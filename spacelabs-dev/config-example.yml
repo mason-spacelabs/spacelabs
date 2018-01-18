@@ -1,0 +1,5 @@
+# The development credentials will match the ./config.json file
+development:
+  password: SHOPIFY_DEVELOPMENT_PASSWORD 
+  theme_id: "SHOPIFY_THEME_ID"
+  store: SHOPIFY_DEVELOPMENT_URL

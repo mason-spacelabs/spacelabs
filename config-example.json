@@ -1,0 +1,12 @@
+{
+    "development": {
+        "shopify_api_key": "DEVELOPMENT_SHOPIFY_KEY", // The development API access credentials will also need to be added to the spacelabs-dev/config.yml file
+        "shopify_api_password": "DEVELOPMENT_SHOPIFY_PASSWORD",
+        "shopify_url": "DEVELOPMENT_SHOPIFY_URL"
+    },
+    "production": {
+        "shopify_api_key": "PRODUCTION_SHOPIFY_KEY", // The production API access credentials will also need to be added to the spacelabs-prod/config.yml file
+        "shopify_api_password": "PRODUCTION_SHOPIFY_PASSWORD",
+        "shopify_url": "PRODUCTION_SHOPIFY_URL"
+    }
+}

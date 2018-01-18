@@ -1,0 +1,40 @@
+{
+  "name": "spacelabs",
+  "version": "1.0.0",
+  "description": "Spacelabs Workflow",
+  "main": "gulpfile.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "dev-watch": "gulp --env=development",
+    "dev-pull": "cd spacelabs-dev && theme download",
+    "prod-push": "gulp --env=production",
+    "prod-upload": "cd spacelabs-prod && theme upload --force"
+  },
+  "author": "Mason Halstead",
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-cache": "^1.0.2",
+    "gulp-changed": "^3.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^3.0.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^3.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-shopify-upload": "^2.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^5.0.0",
+    "jshint": "^2.9.5",
+    "node-bourbon": "^4.2.8",
+    "node-neat": "^2.0.0-beta.0"
+  }
+}

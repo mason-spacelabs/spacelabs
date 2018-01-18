@@ -1,0 +1,7 @@
+# Spacelabs Ignore Files
+
+node_modules
+config.json
+.jsbeautifyrc
+spacelabs-prod/config.json
+spacelabs-dev/config.json
