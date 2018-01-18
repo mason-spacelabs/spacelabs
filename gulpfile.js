@@ -173,8 +173,30 @@ gulp.task('shopifywatch', function() {
 
 // Default gulp action when gulp is run
 
-gulp.task('default', [
+switch(gutil.env.env) {
 
-  'shopifywatch', 'styles', 'scriptsWatch', 'imageWatch'
+  case "development":
 
-]);
+    gulp.task('default', [
+
+      'shopifywatch', 'styles', 'scriptsWatch', 'imageWatch'
+
+    ]);
+
+  break;
+
+  case "production":
+
+    gulp.task('default', [
+
+      'shopifywatch'
+
+    ]);
+
+  break;
+
+  default:
+
+    console.log("Gulp Error");
+
+}

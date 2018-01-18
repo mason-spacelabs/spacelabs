@@ -9,10 +9,13 @@
   "scripts": {
     "dev-watch": "gulp --env=development",
     "dev-pull": "cd spacelabs-dev && theme download",
-    "prod-push": "gulp --env=production",
-    "prod-upload": "cd spacelabs-prod && theme upload --force"
+    "dev-push": "cd spacelabs-dev && theme upload --force",
+    "dev-push-overwrite": "cd spacelabs-dev && theme replace --force",
+    "prod-stage": "gulp --env=production",
+    "prod-push": "cd spacelabs-prod && theme upload --force",
+    "prod-push-overwrite": "cd spacelabs-prod && theme replace --force"
   },
-  "author": "Mason Halstead",
+  "author": "Spacelabs Healthcare",
   "license": "MIT",
   "devDependencies": {
     "del": "^3.0.0",

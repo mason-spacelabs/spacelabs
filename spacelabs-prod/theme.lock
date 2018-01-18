@@ -9,28 +9,14 @@ assets/ico-select.svg.liquid:
   development: 2018-01-15T11:29:06-08:00   28de0c672609528b7c55f6f47810784b
 assets/lazysizes.js:
   development: 2018-01-15T11:29:06-08:00   a27b15d827d7a26f9fa58fb6b4f9d4b6
-assets/main.js:
-  development: 2018-01-16T16:18:36-08:00   4c2d1e9c8b1f99be8024df3c073785d4
-assets/main.min.js:
-  development: 2018-01-16T16:18:18-08:00   fa8fdbf59a9c236b167162f47bf9a1f6
 assets/match-media.min.js:
   development: 2018-01-15T11:29:06-08:00   d0bf06c458a236dcca39b3be8cf80ec5
 assets/password.js:
   development: 2018-01-15T11:29:06-08:00   d826da9cb223a44d53a0c34f457e92dc
-assets/salomon.jpg:
-  development: 2018-01-16T16:18:15-08:00   02f0d1cf8f54a740eef6479d8b0ab1ba
-assets/spacelabs-test.jpg:
-  development: 2018-01-16T14:39:09-08:00   02f0d1cf8f54a740eef6479d8b0ab1ba
-assets/spacelabs.js:
-  development: 2018-01-16T16:18:51-08:00   0c115107c1a5a12eb7aa78e9b694bf66
 assets/spacelabs.min.css:
-  development: 2018-01-16T14:39:09-08:00   32fd741cde41c8ae6cac1c6b5d4924a1
+  development: 2018-01-18T10:39:31-08:00   365a8938e377738f16a5ab6aeb7fce24
 assets/spacelabs.min.js:
-  development: 2018-01-16T14:39:09-08:00   e78231a161616db369c7ca6c20e0d761
-assets/style-main.min.css:
-  development: 2018-01-16T16:18:52-08:00   7040fccadc406d6429077cf46eb73c71
-assets/test-image.jpg:
-  development: 2018-01-16T16:41:37-08:00   02f0d1cf8f54a740eef6479d8b0ab1ba
+  development: 2018-01-18T10:39:21-08:00   924dbfc11812b9446b3f833ecfe261b4
 assets/theme.js:
   development: 2018-01-15T11:29:06-08:00   b50b8c8a74107fa49eed6bf5b802166d
 assets/theme.scss.liquid:
