@@ -6,12 +6,12 @@
         "color_links": "#29927d",
         "color_button_background": "#ffab41",
         "color_button_text": "#1a390c",
-        "color_header_background": "#30656b",
-        "color_header_text": "#ffffff",
+        "color_header_background": "#ffffff",
+        "color_header_text": "#222222",
         "color_footer_background": "#f8f8f8",
         "color_footer_text": "#5c5c5c",
-        "font_body": "Google_Cabin_400,400i,700,700i",
-        "font_heading": "Google_Cabin_400,400i,700,700i",
+        "font_body": "Google_Lato_400,400i,700,700i",
+        "font_heading": "Google_Open+Sans_400,400i,700,700i",
         "continue_shopping_url": "shopify:\/\/collections\/all",
         "sections": {
             "home-promo-mosaic": {
