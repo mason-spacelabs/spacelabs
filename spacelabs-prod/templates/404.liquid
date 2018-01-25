@@ -1,9 +1,21 @@
-<div class="page-width">
-  <div class="empty-page-content text-center">
-    <h1>{{ 'general.404.title' | t }}</h1>
-    <p>{{ 'general.404.subtext' | t }}</p>
-    <p>
-      <a href="/" class="btn btn--has-icon-after">{{ 'general.404.link' | t }}{% include 'icon-arrow-right' %}</a>
-    </p>
+{% assign continue_shopping_url = "/collections/all" %}
+
+{% if settings.continue_shopping_url != blank %}
+  {% assign continue_shopping_url = settings.continue_shopping_url %}
+{% endif %}
+
+<section class="fourohfour--container">
+  <header class="fourohfour-title">
+    <h1>{{ '404.general.title' | t }}</h1>
+  </header>
+
+  <div class="fourohfour--inner">
+    <p>{{ '404.general.text' | t }}</p>
+
+    {% if settings.continue_url_404 != blank %}
+      <a class="button-primary" href="{{ continue_shopping_url }}">
+        {{ '404.general.continue_shopping' | t }}
+      </a>
+    {% endif %}
   </div>
-</div>
+</section>
