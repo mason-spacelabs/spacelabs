@@ -171,7 +171,7 @@ gulp.task('shopifywatch', function() {
 
 });
 
-// Default gulp action when gulp is run
+// Default gulp action when gulp is run in development and production
 
 switch(gutil.env.env) {
 
