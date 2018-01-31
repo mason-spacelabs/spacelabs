@@ -19,6 +19,10 @@
     letter-spacing: 1px;
     font-size: 15px;
 }
+.site-navigation .navmenu-depth-1 > li > a {
+    font-weight: 600;
+}
+
 .navmenu-meganav--scroller {
     display: flex;
 }
@@ -37,4 +41,20 @@
 }
 .button-primary {
     font-weight: normal;
+}
+.site-navigation .site-header-account-link .site-header-cart--button {
+    padding: 10px 12px;
+}
+.static-site-nav {
+    text-transform: uppercase; 
+    font-weight: 600; 
+    letter-spacing: 1px;
+}
+.static-site-nav:hover {
+    opacity: 0.8;
+}
+@media screen and (max-width: 1023px) {
+    .medium-hide {
+        display: none;
+    }
 }
