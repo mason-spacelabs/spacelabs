@@ -4,7 +4,7 @@
     "theme_name": "Empire",
     "theme_author": "Pixel Union",
     "theme_version": "1.4.2",
-    "theme_documentation_url": "http://support.pixelunion.net/category/385-empire",
+    "theme_documentation_url": "http:\/\/support.pixelunion.net\/category\/385-empire",
     "theme_support_email": "support@pixelunion.net"
   },
   {
@@ -420,7 +420,7 @@
       {
         "type": "checkbox",
         "id": "product_ratings_reviews",
-        "label": "Enable product reviews and ratings ([?](https://apps.shopify.com/product-reviews))",
+        "label": "Enable product reviews and ratings ([?](https:\/\/apps.shopify.com\/product-reviews))",
         "default": true
       },
       {
@@ -442,10 +442,22 @@
         "label": "Slideshow aspect ratio",
         "info": "The background in the editor indicates the applied white space, but will not appear on your storefront.",
         "options": [
-          { "value": "natural", "label": "Natural" },
-          { "value": "short", "label": "Short (4:3)" },
-          { "value": "square", "label": "Square (1:1)" },
-          { "value": "tall", "label": "Tall (2:3)" }
+          {
+            "value": "natural",
+            "label": "Natural"
+          },
+          {
+            "value": "short",
+            "label": "Short (4:3)"
+          },
+          {
+            "value": "square",
+            "label": "Square (1:1)"
+          },
+          {
+            "value": "tall",
+            "label": "Tall (2:3)"
+          }
         ],
         "default": "natural"
       },
@@ -466,13 +478,41 @@
         "label": "Product aspect ratio",
         "info": "Using an uncropped setting will generate white space around the image to create a uniform grid without cropping your image. The background in the editor indicates the applied white space, but will not appear on your storefront.",
         "options": [
-          { "group": "Uncropped", "value": "natural", "label": "Natural" },
-          { "group": "Uncropped", "value": "small", "label": "Short (4:3)" },
-          { "group": "Uncropped", "value": "medium", "label": "Square (1:1)" },
-          { "group": "Uncropped", "value": "large", "label": "Tall (2:3)" },
-          { "group": "Cropped", "value": "cropped-small", "label": "Short (4:3)" },
-          { "group": "Cropped", "value": "cropped-medium", "label": "Square (1:1)" },
-          { "group": "Cropped", "value": "cropped-large", "label": "Tall (2:3)" }
+          {
+            "group": "Uncropped",
+            "value": "natural",
+            "label": "Natural"
+          },
+          {
+            "group": "Uncropped",
+            "value": "small",
+            "label": "Short (4:3)"
+          },
+          {
+            "group": "Uncropped",
+            "value": "medium",
+            "label": "Square (1:1)"
+          },
+          {
+            "group": "Uncropped",
+            "value": "large",
+            "label": "Tall (2:3)"
+          },
+          {
+            "group": "Cropped",
+            "value": "cropped-small",
+            "label": "Short (4:3)"
+          },
+          {
+            "group": "Cropped",
+            "value": "cropped-medium",
+            "label": "Square (1:1)"
+          },
+          {
+            "group": "Cropped",
+            "value": "cropped-large",
+            "label": "Tall (2:3)"
+          }
         ],
         "default": "natural"
       },
@@ -505,49 +545,49 @@
         "type": "text",
         "id": "social_facebook",
         "label": "Facebook",
-        "info": "https://facebook.com/pixelunion"
+        "info": "https:\/\/facebook.com\/pixelunion"
       },
       {
         "type": "text",
         "id": "social_twitter",
         "label": "Twitter",
-        "info": "https://twitter.com/pixelunion"
+        "info": "https:\/\/twitter.com\/pixelunion"
       },
       {
         "type": "text",
         "id": "social_google",
         "label": "Google+",
-        "info": "https://plus.google.com/+shopify"
+        "info": "https:\/\/plus.google.com\/+shopify"
       },
       {
         "type": "text",
         "id": "social_pinterest",
         "label": "Pinterest",
-        "info": "https://pinterest.com/pixelunion"
+        "info": "https:\/\/pinterest.com\/pixelunion"
       },
       {
         "type": "text",
         "id": "social_instagram",
         "label": "Instagram",
-        "info": "https://instagram.com/pixelunion"
+        "info": "https:\/\/instagram.com\/pixelunion"
       },
       {
         "type": "text",
         "id": "social_tumblr",
         "label": "Tumblr",
-        "info": "http://shopify.tumblr.com"
+        "info": "http:\/\/shopify.tumblr.com"
       },
       {
         "type": "text",
         "id": "social_vimeo",
         "label": "Vimeo",
-        "info": "https://vimeo.com/shopify"
+        "info": "https:\/\/vimeo.com\/shopify"
       },
       {
         "type": "text",
         "id": "social_youtube",
         "label": "YouTube",
-        "info": "https://www.youtube.com/shopify"
+        "info": "https:\/\/www.youtube.com\/shopify"
       },
       {
         "type": "text",

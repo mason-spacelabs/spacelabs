@@ -9,7 +9,8 @@
   "scripts": {
     "dev-watch": "gulp --env=development",
     "dev-pull": "cd spacelabs-dev && theme download",
-    "dev-push": "cd spacelabs-dev && theme upload --force",
+    "dev-pull-overwrite": "cd spacelabs-dev && theme download --force",
+    "dev-push": "cd spacelabs-dev && theme upload",
     "dev-push-overwrite": "cd spacelabs-dev && theme replace --force",
     "prod-stage": "gulp --env=production",
     "prod-push": "cd spacelabs-prod && theme upload --force",

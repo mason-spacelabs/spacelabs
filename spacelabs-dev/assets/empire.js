@@ -18001,7 +18001,7 @@ var StickyHeader = function () {
         this.$body.addClass(this.stickyClass);
       }
 
-      var offset = getHeaderOffset(this.header);
+      var offset = getHeaderOffset(this.header); /* Creating a Hero Banner that floats behind the navigation. Remove the minus for default setting */
 
       this.$siteMain.css('paddingTop', offset);
 

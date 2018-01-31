@@ -1,8 +1,9 @@
 <article class="site-page" data-template-page data-template-contact>
 
-  <header class="page-masthead">
+  <header class="page-masthead ">
     <h1 class="page-title">
       {{ page.title }}
+      {{ page.id }}
     </h1>
   </header>
   {% form 'contact' %}
@@ -50,38 +51,56 @@
 
           <input
             class="form-field-input form-field-text {% if form.errors contains 'name' %}form-field-error{% endif %}"
-            id="contact_name"
-            name="contact[name]"
+            id="contact_firstname"
+            name="contact[firstname]"
             type="text"
             value="{{ value }}">
 
-          <label class="form-field-title" for="contact_name">
-            {{ 'contact.form.name' | t }}
+          <label class="form-field-title" for="contact_firstname">
+            {{ 'contact.form.firstname' | t }}
           </label>
         </div>
-
         <div class="form-field form-field--half">
-          {% assign value = '' %}
-          {%- if form.email -%}
-            {% assign value = form.email %}
-          {%- elsif customer -%}
-            {% assign value = customer.email %}
-          {%- endif -%}
-          <input
-            class="form-field-input form-field-text {% if form.errors contains 'email' %}form-field-error{% endif %}"
-            id="contact_email"
-            name="contact[email]"
-            type="text"
-            value="{{ value }}"
-            autocorrect="off"
-            autocapitalize="off">
-
-          <label class="form-field-title" for="contact_email">
-            {{ 'contact.form.email' | t }}
-          </label>
-        </div>
+            {% assign value = '' %}
+            {%- if form.name -%}
+              {% assign value = form.name %}
+            {%- elsif customer -%}
+              {% assign value = customer.name %}
+            {%- endif -%}
+  
+            <input
+              class="form-field-input form-field-text {% if form.errors contains 'name' %}form-field-error{% endif %}"
+              id="contact_lastname"
+              name="contact[lastname]"
+              type="text"
+              value="{{ value }}">
+  
+            <label class="form-field-title" for="contact_lastname">
+              {{ 'contact.form.lastname' | t }}
+            </label>
+          </div>
       </div>
+      <div class="form-field">
+        {% assign value = '' %}
+        {%- if form.phone -%}
+          {% assign value = form.phone %}
+        {%- elsif customer -%}
+          {% assign value = customer.phone %}
+        {%- endif -%}
 
+        <input
+        class="form-field-input form-field-text {% if form.errors contains 'email' %}form-field-error{% endif %}"
+        id="contact_email"
+        name="contact[email]"
+        type="text"
+        value="{{ value }}"
+        autocorrect="off"
+        autocapitalize="off">
+
+      <label class="form-field-title" for="contact_email">
+        {{ 'contact.form.email' | t }}
+      </label>
+      </div>
       <div class="form-field">
         {% assign value = '' %}
         {%- if form.phone -%}
@@ -101,7 +120,19 @@
           {{ 'contact.form.phone' | t }}
         </label>
       </div>
+      <div class="form-field">
 
+        
+        <select id="ContactFormFlavor" name="contact[Flavor]" class="form-field-input form-field-text">
+          <option style="display:none"></option>
+          <option>Chocolate</option>
+          <option>Vanilla</option>
+          <option>Strawberry</option>
+        </select>
+        <label class="form-field-title" for="ContactFormFlavor">
+          Select Occupation
+        </label>
+      </div>
       <div class="form-field">
         {% assign value = '' %}
         {%- if form.body -%}
