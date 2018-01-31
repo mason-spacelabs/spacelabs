@@ -19,3 +19,22 @@
     letter-spacing: 1px;
     font-size: 15px;
 }
+.navmenu-meganav--scroller {
+    display: flex;
+}
+.navmenu-meganav {
+    border-top: 1px solid rgba(127, 127, 127, 0.2);
+}
+.navmenu-meganav.navmenu-meganav--desktop .navmenu-meganav-items {
+    margin-right: 0px;
+}
+.navmenu-meganav.navmenu-meganav--desktop .navmenu-item-text {
+    font-weight: normal;
+}
+.navmenu-meganav-items .navmenu .navmenu-link {
+    text-transform: none;
+    letter-spacing: 0px;
+}
+.button-primary {
+    font-weight: normal;
+}

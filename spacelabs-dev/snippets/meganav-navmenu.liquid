@@ -21,7 +21,7 @@
   navmenu-meganav-items
 {%- endcapture -%}
 
-<ul class="{{ navmenu_classes | strip_newlines }}">
+<ul class="{{ navmenu_classes | strip_newlines }}" style="flex-grow: 2;">
   {% for link in link.links %}
     {% assign d = depth | plus: 1 %}
     {% assign nav_item_count = 'navmenu-item-count-' %}
@@ -52,7 +52,6 @@
           </span>
         {% endif %}
       </span>
-
       {%
         include 'navmenu',
         menu: link,
@@ -64,4 +63,19 @@
         aria_expanded: true
       %}
   {% endfor %}
+
 </ul>
+<div style="flex-grow: 1; padding-top: 18px;">
+  <div style=" max-width: 450px; float: right; padding: 0.4375rem 1.5625rem;">
+    <div style="position: relative;">
+      <img style=" width: 100%; height: auto;" src="{{ "2-1.jpg" | asset_url }}">
+      <div style="position: absolute; top: 0; left: 15px;">
+        <h3 style="max-width: 90%;">Neonatal Cuffs</h3>
+        <p style="max-width: 60%;">Put a small one line message here for description</p>
+        <span class="button-primary promo-block--button">
+        View Products
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
