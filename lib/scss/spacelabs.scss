@@ -53,8 +53,45 @@
 .static-site-nav:hover {
     opacity: 0.8;
 }
+.site-footer-block-item {
+    flex-grow: 1;
+}
+.site-footer-block-title {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.site-footer-block-content ul li a:hover {
+    color: #003f72;
+}
+.site-footer-block-social-accounts .social-link {
+    margin: 0px 10px;
+}
+.site-footer-block-social-accounts .social-link svg {
+    background-color: #c4c4c4;
+}
+.site-footer-block-social-accounts .social-link:hover svg {
+    background-color: #c4c4c4;
+}
+.site-footer-block-social-accounts .social-link svg:hover {
+    background-color: #003f72;
+}
+.social-link {
+    color: #f8f8f8 !important ;
+}
+.site-footer-credits {
+    margin-top: 8px;
+}
+.site-footer-information {
+    margin-top: 50px;
+}
 @media screen and (max-width: 1023px) {
     .medium-hide {
         display: none;
+    }
+    .site-header-search {
+        margin-left: 0px;
+        margin-right: 0px;
     }
 }

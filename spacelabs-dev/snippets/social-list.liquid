@@ -1,4 +1,4 @@
-{% assign social_networks = 'facebook|twitter|google|pinterest|instagram|tumblr|vimeo|youtube|email|rss' %}
+{% assign social_networks = 'facebook|twitter|google|linkedin|pinterest|instagram|tumblr|vimeo|youtube|email|rss' %}
 {% assign social_networks = social_networks | split: '|' %}
 
 {% assign has_social_icons = false %}
@@ -40,6 +40,15 @@
       %}
     {%- endif -%}
 
+    {%- if settings.social_linkedin != blank -%}
+      {%
+        include 'social-link',
+        id: 'linkedin',
+        title: 'Linkedin', 
+        url: settings.social_linkedin
+      %}
+    {%- endif -%}
+
     {%- if settings.social_pinterest != blank -%}
       {%
         include 'social-link',
@@ -65,7 +74,7 @@
         title: 'Tumblr'
         url: settings.social_tumblr
       %}
-    {%- endif -%}
+    {%- endif -%} 
 
     {%- if settings.social_vimeo != blank -%}
       {%

@@ -4,7 +4,7 @@
   data-section-type="static-footer">
 </script>
 
-<section class="site-footer-wrapper">
+<section class="site-footer-wrapper" style="border-top: 1px solid hsla(0,0%,50%,.2); border-bottom: 1px solid hsla(0,0%,50%,.2)">
   {% if section.blocks.size %}
     <div class="site-footer-item">
       <div class="site-footer-blocks column-count-{{ section.blocks.size }}">
@@ -14,11 +14,12 @@
       </div>
     </div>
   {% endif %}
-
+</section>
+<section class="site-footer-wrapper" style="padding-top: 15px; padding-bottom: 10px; margin-top: 0px;">
   <div class="site-footer-item">
-    <div class="site-footer-information">
+    <div class="site-footer-information" style="margin-top: 0px;">
       <div class="site-footer-left">
-
+        {% comment %}
         {% if linklists[section.settings.additional_menu].links != blank %}
           <nav
             class="site-footer-navigation"
@@ -32,15 +33,16 @@
             %}
           </nav>
         {% endif %}
-
+        {% endcomment %}
         <p class="site-footer-credits">
           {% assign year = 'now' | date: '%Y' %}
           {{ 'footer.general.copyright_html' | t: year: year, shop_name: shop.name }}
         </p>
-
+        {% comment %}
         <p class="site-footer-credits">
           {{ 'footer.general.copyright_credit_html' | t }} {{ powered_by_link }}
         </p>
+        {% endcomment %}
       </div>
 
       {% if section.settings.payment_icons and shop.enabled_payment_types.size > 0 %}
@@ -49,7 +51,8 @@
             - Test shop payment options against Shopify's provided list of payment gateways
               (https://help.shopify.com/themes/customization/store/add-credit-card-icons)
           {% endcomment %}
-          {% assign payment_icons_available = 'amazon_payments|american_express|android_pay|apple_pay|bitcoin|cirrus|dankort|diners_club|discover|dogecoin|dwolla|forbrugsforeningen|interac|jcb|litecoin|maestro|master|paypal|visa|stripe|shopify_pay' | split: '|' %}
+          {% comment %}{% assign payment_icons_available = 'amazon_payments|american_express|android_pay|apple_pay|bitcoin|cirrus|dankort|diners_club|discover|dogecoin|dwolla|forbrugsforeningen|interac|jcb|litecoin|maestro|master|paypal|visa|stripe|shopify_pay' | split: '|' %}{% endcomment %}
+          {% assign payment_icons_available = 'american_express|cirrus|discover|master|paypal|visa|stripe|shopify_pay' | split: '|' %}
           <ul class="payment-icons">
             {%- for type in shop.enabled_payment_types -%}
               {%- if payment_icons_available contains type -%}

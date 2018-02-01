@@ -4,6 +4,7 @@
   settings.social_twitter_link != blank
   or settings.social_facebook_link != blank
   or settings.social_pinterest_link != blank
+  or settings.social_linkedin_link != blank
   or settings.social_instagram_link != blank
   or settings.social_tumblr_link != blank
   or settings.social_snapchat_link != blank
@@ -77,6 +78,7 @@
     <div class="grid grid--no-gutters">
       {% if social_icons %}
         <div class="grid__item{% if section.settings.footer_newsletter_enable %} medium-up--one-half{% else %} text-center{% endif %}">
+        
           <ul class="list--inline site-footer__social-icons social-icons">
             {% if settings.social_facebook_link != blank %}
               <li>
@@ -91,6 +93,14 @@
                 <a class="social-icons__link" href="{{ settings.social_twitter_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Twitter' }}">
                   {% include 'icon-twitter' %}
                   <span class="icon__fallback-text">Twitter</span>
+                </a>
+              </li>
+            {% endif %}
+            {% if settings.social_linkedin_link != blank %}
+              <li>
+                <a class="social-icons__link" href="{{ settings.social_linkedin_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Linkedin' }}">
+                  {% include 'icon-twitter' %}
+                  <span class="icon__fallback-text">Linkedin</span>
                 </a>
               </li>
             {% endif %}
@@ -158,7 +168,9 @@
         <div class="site-footer__copyright{% if social_icons and section.settings.footer_newsletter_enable != blank %} site-footer__copyright--right medium-up--text-right{% elsif social_icons == false and section.settings.footer_newsletter_enable %} medium-up--text-left{% endif %}">
           {% unless social_icons and section.settings.footer_newsletter_enable and section.settings.show_payment_icons %}
             <small class="site-footer__copyright-content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}</small>
+          {% comment %}
             <small class="site-footer__copyright-content site-footer__copyright-content--powered-by">{{ powered_by_link }}</small>
+          {% endcomment %}
           {% endunless %}
           {% if section.settings.show_payment_icons %}
             <div class="site-footer__payment-icons{% unless social_icons or section.settings.footer_newsletter_enable == blank %} site-footer__payment-icons--right{% endunless %}">

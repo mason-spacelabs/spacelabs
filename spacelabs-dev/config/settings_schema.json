@@ -561,6 +561,12 @@
       },
       {
         "type": "text",
+        "id": "social_linkedin",
+        "label": "Linkedin",
+        "info": "https:\/\/www.linkedin.com\/company\/spacelabs-healthcare"
+      },
+      {
+        "type": "text",
         "id": "social_pinterest",
         "label": "Pinterest",
         "info": "https:\/\/pinterest.com\/pixelunion"
