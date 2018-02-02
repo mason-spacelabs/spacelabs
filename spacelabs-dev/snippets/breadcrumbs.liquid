@@ -22,9 +22,13 @@
     {% elsif template contains 'product' %}
 
       {% if collection.url %}
+      {{ delimiter }}
+       <a href="/collections">Collections</a>
         {{ delimiter }}
         {{ collection.title | link_to: collection.url }}
       {% endif %}
+      {{ delimiter }}
+      <a href="{{ collection.url }}/products">Products</a>
       {{ delimiter }}
       <span>{{ product.title }}</span>
 
@@ -34,7 +38,8 @@
       <span>{{ 'general.breadcrumbs.collections' | t }}</span>
 
     {% elsif template contains 'collection' and collection.handle %}
-
+      {{ delimiter }}
+      <a href="/collections">Collections</a>
       {{ delimiter }}
       {% if current_tags %}
         {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
@@ -89,12 +94,12 @@
         include 'search-sanitizer',
         search_terms: search.terms
       %}
-
+    
       {{ delimiter }}
       <span>{{ 'search.general.breadcrumbs_count' | t: terms: sanitized_terms, count: search.results_count }}</span>
 
     {% else %}
-
+      
       {{ delimiter }}
        <span>{{ page_title }}</span>
 

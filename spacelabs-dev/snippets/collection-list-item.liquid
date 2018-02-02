@@ -23,6 +23,7 @@
 
 {% assign collection_title = collection.title %}
 {% assign collection_url = collection.url %}
+{% assign collection_vendors = collection.all_vendors %}
 
 {% if onboard %}
   {% assign collection_title = 'onboarding.collection.title' | t  %}
@@ -40,6 +41,7 @@
   {% assign image_alt = collection_title | escape %}
 {% endif %}
 
+{% if collection_vendors contains "Patient Monitoring" %}
 <article class="collection--item" {% if block %}{{ block.shopify_attributes }}{% endif %}>
   <figure class="collection--item-image">
     <a href="{{ collection_url }}">
@@ -62,3 +64,4 @@
     </a>
   </h2>
 </article>
+{% endif %}
