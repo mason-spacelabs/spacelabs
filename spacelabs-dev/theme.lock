@@ -36,7 +36,7 @@ assets/spacelabs-logo.jpg:
 assets/spacelabs-logo.png:
   development: 2018-02-02T13:56:21-08:00   09493cd484e61602273a10b527747a96
 assets/spacelabs.min.css:
-  development: 2018-02-02T13:57:36-08:00   4884e8acb1e36061ebe33b8a4b4fe5e2
+  development: 2018-02-02T15:04:51-08:00   63ad58ae218371d321d2cc4537b17d3d
 assets/spacelabs.min.js:
   development: 2018-01-31T10:04:11-08:00   e16df300b8384245a801904d0338a6fb
 assets/theme.js:
@@ -62,7 +62,7 @@ layout/theme.liquid:
 locales/de.json:
   development: 2018-01-16T09:44:22-08:00   b7cd7749b0a0d9df967227ee73bcbb7f
 locales/en.default.json:
-  development: 2018-01-31T10:04:33-08:00   42820896cb7107b69ef3d8027d033061
+  development: 2018-02-02T15:04:52-08:00   3bed6f9c648311f794448e2b41e4d512
 locales/es.json:
   development: 2018-01-16T09:43:57-08:00   1f7faec878ecdbd841a874f20548c252
 locales/fr.json:
@@ -186,7 +186,7 @@ snippets/atc-banner.liquid:
 snippets/bgset.liquid:
   development: 2018-01-15T11:26:39-08:00   85889bbc39b57621f32fad66317366fc
 snippets/breadcrumbs.liquid:
-  development: 2018-01-31T10:04:17-08:00   fde213f35e3c2ff6b3ab771031251dc3
+  development: 2018-02-02T15:04:51-08:00   a83ec48a734526ac7d57f4d3fd238465
 snippets/cart-item.liquid:
   development: 2018-01-31T10:04:04-08:00   d3d73c883e15c55e24c863dd7607ae70
 snippets/cart-shipping.liquid:

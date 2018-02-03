@@ -89,6 +89,7 @@
     {%
       include 'header-search-form',
       quick_links: linklists[section.settings.quick_links],
+      quick_links_secondary: linklists[section.settings.quick_links_secondary],
       enable_live_search: section.settings.enable_live_search,
       enable_images: section.settings.enable_live_search_images,
       enable_content: section.settings.enable_live_search_articles_pages
@@ -229,6 +230,12 @@
       "id": "quick_links",
       "type": "link_list",
       "label": "Quick links",
+      "info": "Displays menu links below the search box the first time it is opened. This menu won't show dropdown items."
+    },
+    {
+      "id": "quick_links_secondary",
+      "type": "link_list",
+      "label": "Quick links Second Menu",
       "info": "Displays menu links below the search box the first time it is opened. This menu won't show dropdown items."
     },
     {

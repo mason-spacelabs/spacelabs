@@ -44,7 +44,7 @@
       {% if meganav_has_triggers %}data-navmenu-trigger{% endif %}
       {{ block.shopify_attributes }}>
       <span class="navmenu-item-text navmenu-link-parent">
-        {{ link.title }}
+        <a class="navmenu-parent" href="{{ link.url }}">{{ link.title }}</a>
 
         {% if submenu_arrows %}
           <span class="navmenu-icon navmenu-icon-depth-{{ depth }}">
@@ -69,12 +69,14 @@
   <div style=" max-width: 450px; float: right; padding: 0.4375rem 1.5625rem;">
     <div style="position: relative;">
       <img style=" width: 100%; height: auto;" src="{{ "2-1.jpg" | asset_url }}">
-      <div style="position: absolute; top: 0; left: 15px;">
-        <h3 style="max-width: 90%;">Neonatal Cuffs</h3>
-        <p style="max-width: 60%;">Put a small one line message here for description</p>
-        <span class="button-primary promo-block--button">
-        View Products
+      <div style="position: absolute; top: 0; left: 15px; right: 0; bottom: 0;">
+        <h3 style="max-width: 60%;">All Product Categories</h3>
+        <p style="max-width: 60%;">Browse through all of our categories by image.</p>
+        <a href="/collections" style="padding: 0px; margin-top: 10px;">
+        <span class="button-primary promo-block--button" style="margin-top: 0px;">
+        All Categories
         </span>
+        </a>
       </div>
     </div>
   </div>

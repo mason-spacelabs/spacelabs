@@ -40,6 +40,12 @@
     text-transform: none;
     letter-spacing: 0px;
 }
+.site-navigation .navmenu-parent {
+    padding-left: 0px;
+}
+.navmenu-parent:hover {
+    color: #003f72;;
+}
 .button-primary {
     font-weight: normal;
 }
@@ -52,7 +58,11 @@
     letter-spacing: 1px;
 }
 .static-site-nav:hover {
-    opacity: 0.8;
+    color: #003f72;
+}
+.site-navigation .navmenu-depth-1>li>a:hover {
+    opacity: 1;
+    color: #003f72;
 }
 .site-footer-block-item {
     flex-grow: 1;
@@ -123,6 +133,9 @@
 }
 .listcollections--container {
     margin-top: 3.5rem;
+}
+.breadcrumbs-container {
+    margin-top: 2.5rem;
 }
 @media screen and (max-width: 1023px) {
     .medium-hide {

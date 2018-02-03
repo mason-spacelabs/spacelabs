@@ -28,8 +28,6 @@
         {{ collection.title | link_to: collection.url }}
       {% endif %}
       {{ delimiter }}
-      <a href="{{ collection.url }}/products">Products</a>
-      {{ delimiter }}
       <span>{{ product.title }}</span>
 
     {% elsif template contains 'list-collections' %}
