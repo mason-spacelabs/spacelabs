@@ -8,10 +8,9 @@
 {% endif %}
 
 {% include 'breadcrumbs' %}
-
 {% paginate collections by pagination %}
 <div class="listcollections--container" style="display: flex;">
-  <div class="listcollections--inner" style="width: 300px; padding-right: 50px;">
+  <div class="listcollections--inner" style="width: 400px; padding-right: 50px;">
     <h3>Categories</h3> 
     <ul id="category-list">
       {% for link in linklists.categories.links %}
@@ -22,7 +21,7 @@
     </ul>
   </div>
   <div style="width: 100%;">
-    <h3>Patient Monitoring &amp; Connectivity</h3>
+    <h3>Non-Invasive Blood Pressure Cuffs</h3>
     <div class="listcollections--inner"> 
       {% if using_linklist %}
         {% for link in linklists[linklist].links %}

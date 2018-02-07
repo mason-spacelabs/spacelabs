@@ -292,13 +292,13 @@
     "sort_by": {
       "title": "Sort by",
       "manual": "Featured",
-      "price_ascending": "Price: Low to High",
-      "price_descending": "Price: High to Low",
-      "title_ascending": "A-Z",
-      "title_descending": "Z-A",
-      "created_ascending": "Oldest to Newest",
-      "created_descending": "Newest to Oldest",
-      "best_selling": "Best Selling"
+      "price_ascending": "Price: Low to High ",
+      "price_descending": "Price: High to Low ",
+      "title_ascending": "A-Z ",
+      "title_descending": "Z-A ",
+      "created_ascending": "Oldest to Newest ",
+      "created_descending": "Newest to Oldest ",
+      "best_selling": "Best Selling "
     },
     "show_per_page": {
       "title": "Show"

@@ -48,7 +48,9 @@
   <div class="price--main" data-price>
     {%- capture price_html -%}
       <span class="money">
-        {{ price | money }}
+
+      {{ price | money }}
+
       </span>
     {%- endcapture -%}
 

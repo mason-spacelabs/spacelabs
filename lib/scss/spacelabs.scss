@@ -92,7 +92,7 @@
     color: #f8f8f8 !important ;
 }
 .site-footer-wrapper {
-    margin-top: 3.5rem;
+    margin-top: 4.5rem;
 }
 .site-footer-credits {
     margin-top: 8px;
@@ -134,8 +134,22 @@
 .listcollections--container {
     margin-top: 3.5rem;
 }
-.breadcrumbs-container {
-    margin-top: 2.5rem;
+.search-flydown--quicklinks-link:hover, .search-flydown--quicklinks-link:focus {
+    color: #003f72 !important;
+    background-color: #f8f8f8;
+}
+nav.productgrid--utils .productgrid--utils {
+    // border: 1px solid hsla(0,0%,50%,.2);
+    background-color: #fff;
+}
+nav.productgrid--utils {
+    background-color: #fff;
+}
+.filter-text {
+    font-weight: normal !important;
+}
+.featured-collection--container .home-section--title {
+    text-align: left;
 }
 @media screen and (max-width: 1023px) {
     .medium-hide {

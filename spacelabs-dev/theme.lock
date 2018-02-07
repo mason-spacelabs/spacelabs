@@ -36,7 +36,7 @@ assets/spacelabs-logo.jpg:
 assets/spacelabs-logo.png:
   development: 2018-02-02T13:56:21-08:00   09493cd484e61602273a10b527747a96
 assets/spacelabs.min.css:
-  development: 2018-02-02T15:04:51-08:00   63ad58ae218371d321d2cc4537b17d3d
+  development: 2018-02-07T08:53:01-08:00   38195b2a0213629626c7848c080de91c
 assets/spacelabs.min.js:
   development: 2018-01-31T10:04:11-08:00   e16df300b8384245a801904d0338a6fb
 assets/theme.js:
@@ -62,7 +62,7 @@ layout/theme.liquid:
 locales/de.json:
   development: 2018-01-16T09:44:22-08:00   b7cd7749b0a0d9df967227ee73bcbb7f
 locales/en.default.json:
-  development: 2018-02-02T15:04:52-08:00   3bed6f9c648311f794448e2b41e4d512
+  development: 2018-02-07T08:53:02-08:00   cf2a35de706f7c4804c364ad6634bd0a
 locales/es.json:
   development: 2018-01-16T09:43:57-08:00   1f7faec878ecdbd841a874f20548c252
 locales/fr.json:
@@ -138,7 +138,7 @@ sections/password-footer.liquid:
 sections/password-header.liquid:
   development: 2018-01-15T11:26:37-08:00   96c731183fa1c3f2f87ca66501494897
 sections/product-template.liquid:
-  development: 2018-01-15T11:26:37-08:00   97835930141d94b232abc785d21a7881
+  development: 2018-02-07T08:53:34-08:00   b3c21bdd3a4f142763e96af60eccda10
 sections/quotes.liquid:
   development: 2018-01-16T09:44:13-08:00   b234ffff9a061befe87a0d69a121af1c
 sections/rich-text.liquid:
@@ -158,9 +158,9 @@ sections/static-footer.liquid:
 sections/static-giftcard.liquid:
   development: 2018-01-31T10:04:03-08:00   aad0f8572fdd83684bbcc67ecdaadbb3
 sections/static-header.liquid:
-  development: 2018-02-01T08:37:25-08:00   54797e719c0b7cf3ef3386464927742a
+  development: 2018-02-07T08:52:29-08:00   aafb8b702d0627dc61f7d23fac18c36b
 sections/static-list-collections.liquid:
-  development: 2018-02-02T13:57:58-08:00   d0c7489e104e32960c891cbdb654c88f
+  development: 2018-02-07T08:52:12-08:00   907088fb9c07fc3ba0567f47461d7c11
 sections/static-password.liquid:
   development: 2018-01-31T10:04:51-08:00   47a8d787723b93ca0f99b0c9634cda56
 sections/static-product.liquid:
@@ -186,7 +186,7 @@ snippets/atc-banner.liquid:
 snippets/bgset.liquid:
   development: 2018-01-15T11:26:39-08:00   85889bbc39b57621f32fad66317366fc
 snippets/breadcrumbs.liquid:
-  development: 2018-02-02T15:04:51-08:00   a83ec48a734526ac7d57f4d3fd238465
+  development: 2018-02-07T08:52:35-08:00   fa3a2b56d6b6be0fbe9bc51b2f8dc746
 snippets/cart-item.liquid:
   development: 2018-01-31T10:04:04-08:00   d3d73c883e15c55e24c863dd7607ae70
 snippets/cart-shipping.liquid:
@@ -194,7 +194,7 @@ snippets/cart-shipping.liquid:
 snippets/collection-grid-item.liquid:
   development: 2018-01-15T11:26:39-08:00   209c8abd3531c95e503636cc520dd9ca
 snippets/collection-list-item.liquid:
-  development: 2018-02-02T13:56:49-08:00   7a9c5d5c19b9b58df2cb7754647bc8c3
+  development: 2018-02-07T08:52:17-08:00   9405adfe83ccf136f091fc53eeee5749
 snippets/comment.liquid:
   development: 2018-01-15T11:26:39-08:00   50406c82467014e1bbe15a62685b2536
 snippets/consistent-savings.liquid:
@@ -208,7 +208,7 @@ snippets/footer-block.liquid:
 snippets/google-fonts.liquid:
   development: 2018-01-15T11:26:39-08:00   377ddc183ac7882100f47299bb8e0467
 snippets/header-search-form.liquid:
-  development: 2018-01-31T10:03:24-08:00   44cd365d5f606c195e59f6211546199c
+  development: 2018-02-07T08:52:13-08:00   1fb1b58ec0f464fe36511f93e40ccc24
 snippets/icon-amazon_payments.liquid:
   development: 2018-01-15T11:26:39-08:00   f1ad8ba26dd5b98117703ede5357e408
 snippets/icon-american_express.liquid:
@@ -328,7 +328,7 @@ snippets/icon-youtube.liquid:
 snippets/image-style.liquid:
   development: 2018-01-15T11:26:41-08:00   2d807ad1f4831d306d8e190b89d45c00
 snippets/meganav-navmenu.liquid:
-  development: 2018-02-01T08:37:31-08:00   9d48f204355dfdce53711d0a432c0274
+  development: 2018-02-07T08:52:45-08:00   9502999220cbfd56ce074202c4c9f941
 snippets/message-banner.liquid:
   development: 2018-01-31T10:03:23-08:00   a9f100127c83a8006c57c083dae90d0f
 snippets/modal.liquid:
@@ -356,7 +356,7 @@ snippets/product-form.liquid:
 snippets/product-gallery.liquid:
   development: 2018-01-31T10:04:20-08:00   47ae1164a73ad41232e891f9b6672e0a
 snippets/product-grid-item.liquid:
-  development: 2018-01-31T10:04:27-08:00   b8eeea723cfa7f9109773b38104a0b09
+  development: 2018-02-07T08:52:43-08:00   2abf5c83d4bf4eb36f9ed9efcfb021b9
 snippets/product-grid-showby.liquid:
   development: 2018-01-31T10:04:58-08:00   c5ace747bdefaf1a4f8ee5c2ee33bd0f
 snippets/product-grid-sidebar-filters.liquid:
@@ -366,7 +366,7 @@ snippets/product-grid-sidebar.liquid:
 snippets/product-grid-sortby.liquid:
   development: 2018-01-31T10:04:53-08:00   a10ceb3f5b973e60087868042a635c12
 snippets/product-grid-tag-groups.liquid:
-  development: 2018-01-31T10:03:35-08:00   8847c4f4bd32a99efb79172e9d1757e7
+  development: 2018-02-07T08:53:38-08:00   5a4870c204f8792d7399dde608432bd8
 snippets/product-grid-tags-active.liquid:
   development: 2018-01-31T10:03:28-08:00   9a9f657e5f527ce5bf0fafe4179be1af
 snippets/product-grid-tags.liquid:
@@ -374,9 +374,9 @@ snippets/product-grid-tags.liquid:
 snippets/product-options.liquid:
   development: 2018-01-31T10:05:01-08:00   b4aeb6bff95e5564ea864577bcec0b2f
 snippets/product-price.liquid:
-  development: 2018-01-31T10:04:35-08:00   13c4cc168e86b1dc98813d771b61ae02
+  development: 2018-02-07T08:53:12-08:00   05231d2264d0b2c7f096f8e1cc2e8123
 snippets/product.liquid:
-  development: 2018-01-31T10:04:57-08:00   5e2274ac908ac151ff5548194bb2f246
+  development: 2018-02-07T08:53:27-08:00   8eafdfd6a2e6c59fe892e253575094a4
 snippets/promo-block-background.liquid:
   development: 2018-01-31T10:04:24-08:00   3741b753b504788b4ac3b0b91bc4f762
 snippets/promo-block.liquid:
@@ -418,7 +418,7 @@ snippets/social-meta-tags.liquid:
 snippets/social-sharing.liquid:
   development: 2018-01-15T11:26:42-08:00   df66127392b32e401ac2dd2963c78047
 snippets/structured-data.liquid:
-  development: 2018-01-31T10:04:00-08:00   78ec5d4b8469ba13a0649a6d9784d79a
+  development: 2018-02-07T08:52:58-08:00   2676cb0f5d301dfb7829091429747836
 snippets/svg-sprite.liquid:
   development: 2018-01-31T10:03:36-08:00   89196daa4fcb4edc9ba0fd471bae1159
 snippets/tweet.liquid:
@@ -463,6 +463,8 @@ templates/page.contact.liquid:
   development: 2018-01-31T10:04:34-08:00   fd703a88bd160473fc3d9a4d4bd04276
 templates/page.liquid:
   development: 2018-01-31T10:03:52-08:00   9e442c571c6eb6ea9b0b06598a29321b
+templates/page.patient-monitoring.liquid:
+  development: 2018-02-07T08:53:35-08:00   b315a5a67e054d34b57d84a55865f6d8
 templates/password.liquid:
   development: 2018-01-31T10:03:46-08:00   2fdfbecb3470b2a25e6559a816577052
 templates/product.liquid:

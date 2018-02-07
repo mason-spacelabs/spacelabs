@@ -31,7 +31,7 @@
 {% endif %}
 
 {% if collection_image and collection_image_alt %}
-  {% assign image = collection_image %}
+  {% assign image = collection_image %} 
   {% assign image_alt = collection_image_alt %}
 {% elsif collection.image %}
   {% assign image = collection %}
@@ -41,7 +41,7 @@
   {% assign image_alt = collection_title | escape %}
 {% endif %}
 
-{% if collection_vendors contains "Patient Monitoring" %}
+{% if collection_vendors contains "Non-Invasive Blood Pressure Cuffs" %}
 <article class="collection--item" {% if block %}{{ block.shopify_attributes }}{% endif %}>
   <figure class="collection--item-image">
     <a href="{{ collection_url }}">
