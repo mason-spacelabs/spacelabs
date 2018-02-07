@@ -68,7 +68,7 @@ function handleErrors() {
 
 gulp.task('images', function() {
 
-  return gulp.src('./lib/images/**')
+  return gulp.src('./lib/images/*')
 
     .pipe(changed('./spacelabs-dev/assets/')) // Ignore unchanged files
 
