@@ -114,6 +114,9 @@
     border-top: 1px solid hsla(0,0%,50%,.2); 
     display: block;
 }
+.collection--item-image {
+    border: 1px solid hsla(0,0%,50%,.2); 
+}
 #category-list li a {
     text-decoration: none; 
     font-size: 0.9375rem; 
@@ -139,7 +142,7 @@
     background-color: #f8f8f8;
 }
 nav.productgrid--utils .productgrid--utils {
-    // border: 1px solid hsla(0,0%,50%,.2);
+    // border: 1px solid hsla(0,0%,50%,.3);
     background-color: #fff;
 }
 nav.productgrid--utils {
@@ -150,6 +153,9 @@ nav.productgrid--utils {
 }
 .featured-collection--container .home-section--title {
     text-align: left;
+}
+.layout--has-sidebar .productgrid--items .productgrid--item {
+    margin-top: 50px;
 }
 @media screen and (max-width: 1023px) {
     .medium-hide {
