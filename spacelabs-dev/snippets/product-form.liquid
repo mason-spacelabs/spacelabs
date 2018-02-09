@@ -5,8 +5,11 @@
 
   @param selected_variant
 {% endcomment %}
-
-<form method="post" action="/cart/add" data-product-form>
+{% if customer %}
+<form method="post" action="/cart/add" data-product-form disabled>
+{% else %}
+<form data-product-form>
+{% endif %}
   {% unless product.has_only_default_variant %}
     {%
       include 'product-options',
@@ -58,12 +61,12 @@
         <label class="form-field-title">{{ 'general.general.quantity' | t }}</label>
       </div>
     </div>
-
+    {% if customer %}
     <button
       class="product-form--atc-button {% unless selected_variant.available %}disabled{% endunless %}"
       type="submit"
       {% unless selected_variant.available %}disabled{% endunless %}
-      data-product-atc>
+      data-product-atc style="font-weight: 400;">
       <span class="atc-button--text">
         {% if selected_variant.available %}
           {{ 'product.buttons.add_to_cart' | t }}
@@ -75,5 +78,12 @@
         {%- include 'icon-spinner' -%}
       </span>
     </button>
+    {% else %}
+    <a href="/account/login">
+    <button type="button" class="product-form--atc-button" style="font-weight: 400;">
+      <span class="atc-button--text">Login For Pricing Details</span>
+      </button>
+    </a>
+    {% endif %}
   </div>
 </form>

@@ -19738,6 +19738,7 @@ function ContentNoResults(props) {
  * @constructor
  */
 function ProductPriceCompareAt(price) {
+	
   return '\n  <span class="search-flydown--product-price--compare-at">\n    <span class="money">' + price.compare_at_price + '</span>\n  </span>\n  ';
 }
 
@@ -19749,7 +19750,11 @@ function ProductPriceCompareAt(price) {
  * @constructor
  */
 function ProductPriceMain(price) {
-  return '\n  <span class="search-flydown--product-price--main">\n    <span class="money">' + price.price + '</span>\n  </span>\n  ';
+	if( !logged_in ){
+  		return '\n';
+	}else{
+		return '\n  <span class="search-flydown--product-price--main">\n    <span class="money">' + price.price + '</span>\n  </span>\n  ';
+	}
 }
 
 /**
