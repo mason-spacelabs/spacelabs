@@ -60,7 +60,7 @@
           {{ product.title }}
         </h1>
       {% endif %}
-
+      
       {% if settings.product_show_vendor and product.vendor != blank %}
         <div class="product-vendor">
           {{ 'product.general.by_vendor' | t: vendor: product.vendor }}
@@ -82,8 +82,15 @@
           </span>
         </div>
       {% endif %}
-
-      <div class="product-pricing">
+      {% comment %}
+      Product description field, never moves
+    {% endcomment %}
+    {% if product.description != blank %}
+      <div class="product-description rte" data-product-description>
+        {{ product.description }}
+      </div>
+    {% endif %}
+      <div class="product-pricing" style="margin-top: 1.5rem; margin-bottom: 1.5rem;" >
         {%
           include 'product-badge',
           class_root: 'product',
@@ -129,18 +136,31 @@
       </div>
     </div>
 
-    {% comment %}
-      Product description field, never moves
-    {% endcomment %}
-    {% if product.description != blank %}
-      <div class="product-description rte" data-product-description>
-        {{ product.description }}
-      </div>
-    {% endif %}
+    
 
     {% if enable_social_sharing and is_product_modal %}
       {{ share_buttons | strip_newlines }}
     {% endif %}
+
+    <div class="product-details" data-product-details>
+      <h3 style="margin-top: 50px;">Product Details</h3>
+      <table class="product_table">
+        <tr >
+          <th>Product SKU</th>
+          <th>Size</th>
+          <th>Description</th> 
+          <th>Packaging</th>
+        </tr>
+        {% for variant in product.variants %}
+          <tr>
+            <td>{{ variant.sku }}</td>
+            <td>{{ variant.option1 }}</td>
+            <td>Put Metafield description here</td>
+            <td>10/EA</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
   </div>
 
   {% comment %}

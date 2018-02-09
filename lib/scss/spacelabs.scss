@@ -157,6 +157,31 @@ nav.productgrid--utils {
 .layout--has-sidebar .productgrid--items .productgrid--item {
     margin-top: 50px;
 }
+table.product_table {
+    width:100%; 
+    border-collapse: collapse;
+}
+table.product_table th {
+    height: 30px;
+    font-weight: normal;
+    background-color: #003f72;
+    color: white;
+}
+table.product_table td {
+    height: 25px;
+}
+table.product_table {
+    border: 1px solid hsla(0,0%,50%,.3);
+    font-size: 13px;
+    text-align: left;
+}
+table.product_table th,table.product_table td {
+    border-bottom: 1px solid hsla(0,0%,50%,.2);
+    padding-left: 5px;
+}
+table.product_table tr:nth-child(odd) {
+    background-color: hsla(0,0%,50%,.2);
+}
 @media screen and (max-width: 1023px) {
     .medium-hide {
         display: none;
