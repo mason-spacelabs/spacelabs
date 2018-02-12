@@ -182,6 +182,26 @@ table.product_table th,table.product_table td {
 table.product_table tr:nth-child(odd) {
     background-color: hsla(0,0%,50%,.2);
 }
+
+#shipping_message {
+    display: none; 
+    max-width: 100%;  
+    font-size: 14px; 
+    text-align: center;
+    margin-top: 0px; 
+    padding: 12px 0px; 
+    border-bottom: 1px solid hsla(0,0%,50%,.3); 
+    color: #003f72;
+}
+#message_close {
+    margin-left: 20px;
+}
+#message_close:hover {
+    cursor: pointer;
+}
+.fa-times-circle:hover {
+    color: #195280;
+}
 @media screen and (max-width: 1023px) {
     .medium-hide {
         display: none;
