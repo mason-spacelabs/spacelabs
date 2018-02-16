@@ -291,6 +291,88 @@ fieldset {
     margin: 0px;
     padding: 0em;
 }
+.error {
+    display: none !important;
+}
+
+// ================= CUSTOM LOGIN MODAL =================
+
+#modal-login {
+    position: fixed;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+.modal-login-box {
+    width: 500px;
+    display: block;
+    margin-top: 100px;
+    border: 1px solid #fff;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    position: relative; 
+    -webkit-box-shadow: 0 3px 3px hsla(0,0%,50%,.25);
+}
+.modal-header-login {
+    margin-bottom: 20px; 
+    margin-top: 25px;
+}
+.modal-content-login {
+    margin-top: 30px; 
+    margin-bottom: 25px;
+}
+.modal-image-login {
+    width: 70%; 
+    display: block; 
+    height: auto; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+.modal-close-icon {
+    position: absolute; 
+    top: 5px; 
+    right: 5px; 
+    cursor: pointer;
+}
+.modal-button-login {
+    padding: 1rem;
+    width: 100%;
+}
+.modal-column-flex {
+    display: flex; 
+    flex-direction: column;
+}
+.modal-column-helper {
+    margin-bottom: 15px;
+}
+.modal-register-cta {
+    width:500px; 
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 15px; 
+    font-size: 14px; 
+    color: #fff; 
+    text-align: center;
+}
+.modal-register-link {
+    color: #b7d2e3; 
+    text-decoration: none;
+}
+.modal-register-link:hover {
+    color: darken( #b7d2e3, 10% );
+}
+.show-modal {
+    display: block;
+}
+.hidden-modal {
+    display: none;
+}
+
+// ================= RESPONSIVE CSS =================
+
 @media screen and (max-width: 1023px) {
     .medium-hide {
         display: none;
@@ -299,8 +381,4 @@ fieldset {
         margin-left: 0px;
         margin-right: 0px;
     }
-}
-
-.error {
-    display: none !important;
 }

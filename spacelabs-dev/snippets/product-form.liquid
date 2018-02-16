@@ -21,7 +21,7 @@
       type="hidden">
   {% endunless %}
 
-  <div class="product-form--atc" style="flex-grow:2;">
+  <div class="product-form--atc" style="flex-grow:2; align-self: flex-start;">
     <div class="product-form--atc-qty form-fields--qty" data-quantity-wrapper style="width:9rem; margin-left: 0.75rem;">
       <div class="form-field form-field--qty-select visible">
         <div class="form-field-select-wrapper">
@@ -77,7 +77,7 @@
       </span>
     </button>
     {% else %}
-    <a href="/account/login">
+    <a onclick="openModal();">
     <button type="button" class="product-form--atc-button" style="font-weight: 400; width: calc(100% - 10.5rem);">
       <span class="atc-button--text">View Pricing Details</span>
       </button>

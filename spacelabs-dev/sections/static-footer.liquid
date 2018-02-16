@@ -52,7 +52,7 @@
               (https://help.shopify.com/themes/customization/store/add-credit-card-icons)
           {% endcomment %}
           {% comment %}{% assign payment_icons_available = 'amazon_payments|american_express|android_pay|apple_pay|bitcoin|cirrus|dankort|diners_club|discover|dogecoin|dwolla|forbrugsforeningen|interac|jcb|litecoin|maestro|master|paypal|visa|stripe|shopify_pay' | split: '|' %}{% endcomment %}
-          {% assign payment_icons_available = 'american_express|cirrus|discover|master|paypal|visa|stripe|shopify_pay' | split: '|' %}
+          {% assign payment_icons_available = 'american_express|cirrus|discover|master|visa|stripe' | split: '|' %}
           <ul class="payment-icons">
             {%- for type in shop.enabled_payment_types -%}
               {%- if payment_icons_available contains type -%}

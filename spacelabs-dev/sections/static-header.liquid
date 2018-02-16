@@ -101,7 +101,7 @@
   {% if shop.customer_accounts_enabled %}
     {% unless customer %}
       <li class="site-header-account-link">
-        <a class="static-site-nav" href="/account/login">
+        <a class="static-site-nav" style="cursor: pointer;" onclick="openModal();">
           {{ 'header.account.login' | t }}
         </a>
       </li>
