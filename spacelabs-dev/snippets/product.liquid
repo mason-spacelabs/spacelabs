@@ -7,7 +7,7 @@
 {% endcomment %}
 
 
-
+{% assign table_size = false %}
 
 {% assign enable_social_sharing = settings.product_social_sharing %}
 {% assign selected_variant = product.selected_or_first_available_variant %}
@@ -57,7 +57,7 @@
         </h2>
       {% else %}
         <h1 class="product-title">
-          {{ product.title }}
+          {{ product.title }}{{ product.id }}
         </h1>
       {% endif %}
       
@@ -87,7 +87,7 @@
     {% endcomment %}
     {% if product.description != blank %}
       <div class="product-description rte" data-product-description>
-        {{ product.description }}
+        {{ product.id }}
       </div>
     {% endif %}
       <div class="product-pricing" style="margin-top: 1.5rem; margin-bottom: 1.5rem;" >
@@ -143,7 +143,7 @@
     {% endif %}
 
     <div class="product-details" data-product-details>
-      <h3 style="margin-top: 50px;">Product Details</h3>
+      <h3 class="product-table-title">Product Details</h3>
       <table class="product_table">
         <tr >
           <th>Product SKU</th>
@@ -154,7 +154,7 @@
         {% for variant in product.variants %}
           <tr>
             <td>{{ variant.sku }}</td>
-            <td>{{ variant.option1 }}</td>
+            <td>{{ variant.id }}</td>
             <td>Put Metafield description here</td>
             <td>10/EA</td>
           </tr>
@@ -170,3 +170,98 @@
     <div class="product-form--alt" data-product-form-alt></div>
   {% endif %}
 </article>
+<section style="margin-top: 75px;">
+<div style="border: 1px solid hsla(0,0%,50%,.3);">
+  <ul id="specs_tabs" class="tabs-nav">
+  <a class="specs-tab-1 active-tab" href="#"><span class="spec-list-text">Specifications</span></a>
+  <a class="specs-tab-2" href="#"><span class="spec-list-text">Documentation</span></a>
+  <a class="specs-tab-3" href="#"><span class="spec-list-text">Data Sheets</span></a>
+  </ul>
+</div>
+<div>
+  <div class="content content-specs-tab-1">
+    <div class="product-details" data-product-details>
+      <h3 class="product-table-title">Product Specifications</h3>
+      <table class="product_table">
+        <tr >
+          <th>Specifications</th>
+          {% assign first_variant = product.variants[0] %} 
+          {% assign metafield_title = first_variant.metafields.specifications %}
+          {% assign key = "specifications "%}
+          {% assign meta_details_title = metafield_title.specifications | split: ','%}
+            {% for meta_title in meta_details_title %}
+            <th>{{ meta_title | split: ":" | join: '' | truncatewords: 1, "" | capitalize }}</th>
+            {% endfor %}
+        </tr>        
+        {% for variant in product.variants %}
+          {% assign metafield = variant.metafields.specifications %}
+          {% assign key = "specifications" %}
+          <tr>
+            <td>{{ variant.sku }}</td>
+            {% assign meta_details = metafield.specifications | split: ',' %}
+            {% for details in meta_details %}
+              <td>{{ details | split: ":" | reverse | join: " " | truncatewords: 1, "" | capitalize }}</td>
+            {% endfor %}
+          </tr>         
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+  <div class="content content-specs-tab-2 hidden-tab-content">
+  <div class="product-details" data-product-details>
+      <h3 class="product-table-title">Product Specifications</h3>
+      <table id="product_specifications" class="product_table">
+      </table>
+    </div>
+  </div>
+  <div class="content content-specs-tab-3 hidden-tab-content">
+    <p>Testing the content n ow for tab 2</p>
+  </div>
+</div>
+<script src="{{ 'specifications_data.js' | asset_url }}"></script>
+<script>
+
+  // Grabbing the correct data based on product page
+
+  let product = {{ product.id }}; 
+  let product_data = data[product]; 
+
+  // Grabbing data for table headers
+
+  let product_first = Object.values(product_data)[0];
+  let header_row = document.createElement('tr'); 
+
+  // Loop throught the first variant to build table title 
+
+  for(let product_first_title in product_first){
+    let header_node = document.createElement('th');
+    let title_node = document.createTextNode(product_first_title);
+
+    header_node.appendChild(title_node);
+    header_row.appendChild(header_node);
+    document.getElementById("product_specifications").appendChild(header_row);
+
+  }
+
+  // Loop through the product object for the variants data
+
+  for (let variant_key in product_data) {
+
+    let variant_data = product_data[variant_key];
+    let table_row = document.createElement('tr');
+
+    // Loop through the variants to build the table rows
+
+    for(let key in variant_data){
+
+      let table_text = variant_data[key];
+      let table_node = document.createElement('td');
+      let text_node = document.createTextNode(table_text);
+
+      table_node.appendChild(text_node);
+      table_row.appendChild(table_node);
+      document.getElementById("product_specifications").appendChild(table_row); 
+    }
+  }
+</script>
+</section>
