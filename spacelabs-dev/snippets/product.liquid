@@ -57,7 +57,7 @@
         </h2>
       {% else %}
         <h1 class="product-title">
-          {{ product.title }}{{ product.id }}
+          {{ product.title }}
         </h1>
       {% endif %}
       
@@ -87,7 +87,7 @@
     {% endcomment %}
     {% if product.description != blank %}
       <div class="product-description rte" data-product-description>
-        {{ product.id }}
+        {{ product.description }}
       </div>
     {% endif %}
       <div class="product-pricing" style="margin-top: 1.5rem; margin-bottom: 1.5rem;" >
@@ -144,22 +144,7 @@
 
     <div class="product-details" data-product-details>
       <h3 class="product-table-title">Product Details</h3>
-      <table class="product_table">
-        <tr >
-          <th>Product SKU</th>
-          <th>Size</th>
-          <th>Description</th> 
-          <th>Packaging</th>
-        </tr>
-        {% for variant in product.variants %}
-          <tr>
-            <td>{{ variant.sku }}</td>
-            <td>{{ variant.id }}</td>
-            <td>Put Metafield description here</td>
-            <td>10/EA</td>
-          </tr>
-        {% endfor %}
-      </table>
+      <table id="product_details" class="product_table"></table>
     </div>
   </div>
 
@@ -182,40 +167,24 @@
   <div class="content content-specs-tab-1">
     <div class="product-details" data-product-details>
       <h3 class="product-table-title">Product Specifications</h3>
-      <table class="product_table">
-        <tr >
+      <table id="product_specifications" class="product_table">
+        <tr>
           <th>Specifications</th>
-          {% assign first_variant = product.variants[0] %} 
-          {% assign metafield_title = first_variant.metafields.specifications %}
-          {% assign key = "specifications "%}
-          {% assign meta_details_title = metafield_title.specifications | split: ','%}
-            {% for meta_title in meta_details_title %}
-            <th>{{ meta_title | split: ":" | join: '' | truncatewords: 1, "" | capitalize }}</th>
-            {% endfor %}
-        </tr>        
-        {% for variant in product.variants %}
-          {% assign metafield = variant.metafields.specifications %}
-          {% assign key = "specifications" %}
-          <tr>
-            <td>{{ variant.sku }}</td>
-            {% assign meta_details = metafield.specifications | split: ',' %}
-            {% for details in meta_details %}
-              <td>{{ details | split: ":" | reverse | join: " " | truncatewords: 1, "" | capitalize }}</td>
-            {% endfor %}
-          </tr>         
-        {% endfor %}
+          <th>Values</th>
+        </tr>
       </table>
     </div>
   </div>
   <div class="content content-specs-tab-2 hidden-tab-content">
   <div class="product-details" data-product-details>
-      <h3 class="product-table-title">Product Specifications</h3>
-      <table id="product_specifications" class="product_table">
-      </table>
+      <h3 class="product-table-title">Product Documentation</h3>
+      <div id="product_documentation">
+
+      </div>
     </div>
   </div>
   <div class="content content-specs-tab-3 hidden-tab-content">
-    <p>Testing the content n ow for tab 2</p>
+    <h3 class="product-table-title">Product Data Sheets</h3>
   </div>
 </div>
 <script src="{{ 'specifications_data.js' | asset_url }}"></script>
@@ -223,44 +192,88 @@
 
   // Grabbing the correct data based on product page
 
-  let product = {{ product.id }}; 
-  let product_data = data[product]; 
+  let product_identification = {{ product.id }}; 
+  let product_data = data[product_identification]; 
 
-  // Grabbing data for table headers
+  // Grabbing data for tables
 
-  let product_first = Object.values(product_data)[0];
-  let header_row = document.createElement('tr'); 
+  let details_data_key = Object.values(product_data.variants)[0];
+  let specifications_data = product_data.specifications;
+  let documentation_data = product_data.documentation;
+  let details_data_values = product_data.variants;
+
+  // Specifications Data table creation
+
+  for(let specifications in specifications_data){
+    
+    let specifications_row = document.createElement('tr'); 
+
+    let specifications_key = document.createElement('td');
+    let specifications_value = document.createElement('td');
+
+    let specifications_value_text = document.createTextNode(specifications);
+    let specifications_key_text = document.createTextNode(specifications_data[specifications]);
+
+    specifications_value.appendChild(specifications_value_text);
+    specifications_key.appendChild(specifications_key_text);
+    specifications_row.appendChild(specifications_value);
+    specifications_row.appendChild(specifications_key);
+    
+    document.getElementById("product_specifications").appendChild(specifications_row);
+
+  }
+
+  // Documentation Data creation
+
+  for(let documentation in documentation_data){
+    
+    let a = document.createElement('a');
+    var br = document.createElement('br');
+
+    let documentation_value = document.createTextNode(documentation);
+    let documentation_href = documentation_data[documentation];
+
+    a.appendChild(documentation_value);
+    a.setAttribute('href', documentation_href);
+    
+    document.getElementById("product_documentation").appendChild(a);
+    document.getElementById("product_documentation").appendChild(br);
+
+  }
 
   // Loop throught the first variant to build table title 
 
-  for(let product_first_title in product_first){
-    let header_node = document.createElement('th');
-    let title_node = document.createTextNode(product_first_title);
+  let details_table_header = document.createElement('tr'); 
 
-    header_node.appendChild(title_node);
-    header_row.appendChild(header_node);
-    document.getElementById("product_specifications").appendChild(header_row);
+  for(let details_key in details_data_key){
+
+    let details_element = document.createElement('th');
+    let details_key_text = document.createTextNode(details_key);
+
+    details_element.appendChild(details_key_text);
+    details_table_header.appendChild(details_element);
+    document.getElementById("product_details").appendChild(details_table_header);
 
   }
 
   // Loop through the product object for the variants data
 
-  for (let variant_key in product_data) {
+  for (let details_value in details_data_values) {
 
-    let variant_data = product_data[variant_key];
-    let table_row = document.createElement('tr');
+    let details_data = details_data_values[details_value];
+    let details_row = document.createElement('tr');
 
     // Loop through the variants to build the table rows
 
-    for(let key in variant_data){
+    for(let key in details_data){
 
-      let table_text = variant_data[key];
+      let details_value_text = details_data[key];
       let table_node = document.createElement('td');
-      let text_node = document.createTextNode(table_text);
+      let text_node = document.createTextNode(details_value_text);
 
       table_node.appendChild(text_node);
-      table_row.appendChild(table_node);
-      document.getElementById("product_specifications").appendChild(table_row); 
+      details_row.appendChild(table_node);
+      document.getElementById("product_details").appendChild(details_row); 
     }
   }
 </script>

@@ -271,7 +271,7 @@ fieldset {
     display: none !important;
 }
 
-// ================= PRODUCT PAGE TABLE =================
+// ================= PRODUCT PAGE TABLES =================
 
 .product-table-title {
     margin-top: 50px;
@@ -301,7 +301,15 @@ table.product_table th,table.product_table td {
 table.product_table tr:nth-child(odd) {
     background-color: hsla(0,0%,50%,.2);
 }
-
+#product_documentation a {
+    font-size: 14px;
+    line-height: 24px;
+    color: #003f72;
+    text-decoration: none;
+}
+#product_documentation a:hover {
+    color: #195280;
+}
 // ================= SPECIFICATION PRODUCT TABS =================
 
 #specs_tabs {
