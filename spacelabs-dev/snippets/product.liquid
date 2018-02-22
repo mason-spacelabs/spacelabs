@@ -90,7 +90,7 @@
         {{ product.description }}
       </div>
     {% endif %}
-      <div class="product-pricing" style="margin-top: 1.5rem; margin-bottom: 1.5rem;" >
+      <div class="product-pricing product-container-pricing">
         {%
           include 'product-badge',
           class_root: 'product',
@@ -155,8 +155,8 @@
     <div class="product-form--alt" data-product-form-alt></div>
   {% endif %}
 </article>
-<section style="margin-top: 75px;">
-<div style="border: 1px solid hsla(0,0%,50%,.3);">
+<section class="tabs-section">
+<div class="tabs-container">
   <ul id="specs_tabs" class="tabs-nav">
   <a class="specs-tab-1 active-tab" href="#"><span class="spec-list-text">Specifications</span></a>
   <a class="specs-tab-2" href="#"><span class="spec-list-text">Documentation</span></a>
@@ -178,9 +178,7 @@
   <div class="content content-specs-tab-2 hidden-tab-content">
   <div class="product-details" data-product-details>
       <h3 class="product-table-title">Product Documentation</h3>
-      <div id="product_documentation">
-
-      </div>
+      <div id="product_documentation"></div>
     </div>
   </div>
   <div class="content content-specs-tab-3 hidden-tab-content">

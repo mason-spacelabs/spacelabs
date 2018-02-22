@@ -1,10 +1,18 @@
 <section
   class="account-page account-page-details"
   data-template-account>
-  <header class="account-page-masthead">
-    <h1 class="account-page-title">
-      {{ 'customers.account.title' | t }}
-    </h1>
+  <header class="account-page-masthead text-left" style="display: flex;">
+  <div style="width: 315px; margin-left: 0px; margin-right: 50px;">
+    <img class="modal-image-login" src="{{ "spacelabs-logo.png" | asset_url }}" style="margin:0px; width: 100%;">
+    </div>
+    {% assign account_data = customer.metafields.account_data %}
+    {% assign key = 'details' %}
+    {% assign account_information = account_data.details | split: ',' %}
+    <ul class="account-address-list" style="margin: 0px;">
+    {% for details in account_information %}
+    <li style="margin-top: 0rem;; margin-bottom: 0.5rem;">{{ details }}</li>
+    {% endfor %}
+    </ul>
   </header>
 
   <article class="account-page--two-column account-page-content">
@@ -75,7 +83,7 @@
 
       {% if customer.default_address != nil %}
         <h2 class="account-page-subtitle">
-          {{ 'customers.account.default_address' | t }}
+          Shipping Address
         </h2>
 
         {%

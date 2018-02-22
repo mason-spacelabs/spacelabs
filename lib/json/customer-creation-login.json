@@ -1,0 +1,54 @@
+// POST /admin/customers.json
+// Customer Creation and Account Password set
+{
+    "customer": {
+      "first_name": "Mason",
+      "last_name": "Halstead",
+      "email": "mason.halstead@spacelabs.com",
+      "phone": "+12252322365",
+      "verified_email": true,
+      "addresses": [
+        {
+          "address1": "78848 148th Ave",
+          "city": "Redmond",
+          "province": "WA",
+          "phone": "555-1212",
+          "zip": "78952",
+          "last_name": "Something",
+          "first_name": "Name",
+          "country": "US"
+        },
+        {
+            "address1": "78333 158th Ave",
+            "city": "Redmond",
+            "province": "WA",
+            "phone": "555-1212",
+            "zip": "123 ABC",
+            "last_name": "Lastnameson",
+            "first_name": "Mother",
+            "country": "US"
+        },
+        {
+            "address1": "78333 158th Ave",
+            "city": "Bellevue",
+            "province": "WA",
+            "phone": "555-1212",
+            "zip": "45878",
+            "last_name": "Lastnameson",
+            "first_name": "Mother",
+            "country": "US"
+        }
+      ],
+      "metafields": [
+        {
+          "key": "details",
+          "value": "Account #: 7899-45-4577, GPO #: 9988-76-8888, Company: Spacelabs,",
+          "value_type": "string",
+          "namespace": "account_data"
+        }
+      ],
+      "password": "password",
+      "password_confirmation": "password",
+      "send_email_welcome": false
+    }
+  }
