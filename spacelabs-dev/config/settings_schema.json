@@ -393,6 +393,13 @@
       },
       {
         "type": "checkbox",
+        "id": "product_enable_recently_viewed_products",
+        "label": "Enable recently viewed products",
+        "default": false,
+        "info": "Note: This will display on both the collection and product pages."
+      },
+      {
+        "type": "checkbox",
         "id": "product_sales_badge",
         "label": "Enable sale badges",
         "default": true

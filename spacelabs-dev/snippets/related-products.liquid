@@ -21,13 +21,13 @@
   {% endif %}
 {% endfor %}
 
-<section class="product-section--container product-row--container related-products--container" data-related-products>
-  <h2 class="product-section--title related-products--title">
+<section class="product-section--container product-row--container related-products--container" style="border-top: 1px solid hsla(0,0%,50%,.3);" data-related-products>
+  <h3 class="related-products--title">
      Customers Also Purchased
-  </h2>
+  </h3>
 
   <div
-    class="product-section--content product-row"
+    class="product-section--content product-row" style="margin-top: 3rem;"
     data-product-row
   >
     {% assign product_limit = product_limit | plus: 1 %}

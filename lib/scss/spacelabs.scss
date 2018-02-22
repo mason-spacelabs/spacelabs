@@ -187,20 +187,14 @@ nav.productgrid--utils {
 .fa-times-circle:hover {
     color: #195280;
 }
-.productitem:hover {
+.productitem:hover, .product-recently-viewed-card:hover, .collection--item-image:hover {
     border:1px solid #195280;
     -webkit-transition: border 0.5s ease-out;
     -moz-transition: border 0.5s ease-out;
     -o-transition: border 0.5s ease-out;
     transition: border 0.5s ease-out;
 }
-.collection--item-image:hover {
-    border:1px solid #195280;
-    -webkit-transition: border 0.5s ease-out;
-    -moz-transition: border 0.5s ease-out;
-    -o-transition: border 0.5s ease-out;
-    transition: border 0.5s ease-out;
-}
+
 // ================= REGISTRATION FORM =================
 
 #contact_form .form-field-input {
