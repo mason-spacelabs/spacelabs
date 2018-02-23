@@ -4,11 +4,12 @@
     "customer": {
       "first_name": "Mason",
       "last_name": "Halstead",
-      "email": "mason.halstead@spacelabs.com",
-      "phone": "+12252322365",
+      "email": "mason@spacelabs.com",
+      "phone": "+12252322345",
       "verified_email": true,
       "addresses": [
         {
+          "company": "Shipping Address",
           "address1": "78848 148th Ave",
           "city": "Redmond",
           "province": "WA",
@@ -19,6 +20,7 @@
           "country": "US"
         },
         {
+            "company": "Facility Address",
             "address1": "78333 158th Ave",
             "city": "Redmond",
             "province": "WA",
@@ -29,6 +31,7 @@
             "country": "US"
         },
         {
+            "company": "Billing Address",
             "address1": "78333 158th Ave",
             "city": "Bellevue",
             "province": "WA",

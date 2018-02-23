@@ -21,7 +21,8 @@
   {% endif %}
 {% endfor %}
 
-<section class="product-section--container product-row--container related-products--container" style="border-top: 1px solid hsla(0,0%,50%,.3);" data-related-products>
+<section class="product-section--container product-row--container related-products--container" data-related-products>
+  <div style="border-top: 1px solid hsla(0,0%,50%,.3);">
   <h3 class="related-products--title">
      Customers Also Purchased
   </h3>
@@ -45,5 +46,6 @@
         {% endunless %}
       {% endif %}
     {% endfor %}
+  </div>
   </div>
 </section>
