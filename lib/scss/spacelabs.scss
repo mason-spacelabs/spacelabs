@@ -1,3 +1,28 @@
+// ================= BREAKPOINTS =================
+$bp-xs: 375px;
+$bp-smaller: 680px;
+$bp-small: 720px;
+$bp-medium: 860px;
+$bp-large: 1024px;
+$bp-large-home: 1080px;
+$bp-xl: 1280px;
+
+// ================= BREAKPOINTS =================
+
+@mixin media($max: false, $min: false) {
+    @if $max {
+      @if $min {
+        @media screen and (max-width: $max - 1) and (min-width: $min) { @content; }
+      } @else {
+        @media screen and (max-width: $max - 1) { @content; }
+      }
+    } @else {
+      @media screen and (min-width: $min) { @content; }
+    }
+  }
+
+// ================= CSS =================
+
 .text-right {
  text-align: right;
 }
@@ -73,42 +98,7 @@
     opacity: 1;
     color: #003f72;
 }
-.site-footer-block-item {
-    flex-grow: 1;
-}
-.site-footer-block-title {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 15px;
-    font-weight: 600;
-}
-.site-footer-block-content ul li a:hover {
-    color: #003f72;
-}
-.site-footer-block-social-accounts .social-link {
-    margin: 0px 10px;
-}
-.site-footer-block-social-accounts .social-link svg {
-    background-color: #c4c4c4;
-}
-.site-footer-block-social-accounts .social-link:hover svg {
-    background-color: #c4c4c4;
-}
-.site-footer-block-social-accounts .social-link svg:hover {
-    background-color: #003f72;
-}
-.social-link {
-    color: #f8f8f8 !important ;
-}
-.site-footer-wrapper {
-    margin-top: 4.5rem;
-}
-.site-footer-credits {
-    margin-top: 8px;
-}
-.site-footer-information {
-    margin-top: 50px;
-}
+
 .collection--item {
     width: calc(20% - 15px);
     margin-left: 15px; 
@@ -193,6 +183,151 @@ nav.productgrid--utils {
     -moz-transition: border 0.5s ease-out;
     -o-transition: border 0.5s ease-out;
     transition: border 0.5s ease-out;
+}
+
+// ================= NAVIGATION =================
+
+.mobile-nav-panel {
+    max-width: 450px;
+}
+.mobile-nav-panel a {
+    font-size: 1rem;
+    font-weight: normal
+}
+.mobile-nav-content .navmenu-depth-1 {
+    font-size: 1rem;
+    font-weight: normal;
+}
+.site-mobile-nav .site-header-actions {
+    position: relative;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+// ================= FOOTER =================
+
+.site-footer-block-item {
+    flex-grow: 1;
+}
+.site-footer-block-title {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.site-footer-block-content ul li a:hover {
+    color: #003f72;
+}
+.site-footer-block-social-accounts .social-link {
+    margin: 0px 10px;
+}
+.site-footer-block-social-accounts .social-link svg {
+    background-color: #c4c4c4;
+}
+.site-footer-block-social-accounts .social-link:hover svg {
+    background-color: #c4c4c4;
+}
+.site-footer-block-social-accounts .social-link svg:hover {
+    background-color: #003f72;
+}
+.social-link {
+    color: #f8f8f8 !important ;
+}
+.site-footer-wrapper {
+    margin-top: 4.5rem;
+}
+.footer-wrapper-top {
+    border-top: 1px solid hsla(0,0%,50%,.3); 
+    border-bottom: 1px solid hsla(0,0%,50%,.3);
+
+    @include media($max: $bp-large) {
+        padding-top: 0px;
+    }
+}
+.footer-wrapper-bottom {
+    padding-top: 15px; 
+    padding-bottom: 10px; 
+    margin-top: 0px;
+}
+.site-footer-credits {
+    margin-top: 8px;
+}
+.site-footer-information {
+    margin-top: 0px;
+    display: flex;
+}
+.footer-image-block {
+    width: 90%; 
+    max-width: 395px; 
+    display: block; 
+    height: auto; 
+    margin-left: auto; 
+    margin-right: auto; 
+    padding-top: 16px;
+
+    @include media($max: $bp-large) {
+        margin-top: 25px;
+        max-width: 340px;
+    }
+}
+.site-footer-block-social-accounts {
+    @include media($max: $bp-large) {
+        border-bottom: none;
+    }
+}
+.footer-social-block {
+    text-align: center; 
+    margin-top: 30px;
+
+    @include media($max: $bp-large) {
+        padding-bottom: 0px;
+    }
+}
+.site-footer-right {
+    @include media($max: $bp-large) {
+        text-align: right;
+    }
+    @include media($max: $bp-small) {
+        display: none;
+    }
+}
+.site-footer-left {
+    @include media($max: $bp-small) {
+        padding-bottom: 15px;
+    }
+}
+.payment-icons {
+    @include media($max: $bp-large) {
+        margin-top: 0px;
+    }
+}
+// ================= HERO BLOCK =================
+
+.promo-block--content {
+    @include media($max: $bp-small) {
+        display: none;
+    }
+}
+.hero-container {
+    width: 450px; 
+    margin-top: 10%; 
+    margin-left: 5%; 
+    border: 12px solid #fff; 
+    padding: 20px; 
+    background: rgba(0, 0, 0, .5);
+
+    @include media($max: $bp-small) {
+        display: none;
+    }
+    
+}
+.hero-header {
+    max-width: 90%; 
+    color: #fff;
+}
+.hero-text {
+    max-width: 90%; 
+    color: #fff;
 }
 
 // ================= REGISTRATION FORM =================

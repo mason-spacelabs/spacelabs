@@ -41,13 +41,8 @@
       {% include 'newsletter' %}
     {% endif %}
   {% elsif block.type == 'social_accounts' %}
-    {% comment %}
-    <h2 class="site-footer-block-title">
-      {{ 'footer.general.follow_us' | t }}
-    </h2>
-    {% endcomment %}
-    <img style=" width: 90%; max-width: 395px; display: block; height: auto; margin-left: auto; margin-right: auto; padding-top: 16px;" src="{{ "spacelabs-logo.png" | asset_url }}">
-    <div class="site-footer-block-content" style="text-align: center; margin-top: 30px;">
+    <img class="footer-image-block" src="{{ "spacelabs-logo.png" | asset_url }}">
+    <div class="site-footer-block-content footer-social-block">
       {% include 'social-list' %}
     </div>
   {% endif %}

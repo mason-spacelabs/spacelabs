@@ -16,15 +16,15 @@
     class="promo-block--content {% unless has_link %}promo-block--unlinked{% endunless %}"
     {% if has_link %}href="{{ block.settings.block_link }}"{% endif %}
     data-promo-block-content>
-    <div style="width: 450px; margin-top: 10%; margin-left: 5%; border: 12px solid #fff; padding: 20px; background: rgba(0, 0, 0, .5);">
+    <div class="hero-container">
     {% if block.settings.title %}
-      <h2 class="promo-block--header" style="max-width: 90%; color: #fff;">
+      <h2 class="promo-block--header hero-header">
         {{ block.settings.title | escape }}
       </h2>
     {% endif %}
 
     {% if block.settings.text %}
-      <p class="promo-block--text" style="max-width: 90%; color: #fff;">
+      <p class="promo-block--text hero-text">
         {{ block.settings.text | escape | truncate: 120 }}
       </p>
     {% endif %}
