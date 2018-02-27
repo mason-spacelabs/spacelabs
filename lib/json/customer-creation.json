@@ -2,13 +2,14 @@
 // Customer Creation and Customer Verifies Account
 {
     "customer": {
-      "first_name": "Steve",
+      "first_name": "",
       "last_name": "Lastnameson",
       "email": "mason.halstead@spacelabs.com",
       "phone": "+15142546011",
       "verified_email": true,
       "addresses": [
         {
+          "company": "Shipping Address",
           "address1": "78848 148th Ave",
           "city": "Redmond",
           "province": "WA",
@@ -19,6 +20,7 @@
           "country": "US"
         },
         {
+          "company": "Facility Address",
             "address1": "78333 158th Ave",
             "city": "Redmond",
             "province": "WA",
@@ -29,6 +31,7 @@
             "country": "US"
         },
         {
+          "company": "Billing Address",
             "address1": "78333 158th Ave",
             "city": "Bellevue",
             "province": "WA",
