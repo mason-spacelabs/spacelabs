@@ -1,9 +1,9 @@
 <section
   class="account-page account-page-details"
   data-template-account>
-  <header class="account-page-masthead text-left" style="display: flex;">
-  <div style="width: 315px; margin-left: 0px; margin-right: 50px;">
-    <img class="modal-image-login" src="{{ "spacelabs-logo.png" | asset_url }}" style="margin:0px; width: 100%;">
+  <header class="account-page-masthead text-left account-flex">
+  <div class="account-image-container">
+    <img class="account-image" src="{{ "spacelabs-logo.png" | asset_url }}">
     </div>
   </header>
 
@@ -19,9 +19,9 @@
     <h2 class="account-page-subtitle">
         Account Information
       </h2>
-      <div style="display: flex; justify-content: flex-start">
+      <div class="account-details-container">
         {% for details in account_information %}
-        <p class="account-info-item" style="margin-top: 0rem; margin-bottom: 0.5rem; width: 250px">{{ details }}</p>
+        <p class="account-info-item account-information">{{ details }}</p>
         {% endfor %} 
       </div>
 

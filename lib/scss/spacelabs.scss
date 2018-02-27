@@ -45,58 +45,9 @@ $bp-xl: 1280px;
 .promo-mosaic--container {
     padding: 0px;
 }
-.site-navigation-wrapper {
-    box-shadow: 0 3px 3px rgba(127,127,127,0.25);
-    -webkit-box-shadow: 0 3px 3px rgba(127,127,127,0.25);
-}
-.site-navigation .navmenu-link {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 15px;
-}
-.site-navigation .navmenu-depth-1 > li > a {
-    font-weight: 600;
-}
 
-.navmenu-meganav--scroller {
-    display: flex;
-}
-.navmenu-meganav {
-    border-top: 1px solid rgba(127, 127, 127, 0.2);
-}
-.navmenu-meganav.navmenu-meganav--desktop .navmenu-meganav-items {
-    margin-right: 0px;
-}
-.navmenu-meganav.navmenu-meganav--desktop .navmenu-item-text {
-    font-weight: normal;
-}
-.navmenu-meganav-items .navmenu .navmenu-link {
-    text-transform: none;
-    letter-spacing: 0px;
-}
-.site-navigation .navmenu-parent {
-    padding-left: 0px;
-}
-.navmenu-parent:hover {
-    color: #003f72;;
-}
 .button-primary {
     font-weight: normal;
-}
-.site-navigation .site-header-account-link .site-header-cart--button {
-    padding: 10px 12px;
-}
-.static-site-nav {
-    text-transform: uppercase; 
-    font-weight: 600; 
-    letter-spacing: 1px;
-}
-.static-site-nav:hover {
-    color: #003f72;
-}
-.site-navigation .navmenu-depth-1>li>a:hover {
-    opacity: 1;
-    color: #003f72;
 }
 .breadcrumbs-tag::first-letter {
     text-transform: uppercase;
@@ -142,16 +93,59 @@ nav.productgrid--utils {
 .fa-times-circle:hover {
     color: #195280;
 }
-.productitem:hover, .product-recently-viewed-card:hover, .collection--item-image:hover {
-    border:1px solid #195280;
-    -webkit-transition: border 0.5s ease-out;
-    -moz-transition: border 0.5s ease-out;
-    -o-transition: border 0.5s ease-out;
-    transition: border 0.5s ease-out;
-}
 
 // ================= NAVIGATION =================
 
+.site-navigation-wrapper {
+    box-shadow: 0 3px 3px rgba(127,127,127,0.25);
+    -webkit-box-shadow: 0 3px 3px rgba(127,127,127,0.25);
+}
+.site-navigation .navmenu-link {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+.site-navigation .navmenu-depth-1 > li > a {
+    font-weight: 600;
+}
+
+.navmenu-meganav--scroller {
+    display: flex;
+}
+.navmenu-meganav {
+    border-top: 1px solid rgba(127, 127, 127, 0.2);
+}
+.navmenu-meganav.navmenu-meganav--desktop .navmenu-meganav-items {
+    margin-right: 0px;
+}
+.navmenu-meganav.navmenu-meganav--desktop .navmenu-item-text {
+    font-weight: normal;
+}
+.navmenu-meganav-items .navmenu .navmenu-link {
+    text-transform: none;
+    letter-spacing: 0px;
+}
+.site-navigation .navmenu-parent {
+    padding-left: 0px;
+}
+.navmenu-parent:hover {
+    color: #003f72;;
+}
+.site-navigation .site-header-account-link .site-header-cart--button {
+    padding: 10px 12px;
+}
+.static-site-nav {
+    text-transform: uppercase; 
+    font-weight: 600; 
+    letter-spacing: 1px;
+}
+.static-site-nav:hover {
+    color: #003f72;
+}
+.site-navigation .navmenu-depth-1>li>a:hover {
+    opacity: 1;
+    color: #003f72;
+}
 .mobile-nav-panel {
     max-width: 450px;
 }
@@ -542,6 +536,13 @@ $local-space-large: 15px;
       margin-left: 20px;
     }
   }
+  .productitem:hover, .product-recently-viewed-card:hover, .collection--item-image:hover {
+    border:1px solid #195280;
+    -webkit-transition: border 0.5s ease-out;
+    -moz-transition: border 0.5s ease-out;
+    -o-transition: border 0.5s ease-out;
+    transition: border 0.5s ease-out;
+}
 
 // ================= PRODUCT PAGE =================
 
@@ -588,6 +589,7 @@ table.product_table tr:nth-child(odd) {
 #product_documentation a:hover {
     color: #195280;
 }
+
 // ================= SPECIFICATION PRODUCT TABS =================
 
 .tabs-section {
@@ -733,6 +735,84 @@ table.product_table tr:nth-child(odd) {
 }
 .modal-product-inner {
     padding: 25px;
+}
+// ================= ACCOUNT PAGE =================
+
+.account-flex {
+    display: flex;
+}
+.account-image-container {
+    width: 315px; 
+    margin-left: 0px; 
+    margin-right: 50px;
+}
+.account-image {
+    width: 100%; 
+    display: block; 
+    height: auto;
+}
+.account-details-container {
+    display: flex; 
+    justify-content: flex-start;
+
+    @include media($max: $bp-small) {
+        flex-direction: column;
+    }
+}
+.account-information {
+    margin-top: 0rem; 
+    margin-bottom: 0.5rem; 
+    width: 250px;
+}
+.account-address-wrapper {
+
+    @include media($max: $bp-small) {
+        flex-direction: column;
+    }
+}
+.address-message-container {
+    margin-top: 20px; 
+    padding: 20px 0px; 
+    display: flex;
+
+    @include media($max: $bp-small) {
+        flex-direction: column-reverse;
+    }
+}
+.account-address {
+
+    @include media($max: $bp-small) {
+        width: 100%;
+        &:first-child {
+            margin-top: 10px;
+        }
+        &:nth-child(2) {
+            margin-top: 10px;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        &:nth-child(3) {
+            margin-top: 10px;
+        }
+    }
+}
+.account-button {
+    margin-right: 20px; 
+    width: 140px;
+
+    @include media($max: $bp-small) {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-top: 10px;
+    }
+}
+.address-change-message {
+    width: 100%;
+}
+.address-change-message p {
+    margin-top: 0px;
+    font-size: 14px;
 }
 // ================= RESPONSIVE CSS =================
 
