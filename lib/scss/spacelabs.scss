@@ -592,10 +592,25 @@ table.product_table tr:nth-child(odd) {
 
 .tabs-section {
     margin-top: 75px;
+
+    @include media($max: $bp-medium) {
+        padding: 0px 10px;
+      }
 }
 .tabs-container {
     border: 1px solid hsla(0,0%,50%,.3);
+
+    @include media($max: $bp-smaller) {
+        display: none; 
+      }
 }
+.tabs-title {
+
+    @include media($max: $bp-smaller) {
+        margin: 18px 0px;
+    }
+}
+
 #specs_tabs {
     display: flex; 
     justify-content: 
@@ -627,6 +642,10 @@ table.product_table tr:nth-child(odd) {
 }
 .hidden-tab-content {
     display: none;
+
+    @include media($max: $bp-smaller) {
+        display: block; 
+      }
 }
 .active-tab {
     border-top: 3px solid rgba(255, 255, 255, 0);

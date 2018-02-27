@@ -4332,7 +4332,7 @@ $local-header-height: $header-content-height + ($header-padding-vertical-mobile 
 // Column structure
 .product-gallery--slider,
 .product-main {
-  @include media($max: $bp-small) {
+  @include media($max: $bp-medium) {
     padding-right: $gutter-outer-small;
     padding-left: $gutter-outer-small;
   }
@@ -4348,7 +4348,7 @@ $local-header-height: $header-content-height + ($header-padding-vertical-mobile 
 }
 
 .product-gallery {
-  @include media($min: $bp-small) {
+  @include media($min: $bp-medium) {
     width: 51.5%;
   }
 
@@ -4360,7 +4360,7 @@ $local-header-height: $header-content-height + ($header-padding-vertical-mobile 
 }
 
 .product-main {
-  @include media($min: $bp-small) {
+  @include media($min: $bp-medium) {
     width: 46%;
     margin-left: 2.5%;
   }
@@ -12576,7 +12576,7 @@ $local-stack: (100, 50);
 .product-details {
   color: $color-text;
 
-  @include media($max: $bp-small) {
+  @include media($max: $bp-medium) {
     margin-top: $space-large;
     margin-bottom: $space-medium;
   }
@@ -12746,7 +12746,7 @@ $local-stack: (100, 50);
 .related-products--title {
   @include media($max: $bp-small) {
     padding-right: $gutter-outer-small;
-    padding-left: $gutter-outer-small;
+    padding-left: 0;
   }
 
   @include media($min: $bp-small, $max: $bp-large) {
