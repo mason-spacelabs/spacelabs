@@ -98,39 +98,8 @@ $bp-xl: 1280px;
     opacity: 1;
     color: #003f72;
 }
-
-#category-list {
-    list-style: none; 
-    border: 1px solid hsla(0,0%,50%,.2); 
-    border-top: none;
-    padding-left: 0px;
-}
-#category-list li {
-    border-top: 1px solid hsla(0,0%,50%,.2); 
-    display: block;
-}
-.collection--item-image {
-    border: 1px solid hsla(0,0%,50%,.2); 
-}
-#category-list li a {
-    text-decoration: none; 
-    font-size: 0.9375rem; 
-    padding: 9px; 
-    line-height: 1;
-    color: #333333; 
-    display: block;
-}
-#category-list li a:hover {
-    color: #003f72;
-    line-height: 1;
-    padding: 9px; 
-    background-color: #f8f8f8;
-}
 .breadcrumbs-tag::first-letter {
     text-transform: uppercase;
-}
-.listcollections--container {
-    margin-top: 3.5rem;
 }
 .search-flydown--quicklinks-link:hover, .search-flydown--quicklinks-link:focus {
     color: #003f72 !important;
@@ -419,6 +388,33 @@ $local-bp-xs-tween: 640px;
 $local-space-small: 10px;
 $local-space-large: 15px;
 
+#category-list {
+    list-style: none; 
+    border: 1px solid hsla(0,0%,50%,.2); 
+    border-top: none;
+    padding-left: 0px;
+}
+#category-list li {
+    border-top: 1px solid hsla(0,0%,50%,.2); 
+    display: block;
+}
+.collection--item-image {
+    border: 1px solid hsla(0,0%,50%,.2); 
+}
+#category-list li a {
+    text-decoration: none; 
+    font-size: 0.9375rem; 
+    padding: 9px; 
+    line-height: 1;
+    color: #333333; 
+    display: block;
+}
+#category-list li a:hover {
+    color: #003f72;
+    line-height: 1;
+    padding: 9px; 
+    background-color: #f8f8f8;
+}
 .collection-list-container {
     display: flex;
 }
@@ -534,7 +530,7 @@ $local-space-large: 15px;
     }
   
     // 4 Column - 15px Gutter 
-    
+
     @include media($min: $bp-medium, $max: $bp-large) {
       width: calc(25% - #{$local-space-large * (3 / 4)});
     }
@@ -640,7 +636,7 @@ table.product_table tr:nth-child(odd) {
 .active-tab-content {
     display: block;
 }
-// ================= CUSTOM LOGIN MODAL =================
+// ================= CUSTOM MODAL =================
 
 #modal-login {
     position: fixed;
@@ -716,7 +712,9 @@ table.product_table tr:nth-child(odd) {
 .hidden-modal {
     display: none;
 }
-
+.modal-product-inner {
+    padding: 25px;
+}
 // ================= RESPONSIVE CSS =================
 
 @media screen and (max-width: 1023px) {
