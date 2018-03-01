@@ -1,4 +1,4 @@
-const data = {
+var data = {
 	"956245311531": {
 		"specifications": {
 			"Compatibility": "Most Monitors",

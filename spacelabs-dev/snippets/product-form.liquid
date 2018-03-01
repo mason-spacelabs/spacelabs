@@ -6,7 +6,7 @@
   @param selected_variant
 {% endcomment %}
 
-<form method="post" action="/cart/add" data-product-form disabled style="display: flex; ">
+<form method="post" action="/cart/add" data-product-form style="display: flex; ">
 
   {% unless product.has_only_default_variant %}
     {%
@@ -77,7 +77,7 @@
       </span>
     </button>
     {% else %}
-    <a onclick="openModal();">
+    <a modal="modal-login" onclick="openModal(this);">
     <button type="button" class="product-form--atc-button" style="font-weight: 400; width: calc(100% - 10.5rem);">
       <span class="atc-button--text">View Pricing Details</span>
       </button>
@@ -85,3 +85,4 @@
     {% endif %}
   </div>
 </form>
+

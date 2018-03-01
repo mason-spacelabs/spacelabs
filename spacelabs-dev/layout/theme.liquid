@@ -3,7 +3,7 @@
 <!--[if !IE]><!--><html class="no-js no-touch" lang="{{ shop.locale }}"><!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>
       {{- page_title -}}
@@ -60,10 +60,11 @@
       if(('ontouchstart' in window)||window.DocumentTouch&&document instanceof DocumentTouch)document.documentElement.className=document.documentElement.className.replace(/\bno-touch\b/,'has-touch');
     </script>
 
-    {% include 'fonts' %}
+    {% include 'fonts' %} 
 
     {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
     {{ 'spacelabs.min.css' | asset_url | stylesheet_tag }}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
   </head>
 
   <body>
@@ -88,6 +89,7 @@
     {% endcomment %}
     {% include 'modal' %}
      {% include 'modal-login' %}
+     {% include 'modal-error' %}
    
 
 

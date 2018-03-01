@@ -21,7 +21,7 @@
   navmenu-meganav-items
 {%- endcapture -%}
 
-<ul class="{{ navmenu_classes | strip_newlines }}" style="flex-grow: 2;">
+<ul class="{{ navmenu_classes | strip_newlines }} navigation-flex">
   {% for link in link.links %}
     {% assign d = depth | plus: 1 %}
     {% assign nav_item_count = 'navmenu-item-count-' %}
@@ -65,15 +65,15 @@
   {% endfor %}
 
 </ul>
-<div style="flex-grow: 1; padding-top: 18px;">
-  <div style=" max-width: 450px; float: right; padding: 25px 15px;">
-    <div style="position: relative;">
-      <img style=" width: 100%; height: auto;" src="{{ "mega-menu-cta.jpg" | asset_url }}">
-      <div style="position: absolute; top: 0; left: 15px; right: 0; bottom: 0;">
-        <h3 style="max-width: 60%; font-family: 'Open Sans', sans-serif; font-weight: normal;">Product Categories</h3>
-        <p style="max-width: 60%;">Browse categories through our online store.</p>
-        <a href="/collections" style="padding: 0px; margin-top: 10px;">
-        <span class="button-primary promo-block--button" style="margin-top: 0px;">
+<div class="navigation-flex-image">
+  <div class="navigation-cta-container">
+    <div class="relative">
+      <img class="navigation-image" src="{{ "mega-menu-cta.jpg" | asset_url }}" >
+      <div class="navigation-text-container">
+        <h3>Product Categories</h3>
+        <p>Browse categories through our online store.</p>
+        <a href="/collections" id="navigation-button">
+        <span class="button-primary promo-block--button">
         All Categories
         </span>
         </a>

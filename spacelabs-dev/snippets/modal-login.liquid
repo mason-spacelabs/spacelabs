@@ -1,6 +1,6 @@
 <div id="modal-login" class="hidden-modal" style="z-index: 1000 !important;">
     <div class="modal-login-box">
-        <i class="fas fa-times fa-lg modal-close-icon" onclick="closeModal();"></i>
+        <i class="fas fa-times fa-lg modal-close-icon" modal="modal-login" onclick="closeModal(this);"></i>
         <section class="account-page-login" data-template-account data-template-account-login>
             <header class="account-page-masthead modal-header-login">
                 <img class="modal-image-login" src="{{ "spacelabs-logo.png" | asset_url }}">

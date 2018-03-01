@@ -194,8 +194,8 @@
   let product_data = data[product_identification]; 
 
   // Grabbing data for tables
-
-  let details_data_key = Object.values(product_data.variants)[0];
+  let myObjects = Object.keys(product_data.variants).map(function(itm) { return product_data.variants[itm]; });
+  let details_data_key = myObjects["0"];
   let specifications_data = product_data.specifications;
   let documentation_data = product_data.documentation;
   let details_data_values = product_data.variants;

@@ -1,0 +1,22 @@
+<div id="modal-error" class="hidden-modal" style="z-index: 1000 !important;">
+    <div class="modal-login-box">
+        <i class="fas fa-times fa-lg modal-close-icon" modal="modal-error" onclick="closeModal(this);"></i>
+        <section class="account-page-login">
+            <header class="account-page-masthead modal-header-login">
+                <img class="modal-image-login" src="{{ "spacelabs-logo.png" | asset_url }}">
+            </header>
+            <article class="account-page-content modal-content-login">
+                <h3 style="margin: 25px 0px;">Oops! Please fix the errors and resubmit your form.</h3>
+                <div id="error-box" class="account-login visible" >
+                    
+                </div>
+                <div class="form-action-row" style="display: flex; margin-top: 50px;">
+                    <button class="button-primary modal-button-login" modal="modal-error" onclick="closeModal(this);">
+                        Close
+                    </button>
+                </div>
+            </article>
+        </section>
+    </div>
+</div>
+

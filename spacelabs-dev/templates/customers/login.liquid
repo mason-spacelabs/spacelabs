@@ -1,5 +1,5 @@
 <section class="account-page account-page-login" data-template-account data-template-account-login>
-    <header class="account-page-masthead modal-header-login" style="width: 500px;">
+    <header class="account-page-masthead modal-header-login">
         <img class="modal-image-login" src="{{ "spacelabs-logo.png" | asset_url }}">
     </header>
 
@@ -32,7 +32,7 @@
                     Login
                 </button>
 
-                <div class="form-action-row--helper" style="display: flex; margin: 20px 0px; justify-content: space-between">
+                <div class="form-action-row--helper login-helper-container">
                     <span class="form-action-row--helper-item">
                         {{ 'customers.new_customer.title' | t }}
                         <a href="/pages/register">
@@ -41,7 +41,7 @@
                     </span>
 
                     {% if form.password_needed %}
-                    <span class="form-action-row--helper-item text-right" style="margin-top: 0px;">
+                    <span class="form-action-row--helper-item text-right login-helper-password">
                         <a href="#customer_recovery" data-login-toggle>
                             {{ 'customers.login.forgot_password' | t }}
                         </a>
@@ -56,7 +56,7 @@
         <div class="account-recovery" id="customer_recovery" data-account-login-recovery>
             {% form 'recover_customer_password' %}
 
-            <h2 class="account-page-subtitle" style="font-weight: normal;">
+            <h2 class="account-page-subtitle login-helper-title">
                 {{ 'customers.recover_password.title' | t }}
             </h2>
 
@@ -79,7 +79,7 @@
                 </label>
             </div>
 
-            <div class="form-action-row" style="display: flex;">
+            <div class="form-action-row login-flex">
                 <button class="button-primary modal-button-login" type="submit">
                     {{ 'customers.forms.submit' | t }}
                 </button>

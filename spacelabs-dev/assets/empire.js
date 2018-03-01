@@ -14691,61 +14691,61 @@
 	};
 	
 	var Quantity = function () {
-	  function Quantity(el) {
-		classCallCheck(this, Quantity);
-	
-		this.$el = $(el);
-		this.$inputParent = this.$el.find('.form-field--qty-input');
-		this.$input = this.$el.find('[data-quantity-input]');
-		this.$selectParent = this.$el.find('.form-field--qty-select');
-		this.$select = this.$el.find('[data-quantity-select]');
-	
-		this._watchSelect = this._watchSelect.bind(this);
-		this._watchInput = this._watchInput.bind(this);
-	
-		this.$select.on('change.quantity', this._watchSelect);
-		this.$input.on('change.quantity', this._watchInput);
-	  }
-	
-	  createClass(Quantity, [{
-		key: 'unload',
-		value: function unload() {
-		  this.$el.off('.quantity');
+		function Quantity(el) {
+		  classCallCheck(this, Quantity);
+	  
+		  this.$el = $(el);
+		  this.$inputParent = this.$el.find('.form-field--qty-input');
+		  this.$input = this.$el.find('[data-quantity-input]');
+		  this.$selectParent = this.$el.find('.form-field--qty-select');
+		  this.$select = this.$el.find('[data-quantity-select]');
+	  
+		  this._watchSelect = this._watchSelect.bind(this);
+		  this._watchInput = this._watchInput.bind(this);
+	  
+		  this.$select.on('change.quantity', this._watchSelect);
+		  this.$input.on('change.quantity', this._watchInput);
 		}
-	  }, {
-		key: '_validateValue',
-		value: function _validateValue(event) {
-		  var baseValue = parseInt(event.currentTarget.value, 10);
-	
-		  return isNaN(baseValue) ? 1 : baseValue;
-		}
-	  }, {
-		key: '_watchSelect',
-		value: function _watchSelect(event) {
-		  var value = this._validateValue(event);
-	
-		  // Update input to match select
-		  this.$input.val(value).trigger('change');
-	
-		  // Switch to quantity input when 10 or more
-		  if (value >= 10) {
-			this.$inputParent.removeClass('hidden').addClass('visible');
-	
-			this.$input.focus().removeAttr('tabindex').select();
-	
-			this.$selectParent.removeClass('visible').addClass('hidden');
-	
-			this.$select.attr('tabindex', '-1');
+	  
+		createClass(Quantity, [{
+		  key: 'unload',
+		  value: function unload() {
+			this.$el.off('.quantity');
 		  }
-		}
-	  }, {
-		key: '_watchInput',
-		value: function _watchInput(event) {
-		  this.$input.val(this._validateValue(event));
-		}
-	  }]);
-	  return Quantity;
-	}();
+		}, {
+		  key: '_validateValue',
+		  value: function _validateValue(event) {
+			var baseValue = parseInt(event.currentTarget.value, 10);
+	  
+			return isNaN(baseValue) ? 1 : baseValue;
+		  }
+		}, {
+		  key: '_watchSelect',
+		  value: function _watchSelect(event) {
+			var value = this._validateValue(event);
+	  
+			// Update input to match select
+			this.$input.val(value).trigger('change');
+	  
+			// Switch to quantity input when 10 or more
+			if (value >= 10) {
+			  this.$inputParent.removeClass('hidden').addClass('visible');
+	  
+			  this.$input.focus().removeAttr('tabindex').select();
+	  
+			  this.$selectParent.removeClass('visible').addClass('hidden');
+	  
+			  this.$select.attr('tabindex', '-1');
+			}
+		  }
+		}, {
+		  key: '_watchInput',
+		  value: function _watchInput(event) {
+			this.$input.val(this._validateValue(event));
+		  }
+		}]);
+		return Quantity;
+	  }();
 	
 	var Forms = function () {
 	  function Forms($el) {

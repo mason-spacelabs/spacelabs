@@ -7,7 +7,7 @@ $bp-large: 1024px;
 $bp-large-home: 1080px;
 $bp-xl: 1280px;
 
-// ================= BREAKPOINTS =================
+// ================= MIXINS =================
 
 @mixin media($max: false, $min: false) {
     @if $max {
@@ -21,7 +21,7 @@ $bp-xl: 1280px;
     }
   }
 
-// ================= CSS =================
+// ================= GLOBAL CSS =================
 
 .text-right {
  text-align: right;
@@ -32,66 +32,11 @@ $bp-xl: 1280px;
 .text-center {
     text-align: center;
 }
-.site-header-search {
-    margin-left: 50px;
-    margin-right: 50px;
-}
-.shopify-section:first-child .home-section--content:first-child {
-    margin-top: 0px;
-}
-.home-section--content {
-    margin-top: 0px;
-}
-.promo-mosaic--container {
-    padding: 0px;
-}
-
 .button-primary {
     font-weight: normal;
 }
-.breadcrumbs-tag::first-letter {
-    text-transform: uppercase;
-}
-.search-flydown--quicklinks-link:hover, .search-flydown--quicklinks-link:focus {
-    color: #003f72 !important;
-    background-color: #f8f8f8;
-}
-nav.productgrid--utils .productgrid--utils {
-    // border: 1px solid hsla(0,0%,50%,.3);
-    background-color: #fff;
-}
-nav.productgrid--utils {
-    background-color: #fff;
-}
-.filter-text {
-    font-weight: normal !important;
-}
-.featured-collection--container .home-section--title {
-    text-align: left;
-}
-.layout--has-sidebar .productgrid--items .productgrid--item {
-    margin-top: 50px;
-}
-
-
-#shipping_message {
-    display: none; 
-    max-width: 100%;  
-    font-size: 14px; 
-    text-align: center;
-    margin-top: 0px; 
-    padding: 12px 0px; 
-    border-bottom: 1px solid hsla(0,0%,50%,.3); 
-    color: #003f72;
-}
-#message_close {
-    margin-left: 20px;
-}
-#message_close:hover {
-    cursor: pointer;
-}
-.fa-times-circle:hover {
-    color: #195280;
+.relative {
+    position: relative;
 }
 
 // ================= NAVIGATION =================
@@ -146,6 +91,46 @@ nav.productgrid--utils {
     opacity: 1;
     color: #003f72;
 }
+.navigation-flex {
+    flex-grow: 2;
+}
+.navigation-flex-image {
+    flex-grow: 1; 
+    padding-top: 18px;
+}
+.navigation-cta-container {
+    max-width: 450px; 
+    float: right; 
+    padding: 25px 15px;
+}
+.navigation-image {
+    width: 100%; 
+    height: auto;
+    border: 1px solid hsla(0,0%,50%,.2);
+}
+.navigation-text-container {
+    position: absolute; 
+    top: 0; 
+    left: 15px; 
+    right: 0; 
+    bottom: 0;
+}
+.navigation-text-container h3 {
+    max-width: 60%; 
+    font-family: 'Open Sans', sans-serif; 
+    font-weight: normal;
+}
+.navigation-text-container p {
+    max-width: 60%; 
+
+}
+#navigation-button {
+    padding: 0px; 
+    margin-top: 10px;
+}
+#navigation-button span{
+    margin-top: 0px;
+}
 .mobile-nav-panel {
     max-width: 450px;
 }
@@ -161,6 +146,56 @@ nav.productgrid--utils {
     position: relative;
     display: inline-block;
     padding-right: 10px;
+}
+
+// ================= SEARCH BAR =================
+
+
+.search-flydown--quicklinks-link:hover, .search-flydown--quicklinks-link:focus {
+    color: #003f72 !important;
+    background-color: #f8f8f8;
+}
+nav.productgrid--utils .productgrid--utils {
+    // border: 1px solid hsla(0,0%,50%,.3);
+    background-color: #fff;
+}
+nav.productgrid--utils {
+    background-color: #fff;
+}
+.filter-text {
+    font-weight: normal !important;
+}
+.site-header-search {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+// ================= SHIPPING MESSAGE =================
+
+#shipping_message {
+    display: none; 
+    max-width: 100%;  
+    font-size: 14px; 
+    text-align: center;
+    margin-top: 0px; 
+    padding: 12px 0px; 
+    border-bottom: 1px solid hsla(0,0%,50%,.3); 
+    color: #003f72;
+}
+#message_close {
+    margin-left: 20px;
+}
+#message_close:hover {
+    cursor: pointer;
+}
+.fa-times-circle:hover {
+    color: #195280;
+}
+
+// ================= BREADCRUMBS =================
+
+.breadcrumbs-tag::first-letter {
+    text-transform: uppercase;
 }
 
 // ================= FOOTER =================
@@ -288,6 +323,15 @@ nav.productgrid--utils {
     max-width: 90%; 
     color: #fff;
 }
+.shopify-section:first-child .home-section--content:first-child {
+    margin-top: 0px;
+}
+.home-section--content {
+    margin-top: 0px;
+}
+.promo-mosaic--container {
+    padding: 0px;
+}
 
 // ================= REGISTRATION FORM =================
 
@@ -310,7 +354,7 @@ nav.productgrid--utils {
     margin-bottom: 25px;
 }
 #form-progress-box {
-    position:absolute; 
+    position:absolute;  
     padding: 0px 10px;  
     height: 48px; 
     width: 100%; 
@@ -340,6 +384,7 @@ nav.productgrid--utils {
     background-color: #5cb85c;
 }
 .icon-stack-box {
+    justify-content: space-between;
     z-index:2; 
     line-height: 1;
 }
@@ -360,11 +405,22 @@ nav.productgrid--utils {
     margin-left: 10px; 
     margin-right: 10px; 
     flex-grow: 2;
+
+    @include media($max: $bp-small) {
+        margin-left: 0px;
+        flex-grow: 1;
+    }
 }
 .address-fields-state, .address-fields-zip {
     margin-left: 10px; 
     margin-right: 10px; 
     flex-grow: 1;
+}
+.address-fields-zip {
+
+    @include media($max: $bp-small) {
+        margin-right: 0px;
+    }
 }
 fieldset {
     border: none;
@@ -374,7 +430,14 @@ fieldset {
 .error {
     display: none !important;
 }
+.form-field--half-fixed {
+    width: calc(50% - 20px);
 
+    @include media($max: $bp-small) {
+        width: calc(50%);
+        float:left;
+    }
+}
 // ================= COLLECTION LIST =================
 
 $local-bp-xs-tween-small: 480px;
@@ -543,6 +606,12 @@ $local-space-large: 15px;
     -o-transition: border 0.5s ease-out;
     transition: border 0.5s ease-out;
 }
+.featured-collection--container .home-section--title {
+    text-align: left;
+}
+.layout--has-sidebar .productgrid--items .productgrid--item {
+    margin-top: 50px;
+}
 
 // ================= PRODUCT PAGE =================
 
@@ -649,6 +718,11 @@ table.product_table tr:nth-child(odd) {
         display: block; 
       }
 }
+.content {
+    @include media($max: $bp-smaller) {
+        display: block; 
+      }
+}
 .active-tab {
     border-top: 3px solid rgba(255, 255, 255, 0);
     border-bottom: 3px solid #003f72;
@@ -659,7 +733,7 @@ table.product_table tr:nth-child(odd) {
 }
 // ================= CUSTOM MODAL =================
 
-#modal-login {
+#modal-login, #modal-error {
     position: fixed;
     top:0;
     left:0;
@@ -678,10 +752,19 @@ table.product_table tr:nth-child(odd) {
     position: relative; 
     box-shadow: 0 3px 3px hsla(0,0%,50%,.25);
     -webkit-box-shadow: 0 3px 3px hsla(0,0%,50%,.25);
+
+    @include media($max: $bp-smaller) {
+        width: auto;
+    }
 }
 .modal-header-login {
     margin-bottom: 20px; 
     margin-top: 25px;
+    max-width: 500px;
+
+    @include media($max: $bp-smaller) {
+        width: auto;
+    }
 }
 .modal-content-login {
     margin-top: 30px; 
@@ -693,6 +776,11 @@ table.product_table tr:nth-child(odd) {
     height: auto; 
     margin-left: auto; 
     margin-right: auto;
+
+    @include media($max: $bp-smaller) {
+        width: 100%;
+        max-width: 350px;
+    }
 }
 .modal-close-icon {
     position: absolute; 
@@ -719,6 +807,10 @@ table.product_table tr:nth-child(odd) {
     font-size: 14px; 
     color: #fff; 
     text-align: center;
+
+    @include media($max: $bp-smaller) {
+        width: auto;
+    }
 }
 .modal-register-link {
     color: #b7d2e3; 
@@ -735,6 +827,9 @@ table.product_table tr:nth-child(odd) {
 }
 .modal-product-inner {
     padding: 25px;
+}
+#error-box p::first-letter{
+    text-transform: uppercase;
 }
 // ================= ACCOUNT PAGE =================
 
@@ -814,6 +909,26 @@ table.product_table tr:nth-child(odd) {
     margin-top: 0px;
     font-size: 14px;
 }
+
+// ================= LOGIN PAGE =================
+
+.login-flex {
+    display: flex;
+}
+.login-helper-title {
+    font-weight: normal;
+}
+.login-helper-container {
+    display: flex !important; 
+    margin: 20px 0px; 
+    margin-left: 0px !important;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.login-helper-password {
+    margin-top: 0px;
+}
+
 // ================= RESPONSIVE CSS =================
 
 @media screen and (max-width: 1023px) {
