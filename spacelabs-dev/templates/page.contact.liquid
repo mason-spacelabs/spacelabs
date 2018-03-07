@@ -28,29 +28,37 @@
                     <div id="progress"></div>
                 </div>
             </div>
-            <div class="fa-3x icon-stack-box text-left" style="width: 25%;">
-                <span class="fa-layers fa-fw">
-                    <i id="step1" class="fas fa-circle"></i>
-                    <i class="fa-inverse fas fa-check" data-fa-transform="shrink-7"></i>
-                </span>
+            <div class="fa-3x icon-stack-box text-left">
+                <div>
+                    <span class="fa-layers fa-fw register-layers">
+                        <i id="step1" class="fas fa-circle"></i>
+                        <i class="fa-inverse fas fa-check" data-fa-transform="shrink-7"></i>
+                    </span>
+                </div>
             </div>
-            <div class="fa-3x icon-stack-box" style="width: 25%;">
-                <span class="fa-layers fa-fw" style="margin-right: 40%; margin-left: 20%;">
-                    <i id="step2" class="fas fa-circle"></i>
-                    <i class="fa-inverse fas fa-check" data-fa-transform="shrink-7"></i>
-                </span>
+            <div class="fa-3x icon-stack-box text-left" >
+                <div class="icon-middle-left">
+                    <span class="fa-layers fa-fw register-layers" >
+                        <i id="step2" class="fas fa-circle "></i>
+                        <i class="fa-inverse fas fa-check" data-fa-transform="shrink-7"></i>
+                    </span>
+                </div>
             </div>
-            <div class="fa-3x icon-stack-box" style="width: 25%;">
-                <span class="fa-layers fa-fw" style="margin-left: 40%; margin-right: 20%;">
-                    <i id="step3" class="fas fa-circle"></i>
-                    <i class="fa-inverse fas fa-check"  data-fa-transform="shrink-7"></i>
-                </span>
+            <div class="fa-3x icon-stack-box text-right">
+                <div class="icon-middle-right">
+                    <span class="fa-layers fa-fw register-layers"> 
+                        <i id="step3" class="fas fa-circle"></i>
+                        <i class="fa-inverse fas fa-check" data-fa-transform="shrink-7"></i>
+                    </span>
+                </div>
             </div>
-            <div class="fa-3x icon-stack-box text-right" style="width: 25%;">
-                <span class="fa-layers fa-fw">
-                    <i id="step4" class="fas fa-circle"></i>
-                    <i class="fa-inverse fas fa-check"  data-fa-transform="shrink-7"></i>
-                </span>
+            <div class="fa-3x icon-stack-box text-right">
+                <div>
+                    <span class="fa-layers fa-fw register-layers" >
+                        <i id="step4" class="fas fa-circle"></i>
+                        <i class="fa-inverse fas fa-check"  data-fa-transform="shrink-7"></i>
+                    </span>
+                </div>
             </div>
         </div>
         <fieldset id="section1">
@@ -629,3 +637,5 @@
         <p>If you have any questions please contact our customer service at 1-800-893-0094 Monday - Friday 8am - 5pm PST.</p>
     </div>
 </article>
+{% include 'modal-error' %}
+{% include 'modal-success' %}

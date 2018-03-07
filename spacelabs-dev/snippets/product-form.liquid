@@ -6,7 +6,7 @@
   @param selected_variant
 {% endcomment %}
 
-<form method="post" action="/cart/add" data-product-form style="display: flex; ">
+<form class="product-flex" method="post" action="/cart/add" data-product-form>
 
   {% unless product.has_only_default_variant %}
     {%
@@ -21,8 +21,8 @@
       type="hidden">
   {% endunless %}
 
-  <div class="product-form--atc" style="flex-grow:2; align-self: flex-start;">
-    <div class="product-form--atc-qty form-fields--qty" data-quantity-wrapper style="width:9rem; margin-left: 0.75rem;">
+  <div class="product-form--atc">
+    <div class="product-form--atc-qty form-fields--qty" data-quantity-wrapper style=" width: 100%;">
       <div class="form-field form-field--qty-select visible">
         <div class="form-field-select-wrapper">
           <select
@@ -59,12 +59,14 @@
         <label class="form-field-title">{{ 'general.general.quantity' | t }}</label>
       </div>
     </div>
+  </div>
+  <div class="product-form--atc">
     {% if customer %}
     <button
-      class="product-form--atc-button {% unless selected_variant.available %}disabled{% endunless %}"
+      class="product-form--atc-button add-button {% unless selected_variant.available %}disabled{% endunless %}"
       type="submit"
       {% unless selected_variant.available %}disabled{% endunless %}
-      data-product-atc style="font-weight: 400; width: calc(100% - 10.5rem);">
+      data-product-atc>
       <span class="atc-button--text">
         {% if selected_variant.available %}
           {{ 'product.buttons.add_to_cart' | t }}
@@ -78,10 +80,10 @@
     </button>
     {% else %}
     <a modal="modal-login" onclick="openModal(this);">
-    <button type="button" class="product-form--atc-button" style="font-weight: 400; width: calc(100% - 10.5rem);">
-      <span class="atc-button--text">View Pricing Details</span>
+      <button type="button" class="product-form--atc-button add-button">
+        <span class="atc-button--text">View Pricing Details</span>
       </button>
-    </a>
+      </a>
     {% endif %}
   </div>
 </form>

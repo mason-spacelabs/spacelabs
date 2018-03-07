@@ -2,7 +2,7 @@
 <html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
     <meta name="referrer" content="origin">
 
@@ -50,11 +50,11 @@
 
     {{ tracking_code }}
   </body>
-  <script>
+<script>
 
-var x = document.querySelectorAll(".section__title"); 
+var x = document.querySelectorAll('[data-address-field="zip"]');
+x["0"].classList.add("error-show");
 
-x[1].innerHTML = "Shipping Address is directly populated from Account Information";
 
   </script>
 </html>

@@ -22,8 +22,6 @@
     {% elsif template contains 'product' %}
 
       {% if collection.url %}
-      {{ delimiter }}
-       <a href="/collections">Collections</a>
         {{ delimiter }}
         {{ collection.title | link_to: collection.url }}
       {% endif %}
@@ -37,7 +35,7 @@
 
     {% elsif template contains 'collection' and collection.handle %}
       {{ delimiter }}
-      <a href="/collections">Collections</a>
+      <a href="/pages/{{ collection.metafields.anchor.business_link }}">{{ collection.metafields.title.business_title }}</a>
       {{ delimiter }}
       {% if current_tags %}
         {% capture url %}/collections/{{ collection.handle }}{% endcapture %}

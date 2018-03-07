@@ -25,7 +25,7 @@
 
     {% if block.settings.text %}
       <p class="promo-block--text hero-text">
-        {{ block.settings.text | escape | truncate: 120 }}
+        {{ block.settings.text | escape | truncate: 300 }}
       </p>
     {% endif %}
 
@@ -35,10 +35,6 @@
         {{ block.settings.button_text | escape }}
       </span>
     {% endif %}
-
-    <span class="promo-block--expander">
-      {% include 'icon-chevron-down' %}
-    </span>
     </div>
   </a>
 </article>

@@ -1,8 +1,8 @@
 <div class="site-mobile-nav" id="site-mobile-nav" data-mobile-nav>
   <div class="mobile-nav-panel" data-mobile-nav-panel>
-
-    {% include 'site-header-actions' %}
-
+    {% if customer %}
+    {% include 'site-header-actions' %} 
+    {% endif %} 
     <a
       class="mobile-nav-close"
       href="#site-header-nav"
@@ -10,7 +10,6 @@
       {% include 'icon-menu-close' %}
       <span class="show-for-sr">{{ 'general.accessibility.close' | t }}</span>
     </a>
-
     <div class="mobile-nav-content">
       {%
         include 'navmenu',

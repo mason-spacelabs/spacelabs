@@ -54,7 +54,22 @@
       <span class="show-for-sr">{{ 'general.accessibility.menu' | t }}</span>
     </a>
   </div>
-
+  
+  <div class="mobile-login text-right">
+  {% if customer %}
+    <a style="cursor: pointer;"  href="/account" style="padding:10px;" >
+      <i class="fas fa-user mobile-user-icon"></i>
+      
+    </a>
+    <a  href="/account/logout">
+        <i class="fas fa-sign-out-alt mobile-user-icon"></i>
+    </a>
+  {% else %}
+    <a class="mobile-user-icon"  style="cursor: pointer;"  modal="modal-login" onclick="openModal(this);" style="padding:10px;" >
+      <i class="fas fa-user"></i>
+    </a>
+  {%endif%}
+  </div>
   <div class="site-header-main">
 
     <div class="site-header-logo">

@@ -21,11 +21,13 @@
   {% endif %}
 {% endcomment %} 
   <li class="site-header-account-link">
-    <a class="site-header-cart--button" href="/cart">
+    <a class="site-header-cart--button" href="/cart"> 
+        {% if customer %}
         <span
           class="site-header-cart--count {% if cart.item_count > 0 %}visible{% endif %}"
           data-header-cart-count="{% if cart.item_count > 0 %}{{ cart.item_count }}{% endif %}">
         </span>
+        {% endif %}
         {% include 'icon-cart' %}
         <span class="show-for-sr">{{ 'general.accessibility.cart' | t }}</span>
     </a>

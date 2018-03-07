@@ -79,7 +79,7 @@
             </div>
           </div>
 
-          <button
+          {% comment %} <button
             class="button-primary cart-title-button"
             name="checkout"
             type="submit"
@@ -87,7 +87,7 @@
           >
             {% include 'icon-cart' %}
             {{ 'cart.general.checkout' | t }}
-          </button>
+          </button> {% endcomment %}
         {% elsif show_continue_link %}
           {{ continue_link_html }}
         {% endif %}

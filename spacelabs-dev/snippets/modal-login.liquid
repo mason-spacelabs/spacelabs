@@ -1,6 +1,8 @@
 <div id="modal-login" class="hidden-modal" style="z-index: 1000 !important;">
     <div class="modal-login-box">
-        <i class="fas fa-times fa-lg modal-close-icon" modal="modal-login" onclick="closeModal(this);"></i>
+    <button class="atc-banner--close" style="right: 10px; top: 10px;" type="button" aria-label="{{ 'general.accessibility.close' | t }}"  modal="modal-login" onclick="closeModal(this);">
+      {%- include 'icon-menu-close' -%}
+    </button>
         <section class="account-page-login" data-template-account data-template-account-login>
             <header class="account-page-masthead modal-header-login">
                 <img class="modal-image-login" src="{{ "spacelabs-logo.png" | asset_url }}">
@@ -86,6 +88,17 @@
                     {% endform %}
                 </div>
                 {% endif %}
+                <div  class="modal-register-alt text-center">
+                    <hr class ="modal-register-divider"/>
+                    <div class="modal-divider-box" >
+                        <span class="modal-divider-text">New to Spacelabs Healthcare</span>
+                    </div>
+                </div>
+                <a class="modal-register-alt-button" href="/pages/register">
+                    <button class="button-primary modal-button-login" type="button">
+                            Register
+                    </button>
+                </a>
             </article>
         </section>
     </div>

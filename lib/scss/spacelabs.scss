@@ -1,11 +1,15 @@
 // ================= BREAKPOINTS =================
 $bp-xs: 375px;
+
 $bp-smaller: 680px;
 $bp-small: 720px;
 $bp-medium: 860px;
 $bp-large: 1024px;
 $bp-large-home: 1080px;
 $bp-xl: 1280px;
+
+$bp-register-sm: 400px;
+$bp-register-md: 600px;
 
 // ================= MIXINS =================
 
@@ -138,6 +142,9 @@ $bp-xl: 1280px;
     font-size: 1rem;
     font-weight: normal
 }
+.mobile-nav-content {
+    padding-top: 40px;
+}
 .mobile-nav-content .navmenu-depth-1 {
     font-size: 1rem;
     font-weight: normal;
@@ -147,7 +154,32 @@ $bp-xl: 1280px;
     display: inline-block;
     padding-right: 10px;
 }
-
+.site-logo-image {
+    @include media($max: $bp-small) {
+        margin-bottom: 10px;
+    }
+}
+.mobile-login {
+    display: none;
+    position: absolute; 
+    top: 20px; 
+    right: 0px; 
+    width: 70px; 
+    height: 40px;
+    @include media($max: $bp-large) {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+}
+.mobile-login a {
+    text-decoration: none;
+}
+.mobile-user-icon, .mobile-user-icon:visited, .mobile-user-icon:active, .mobile-user-icon:link {
+    color: #333;
+    margin:0px 8px;
+    line-height: 0;
+}
 // ================= SEARCH BAR =================
 
 
@@ -299,11 +331,18 @@ nav.productgrid--utils {
 
 .promo-block--content {
     @include media($max: $bp-small) {
-        display: none;
+        height: 400px;
+        margin-top: 0px;
+        padding: 2rem 1.25rem;
+    }
+}
+.promo-block {
+    @include media($max: $bp-small) {
+        border-radius: 0px;
     }
 }
 .hero-container {
-    width: 450px; 
+    max-width: 450px; 
     margin-top: 10%; 
     margin-left: 5%; 
     border: 12px solid #fff; 
@@ -311,9 +350,17 @@ nav.productgrid--utils {
     background: rgba(0, 0, 0, .5);
 
     @include media($max: $bp-small) {
-        display: none;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
     }
     
+}
+.promo-block--button {
+    @include media($max: $bp-small) {
+        display: inline-block;
+        opacity: 1;
+    }
 }
 .hero-header {
     max-width: 90%; 
@@ -322,6 +369,13 @@ nav.productgrid--utils {
 .hero-text {
     max-width: 90%; 
     color: #fff;
+}
+.promo-block--text {
+    @include media($max: $bp-small) {
+        margin-top: 15px;
+        text-overflow: "-";
+        white-space: normal;
+    }
 }
 .shopify-section:first-child .home-section--content:first-child {
     margin-top: 0px;
@@ -619,6 +673,22 @@ $local-space-large: 15px;
     margin-top: 1.5rem; 
     margin-bottom: 1.5rem;
 }
+.product-flex {
+    display: flex;
+    flex-wrap: wrap;
+    @include media($max: $bp-large) {
+        
+    }
+}
+.product-form--atc {
+    flex-grow:1;
+    margin-right: 0.75rem;
+}
+.add-button {
+    font-weight: 400; 
+    width: 100%; 
+    margin-left: 0rem;
+}
 // ================= PRODUCT PAGE TABLES =================
 
 .product-table-title {
@@ -630,6 +700,7 @@ table.product_table {
 }
 table.product_table th {
     height: 30px;
+    text-align: left;
     font-weight: normal;
     background-color: #003f72;
     color: white;
@@ -733,7 +804,7 @@ table.product_table tr:nth-child(odd) {
 }
 // ================= CUSTOM MODAL =================
 
-#modal-login, #modal-error {
+#modal-login, #modal-error, #modal-success {
     position: fixed;
     top:0;
     left:0;
@@ -755,7 +826,40 @@ table.product_table tr:nth-child(odd) {
 
     @include media($max: $bp-smaller) {
         width: auto;
+        margin-top: 0px;
+        height: 100%;
     }
+}
+.modal-register-alt {
+        display: none;
+        position: relative; 
+        height: 31px; 
+        margin: 15px 0px;
+    @include media($max: $bp-smaller) {
+        display: block;
+    }
+}
+.modal-register-alt-button {
+    display: none;
+@include media($max: $bp-smaller) {
+    display: block;
+}
+
+}
+.modal-register-divider {
+    position: absolute; 
+    margin: 15px 0px; 
+    left: 0; right: 0;
+}
+.modal-divider-box {
+    position: absolute; 
+    left:0; 
+    right: 0; 
+    padding: 6px 0px;
+}
+.modal-divider-text {
+    background-color: #fff; 
+    padding:0px 3px;
 }
 .modal-header-login {
     margin-bottom: 20px; 
@@ -910,6 +1014,41 @@ table.product_table tr:nth-child(odd) {
     font-size: 14px;
 }
 
+// ================= REGISTRATION PAGE =================
+
+.icon-stack-box {
+    width: 25%;
+    display: block;
+}
+.register-layers {
+    width: 1em !important;
+}
+.register-layers svg {
+    margin: 0px !important;
+}
+.icon-middle-left {
+    margin-right: auto; 
+    margin-left: 25%;
+
+    @include media($max: $bp-register-md) {
+        margin-left: 18%;
+    }
+    @include media($max: $bp-register-sm) {
+        margin-left: 15%;
+    }
+}
+.icon-middle-right {
+    margin-left: auto; 
+    margin-right: 25%;
+
+    @include media($max: $bp-register-md) {
+        margin-right: 18%;
+    }
+    @include media($max: $bp-register-sm) {
+        margin-right: 15%;
+    }
+}
+
 // ================= LOGIN PAGE =================
 
 .login-flex {
@@ -929,6 +1068,34 @@ table.product_table tr:nth-child(odd) {
     margin-top: 0px;
 }
 
+// ================= TEXT FLYDOWN =================
+
+.search-flydown--quicklinks {
+    width: 50%; 
+    padding: 25px 10px;
+
+    @include media($max: $bp-small) {
+        width: 100% !important; 
+    }
+}
+#search-flydown-second {
+    @include media($max: $bp-small) {
+        display: none !important; 
+    }
+}
+.search-flydown--quicklinks-title {
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    font-size: 15px; 
+    font-weight: 600;
+}
+.search-flydown--quicklinks-link {
+    font-size: 0.9375rem; 
+    color: #333333;
+}
+.productgrid--footer-title {
+    font-size: 1rem;
+}
 // ================= RESPONSIVE CSS =================
 
 @media screen and (max-width: 1023px) {

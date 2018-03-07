@@ -14,7 +14,8 @@
     "dev-push-overwrite": "cd spacelabs-dev && theme replace --force",
     "prod-stage": "gulp --env=production",
     "prod-push": "cd spacelabs-prod && theme upload --force",
-    "prod-push-overwrite": "cd spacelabs-prod && theme replace --force"
+    "prod-push-overwrite": "cd spacelabs-prod && theme replace --force",
+    "csv": "cd lib/json && node index.js"
   },
   "author": "Spacelabs Healthcare",
   "license": "MIT",
@@ -40,5 +41,10 @@
     "jshint": "^2.9.5",
     "node-bourbon": "^4.2.8",
     "node-neat": "^2.0.0-beta.0"
+  },
+  "dependencies": {
+    "csvjson": "^5.0.0",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
   }
 }

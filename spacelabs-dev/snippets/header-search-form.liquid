@@ -96,15 +96,15 @@
       </div>
 
       <div class="search-flydown--results {% if enable_content %}search-flydown--results--content-enabled{% endif %}" data-live-search-results></div>
-<div style="display: flex;">
+<div style="display: flex;"> 
       {% if has_quick_links %}
-        <div class="search-flydown--quicklinks" style="width: 50%; padding: 25px 10px;" data-live-search-quick-links>
-          <span class="search-flydown--quicklinks-title" style="text-transform: uppercase; letter-spacing: 1px; font-size: 15px; font-weight: 600;">{{ quick_links.title }}</span>
+        <div id="search-flydown-first" class="search-flydown--quicklinks" data-live-search-quick-links>
+          <span class="search-flydown--quicklinks-title">{{ quick_links.title }}</span>
 
           <ul class="search-flydown--quicklinks-list">
             {% for link in quick_links.links %}
               <li class="search-flydown--quicklinks-item">
-                <a class="search-flydown--quicklinks-link" href="{{ link.url }}" style="font-size: 0.9375rem; color: #333333;">
+                <a class="search-flydown--quicklinks-link" href="{{ link.url }}">
                   {{ link.title }}
                 </a>
               </li>
@@ -113,13 +113,13 @@
         </div>
       {% endif %}
       {% if has_quick_links_secondary %}
-        <div class="search-flydown--quicklinks" style="width: 50%; padding: 25px 10px;" data-live-search-quick-links>
-          <span class="search-flydown--quicklinks-title" style="text-transform: uppercase; letter-spacing: 1px; font-size: 15px; font-weight: 600;">{{ quick_links_secondary.title }}</span>
+        <div id="search-flydown-second" class="search-flydown--quicklinks" data-live-search-quick-links>
+          <span class="search-flydown--quicklinks-title">{{ quick_links_secondary.title }}</span>
 
           <ul class="search-flydown--quicklinks-list">
             {% for link in quick_links_secondary.links %}
               <li class="search-flydown--quicklinks-item">
-                <a class="search-flydown--quicklinks-link" href="{{ link.url }}" style="font-size: 0.9375rem; color: #333333;">
+                <a class="search-flydown--quicklinks-link" href="{{ link.url }}">
                   {{ link.title }}
                 </a>
               </li>

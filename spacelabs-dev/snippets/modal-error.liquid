@@ -1,6 +1,8 @@
 <div id="modal-error" class="hidden-modal" style="z-index: 1000 !important;">
     <div class="modal-login-box">
-        <i class="fas fa-times fa-lg modal-close-icon" modal="modal-error" onclick="closeModal(this);"></i>
+        <button class="atc-banner--close" style="right: 10px; top: 10px;" type="button" aria-label="{{ 'general.accessibility.close' | t }}"  modal="modal-error" onclick="closeModal(this);">
+      {%- include 'icon-menu-close' -%}
+    </button>
         <section class="account-page-login">
             <header class="account-page-masthead modal-header-login">
                 <img class="modal-image-login" src="{{ "spacelabs-logo.png" | asset_url }}">
