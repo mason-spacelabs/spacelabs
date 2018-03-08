@@ -17,7 +17,8 @@
         {%- endif -%}
       {%- endcapture -%}
 
-      <option
+      <option 
+        
         {% if variant.id == selected_variant.id %}selected="selected"{% endif %}
         data-variant-id="{{ variant.id }}"
         {% if variant.available %}
@@ -27,6 +28,7 @@
           disabled="disabled"
         {% endif %}>
         {{ option_content | strip_newlines }}
+      
       </option>
     {% endfor %}
   </select>

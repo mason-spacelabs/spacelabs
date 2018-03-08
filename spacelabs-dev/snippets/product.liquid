@@ -144,7 +144,12 @@
 
     <div class="product-details" data-product-details>
       <h3 class="product-table-title">Product Details</h3>
-      <table id="product_details" class="product_table"></table>
+      <table id="product_details" class="product_table">
+      <tr>
+          <th>Specifications</th>
+          <th>Values</th>
+      </tr>
+      </table>
     </div>
   </div>
 
@@ -159,8 +164,7 @@
 <div class="tabs-container">
   <ul id="specs_tabs" class="tabs-nav">
   <a class="specs-tab-1 active-tab" href="#"><span class="spec-list-text">Specifications</span></a>
-  <a class="specs-tab-2" href="#"><span class="spec-list-text">Documentation</span></a>
-  <a class="specs-tab-3" href="#"><span class="spec-list-text">Data Sheets</span></a>
+  <a class="specs-tab-2" href="#"><span class="spec-list-text">Resources</span></a>
   </ul>
 </div>
 <div>
@@ -181,27 +185,56 @@
       <div id="product_documentation"></div>
     </div>
   </div>
-  <div class="content content-specs-tab-3 hidden-tab-content">
-    <h3 class="product-table-title tabs-title">Product Data Sheets</h3>
-  </div>
 </div>
 <script src="{{ 'specifications_data.js' | asset_url }}"></script>
 <script>
 
   // Grabbing the correct data based on product page
-
   let product_identification = {{ product.id }}; 
   let product_data = data[product_identification]; 
 
+  // Returning a single instance of the selected variant and creating a dynamic table from the JSON
+  function variant_selector(variant){
+
+    // Grabbing the correct JSON data for the variant
+    current_variant = data[product_identification].variants[variant];
+
+    // Grabbing the table element
+    var table = document.getElementById("product_details");
+
+    // Looping through the previous table and deleting table rows
+    for(var i = table.rows.length - 1; i > 0; i--)
+    {
+        table.deleteRow(i);
+    }
+
+    // Looping through the new variant data and creating a fresh table
+    for(let variant in current_variant){
+
+      let details_row = document.createElement('tr'); 
+
+      let details_key = document.createElement('td');
+      let details_value = document.createElement('td');
+
+      let details_value_text = document.createTextNode(current_variant[variant]);
+      let details_key_text = document.createTextNode(variant);
+
+      details_key.appendChild(details_key_text);
+      details_value.appendChild(details_value_text);
+      details_row.appendChild(details_key);
+      details_row.appendChild(details_value);
+    
+      document.getElementById("product_details").appendChild(details_row);
+
+    }
+  }
+
   // Grabbing data for tables
   let myObjects = Object.keys(product_data.variants).map(function(itm) { return product_data.variants[itm]; });
-  let details_data_key = myObjects["0"];
   let specifications_data = product_data.specifications;
   let documentation_data = product_data.documentation;
-  let details_data_values = product_data.variants;
 
   // Specifications Data table creation
-
   for(let specifications in specifications_data){
     
     let specifications_row = document.createElement('tr'); 
@@ -222,7 +255,6 @@
   }
 
   // Documentation Data creation
-
   for(let documentation in documentation_data){
     
     let a = document.createElement('a');
@@ -237,42 +269,6 @@
     document.getElementById("product_documentation").appendChild(a);
     document.getElementById("product_documentation").appendChild(br);
 
-  }
-
-  // Loop throught the first variant to build table title 
-
-  let details_table_header = document.createElement('tr'); 
-
-  for(let details_key in details_data_key){
-
-    let details_element = document.createElement('th');
-    let details_key_text = document.createTextNode(details_key);
-
-    details_element.appendChild(details_key_text);
-    details_table_header.appendChild(details_element);
-    document.getElementById("product_details").appendChild(details_table_header);
-
-  }
-
-  // Loop through the product object for the variants data
-
-  for (let details_value in details_data_values) {
-
-    let details_data = details_data_values[details_value];
-    let details_row = document.createElement('tr');
-
-    // Loop through the variants to build the table rows
-
-    for(let key in details_data){
-
-      let details_value_text = details_data[key];
-      let table_node = document.createElement('td');
-      let text_node = document.createTextNode(details_value_text);
-
-      table_node.appendChild(text_node);
-      details_row.appendChild(table_node);
-      document.getElementById("product_details").appendChild(details_row); 
-    }
   }
 </script>
 </section>

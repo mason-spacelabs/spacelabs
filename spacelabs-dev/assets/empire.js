@@ -21613,22 +21613,34 @@ function ProductPriceMain(price) {
 		key: '_switchVariantSelect',
 		value: function _switchVariantSelect(variant, availableOptions) {
 		  var _this2 = this;
-	
 		  var _loop = function _loop(i) {
 			// Corresponding select dropdown
 			var $select = jquery$1(_this2.$options[i]);
 			var $optionEls = $select.find('option');
-	
+
+			
 			// Iterate over each option on dropdown
 			$optionEls.each(function (index, option) {
 			  var $option = jquery$1(option);
-			  var value = option.value;
-	
+			  var value = option.value; 
+			  
 			  // Not an available option
 			  $option.prop('disabled', !availableOptions[i][value] || !availableOptions[i][value].available).prop('selected', false);
-	
+
+
+			  // Creating Variable for the current selected variant and all the variants
+			  let selected_variant = variant.id;
+			  let looped_variant = _this2.$variants["0"][index].value
+
+			  // Compare the selected variant with the looped variants and return a match	
+			  if( selected_variant == looped_variant ){
+				variant_selector(variant.id);
+			  }
+
+
 			  // Dropdown option matches variant option
 			  if (variant.options[i] === value) {
+				
 				$option.prop('disabled', false).prop('selected', true);
 			  }
 			});
