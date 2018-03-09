@@ -6,13 +6,15 @@
     Is the snippet being loaded in a QuickShop
 {% endcomment %}
 
+
+{% assign table_size = false %}
+
 {% assign enable_social_sharing = settings.product_social_sharing %}
 {% assign selected_variant = product.selected_or_first_available_variant %}
 {% assign selected_image = selected_variant.image | default: product.featured_image %}
 {% assign compare_at_price = selected_variant.compare_at_price %}
 {% assign price = selected_variant.price %}
 {% assign product_available = product.available %}
-
 {% assign on_sale = false %}
 {% if compare_at_price > price %}
   {% assign on_sale = true %}
@@ -58,7 +60,7 @@
           {{ product.title }}
         </h1>
       {% endif %}
-
+      
       {% if settings.product_show_vendor and product.vendor != blank %}
         <div class="product-vendor">
           {{ 'product.general.by_vendor' | t: vendor: product.vendor }}
@@ -80,8 +82,15 @@
           </span>
         </div>
       {% endif %}
-
-      <div class="product-pricing">
+      {% comment %}
+      Product description field, never moves
+    {% endcomment %}
+    {% if product.description != blank %}
+      <div class="product-description rte" data-product-description>
+        {{ product.description }}
+      </div>
+    {% endif %}
+      <div class="product-pricing product-container-pricing">
         {%
           include 'product-badge',
           class_root: 'product',
@@ -127,18 +136,21 @@
       </div>
     </div>
 
-    {% comment %}
-      Product description field, never moves
-    {% endcomment %}
-    {% if product.description != blank %}
-      <div class="product-description rte" data-product-description>
-        {{ product.description }}
-      </div>
-    {% endif %}
+    
 
     {% if enable_social_sharing and is_product_modal %}
       {{ share_buttons | strip_newlines }}
     {% endif %}
+
+    <div class="product-details" data-product-details>
+      <h3 class="product-table-title">Product Details</h3>
+      <table id="product_details" class="product_table">
+      <tr>
+          <th>Specifications</th>
+          <th>Values</th>
+      </tr>
+      </table>
+    </div>
   </div>
 
   {% comment %}
@@ -148,3 +160,115 @@
     <div class="product-form--alt" data-product-form-alt></div>
   {% endif %}
 </article>
+<section class="tabs-section">
+<div class="tabs-container">
+  <ul id="specs_tabs" class="tabs-nav">
+  <a class="specs-tab-1 active-tab" href="#"><span class="spec-list-text">Specifications</span></a>
+  <a class="specs-tab-2" href="#"><span class="spec-list-text">Resources</span></a>
+  </ul>
+</div>
+<div>
+  <div class="content content-specs-tab-1">
+    <div class="product-details" data-product-details>
+      <h3 class="product-table-title tabs-title">Product Specifications</h3>
+      <table id="product_specifications" class="product_table">
+        <tr>
+          <th>Specifications</th>
+          <th>Values</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="content content-specs-tab-2 hidden-tab-content">
+  <div class="product-details" data-product-details>
+      <h3 class="product-table-title tabs-title">Product Documentation</h3>
+      <div id="product_documentation"></div>
+    </div>
+  </div>
+</div>
+<script src="{{ 'specifications_data.js' | asset_url }}"></script>
+<script>
+
+  // Grabbing the correct data based on product page
+  let product_identification = {{ product.id }}; 
+  let product_data = data[product_identification]; 
+
+  // Returning a single instance of the selected variant and creating a dynamic table from the JSON
+  function variant_selector(variant){
+
+    // Grabbing the correct JSON data for the variant
+    current_variant = data[product_identification].variants[variant];
+
+    // Grabbing the table element
+    var table = document.getElementById("product_details");
+
+    // Looping through the previous table and deleting table rows
+    for(var i = table.rows.length - 1; i > 0; i--)
+    {
+        table.deleteRow(i);
+    }
+
+    // Looping through the new variant data and creating a fresh table
+    for(let variant in current_variant){
+
+      let details_row = document.createElement('tr'); 
+
+      let details_key = document.createElement('td');
+      let details_value = document.createElement('td');
+
+      let details_value_text = document.createTextNode(current_variant[variant]);
+      let details_key_text = document.createTextNode(variant);
+
+      details_key.appendChild(details_key_text);
+      details_value.appendChild(details_value_text);
+      details_row.appendChild(details_key);
+      details_row.appendChild(details_value);
+    
+      document.getElementById("product_details").appendChild(details_row);
+
+    }
+  }
+
+  // Grabbing data for tables
+  let myObjects = Object.keys(product_data.variants).map(function(itm) { return product_data.variants[itm]; });
+  let specifications_data = product_data.specifications;
+  let documentation_data = product_data.documentation;
+
+  // Specifications Data table creation
+  for(let specifications in specifications_data){
+    
+    let specifications_row = document.createElement('tr'); 
+
+    let specifications_key = document.createElement('td');
+    let specifications_value = document.createElement('td');
+
+    let specifications_value_text = document.createTextNode(specifications);
+    let specifications_key_text = document.createTextNode(specifications_data[specifications]);
+
+    specifications_value.appendChild(specifications_value_text);
+    specifications_key.appendChild(specifications_key_text);
+    specifications_row.appendChild(specifications_value);
+    specifications_row.appendChild(specifications_key);
+    
+    document.getElementById("product_specifications").appendChild(specifications_row);
+
+  }
+
+  // Documentation Data creation
+  for(let documentation in documentation_data){
+    
+    let a = document.createElement('a');
+    var br = document.createElement('br');
+
+    let documentation_value = document.createTextNode(documentation);
+    let documentation_href = documentation_data[documentation];
+
+    a.appendChild(documentation_value);
+    a.setAttribute('href', documentation_href);
+    
+    document.getElementById("product_documentation").appendChild(a);
+    document.getElementById("product_documentation").appendChild(br);
+
+  }
+</script>
+</section>

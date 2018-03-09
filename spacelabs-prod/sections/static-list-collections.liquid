@@ -8,10 +8,21 @@
 {% endif %}
 
 {% include 'breadcrumbs' %}
-
 {% paginate collections by pagination %}
-  <div class="listcollections--container">
-    <div class="listcollections--inner">
+<div class="listcollections--container collection-list-container">
+  <div class="listcollections--inner collection-list-categories">
+    <h3>Categories</h3> 
+    <ul id="category-list">
+      {% for link in linklists.categories.links %}
+        <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="list-collection-box">
+    <h3 class="list-collection-header">Non-Invasive Blood Pressure Cuffs</h3>
+    <div class="listcollections--inner list-collection-flex"> 
       {% if using_linklist %}
         {% for link in linklists[linklist].links %}
           {% assign link_handle = link.handle %}
@@ -25,7 +36,7 @@
       {% endif %}
     </div>
   </div>
-
+</div>
   {% include 'pagination' %}
 {% endpaginate %}
 {% schema %}

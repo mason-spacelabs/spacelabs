@@ -41,11 +41,8 @@
       {% include 'newsletter' %}
     {% endif %}
   {% elsif block.type == 'social_accounts' %}
-    <h2 class="site-footer-block-title">
-      {{ 'footer.general.follow_us' | t }}
-    </h2>
-
-    <div class="site-footer-block-content">
+    <img class="footer-image-block" src="{{ "spacelabs-logo.png" | asset_url }}">
+    <div class="site-footer-block-content footer-social-block">
       {% include 'social-list' %}
     </div>
   {% endif %}

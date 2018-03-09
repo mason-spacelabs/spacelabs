@@ -21,7 +21,7 @@
   navmenu-meganav-items
 {%- endcapture -%}
 
-<ul class="{{ navmenu_classes | strip_newlines }}">
+<ul class="{{ navmenu_classes | strip_newlines }} navigation-flex">
   {% for link in link.links %}
     {% assign d = depth | plus: 1 %}
     {% assign nav_item_count = 'navmenu-item-count-' %}
@@ -44,7 +44,7 @@
       {% if meganav_has_triggers %}data-navmenu-trigger{% endif %}
       {{ block.shopify_attributes }}>
       <span class="navmenu-item-text navmenu-link-parent">
-        {{ link.title }}
+        <a class="navmenu-parent" href="{{ link.url }}">{{ link.title }}</a>
 
         {% if submenu_arrows %}
           <span class="navmenu-icon navmenu-icon-depth-{{ depth }}">
@@ -52,7 +52,6 @@
           </span>
         {% endif %}
       </span>
-
       {%
         include 'navmenu',
         menu: link,
@@ -64,4 +63,21 @@
         aria_expanded: true
       %}
   {% endfor %}
+
 </ul>
+<div class="navigation-flex-image">
+  <div class="navigation-cta-container">
+    <div class="relative">
+      <img class="navigation-image" src="{{ "mega-menu-cta.jpg" | asset_url }}" >
+      <div class="navigation-text-container">
+        <h3>Product Categories</h3>
+        <p>Browse categories through our online store.</p>
+        <a href="/collections" id="navigation-button">
+        <span class="button-primary promo-block--button">
+        All Categories
+        </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

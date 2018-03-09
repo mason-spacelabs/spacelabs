@@ -17,6 +17,11 @@
   {% assign has_quick_links = true %}
 {% endif %}
 
+{% assign has_quick_links_secondary = false %}
+{% if quick_links.links.size > 0 %}
+  {% assign has_quick_links_secondary = true %}
+{% endif %}
+
 {%- capture search_type -%}
   {% if enable_content %}
     article,page,product
@@ -91,9 +96,9 @@
       </div>
 
       <div class="search-flydown--results {% if enable_content %}search-flydown--results--content-enabled{% endif %}" data-live-search-results></div>
-
+<div style="display: flex;"> 
       {% if has_quick_links %}
-        <div class="search-flydown--quicklinks" data-live-search-quick-links>
+        <div id="search-flydown-first" class="search-flydown--quicklinks" data-live-search-quick-links>
           <span class="search-flydown--quicklinks-title">{{ quick_links.title }}</span>
 
           <ul class="search-flydown--quicklinks-list">
@@ -107,6 +112,22 @@
           </ul>
         </div>
       {% endif %}
+      {% if has_quick_links_secondary %}
+        <div id="search-flydown-second" class="search-flydown--quicklinks" data-live-search-quick-links>
+          <span class="search-flydown--quicklinks-title">{{ quick_links_secondary.title }}</span>
+
+          <ul class="search-flydown--quicklinks-list">
+            {% for link in quick_links_secondary.links %}
+              <li class="search-flydown--quicklinks-item">
+                <a class="search-flydown--quicklinks-link" href="{{ link.url }}">
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+</div>
     </div>
   </form>
 </div>

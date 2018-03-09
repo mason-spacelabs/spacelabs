@@ -78,7 +78,7 @@ $bp-register-md: 600px;
     padding-left: 0px;
 }
 .navmenu-parent:hover {
-    color: #003f72;;
+    color: #003f72;
 }
 .site-navigation .site-header-account-link .site-header-cart--button {
     padding: 10px 12px;
@@ -87,6 +87,7 @@ $bp-register-md: 600px;
     text-transform: uppercase; 
     font-weight: 600; 
     letter-spacing: 1px;
+    cursor: pointer
 }
 .static-site-nav:hover {
     color: #003f72;
@@ -105,7 +106,7 @@ $bp-register-md: 600px;
 .navigation-cta-container {
     max-width: 450px; 
     float: right; 
-    padding: 25px 15px;
+    padding: 19px 15px;
 }
 .navigation-image {
     width: 100%; 
@@ -135,6 +136,13 @@ $bp-register-md: 600px;
 #navigation-button span{
     margin-top: 0px;
 }
+.medium-hide {
+    padding-right: 0px;
+
+    @include media($max: $bp-large) {
+        display: none;
+    }
+}
 .mobile-nav-panel {
     max-width: 450px;
 }
@@ -163,7 +171,7 @@ $bp-register-md: 600px;
     display: none;
     position: absolute; 
     top: 20px; 
-    right: 0px; 
+    right: 5px; 
     width: 70px; 
     height: 40px;
     @include media($max: $bp-large) {
@@ -179,6 +187,12 @@ $bp-register-md: 600px;
     color: #333;
     margin:0px 8px;
     line-height: 0;
+    height: 1.15em !important; 
+    width: 1.15em !important;
+}
+.mobile-icon-link {
+    padding:0px 0px 0px 15px;
+    cursor: pointer;
 }
 // ================= SEARCH BAR =================
 
@@ -197,11 +211,29 @@ nav.productgrid--utils {
 .filter-text {
     font-weight: normal !important;
 }
+.site-header-main {
+    @include media($max: $bp-xl) {
+        margin-right: 25px;
+    }
+    @include media($max: $bp-large) {
+        margin-right: 0px;
+    }
+}
 .site-header-search {
     margin-left: 50px;
-    margin-right: 50px;
-}
+    margin-right: 30px;
 
+    @include media($max: $bp-xl) {
+        margin-left: 50px;
+        margin-right: 0px;
+    }
+
+    @include media($max: $bp-large) {
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 5px;
+    }
+}
 // ================= SHIPPING MESSAGE =================
 
 #shipping_message {
@@ -387,6 +419,27 @@ nav.productgrid--utils {
     padding: 0px;
 }
 
+// ================= TAGLINE BLOCK =================
+
+.tagline-header {
+    margin-top: 4.25rem; 
+    font-size: 2.125rem;
+
+    @include media($max: $bp-large) {
+        font-size: 1.875rem;
+    }
+}
+.tagline-text {
+    max-width: 1100px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    font-size: 1.25rem; 
+    line-height: 2rem;
+
+    @include media($max: $bp-large) {
+        font-size: 1.125rem;
+    }
+}
 // ================= REGISTRATION FORM =================
 
 #contact_form .form-field-input {
@@ -500,13 +553,18 @@ $local-space-small: 10px;
 $local-space-large: 15px;
 
 #category-list {
-    list-style: none; 
-    border: 1px solid hsla(0,0%,50%,.2); 
+    list-style: none;  
     border-top: none;
     padding-left: 0px;
 }
 #category-list li {
-    border-top: 1px solid hsla(0,0%,50%,.2); 
+    border-top: 1px solid hsla(0,0%,50%,.2);
+    border-right: 1px solid hsla(0,0%,50%,.2);
+    border-left: 1px solid hsla(0,0%,50%,.2);
+    display: block;
+}
+#category-list li:last-child {
+    border: 1px solid hsla(0,0%,50%,.2);
     display: block;
 }
 .collection--item-image {
@@ -1098,12 +1156,3 @@ table.product_table tr:nth-child(odd) {
 }
 // ================= RESPONSIVE CSS =================
 
-@media screen and (max-width: 1023px) {
-    .medium-hide {
-        display: none;
-    }
-    .site-header-search {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-}

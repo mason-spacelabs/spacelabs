@@ -34,7 +34,8 @@
       <span>{{ 'general.breadcrumbs.collections' | t }}</span>
 
     {% elsif template contains 'collection' and collection.handle %}
-
+      {{ delimiter }}
+      <a href="/pages/{{ collection.metafields.anchor.business_link }}">{{ collection.metafields.title.business_title }}</a>
       {{ delimiter }}
       {% if current_tags %}
         {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
@@ -89,12 +90,12 @@
         include 'search-sanitizer',
         search_terms: search.terms
       %}
-
+    
       {{ delimiter }}
       <span>{{ 'search.general.breadcrumbs_count' | t: terms: sanitized_terms, count: search.results_count }}</span>
 
     {% else %}
-
+      
       {{ delimiter }}
        <span>{{ page_title }}</span>
 

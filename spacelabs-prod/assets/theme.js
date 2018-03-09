@@ -649,7 +649,6 @@ slate.Variants = (function() {
       if (!history.replaceState || !variant) {
         return;
       }
-
       var newurl =
         window.location.protocol +
         '//' +
@@ -669,7 +668,6 @@ slate.Variants = (function() {
       $(this.originalSelectorId, this.$container).val(variant.id);
     }
   });
-
   return Variants;
 })();
 

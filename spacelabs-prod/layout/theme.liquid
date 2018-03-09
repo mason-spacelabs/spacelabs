@@ -49,7 +49,7 @@
 
     <link rel="canonical" href="{{ canonical_url }}">
     <meta name="viewport" content="width=device-width">
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
     {% include 'social-meta-tags' %}
 
     {{ content_for_header }}
@@ -60,9 +60,11 @@
       if(('ontouchstart' in window)||window.DocumentTouch&&document instanceof DocumentTouch)document.documentElement.className=document.documentElement.className.replace(/\bno-touch\b/,'has-touch');
     </script>
 
-    {% include 'fonts' %}
+    {% include 'fonts' %} 
 
     {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+    {{ 'spacelabs.min.css' | asset_url | stylesheet_tag }}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
   </head>
 
   <body>
@@ -86,6 +88,8 @@
       Modal container, used on Collections, Password, and QuickShop
     {% endcomment %}
     {% include 'modal' %}
+     {% include 'modal-login' %}
+   
 
 
     {%- if template contains 'customer' -%}
@@ -102,7 +106,19 @@
       data-shopify-common="{{ 'shopify_common.js' | shopify_asset_url }}"
       data-shopify-cart="{{ 'jquery.cart.js' | asset_url }}">
     </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="{{ 'spacelabs.min.js' | asset_url }}"></script>
+    {% if customer %}
+      <script>
+        var logged_in = true;
+      </script>
+    {% else %}
+      <script>
+        var logged_in = false;
+      </script>
+    {% endif %}
     {% include 'structured-data' %}
   </body>
 </html>

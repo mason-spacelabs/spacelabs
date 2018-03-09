@@ -1,4 +1,5 @@
 <ul class="site-header-actions" data-header-actions>
+{% comment %}
   {% if shop.customer_accounts_enabled %}
     {% unless customer %}
       <li class="site-header-account-link">
@@ -18,7 +19,19 @@
       </li>
     {% endunless %}
   {% endif %}
-
+{% endcomment %} 
+  <li class="site-header-account-link">
+    <a class="site-header-cart--button" href="/cart"> 
+        {% if customer %}
+        <span
+          class="site-header-cart--count {% if cart.item_count > 0 %}visible{% endif %}"
+          data-header-cart-count="{% if cart.item_count > 0 %}{{ cart.item_count }}{% endif %}">
+        </span>
+        {% endif %}
+        {% include 'icon-cart' %}
+        <span class="show-for-sr">{{ 'general.accessibility.cart' | t }}</span>
+    </a>
+  </li>
   {% if settings.enable_currency_converter %}
     <li class="currency-converter-wrapper">
       <div class="form-field-select-wrapper no-label">

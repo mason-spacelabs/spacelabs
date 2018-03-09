@@ -6,7 +6,7 @@
   @param selected_variant
 {% endcomment %}
 
-<div data-product-options-container>
+<div data-product-options-container style="flex-grow: 1; margin-right: 0.75rem;">
   <select name="id" data-variants class="form-options no-js-required">
     {% for variant in product.variants %}
       {%- capture option_content -%}
@@ -17,7 +17,8 @@
         {%- endif -%}
       {%- endcapture -%}
 
-      <option
+      <option 
+        
         {% if variant.id == selected_variant.id %}selected="selected"{% endif %}
         data-variant-id="{{ variant.id }}"
         {% if variant.available %}
@@ -27,6 +28,7 @@
           disabled="disabled"
         {% endif %}>
         {{ option_content | strip_newlines }}
+      
       </option>
     {% endfor %}
   </select>

@@ -12,20 +12,20 @@
 <article
   class="{{ classes | replace: '  ', ' ' | strip_newlines }}"
   {{ block.shopify_attributes }}>
-  <a
+  <a style=""
     class="promo-block--content {% unless has_link %}promo-block--unlinked{% endunless %}"
     {% if has_link %}href="{{ block.settings.block_link }}"{% endif %}
     data-promo-block-content>
-
+    <div class="hero-container">
     {% if block.settings.title %}
-      <h2 class="promo-block--header">
+      <h2 class="promo-block--header hero-header">
         {{ block.settings.title | escape }}
       </h2>
     {% endif %}
 
     {% if block.settings.text %}
-      <p class="promo-block--text">
-        {{ block.settings.text | escape | truncate: 120 }}
+      <p class="promo-block--text hero-text">
+        {{ block.settings.text | escape | truncate: 300 }}
       </p>
     {% endif %}
 
@@ -35,9 +35,6 @@
         {{ block.settings.button_text | escape }}
       </span>
     {% endif %}
-
-    <span class="promo-block--expander">
-      {% include 'icon-chevron-down' %}
-    </span>
+    </div>
   </a>
 </article>

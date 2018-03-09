@@ -11,7 +11,7 @@
   @param collection_image_alt String
          String to show an alt tag on the image
 
-{% endcomment %}
+{% endcomment %} 
 
 {% assign onboard = false %}
 {% assign image = false %}
@@ -23,6 +23,7 @@
 
 {% assign collection_title = collection.title %}
 {% assign collection_url = collection.url %}
+{% assign collection_vendors = collection.all_vendors %}
 
 {% if onboard %}
   {% assign collection_title = 'onboarding.collection.title' | t  %}
@@ -30,7 +31,7 @@
 {% endif %}
 
 {% if collection_image and collection_image_alt %}
-  {% assign image = collection_image %}
+  {% assign image = collection_image %} 
   {% assign image_alt = collection_image_alt %}
 {% elsif collection.image %}
   {% assign image = collection %}
@@ -39,7 +40,12 @@
   {% assign image = collection.products.first.featured_image %}
   {% assign image_alt = collection_title | escape %}
 {% endif %}
+{% comment %}
+  
+  Create another for loop for any new collection categories so that it can be displayed in the collection list
 
+{% endcomment %}
+{% if collection_vendors contains "Non-Invasive Blood Pressure Cuffs" %}
 <article class="collection--item" {% if block %}{{ block.shopify_attributes }}{% endif %}>
   <figure class="collection--item-image">
     <a href="{{ collection_url }}">
@@ -55,10 +61,10 @@
       {% endif %}
     </a>
   </figure>
-
   <h2 class="collection--item-info">
     <a class="collection--item-title" href="{{ collection_url }}">
       {{ collection_title }}
     </a>
   </h2>
 </article>
+{% endif %}
