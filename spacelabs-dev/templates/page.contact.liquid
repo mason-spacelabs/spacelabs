@@ -6,12 +6,7 @@
             </h1>
         </div>
     </header>
-    {% form 'contact' %} {% if page.content != blank %}
-    {% comment %} <div class="page-content rte">
-        {{ page.content }}
-    </div> {% endcomment %}
-    {% endif %}
-
+    {% form 'contact' %}
     <div class="contact-page-content">
         {% assign has_message = false %} {% if form.errors != blank %} {% assign has_message = true %} {% assign message_type = 'error' %} {% endif %} {% if form.posted_successfully? %} {% assign has_message = true %} {% assign message_type = 'success' %} {% endif %} {% if has_message %}
         <div class="contact-message message--{{ message_type }}">
@@ -280,7 +275,7 @@
                     </label>
                 </div>
                 <div class="form-field form-field--half">
-                    <select id="contact_billing_state" name="contact[StateOfIncorporation]" class="form-field-input form-field-text">
+                    <select id="state_incorporation" name="contact[StateOfIncorporation]" class="form-field-input form-field-text">
                         <option style="display:none"></option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
@@ -334,7 +329,7 @@
                         <option value="WI">Wisconsin</option>
                         <option value="WY">Wyoming</option>
                     </select>
-                    <label class="form-field-title" for="ontact_billing_fed_state">
+                    <label class="form-field-title" for="state_incorporation">
                         State of Incorporation *
                     </label>
                 </div>
@@ -633,8 +628,8 @@
     </div>
     {% endform %}
     <div class="contact-page-content" style="border-top: 1px solid hsla(0,0%,50%,.3); font-size: 14px; padding-top: 10px;">
-        <p>If you would like to complete the application process manually please send a completed <a href="" style="color: #003f72;">account request form</a> via fax (888)344-3444.</p>
-        <p>If you have any questions please contact our customer service at 1-800-893-0094 Monday - Friday 8am - 5pm PST.</p>
+        <p>If you would like to complete the application process manually please send a completed <a href="https://cdn.shopify.com/s/files/1/2777/7236/files/Account_Request_Form.pdf?14751337191092706148" style="color: #003f72;" download>account request form</a> via fax 425-396-3301.</p>
+        <p>If you have any questions please contact our customer service at 425-396-3300 Monday - Friday 8am - 5pm PST.</p>
     </div>
 </article>
 {% include 'modal-error' %}

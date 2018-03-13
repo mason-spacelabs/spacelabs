@@ -172,7 +172,7 @@ $bp-register-md: 600px;
     position: absolute; 
     top: 20px; 
     right: 5px; 
-    width: 70px; 
+    width: auto; 
     height: 40px;
     @include media($max: $bp-large) {
         display: flex;
@@ -428,6 +428,9 @@ nav.productgrid--utils {
     @include media($max: $bp-large) {
         font-size: 1.875rem;
     }
+    @include media($max: $bp-small) {
+        font-size: 1.5rem;
+    }
 }
 .tagline-text {
     max-width: 1100px; 
@@ -438,6 +441,9 @@ nav.productgrid--utils {
 
     @include media($max: $bp-large) {
         font-size: 1.125rem;
+    }
+    @include media($max: $bp-small) {
+        font-size: 0.9375rem;
     }
 }
 // ================= REGISTRATION FORM =================
@@ -873,7 +879,7 @@ table.product_table tr:nth-child(odd) {
 .modal-login-box {
     width: 500px;
     display: block;
-    margin-top: 100px;
+    margin-top: 150px;
     border: 1px solid #fff;
     margin-left: auto;
     margin-right: auto;
@@ -1070,6 +1076,16 @@ table.product_table tr:nth-child(odd) {
 .address-change-message p {
     margin-top: 0px;
     font-size: 14px;
+}
+
+// ================= GENERIC PAGE =================
+
+.custom-page-box section img {
+    // @include media($max: $bp-large) {
+    //     min-height: 250px;
+    //     width: 100%;
+    //     overflow: hidden;
+    // }
 }
 
 // ================= REGISTRATION PAGE =================

@@ -26,7 +26,7 @@
     "product_grid_quick_buy": false,
     "social_facebook": "https:\/\/www.facebook.com\/spacelabshealthcare",
     "social_twitter": "https:\/\/twitter.com\/spacelabs",
-    "social_google": "http:\/\/www.google.com\/",
+    "social_google": "",
     "social_linkedin": "http:\/\/www.linkedin.com\/company\/166075",
     "social_pinterest": "",
     "social_instagram": "",
@@ -161,7 +161,7 @@
       "1520615015554": {
         "type": "static-tagline",
         "settings": {
-          "title": "Spacelabs Healthcare, because lives depend on you.",
+          "title": "Spacelabs Healthcare, Because Lives Depend on You",
           "description": "Since 1958, Spacelabs has continually redefined the boundaries of what’s possible in healthcare technology. We are committed to leading innovation in healthcare technology, and working as a dedicated partner with our customers."
         }
       }
