@@ -634,3 +634,9 @@
 </article>
 {% include 'modal-error' %}
 {% include 'modal-success' %}
+{%if message_type == 'success'%}
+    <script>
+    $("#modal-success").addClass("show-modal").fadeIn(700); 
+    $("#modal-success").removeClass("hidden-modal");
+    </script>
+{% endif %}
