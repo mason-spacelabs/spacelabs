@@ -1099,6 +1099,38 @@ table.product_table tr:nth-child(odd) {
 .register-layers svg {
     margin: 0px !important;
 }
+.register-title {
+    font-size: 1.5rem; 
+    font-weight: 400;
+}
+.register-hidden {
+    display: none;
+}
+.terms-text {
+    padding: 10px 0px 25px 0px; 
+    line-height: 1.5;
+}
+.terms-link {
+    color: #195280;
+    text-decoration:none;
+}
+.terms-link:hover {
+     color: #195280;
+}
+#acknowledgment {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.register-raw-form {
+    color: #003f72;
+    text-decoration: none;
+}
+.register-contact-info {
+    border-top: 1px solid hsla(0,0%,50%,.3); 
+    font-size: 14px; 
+    padding-top: 10px; 
+    margin-top: 0px;
+}
 .icon-middle-left {
     margin-right: auto; 
     margin-left: 25%;

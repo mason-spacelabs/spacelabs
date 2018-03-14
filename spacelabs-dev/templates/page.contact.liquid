@@ -1,8 +1,8 @@
 <article class="site-page" data-template-page data-template-contact>
     <header class="page-masthead ">
         <div class="page-content">
-            <h1 class="page-title text-left" style="font-size: 1.5rem; font-weight: 400;">
-        {{ page.title }}
+            <h1 class="page-title text-left register-title">
+            {{ page.title }}
             </h1>
         </div>
     </header>
@@ -61,7 +61,7 @@
                 <h3>General Information</h3>
                 <p>* indicates a required field</p>
             </div>
-            <div class="form-field" style="display: none;">
+            <div class="form-field register-hidden">
                 <input class="form-field-input form-field-text" id="customer_id" value="ERROR 999-999999" name="contact[ShopifyCustomerNumber]" type="text">
             </div>
             <div class="form-fields-columns">
@@ -92,7 +92,7 @@
             </div>
             <div class="form-field">
                 <select id="registerOccupation" name="contact[Occupation]" class="form-field-input form-field-text">
-                    <option style="display:none"></option>
+                    <option class="register-hidden"></option>
                     <option>Administrator</option>
                     <option>Administrator, Assistant</option>
                     <option>Buyer / Purchaser</option>
@@ -131,7 +131,7 @@
             </div>
             <div class="form-field">
                 <select id="registerBusiness" name="contact[BusinessType]" class="form-field-input form-field-text" required>
-                    <option style="display:none"></option>
+                    <option class="register-hidden"></option>
                     <option>Animal Health</option>
                     <option>Assisted Living</option>
                     <option>DME/HME Dealer</option>
@@ -174,7 +174,7 @@
                 <h3>Billing Information</h3>
                 <p>* indicates a required field</p>
             </div>
-            <div class="form-field" style="display: none;">
+            <div class="form-field register-hidden">
                 <input class="form-field-input form-field-text" id="billing_id" value="ERROR 999-999999" name="contact[ShopifyBillingAddressNumber]" type="text">
             </div>
             <div class="form-field">
@@ -198,7 +198,7 @@
                 </div>
                 <div class="form-field address-fields-state">
                     <select id="contact_billing_state" name="contact[BillingAddressState]" class="form-field-input form-field-text">
-                        <option style="display:none"></option>
+                        <option class="register-hidden"></option>
                         <option value="AL">AL</option>
                         <option value="AK">AK</option>
                         <option value="AR">AR</option>
@@ -265,7 +265,7 @@
             <div class="form-fields-columns">
                 <div class="form-field form-field--half">
                     <select id="contact_billing_entity" name="contact[BillingEntity]" class="form-field-input form-field-text">
-                        <option style="display:none"></option>
+                        <option class="register-hidden"></option>
                         <option>Corporation</option>
                         <option>Partnership</option>
                         <option>Sole Proprietor</option>
@@ -306,7 +306,7 @@
                 </div>
                 <div class="form-field form-field--half">
                     <select id="state_incorporation" name="contact[StateOfIncorporation]" class="form-field-input form-field-text">
-                        <option style="display:none"></option>
+                        <option class="register-hidden"></option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AZ">Arizona</option>
@@ -366,7 +366,7 @@
             </div>
             <div class="form-field">
                 <select id="contact_export_products" name="contact[ExportSpacelabsProducts]" class="form-field-input form-field-text">
-                    <option style="display:none"></option>
+                    <option class="register-hidden"></option>
                     <option>Yes</option>
                     <option>No</option>
                 </select>
@@ -376,7 +376,7 @@
             </div>
             <div class="form-field">
                 <select id="contact_export_taxable" name="contact[ExportProductsTaxable]" class="form-field-input form-field-text">
-                    <option style="display:none"></option>
+                    <option class="register-hidden"></option>
                     <option>Yes</option>
                     <option>No - If no please contact customer service to provide exemption certificate.</option>
                 </select>
@@ -422,7 +422,7 @@
                 <h3>Facility Address</h3>
                 <p>* indicates a required field</p>
             </div>
-            <div class="form-field" style="display: none;">
+            <div class="form-field register-hidden">
                 <input class="form-field-input form-field-text" id="facility_id" value="ERROR 999-999999" name="contact[ShopifyFacilityAddressNumber]" type="text">
             </div>
             <div class="form-field form-field--half">
@@ -452,7 +452,7 @@
                 </div>
                 <div class="form-field address-fields-state">
                     <select id="contact_facility_state" name="contact[FacilityAddressState]" class="form-field-input form-field-text">
-                        <option style="display:none"></option>
+                        <option class="register-hidden"></option>
                         <option value="AL">AL</option>
                         <option value="AK">AK</option>
                         <option value="AR">AR</option>
@@ -590,7 +590,7 @@
                 <h3>Shipping Address</h3>
                 <p>* indicates a required field</p>
             </div>
-            <div class="form-field" style="display: none;">
+            <div class="form-field register-hidden">
                 <input class="form-field-input form-field-text" id="shipping_id" value="ERROR 999-999999" name="contact[ShopifyShippingAddressNumber]" type="text">
             </div>
             <div class="form-field form-field--half">
@@ -620,7 +620,7 @@
                 </div>
                 <div class="form-field address-fields-state">
                     <select id="contact_shipping_state" name="contact[ShippingAddressState]" class="form-field-input form-field-text">
-                        <option style="display:none"></option>
+                        <option class="register-hidden"></option>
                         <option value="AL">AL</option>
                         <option value="AK">AK</option>
                         <option value="AR">AR</option>
@@ -721,13 +721,13 @@
             <div class="form-title-box">
                 <h3>Registration Acknowledgment</h3>
             </div>
-            <div class="form-field" style="padding: 10px 0px 25px 0px; line-height: 1.5;">
+            <div class="form-field terms-text">
                 <p>Products and services shall be provided to applicant subject to the terms of any contract between Spacelabs Healthcare and
                 Customer applicable to the products and services. If there is no such contract in place, the products and services shall be provided
-                to applicant subject to Spacelabs Healthcare’s standard Terms of Sale available upon request and on the <a href="https://www.spacelabshealthcare.com/about-us/terms-policies" style="color: #195280;">Terms &amp; Conditions</a>
+                to applicant subject to Spacelabs Healthcare’s standard Terms of Sale available upon request and on the <a href="https://www.spacelabshealthcare.com/about-us/terms-policies" class="terms-link">Terms &amp; Conditions</a>
                 page of our website. The Terms of Sale are incorporated herein by this reference.</p>
             </div>
-            <div class="form-field" style="margin-bottom: 50px;">
+            <div id="acknowledgment" class="form-field">
                 <input id="terms" name="contact[TermsAcknowledgment]" type="checkbox">
                 <span class="form-field-title--inline">
                     I acknowledged and agree to the above terms
@@ -750,8 +750,8 @@
         </fieldset>
     </div>
     {% endform %}
-    <div class="contact-page-content" style="border-top: 1px solid hsla(0,0%,50%,.3); font-size: 14px; padding-top: 10px; margin-top: 0px;">
-        <p>If you would like to complete the application process manually please send a completed <a href="https://cdn.shopify.com/s/files/1/2777/7236/files/Account_Request_Form.pdf?14751337191092706148" style="color: #003f72;" download>account request form</a> via fax 425-396-3301.</p>
+    <div class="contact-page-content register-contact-info">
+        <p>If you would like to complete the application process manually please send a completed <a href="https://cdn.shopify.com/s/files/1/2777/7236/files/Account_Request_Form.pdf?14751337191092706148" class="register-raw-form" download>account request form</a> via fax 425-396-3301.</p>
         <p>If you have any questions please contact our customer service at 425-396-3300 Monday - Friday 8am - 5pm PST.</p>
     </div>
 </article> 
