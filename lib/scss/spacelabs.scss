@@ -92,6 +92,9 @@ $bp-register-md: 600px;
 .static-site-nav:hover {
     color: #003f72;
 }
+.site-navigation .navmenu-depth-1>li>a {
+    opacity: 1;
+}
 .site-navigation .navmenu-depth-1>li>a:hover {
     opacity: 1;
     color: #003f72;
@@ -460,6 +463,9 @@ nav.productgrid--utils {
 #section4 {
     display:none;
 }
+#section5 {
+    display:none;
+}
 #form-tracker-box {
     display:flex; 
     justify-content: space-between; 
@@ -550,6 +556,9 @@ fieldset {
         width: calc(50%);
         float:left;
     }
+}
+.hospital-questions {
+    display: none;
 }
 // ================= COLLECTION LIST =================
 
@@ -1076,16 +1085,6 @@ table.product_table tr:nth-child(odd) {
 .address-change-message p {
     margin-top: 0px;
     font-size: 14px;
-}
-
-// ================= GENERIC PAGE =================
-
-.custom-page-box section img {
-    // @include media($max: $bp-large) {
-    //     min-height: 250px;
-    //     width: 100%;
-    //     overflow: hidden;
-    // }
 }
 
 // ================= REGISTRATION PAGE =================
