@@ -17,11 +17,7 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"NN1ST-M316-10 Documentation.pdf": "/path-name-here",
-            "NN2ST-M316-10 Documentation.pdf": "/path-name-here",
-            "NN3ST-M316-10 Documentation.pdf": "/path-name-here",
-            "NN4ST-M316-10 Documentation.pdf": "/path-name-here",
-            "NN5ST-M316-10 Documentation.pdf": "/path-name-here"
+			"Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0020-01_A_SoftCheck_IFU.pdf?7182394033425560905",
 		},
 		"variants": {
 			"10153058697259": {
@@ -30,7 +26,7 @@ var data = {
 				"GTIN": "30841522108086",
 				"NIBP Size": "Neonatal size 1",
 				"Limb Circumference": "3-6 cm",
-				"Unit of Measure": "EA",
+				"Unit of Measure": "BX",
 				"Quantity": "10"
 			},
 			"10153058730027": {
@@ -89,14 +85,7 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"ST0814HP-05 Documentation.pdf": "/path-name-here",
-            "ST1320HP-05 Documentation.pdf": "/path-name-here",
-            "ST1826HP-05 Documentation.pdf": "/path-name-here",
-            "ST2635HP-05 Documentation.pdf": "/path-name-here",
-            "ST2938HP-05 Documentation.pdf": "/path-name-here",
-            "ST3242HP-05 Documentation.pdf": "/path-name-here",
-            "ST3544HP-05 Documentation.pdf": "/path-name-here",
-            "ST4250HP-05 Documentation.pdf": "/path-name-here"
+			"Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0020-01_A_SoftCheck_IFU.pdf?7182394033425560905",
 		},
 		"variants": {
 			"10232430755883": {
@@ -137,7 +126,7 @@ var data = {
 			},
 			"10232430886955": {
 				"Product SKU": "ST2938HP-05",
-				"Description": "BP CUFF,SC FABRIC,1T,ADULT LONG,29-38CM,HP,5/BG",
+				"Description": "BP CUFF,SC FABRIC,1T,ADULT-LONG,29-38CM,HP,5/BG",
 				"GTIN": "30841522109342",
 				"NIBP Size": "Adult Long",
 				"Limb Circumference": "29-38 cm",
@@ -191,7 +180,7 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"714-0019-01 Documentation.pdf": "/path-name-here"
+			"No Product Documentation": "",
 		},
 		"variants": {
 			"10233012781099": {
@@ -222,7 +211,7 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"714-0018-00 Documentation.pdf": "/path-name-here"
+			"No Product Documentation": "",
 		},
 		"variants": {
 			"10233038077995": {
@@ -252,11 +241,7 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"VNN1ST-M316-10 Documentation.pdf": "/path-name-here",
-            "VNN2ST-M316-10 Documentation.pdf": "/path-name-here",
-            "VNN3ST-M316-10 Documentation.pdf": "/path-name-here",
-            "VNN4ST-M316-10 Documentation.pdf": "/path-name-here",
-            "VNN5ST-M316-10 Documentation.pdf": "/path-name-here"
+			"Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0020-01_A_SoftCheck_IFU.pdf?7182394033425560905",
 		},
 		"variants": {
 			"10232382881835": {
@@ -324,14 +309,7 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"US0814MHP-05 Documentation.pdf": "/path-name-here",
-            "US1320MHP-05 Documentation.pdf": "/path-name-here",
-            "US1826MHP-05 Documentation.pdf": "/path-name-here",
-            "US2635MHP-05 Documentation.pdf": "/path-name-here",
-            "US2938MHP-05 Documentation.pdf": "/path-name-here",
-            "US3242MHP-05 Documentation.pdf": "/path-name-here",
-            "US3544MHP-05 Documentation.pdf": "/path-name-here",
-            "US4250MHP-05 Documentation.pdf": "/path-name-here"
+			"Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0021-01_A_UltraCheck_IFU.pdf?7182394033425560905",
 		},
 		"variants": {
 			"10232765841451": {
@@ -426,14 +404,7 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"US0814HP-05 Documentation.pdf": "/path-name-here",
-            "US1320HP-05 Documentation.pdf": "/path-name-here",
-            "US1826HP-05 Documentation.pdf": "/path-name-here",
-            "US2635HP-05 Documentation.pdf": "/path-name-here",
-            "US2938HP-05 Documentation.pdf": "/path-name-here",
-            "US3242HP-05 Documentation.pdf": "/path-name-here",
-            "US3544HP-05 Documentation.pdf": "/path-name-here",
-            "US4250HP-05 Documentation.pdf": "/path-name-here"
+			"Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0021-01_A_UltraCheck_IFU.pdf?7182394033425560905",
 		},
 		"variants": {
 			"10232695521323": {
@@ -456,7 +427,7 @@ var data = {
 			},
 			"10232695619627": {
 				"Product SKU": "US1826HP-05",
-				"Description": "BP CUFF,UC NYLON,1T,SM.ADULT,18-26CM,HP,5/BG",
+				"Description": "BP CUFF,UC NYLON,1T,SMALL ADULT,18-26CM,HP,5/BG",
 				"GTIN": "30841522110447",
 				"NIBP Size": "Small Adult",
 				"Limb Circumference": "18-26 cm",
@@ -483,7 +454,7 @@ var data = {
 			},
 			"10325224292395": {
 				"Product SKU": "US3242HP-05",
-				"Description": "BP CUFF,UC NYLON,1T,LG.ADLT,32-42CM,HP,5/BG",
+				"Description": "BP CUFF,UC NYLON,1T,LARGE ADLT,32-42CM,HP,5/BG",
 				"GTIN": "30841522110768",
 				"NIBP Size": "Large Adult",
 				"Limb Circumference": "32-42 cm",
@@ -492,7 +463,7 @@ var data = {
 			},
 			"10325216100395": {
 				"Product SKU": "US3544HP-05",
-				"Description": "BP CUFF,UC NYLON,1T,LG.ADULT-L,35-44CM,HP,5/BG",
+				"Description": "BP CUFF,UC NYLON,1T,LG.ADULT-LNG,35-44CM,HP,5/BG",
 				"GTIN": "30841522110829",
 				"NIBP Size": "Large Adult Long",
 				"Limb Circumference": "35-44 cm",
@@ -528,14 +499,7 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"VST0814HP-05 Documentation.pdf": "/path-name-here",
-            "VST1320HP-05 Documentation.pdf": "/path-name-here",
-            "VST1826HP-05 Documentation.pdf": "/path-name-here",
-            "VST2635HP-05 Documentation.pdf": "/path-name-here",
-            "VST2938HP-05 Documentation.pdf": "/path-name-here",
-            "VST3242HP-05 Documentation.pdf": "/path-name-here",
-            "VST3544HP-05 Documentation.pdf": "/path-name-here",
-            "VST4250HP-05 Documentation.pdf": "/path-name-here"
+			"Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0020-01_A_SoftCheck_IFU.pdf?7182394033425560905",
 		},
 		"variants": {
 			"10232817221675": {
@@ -585,7 +549,7 @@ var data = {
 			},
 			"10324494680107": {
 				"Product SKU": "VST3242HP-05",
-				"Description": "BP CUFF,SC VINYL,1T,LG.ADLT,32-42CM,HP,5/BG",
+				"Description": "BP CUFF,SC VINYL,1T,LG.ADULT,32-42CM,HP,5/BG",
 				"GTIN": "30841522112076",
 				"NIBP Size": "Large Adult",
 				"Limb Circumference": "32-42 cm",

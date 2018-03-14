@@ -42,7 +42,7 @@
     {% if page_description != blank %}
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
-
+   
     {% include 'favicon' %}
 
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -90,8 +90,7 @@
     {% include 'modal' %}
     {% include 'modal-login' %}
     {% include 'modal-error' %}
-    {% include 'modal-success' %}  
-   
+    {% include 'modal-success' %}   
 
 
     {%- if template contains 'customer' -%}
@@ -111,8 +110,8 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script src="{{ 'spacelabs.min.js' | asset_url }}"></script>
     <script src="{{ 'jquery-mask.js' | asset_url }}"></script> 
+    <script src="{{ 'spacelabs.min.js' | asset_url }}"></script>
     {% if customer %}
       <script>
         var logged_in = true;

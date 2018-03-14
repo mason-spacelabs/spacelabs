@@ -1,17 +1,12 @@
 <article class="site-page" data-template-page data-template-contact>
     <header class="page-masthead ">
         <div class="page-content">
-            <h1 class="page-title text-left" style="font-size: 1.5rem; font-weight: 400;">
-        {{ page.title }}
+            <h1 class="page-title text-left register-title">
+            {{ page.title }}
             </h1>
         </div>
     </header>
-    {% form 'contact' %} {% if page.content != blank %}
-    {% comment %} <div class="page-content rte">
-        {{ page.content }}
-    </div> {% endcomment %}
-    {% endif %}
-
+    {% form 'contact' %}
     <div class="contact-page-content">
         {% assign has_message = false %} {% if form.errors != blank %} {% assign has_message = true %} {% assign message_type = 'error' %} {% endif %} {% if form.posted_successfully? %} {% assign has_message = true %} {% assign message_type = 'success' %} {% endif %} {% if has_message %}
         <div class="contact-message message--{{ message_type }}">
@@ -66,6 +61,9 @@
                 <h3>General Information</h3>
                 <p>* indicates a required field</p>
             </div>
+            <div class="form-field register-hidden">
+                <input class="form-field-input form-field-text" id="customer_id" value="ERROR 999-999999" name="contact[ShopifyCustomerNumber]" type="text">
+            </div>
             <div class="form-fields-columns">
                 <div class="form-field form-field--half">
                     <input class="form-field-input form-field-text" id="contact_name" name="contact[Firstname]" type="text">
@@ -94,7 +92,7 @@
             </div>
             <div class="form-field">
                 <select id="registerOccupation" name="contact[Occupation]" class="form-field-input form-field-text">
-                    <option style="display:none"></option>
+                    <option class="register-hidden"></option>
                     <option>Administrator</option>
                     <option>Administrator, Assistant</option>
                     <option>Buyer / Purchaser</option>
@@ -133,7 +131,7 @@
             </div>
             <div class="form-field">
                 <select id="registerBusiness" name="contact[BusinessType]" class="form-field-input form-field-text" required>
-                    <option style="display:none"></option>
+                    <option class="register-hidden"></option>
                     <option>Animal Health</option>
                     <option>Assisted Living</option>
                     <option>DME/HME Dealer</option>
@@ -176,6 +174,9 @@
                 <h3>Billing Information</h3>
                 <p>* indicates a required field</p>
             </div>
+            <div class="form-field register-hidden">
+                <input class="form-field-input form-field-text" id="billing_id" value="ERROR 999-999999" name="contact[ShopifyBillingAddressNumber]" type="text">
+            </div>
             <div class="form-field">
                 <input class="form-field-input form-field-text" id="contact_billing_name" name="contact[BillingName]" type="text">
                 <label class="form-field-title" for="contact_billing_name">
@@ -197,7 +198,7 @@
                 </div>
                 <div class="form-field address-fields-state">
                     <select id="contact_billing_state" name="contact[BillingAddressState]" class="form-field-input form-field-text">
-                        <option style="display:none"></option>
+                        <option class="register-hidden"></option>
                         <option value="AL">AL</option>
                         <option value="AK">AK</option>
                         <option value="AR">AR</option>
@@ -261,16 +262,40 @@
                     </label>
                 </div>
             </div>
+            <div class="form-fields-columns">
+                <div class="form-field form-field--half">
+                    <select id="contact_billing_entity" name="contact[BillingEntity]" class="form-field-input form-field-text">
+                        <option class="register-hidden"></option>
+                        <option>Corporation</option>
+                        <option>Partnership</option>
+                        <option>Sole Proprietor</option>
+                    </select>
+                    <label class="form-field-title" for="contact_billing_entity">
+                        Business Entity *
+                    </label>
+                </div>
+                <div class="form-field form-field--half">
+                    <input class="form-field-input form-field-text" id="contact_billing_year" name="contact[YearBusinessStarted]" type="text">
+                    <label class="form-field-title" for="contact_billing_year">
+                        Year Business Started *
+                    </label>
+                </div>
+            </div>
             <div class="form-field">
-                <select id="contact_billing_entity" name="contact[BillingEntity]" class="form-field-input form-field-text">
-                    <option style="display:none"></option>
-                    <option>Corporation</option>
-                    <option>Partnership</option>
-                    <option>Sole Proprietor</option>
-                </select>
-                <label class="form-field-title" for="contact_billing_entity">
-                    Business Entity *
-                </label>
+                <div class="form-field">
+                     <input class="form-field-input form-field-text" id="contact_employee_count" name="contact[EmployeeNumber]" type="text">
+                    <label class="form-field-title" for="contact_employee_count">
+                        Number of Employees *
+                    </label>
+                </div>
+            </div>
+            <div class="form-field"> 
+                <div class="form-field">
+                    <input class="form-field-input form-field-text" id="contact_dun_number" name="contact[DunBradstreetNumber]" type="text">
+                    <label class="form-field-title" for="contact_dun_number">
+                        DUNS Number *
+                    </label>
+                </div>
             </div>
             <div class="form-fields-columns">
                 <div class="form-field form-field--half">
@@ -280,8 +305,8 @@
                     </label>
                 </div>
                 <div class="form-field form-field--half">
-                    <select id="contact_billing_state" name="contact[StateOfIncorporation]" class="form-field-input form-field-text">
-                        <option style="display:none"></option>
+                    <select id="state_incorporation" name="contact[StateOfIncorporation]" class="form-field-input form-field-text">
+                        <option class="register-hidden"></option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AZ">Arizona</option>
@@ -334,10 +359,30 @@
                         <option value="WI">Wisconsin</option>
                         <option value="WY">Wyoming</option>
                     </select>
-                    <label class="form-field-title" for="ontact_billing_fed_state">
+                    <label class="form-field-title" for="state_incorporation">
                         State of Incorporation *
                     </label>
                 </div>
+            </div>
+            <div class="form-field">
+                <select id="contact_export_products" name="contact[ExportSpacelabsProducts]" class="form-field-input form-field-text">
+                    <option class="register-hidden"></option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+                <label class="form-field-title" for="contact_export_products">
+                   Do you export Spacelabs product outside of US? *
+                </label>
+            </div>
+            <div class="form-field">
+                <select id="contact_export_taxable" name="contact[ExportProductsTaxable]" class="form-field-input form-field-text">
+                    <option class="register-hidden"></option>
+                    <option>Yes</option>
+                    <option>No - If no please contact customer service to provide exemption certificate.</option>
+                </select>
+                <label class="form-field-title" for="contact_export_taxable">
+                   Are these products taxable? *
+                </label>
             </div>
             <div class="form-field">
                 <input class="form-field-input form-field-text" id="contact_billing_fullname" name="contact[BillingContactName]" type="text">
@@ -346,7 +391,7 @@
                 </label>
             </div>
             <div class="form-field">
-                <input class="form-field-input form-field-text" id="contact_billing_number" name="contact[BillingContactNumber]" type="text">
+                <input class="form-field-input form-field-text" id="contact_billing_number" name="contact[BillingContactNumber]" type="tel">
                 <label class="form-field-title" for="contact_billing_number">
                     Billing Contact Phone Number *
                 </label>
@@ -377,6 +422,9 @@
                 <h3>Facility Address</h3>
                 <p>* indicates a required field</p>
             </div>
+            <div class="form-field register-hidden">
+                <input class="form-field-input form-field-text" id="facility_id" value="ERROR 999-999999" name="contact[ShopifyFacilityAddressNumber]" type="text">
+            </div>
             <div class="form-field form-field--half">
                 <input id="facility_same_as_billing" name="contact[FacilitySameAsBilling]" type="checkbox">
                 <span class="form-field-title--inline">
@@ -404,7 +452,7 @@
                 </div>
                 <div class="form-field address-fields-state">
                     <select id="contact_facility_state" name="contact[FacilityAddressState]" class="form-field-input form-field-text">
-                        <option style="display:none"></option>
+                        <option class="register-hidden"></option>
                         <option value="AL">AL</option>
                         <option value="AK">AK</option>
                         <option value="AR">AR</option>
@@ -469,13 +517,49 @@
                 </div>
             </div>
             <div class="form-field">
+                <select id="contact_facility_hospital" onchange="hospitalTrigger(this.value)" name="contact[FacilityHospital]" class="form-field-input form-field-text">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+                <label class="form-field-title" for="contact_facility_hospital">
+                    Is your facility a Hospital?
+                </label>
+            </div>
+            <div class="form-field hospital-questions">
+                <input class="form-field-input form-field-text" id="contact_facility_HIN" name="contact[HealthIndustryNumber]" type="text" value=" ">
+                <label class="form-field-title" for="contact_facility_HIN">
+                    Hospital Health Industry Number
+                </label>
+            </div>
+            <div class="form-field hospital-questions">
+                <input class="form-field-input form-field-text" id="contact_facility_GLN" name="contact[GlobalLocationNumber]" type="text" value=" ">
+                <label class="form-field-title" for="contact_facility_GLN">
+                    Hospital Global Location Number
+                </label>
+            </div>
+            <div class="form-field hospital-questions">
+                <select id="contact_facility_anesthesia" name="contact[FacilityAnesthesia]" class="form-field-input form-field-text">
+                    <option>No</option>
+                    <option>Yes</option>
+                </select>
+                <label class="form-field-title" for="contact_facility_anesthesia">
+                    Does your facility use inhaled anesthesia?
+                </label>
+            </div>
+            <div class="form-field hospital-questions">
+                <input class="form-field-input form-field-text" id="contact_facility_beds" name="contact[FacilityHospitalBeds]" type="text" value=" ">
+                <label class="form-field-title" for="contact_facility_beds">
+                    Number of Hospital Beds
+                </label>
+            </div>
+            <div class="form-field">
                 <input class="form-field-input form-field-text" id="contact_facility_fullname" name="contact[FacilityContactFullName]" type="text" value=" ">
                 <label class="form-field-title" for="contact_facility_fullname">
                     Facility Contact Name *
                 </label>
             </div>
             <div class="form-field">
-                <input class="form-field-input form-field-text" id="contact_facility_number" name="contact[FacilityContactNumber]" type="text" value=" ">
+                <input class="form-field-input form-field-text" id="contact_facility_number" name="contact[FacilityContactNumber]" type="tel" value=" ">
                 <label class="form-field-title" for="contact_facility_number">
                     Facility Contact Phone Number *
                 </label>
@@ -506,6 +590,9 @@
                 <h3>Shipping Address</h3>
                 <p>* indicates a required field</p>
             </div>
+            <div class="form-field register-hidden">
+                <input class="form-field-input form-field-text" id="shipping_id" value="ERROR 999-999999" name="contact[ShopifyShippingAddressNumber]" type="text">
+            </div>
             <div class="form-field form-field--half">
                 <input id="shipping_same_as_billing" name="contact[ShippingSameAsBilling]" type="checkbox">
                 <span class="form-field-title--inline">
@@ -515,13 +602,13 @@
             <div class="form-field">
                 <input class="form-field-input form-field-text" id="contact_shipping_name" name="contact[ShippingName]" type="text" value=" ">
                 <label class="form-field-title" for="contact_shipping_name">
-                    Facility Name *
+                    Shipping Name *
                 </label>
             </div>
             <div class="form-field">
                 <input class="form-field-input form-field-text" id="contact_shipping_address" name="contact[ShippingAddress]" type="text" value=" ">
                 <label class="form-field-title" for="contact_shipping_address">
-                    Facility Address *
+                    Shipping Address *
                 </label>
             </div>
             <div class="form-fields-columns address-fields-box">
@@ -533,7 +620,7 @@
                 </div>
                 <div class="form-field address-fields-state">
                     <select id="contact_shipping_state" name="contact[ShippingAddressState]" class="form-field-input form-field-text">
-                        <option style="display:none"></option>
+                        <option class="register-hidden"></option>
                         <option value="AL">AL</option>
                         <option value="AK">AK</option>
                         <option value="AR">AR</option>
@@ -600,20 +687,51 @@
             <div class="form-field">
                 <input class="form-field-input form-field-text" id="contact_shipping_fullname" name="contact[ShippingContactFullName]" type="text" value=" ">
                 <label class="form-field-title" for="contact_shipping_fullname">
-                    Facility Contact Name *
+                    Shipping Contact Name *
                 </label>
             </div>
             <div class="form-field">
-                <input class="form-field-input form-field-text" id="contact_shipping_number" name="contact[ShippingContactNumber]" type="text" value=" ">
+                <input class="form-field-input form-field-text" id="contact_shipping_number" name="contact[ShippingContactNumber]" type="tel" value=" ">
                 <label class="form-field-title" for="contact_shipping_number">
-                    Facility Contact Phone Number *
+                    Shipping Contact Phone Number *
                 </label>
             </div>
             <div class="form-field">
                 <input class="form-field-input form-field-text" id="contact_shipping_email" name="contact[ShippingContactEmail]" type="text" value=" ">
                 <label class="form-field-title" for="contact_shipping_email">
-                    Facility Contact Email Address *
+                    Shipping Contact Email Address *
                 </label>
+            </div>
+            <div class="form-action-row">
+                <div class="form-fields-columns">
+                    <div class="form-field form-field--half-fixed">
+                        <button class="button-primary contact-form-button" type="button" onclick="registerFormPrevious();">
+                            Back
+                        </button>
+                    </div>
+                    <div class="form-field form-field--half-fixed text-right">
+                        <button class="button-primary contact-form-button next" type="button">
+                            Next
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset id="section5">
+            <div class="form-title-box">
+                <h3>Registration Acknowledgment</h3>
+            </div>
+            <div class="form-field terms-text">
+                <p>Products and services shall be provided to applicant subject to the terms of any contract between Spacelabs Healthcare and
+                Customer applicable to the products and services. If there is no such contract in place, the products and services shall be provided
+                to applicant subject to Spacelabs Healthcare’s standard Terms of Sale available upon request and on the <a href="https://www.spacelabshealthcare.com/about-us/terms-policies" class="terms-link">Terms &amp; Conditions</a>
+                page of our website. The Terms of Sale are incorporated herein by this reference.</p>
+            </div>
+            <div id="acknowledgment" class="form-field">
+                <input id="terms" name="contact[TermsAcknowledgment]" type="checkbox">
+                <span class="form-field-title--inline">
+                    I acknowledged and agree to the above terms
+                </span>
             </div>
             <div class="form-action-row">
                 <div class="form-fields-columns">
@@ -632,10 +750,9 @@
         </fieldset>
     </div>
     {% endform %}
-    <div class="contact-page-content" style="border-top: 1px solid hsla(0,0%,50%,.3); font-size: 14px; padding-top: 10px;">
-        <p>If you would like to complete the application process manually please send a completed <a href="" style="color: #003f72;">account request form</a> via fax (888)344-3444.</p>
-        <p>If you have any questions please contact our customer service at 1-800-893-0094 Monday - Friday 8am - 5pm PST.</p>
+    <div class="contact-page-content register-contact-info">
+        <p>If you would like to complete the application process manually please send a completed <a href="https://cdn.shopify.com/s/files/1/2777/7236/files/Account_Request_Form.pdf?14751337191092706148" class="register-raw-form" download>account request form</a> via fax 425-396-3301.</p>
+        <p>If you have any questions please contact our customer service at 425-396-3300 Monday - Friday 8am - 5pm PST.</p>
     </div>
-</article>
-{% include 'modal-error' %}
-{% include 'modal-success' %}
+</article> 
+

@@ -1,96 +1,175 @@
 {
   "current": {
     "color_background": "#ffffff",
-    "color_headings": "#222222",
-    "color_text": "#4d4d4d",
-    "color_links": "#29927d",
-    "color_button_background": "#ffab41",
-    "color_button_text": "#1a390c",
+    "color_headings": "#666666",
+    "color_text": "#666666",
+    "color_links": "#195280",
+    "color_button_background": "#003f72",
+    "color_button_text": "#ffffff",
     "color_header_background": "#ffffff",
-    "color_header_text": "#222222",
+    "color_header_text": "#666666",
     "color_footer_background": "#f8f8f8",
     "color_footer_text": "#5c5c5c",
-    "font_body": "Google_Lato_400,400i,700,700i",
-    "font_heading": "Google_Open+Sans_400,400i,700,700i",
+    "font_body": "Google_Open+Sans_400,400i,700,700i",
+    "font_heading": "Google_Lato_400,400i,700,700i",
+    "product_show_vendor": false,
+    "product_enable_recently_viewed_products": true,
+    "product_sales_badge": true,
+    "product_sales_badge_style": "percentile",
+    "product_ratings_reviews": false,
+    "product_social_sharing": false,
+    "product_cart_redirect": false,
+    "product_slideshow_style": "natural",
+    "product_grid_emphasize_price": true,
+    "product_grid_image_style": "natural",
+    "product_grid_quick_look": false,
+    "product_grid_quick_buy": false,
+    "social_facebook": "https:\/\/www.facebook.com\/spacelabshealthcare",
+    "social_twitter": "https:\/\/twitter.com\/spacelabs",
+    "social_google": "",
+    "social_linkedin": "http:\/\/www.linkedin.com\/company\/166075",
+    "social_pinterest": "",
+    "social_instagram": "",
+    "social_tumblr": "",
+    "social_vimeo": "",
+    "social_youtube": "https:\/\/www.youtube.com\/user\/SpacelabsHealthcare",
+    "social_email": "",
+    "favicon": "",
+    "enable_currency_converter": false,
+    "currency_display_format": "money_with_currency_format",
+    "currency_converter_currencies": "INR GBP CAD USD AUD EUR JPY",
+    "currency_converter_default": "USD",
     "continue_shopping_url": "shopify:\/\/collections\/all",
+    "continue_url_cart": true,
+    "continue_url_404": true,
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
     "sections": {
-      "home-promo-mosaic": {
-        "type": "dynamic-promo-mosaic",
-        "blocks": {
-          "promo-mosaic-block-1": {
-            "type": "promotion",
-            "settings": {}
-          },
-          "promo-mosaic-block-2": {
-            "type": "promotion",
-            "settings": {}
-          },
-          "promo-mosaic-block-3": {
-            "type": "promotion",
-            "settings": {}
-          }
-        },
-        "block_order": [
-          "promo-mosaic-block-1",
-          "promo-mosaic-block-2",
-          "promo-mosaic-block-3"
-        ],
-        "settings": {}
-      },
-      "home-blog-posts": {
-        "type": "dynamic-blog-posts",
-        "settings": {}
-      },
-      "home-twitter-feed": {
-        "type": "dynamic-twitter-feed",
-        "settings": {}
-      },
-      "home-featured-collection-1": {
-        "type": "dynamic-featured-collection",
-        "settings": {}
-      },
-      "home-promo-grid": {
-        "type": "dynamic-promo-grid",
-        "blocks": {
-          "promo-grid-block-1": {
-            "type": "promotion",
-            "settings": {}
-          },
-          "promo-grid-block-2": {
-            "type": "promotion",
-            "settings": {}
-          },
-          "promo-grid-block-3": {
-            "type": "promotion",
-            "settings": {}
-          },
-          "promo-grid-block-4": {
-            "type": "promotion",
-            "settings": {}
-          }
-        },
-        "block_order": [
-          "promo-grid-block-1",
-          "promo-grid-block-2",
-          "promo-grid-block-3",
-          "promo-grid-block-4"
-        ],
-        "settings": {}
-      },
       "home-featured-collection-2": {
         "type": "dynamic-featured-collection",
         "settings": {
-          "title": ""
+          "title": "Featured Product",
+          "collection": "blood-pressure-cuff",
+          "banner_color": "#ffffff",
+          "banner_image": ""
+        }
+      },
+      "static-header": {
+        "type": "static-header",
+        "settings": {
+          "sticky_header": true,
+          "logo": "shopify:\/\/shop_images\/sp-logo.png",
+          "logo_height": 100,
+          "logo_width": 200,
+          "enable_live_search": true,
+          "enable_live_search_images": true,
+          "enable_live_search_articles_pages": true,
+          "quick_links": "categories",
+          "quick_links_secondary": "footer",
+          "menu": "main-menu"
+        }
+      },
+      "static-footer": {
+        "type": "static-footer",
+        "blocks": {
+          "static-footer-0": {
+            "type": "menu",
+            "settings": {
+              "menu": "footer"
+            }
+          },
+          "1520556836362": {
+            "type": "menu",
+            "settings": {
+              "menu": "healthcare-policies"
+            }
+          },
+          "1520557144600": {
+            "type": "social_accounts",
+            "settings": {
+            }
+          }
+        },
+        "block_order": [
+          "static-footer-0",
+          "1520556836362",
+          "1520557144600"
+        ],
+        "settings": {
+          "payment_icons": true,
+          "additional_menu": "footer"
+        }
+      },
+      "1520556179754": {
+        "type": "dynamic-promo-mosaic",
+        "blocks": {
+          "1520556179754-0": {
+            "type": "promotion",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/PRN-Nursing-Position.jpg",
+              "title": "Blood Pressure Cuffs",
+              "text": "Now featuring Neonatal and Adult Blood Pressure Cuffs for online purchasing.",
+              "color": "#4d4d4d",
+              "block_link": "shopify:\/\/collections\/blood-pressure-cuff",
+              "button_text": "View Products",
+              "button_style": "primary"
+            }
+          }
+        },
+        "block_order": [
+          "1520556179754-0"
+        ],
+        "settings": {
+          "title": "",
+          "section_height": "large"
+        }
+      },
+      "static-collection": {
+        "type": "static-collection",
+        "settings": {
+          "show_collection_image": false,
+          "products_per_page_range": 24,
+          "sort_by": true,
+          "show_by": true,
+          "show_sidebar": true,
+          "filter_style": "groups",
+          "filter_limit": "999",
+          "filter_position": "above_menus",
+          "menu_depth_range": 1
+        }
+      },
+      "static-product": {
+        "type": "static-product",
+        "settings": {
+          "layout": "layout--two-col",
+          "enable_related_products": true,
+          "enable_video_autoplay": false
+        }
+      },
+      "1520615015554": {
+        "type": "static-tagline",
+        "settings": {
+          "title": "Spacelabs Healthcare, Because Lives Depend on You",
+          "description": "Since 1958, Spacelabs has continually redefined the boundaries of what’s possible in healthcare technology. We are committed to leading innovation in healthcare technology, and working as a dedicated partner with our customers."
         }
       }
     },
     "content_for_index": [
-      "home-promo-mosaic",
-      "home-promo-grid",
-      "home-featured-collection-1",
-      "home-featured-collection-2",
-      "home-blog-posts",
-      "home-twitter-feed"
+      "1520556179754",
+      "1520615015554",
+      "home-featured-collection-2"
     ]
   },
   "presets": {
@@ -114,15 +193,18 @@
           "blocks": {
             "promo-mosaic-block-1": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             },
             "promo-mosaic-block-2": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             },
             "promo-mosaic-block-3": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -130,38 +212,46 @@
             "promo-mosaic-block-2",
             "promo-mosaic-block-3"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "home-blog-posts": {
           "type": "dynamic-blog-posts",
-          "settings": {}
+          "settings": {
+          }
         },
         "home-twitter-feed": {
           "type": "dynamic-twitter-feed",
-          "settings": {}
+          "settings": {
+          }
         },
         "home-featured-collection-1": {
           "type": "dynamic-featured-collection",
-          "settings": {}
+          "settings": {
+          }
         },
         "home-promo-grid": {
           "type": "dynamic-promo-grid",
           "blocks": {
             "promo-grid-block-1": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             },
             "promo-grid-block-2": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             },
             "promo-grid-block-3": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             },
             "promo-grid-block-4": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -170,7 +260,8 @@
             "promo-grid-block-3",
             "promo-grid-block-4"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "home-featured-collection-2": {
           "type": "dynamic-featured-collection",
@@ -215,19 +306,23 @@
           "blocks": {
             "home-promo-mosaic-1": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             },
             "home-promo-mosaic-2": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             },
             "home-promo-mosaic-3": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             },
             "home-promo-mosaic-4": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -236,7 +331,8 @@
             "home-promo-mosaic-3",
             "home-promo-mosaic-4"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "home-promo-grid": {
           "type": "dynamic-promo-grid",
@@ -249,11 +345,13 @@
             },
             "home-promo-grid-2": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             },
             "home-promo-grid-3": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -261,26 +359,31 @@
             "home-promo-grid-2",
             "home-promo-grid-3"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "home-featured-collection-1": {
           "type": "dynamic-featured-collection",
-          "settings": {}
+          "settings": {
+          }
         },
         "home-menu-list": {
           "type": "dynamic-menu-list",
           "blocks": {
             "home-menu-list-1": {
               "type": "menu",
-              "settings": {}
+              "settings": {
+              }
             },
             "home-menu-list-2": {
               "type": "menu",
-              "settings": {}
+              "settings": {
+              }
             },
             "home-menu-list-3": {
               "type": "menu",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -294,15 +397,18 @@
         },
         "home-blog-posts": {
           "type": "dynamic-blog-posts",
-          "settings": {}
+          "settings": {
+          }
         },
         "home-twitter-feed": {
           "type": "dynamic-twitter-feed",
-          "settings": {}
+          "settings": {
+          }
         },
         "home-instagram-feed": {
           "type": "dynamic-instagram-feed",
-          "settings": {}
+          "settings": {
+          }
         }
       },
       "content_for_index": [
@@ -332,7 +438,8 @@
       "sections": {
         "static-header": {
           "type": "static-header",
-          "settings": {}
+          "settings": {
+          }
         },
         "static-footer": {
           "type": "static-footer",
@@ -345,7 +452,8 @@
             },
             "static-footer-3": {
               "type": "newsletter",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -385,23 +493,28 @@
           "blocks": {
             "home-promo-mosaic-1": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             },
             "home-promo-mosaic-2": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             },
             "home-promo-mosaic-3": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             },
             "home-promo-mosaic-4": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             },
             "home-promo-mosaic-5": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -417,48 +530,57 @@
         },
         "home-featured-collection": {
           "type": "dynamic-featured-collection",
-          "settings": {}
+          "settings": {
+          }
         },
         "home-promo-grid": {
           "type": "dynamic-promo-grid",
           "blocks": {
             "home-promo-grid-1": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             },
             "home-promo-grid-2": {
               "type": "promotion",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
             "home-promo-grid-1",
             "home-promo-grid-2"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "home-blog-posts": {
           "type": "dynamic-blog-posts",
-          "settings": {}
+          "settings": {
+          }
         },
         "home-collection-list": {
           "type": "dynamic-collection-list",
           "blocks": {
             "home-collection-list-1": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "home-collection-list-2": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "home-collection-list-3": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "home-collection-list-4": {
               "type": "collection",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -467,7 +589,8 @@
             "home-collection-list-3",
             "home-collection-list-4"
           ],
-          "settings": {}
+          "settings": {
+          }
         }
       },
       "content_for_index": [

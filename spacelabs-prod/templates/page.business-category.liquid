@@ -10,9 +10,11 @@
 
 {% paginate collections by pagination %}
 <div class="listcollections--container collection-list-container">
-    <div class="listcollections--inner collection-list-categories">
-        <h3>Categories</h3>  
+    <div class="listcollections--inner collection-list-categories"> 
         <ul id="category-list">
+        <li>
+            <a href="/collections/all">All Categories</a>
+        </li>
         {% for collection in collections %}
         {% assign collection_vendors_list = collection.all_vendors %}
         {% if collection_vendors_list contains page.title %}
