@@ -449,10 +449,14 @@ nav.productgrid--utils {
         font-size: 0.9375rem;
     }
 }
+
 // ================= REGISTRATION FORM =================
 
-#contact_form .form-field-input {
+#contact_register .form-field-input {
     height: 54px; 
+}
+#contact_form .form-field-input.message-box {
+    min-height: 150px; 
 }
 #section2 {
     display:none;
@@ -559,6 +563,66 @@ fieldset {
 }
 .hospital-questions {
     display: none;
+}
+
+// ================= CONTACT FORM =================
+
+.contact-page {
+    max-width: 850px;
+}
+.contact-page-flex {
+    display: flex; 
+    max-width: 850px;
+    @include media($max: $bp-smaller) {
+        flex-direction: column;
+    }
+}
+.contact-information {
+    min-width: 240px; 
+    max-width: 300px; 
+    order: 2;
+
+    @include media($max: $bp-smaller) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.contact-form-box {
+    width: 100%; 
+    order: 1; 
+    padding-right: 40px; 
+
+    @include media($max: $bp-smaller) {
+        padding-right: 0px;
+    }
+}
+.contact-info-box {
+    position: relative; 
+    padding-left: 40px;
+
+}
+.contact-info-text:first-child {
+    margin-top: 0px;
+    @include media($max: $bp-smaller) {
+        margin-top: 50px;
+    }
+}
+.contact-info-text {
+    border-bottom: 1px solid hsla(0,0%,50%,.3); 
+    padding-bottom: 15px; 
+    margin-top: 15px;
+
+    @include media($max: $bp-smaller) {
+        border: none;
+    }
+}
+.contact-icon:first-child {
+    position:absolute; 
+    top: 0px; 
+    left: 13px;
+}
+.contact-icon {
+    left: 10px;
 }
 // ================= COLLECTION LIST =================
 
