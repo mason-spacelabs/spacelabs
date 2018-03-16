@@ -56,7 +56,7 @@
   }
 </script>
 
-<form action="/cart" method="post">
+<form id="checkout" action="/cart" method="post">
   <header class="cart-title">
     <div class="cart-title-left">
       <h1>{{ 'cart.general.your_cart' | t }}</h1>
@@ -158,7 +158,30 @@
               {{ continue_link_html }}
             {% endif %}
           </div>
-        </div>
+          {% comment %} <div class="cart-checkout">
+            <button
+              class="button-primary"
+              type="button"
+              name="checkout"
+              aria-label="{{ 'cart.general.checkout' | t }}"
+              onclick="collectData(customer);"
+            >
+              {% include 'icon-cart' %}
+              {{ 'cart.general.checkout' | t }}
+            </button>
+
+            {% if additional_checkout_buttons %}
+              <div class="cart-checkout-additional">
+                {{ content_for_additional_checkout_buttons }}
+              </div>
+            {% endif %}
+
+            {% if show_continue_link %}
+              {{ continue_link_html }}
+            {% endif %}
+          </div>
+        </div> {% endcomment %}
+
       {% else %}
         <div class="cartitems-empty">
           <div class="cartitems-empty--inner">
@@ -284,3 +307,6 @@
 }
 
 {% endschema %}
+<script>
+var customer = {{ customer.id }}
+</script>

@@ -60,7 +60,7 @@
       "home-featured-collection-2": {
         "type": "dynamic-featured-collection",
         "settings": {
-          "title": "Featured Products", 
+          "title": "Featured Products",
           "collection": "blood-pressure-cuff",
           "banner_color": "#ffffff",
           "banner_image": ""

@@ -199,7 +199,7 @@
                     </label>
                 </div>
                 <div class="form-field address-fields-state">
-                    <select id="contact_billing_state" name="contact[BillingAddressState]" class="form-field-input form-field-text">
+                    <select id="contact_billing_state" name="contact[BillingAddressState]" class="form-field-input form-field-text" style="min-width: 100px;" value=" ">
                         <option class="register-hidden"></option>
                         <option value="AL">AL</option>
                         <option value="AK">AK</option>
@@ -453,8 +453,8 @@
                     </label>
                 </div>
                 <div class="form-field address-fields-state">
-                    <select id="contact_facility_state" name="contact[FacilityAddressState]" class="form-field-input form-field-text">
-                        <option class="register-hidden"></option>
+                    <select id="contact_facility_state" name="contact[FacilityAddressState]" style="min-width: 100px;" class="form-field-input form-field-text">
+                        <option class="register-hidden" value=" "></option>
                         <option value="AL">AL</option>
                         <option value="AK">AK</option>
                         <option value="AR">AR</option>
@@ -568,7 +568,7 @@
                 </label>
             </div>
             <div class="form-field">
-                <input class="form-field-input form-field-text" id="contact_facility_email" name="contact[FacilityContactEmail]" type="text" value=" ">
+                <input class="form-field-input form-field-text" id="contact_facility_email" name="contact[FacilityContactEmail]" type="text" onfocus="if(this.value == ' ') { this.value = ''; }" value=" ">
                 <label class="form-field-title" for="contact_facility_email">
                     Facility Contact Email Address *
                 </label>
@@ -622,8 +622,8 @@
                     </label>
                 </div>
                 <div class="form-field address-fields-state">
-                    <select id="contact_shipping_state" name="contact[ShippingAddressState]" class="form-field-input form-field-text">
-                        <option class="register-hidden"></option>
+                    <select id="contact_shipping_state" name="contact[ShippingAddressState]" style="min-width: 100px;" class="form-field-input form-field-text">
+                    <option class="register-hidden" value=" "></option>
                         <option value="AL">AL</option>
                         <option value="AK">AK</option>
                         <option value="AR">AR</option>
@@ -700,7 +700,7 @@
                 </label>
             </div>
             <div class="form-field">
-                <input class="form-field-input form-field-text" id="contact_shipping_email" name="contact[ShippingContactEmail]" type="text" value=" ">
+                <input class="form-field-input form-field-text" id="contact_shipping_email" name="contact[ShippingContactEmail]" type="text" onfocus="if(this.value == ' ') { this.value = ''; }" value=" ">
                 <label class="form-field-title" for="contact_shipping_email">
                     Shipping Contact Email Address *
                 </label>
@@ -752,7 +752,7 @@
             </div>
         </fieldset>
     </div>
-    {% endform %}
+    </form>
     <div class="contact-page-content register-contact-info">
         <p>If you would like to complete the application process manually please send a completed <a href="https://cdn.shopify.com/s/files/1/2777/7236/files/Account_Request_Form.pdf?14751337191092706148" class="register-raw-form" download>account request form</a> via fax 425-396-3301.</p>
         <p>If you have any questions please contact our customer service at 425-396-3300 Monday - Friday 8am - 5pm PST.</p>

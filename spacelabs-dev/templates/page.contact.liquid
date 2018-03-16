@@ -70,7 +70,7 @@
             id="contact_name"
             name="contact[name]"
             type="text"
-            value="{{ value }}" required>
+            value="{{ value }}">
 
           <label class="form-field-title" for="contact_name">
             {{ 'contact.form.name' | t }}
@@ -92,7 +92,7 @@
                 value="{{ value }}"
                 autocorrect="off"
                 autocapitalize="off"
-                required>
+                >
 
             <label class="form-field-title" for="contact_email">
                 {{ 'contact.form.email' | t }}
@@ -100,20 +100,20 @@
             </div>
         </div>
         <div class="form-field">
-                <input class="form-field-input form-field-text" id="contact_company" name="contact[company]" required>
+                <input class="form-field-input form-field-text" id="contact_company" name="contact[company]">
                 <label class="form-field-title" for="contact_company">
                     Company
                 </label>
         </div>
         <div class="form-fields-columns">
             <div class="form-field form-field--half">
-                <input class="form-field-input form-field-text" id="contact_country" name="contact[country]" required>
+                <input class="form-field-input form-field-text" id="contact_country" name="contact[country]">
                 <label class="form-field-title" for="contact_country">
                     Country
                 </label>
             </div>
             <div class="form-field form-field--half">
-                <input class="form-field-input form-field-text" id="contact_state" name="contact[CountryCode]" required>
+                <input class="form-field-input form-field-text" id="contact_state" name="contact[CountryCode]" >
                 <label class="form-field-title" for="contact_state">
                     State/Providence
                 </label>
@@ -129,13 +129,13 @@
 
             <input
             class="form-field-input form-field-text"
-            id="contact_phone"
+            id="contact_phone_alt"
             name="contact[phone]"
             type="tel"
             value="{{ value }}"
-            required>
+            >
 
-            <label class="form-field-title" for="contact_phone">
+            <label class="form-field-title" for="contact_phone_alt">
             {{ 'contact.form.phone' | t }}
             </label>
         </div>

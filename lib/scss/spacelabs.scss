@@ -1,6 +1,6 @@
 // ================= BREAKPOINTS =================
 $bp-xs: 375px;
-
+$bp-xs-mobile: 425px;
 $bp-smaller: 680px;
 $bp-small: 720px;
 $bp-medium: 860px;
@@ -169,6 +169,14 @@ $bp-register-md: 600px;
     @include media($max: $bp-small) {
         margin-bottom: 10px;
     }
+    @include media($max: $bp-xs-mobile) {
+        padding-right: 10px;
+    }
+}
+.site-header-logo {
+    @include media($max: $bp-xs-mobile) {
+        padding-right: 30px;
+    }
 }
 .mobile-login {
     display: none;
@@ -196,6 +204,10 @@ $bp-register-md: 600px;
 .mobile-icon-link {
     padding:0px 0px 0px 15px;
     cursor: pointer;
+
+    @include media($max: $bp-xs) {
+        padding:0px 0px 0px 0px; 
+    }
 }
 // ================= SEARCH BAR =================
 
@@ -949,6 +961,10 @@ table.product_table tr:nth-child(odd) {
     right: 0;
     background: rgba(0, 0, 0, 0.7);
 }
+#modal-login {
+    position: absolute;
+
+}
 .modal-login-box {
     width: 500px;
     display: block;
@@ -1072,6 +1088,8 @@ table.product_table tr:nth-child(odd) {
 #error-box p::first-letter{
     text-transform: uppercase;
 }
+
+
 // ================= ACCOUNT PAGE =================
 
 .account-flex {
