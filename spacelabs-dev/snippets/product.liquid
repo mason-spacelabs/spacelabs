@@ -119,6 +119,9 @@
       Product form original location, will remain unless is 3 column layout
     {% endcomment %}
     <div class="product-form--regular" data-product-form-regular>
+    <span class="atc-subtotal--label" style="font-size: 12px; color: #666; opacity: 1;">
+            * Calculate customer specific pricing at checkout
+    </span>
       <div data-product-form-area>
         {% if is_product_modal %}
           <div data-product-quickshop-message class="product-message--container"></div>
@@ -262,8 +265,9 @@
 
     let documentation_value = document.createTextNode(documentation);
     let documentation_href = documentation_data[documentation];
-
-    a.appendChild(documentation_value);
+    
+    a.innerHTML = '<i class="far fa-file-pdf"></i> ';
+    a.appendChild( documentation_value);
     a.setAttribute('href', documentation_href);
     
     document.getElementById("product_documentation").appendChild(a);

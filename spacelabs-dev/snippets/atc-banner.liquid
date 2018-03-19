@@ -25,18 +25,17 @@
         <div class="atc-banner--cart-subtotal">
           <span class="atc-subtotal--label">
             {{ 'add_to_cart_banner.general.sub_total' | t }}
-          </span>
+          </span>          
           <span class="atc-subtotal--price money" data-atc-banner-cart-subtotal></span>
         </div>
 
         <footer class="atc-banner--cart-footer">
-          <a class="button-secondary atc-button--viewcart" href="/cart" data-atc-banner-cart-button>
+          <a class="button-secondary atc-button--viewcart" style="margin-bottom: 15px;" href="/cart" data-atc-banner-cart-button>
             {{ 'add_to_cart_banner.general.view_cart_html' | t: count: '<span></span>' }}
-          </a>
-
-          <a class="button-primary atc-button--checkout" href="/checkout">
-            {{ 'add_to_cart_banner.general.checkout' | t }}
-          </a>
+          </a><br/>
+          <span class="atc-subtotal--label" style="font-size: 12px; color: #666; opacity: 1;">
+            * Calculate customer specific pricing at checkout
+          </span>
         </footer>
       </div>
     </div>

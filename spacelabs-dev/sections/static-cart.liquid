@@ -72,22 +72,31 @@
           <div class="cart-title-total--large">
             <div class="cart-title-total" data-cart-title-total>
               {{ 'cart.general.subtotal' | t }}
-
-              <span class="money" data-cart-total>
-                {{ cart.total_price | money }}
-              </span>
+              {% if cart.original_total_price != cart.total_price %}
+                <span class="money" style="text-decoration: line-through; font-size: 14px;" data-discount-cart-total>
+                {{ cart.original_total_price | money }}
+                </span>
+                <span class="money" data-cart-total>
+                  {{ cart.total_price | money }} 
+                </span>
+              {% else %}
+                <span class="money" data-cart-total>
+                  {{ cart.total_price | money }}
+                </span>
+              {% endif %}
             </div>
           </div>
 
-          {% comment %} <button
+          <button
             class="button-primary cart-title-button"
             name="checkout"
-            type="submit"
+            type="button"
             aria-label="{{ 'cart.general.checkout' | t }}"
+            onclick="collectData(customer, true);"
           >
             {% include 'icon-cart' %}
-            {{ 'cart.general.checkout' | t }}
-          </button> {% endcomment %}
+            Update Pricing
+          </button>
         {% elsif show_continue_link %}
           {{ continue_link_html }}
         {% endif %}
@@ -136,29 +145,16 @@
               {% include 'cart-shipping' %}
             {% endif %}
           </div>
-
-          <div class="cart-checkout">
             <button
               class="button-primary"
               type="submit"
               name="checkout"
+              id="hidden-submit"
+              style="display: none;"
               aria-label="{{ 'cart.general.checkout' | t }}"
             >
-              {% include 'icon-cart' %}
-              {{ 'cart.general.checkout' | t }}
             </button>
-
-            {% if additional_checkout_buttons %}
-              <div class="cart-checkout-additional">
-                {{ content_for_additional_checkout_buttons }}
-              </div>
-            {% endif %}
-
-            {% if show_continue_link %}
-              {{ continue_link_html }}
-            {% endif %}
-          </div>
-          {% comment %} <div class="cart-checkout">
+          <div class="cart-checkout">
             <button
               class="button-primary"
               type="button"
@@ -180,7 +176,7 @@
               {{ continue_link_html }}
             {% endif %}
           </div>
-        </div> {% endcomment %}
+        </div>
 
       {% else %}
         <div class="cartitems-empty">
@@ -233,6 +229,10 @@
     {% endif %}
   </section>
 </form>
+<div class="text-center loading-screen">
+<p class="loading-text"><i class="fas fa-spinner fa-pulse"></i> Retrieving Product Pricing
+</p>
+</div>
 {% else %}
 <meta content="0; url=/account/login" http-equiv="refresh" />
 {% endif %}
@@ -308,5 +308,6 @@
 
 {% endschema %}
 <script>
+$(".loading-screen").css( "display", "none" );
 var customer = {{ customer.id }}
 </script>

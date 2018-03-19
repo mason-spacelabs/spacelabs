@@ -17,7 +17,7 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0020-01_A_SoftCheck_IFU.pdf?7182394033425560905",
+			"SoftCheck Blood Pressure Cuff Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0020-01_A_SoftCheck_IFU.pdf?7182394033425560905",
 		},
 		"variants": {
 			"10153058697259": {
@@ -85,7 +85,7 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0020-01_A_SoftCheck_IFU.pdf?7182394033425560905",
+			"SoftCheck Blood Pressure Cuff Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0020-01_A_SoftCheck_IFU.pdf?7182394033425560905",
 		},
 		"variants": {
 			"10232430755883": {
@@ -241,7 +241,7 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0020-01_A_SoftCheck_IFU.pdf?7182394033425560905",
+			"SoftCheck Blood Pressure Cuff Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0020-01_A_SoftCheck_IFU.pdf?7182394033425560905",
 		},
 		"variants": {
 			"10232382881835": {
@@ -309,7 +309,7 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0021-01_A_UltraCheck_IFU.pdf?7182394033425560905",
+			"UltraCheck Blood Pressure Cuff Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0021-01_A_UltraCheck_IFU.pdf?7182394033425560905",
 		},
 		"variants": {
 			"10232765841451": {
@@ -404,7 +404,7 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0021-01_A_UltraCheck_IFU.pdf?7182394033425560905",
+			"UltraCheck Blood Pressure Cuff Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0021-01_A_UltraCheck_IFU.pdf?7182394033425560905",
 		},
 		"variants": {
 			"10232695521323": {
@@ -499,7 +499,7 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0020-01_A_SoftCheck_IFU.pdf?7182394033425560905",
+			"SoftCheck Blood Pressure Cuff Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0020-01_A_SoftCheck_IFU.pdf?7182394033425560905",
 		},
 		"variants": {
 			"10232817221675": {

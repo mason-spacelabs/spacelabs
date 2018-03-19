@@ -111,9 +111,18 @@
       </div>
 
       <div class="cart-item--total">
-        <span class="money" data-cartitem-total>
-          {{ item.line_price | money }}
-        </span>
+        {% if item.original_line_price != item.line_price %}
+                <span class="money" style="text-decoration: line-through; font-size: 12px;" data-cartitem-discount-total>
+                {{ item.original_line_price | money }}
+                </span><br/>
+                <span class="money" data-cartitem-total>
+                  {{ item.line_price | money }}
+                </span>
+              {% else %}
+                <span class="money" data-cartitem-total>
+                  {{ item.line_price | money }}
+                </span>
+        {% endif %}
       </div>
 
       <div class="cart-item--remove">
