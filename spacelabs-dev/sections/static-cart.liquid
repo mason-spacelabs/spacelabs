@@ -73,7 +73,7 @@
             <div class="cart-title-total" data-cart-title-total>
               {{ 'cart.general.subtotal' | t }}
               {% if cart.original_total_price != cart.total_price %}
-                <span class="money" style="text-decoration: line-through; font-size: 14px;" data-discount-cart-total>
+                <span class="money sub-total-line" data-discount-cart-total>
                 {{ cart.original_total_price | money }}
                 </span>
                 <span class="money" data-cart-total>
@@ -146,11 +146,10 @@
             {% endif %}
           </div>
             <button
-              class="button-primary"
+              class="button-primary hidden"
               type="submit"
               name="checkout"
               id="hidden-submit"
-              style="display: none;"
               aria-label="{{ 'cart.general.checkout' | t }}"
             >
             </button>

@@ -68,7 +68,7 @@
         class="cart-item--quantity form-fields--qty"
         data-quantity-wrapper
         >
-        <div class="form-field form-field--qty-select {% if item.quantity < 10 %}visible{% else %}hidden{% endif %}">
+        <div class="form-field form-field--qty-select {% if item.quantity < 10 %}visible{% else %}hidden{% endif %}" style="height: 50px;">
           <div class="form-field-select-wrapper">
             <select
               class="form-field-input form-field-select form-field-filled"
@@ -112,7 +112,7 @@
 
       <div class="cart-item--total">
         {% if item.original_line_price != item.line_price %}
-                <span class="money" style="text-decoration: line-through; font-size: 12px;" data-cartitem-discount-total>
+                <span class="money cart-item-text" data-cartitem-discount-total>
                 {{ item.original_line_price | money }}
                 </span><br/>
                 <span class="money" data-cartitem-total>

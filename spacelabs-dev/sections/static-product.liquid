@@ -120,7 +120,7 @@
 
 {% if settings.product_enable_recently_viewed_products %}
   <section class="product-section--container product-recently-viewed--section">
-    <div class="product-recently-viewed-wrapper" style="background: #fff; padding: 0px; border-top: 1px solid hsla(0,0%,50%,.3);">
+    <div class="product-recently-viewed-wrapper recently-viewed">
       <div class="product-recently-viewed-header">
         <h3 class="related-products--title">
           You Recently Viewed
@@ -132,7 +132,7 @@
           {{ 'general.time.clear' | t }}
         </span>
       </div>
-      <div style="padding:0px 20px;">
+      <div class="recently-viewed-box">
       
       <div
         class="
@@ -141,7 +141,8 @@
           imagestyle--{{ settings.product_grid_image_style }}
         "
         data-recently-viewed-container
-      ></div>
+      >
+      </div>
       </div>
     </div>
   </section>
