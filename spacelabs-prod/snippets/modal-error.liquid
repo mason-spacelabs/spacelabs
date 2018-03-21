@@ -1,6 +1,6 @@
 <div id="modal-error" class="hidden-modal" style="z-index: 1000 !important;">
     <div class="modal-login-box">
-        <button class="atc-banner--close" style="right: 10px; top: 10px;" type="button" aria-label="{{ 'general.accessibility.close' | t }}"  modal="modal-error" onclick="closeModal(this, true);">
+        <button class="atc-banner--close" style="right: 10px; top: 10px;" type="button" aria-label="{{ 'general.accessibility.close' | t }}"  modal="modal-error" onclick="closeModal(this);">
       {%- include 'icon-menu-close' -%}
     </button>
         <section class="account-page-login">
@@ -10,11 +10,10 @@
             <article class="account-page-content modal-content-login">
                 <h3 style="margin: 25px 0px;">Oops! Please fix the errors and resubmit your form.</h3>
                 <div id="error-box" class="account-login visible" >
-
                     
                 </div>
                 <div class="form-action-row" style="display: flex; margin-top: 50px;">
-                    <button class="button-primary modal-button-login" modal="modal-error" onclick="closeModal(this, true);">
+                    <button class="button-primary modal-button-login" modal="modal-error" onclick="closeModal(this);">
                         Close
                     </button>
                 </div>

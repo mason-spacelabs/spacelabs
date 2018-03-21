@@ -8,14 +8,13 @@
   },
   "scripts": {
     "dev-watch": "gulp --env=development",
-    "dev-pull": "cd spacelabs-dev && theme download",
-    "dev-pull-overwrite": "cd spacelabs-dev && theme download --force",
-    "dev-push": "cd spacelabs-dev && theme upload",
-    "dev-push-overwrite": "cd spacelabs-dev && theme replace --force",
+    "test-stage": "gulp --env=test",
+    "test-push": "cd spacelabs-test && theme replace -f",
+    "test-download": "cd spacelabs-test && theme download --force",
     "prod-stage": "gulp --env=production",
-    "prod-push": "cd spacelabs-prod && theme upload --force",
-    "prod-push-overwrite": "cd spacelabs-prod && theme replace --force",
-    "csv": "cd lib/json && node index.js"
+    "prod-push": "cd spacelabs-prod && theme replace --force",
+    "prod-download": "cd spacelabs-prod && theme download --force",
+    "csv": "cd lib/csv && node index.js"
   },
   "author": "Spacelabs Healthcare",
   "license": "MIT",

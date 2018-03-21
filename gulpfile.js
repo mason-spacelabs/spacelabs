@@ -81,6 +81,18 @@ gulp.task('images', function() {
 
 });
 
+gulp.task('filesWatch', function () {
+
+  gulp.watch('./lib/files/*', ['files']);
+
+});
+
+gulp.task('files', function () {
+  gulp.src('./lib/files/*')
+  
+      .pipe(gulp.dest('./spacelabs-dev/assets/'));
+});
+
 gulp.task('sass', function () {
 
   gulp.src('./lib/scss/*.{sass,scss}')
@@ -153,14 +165,23 @@ gulp.task('shopifywatch', function() {
       
       return watch('./spacelabs-dev/+(assets|layout|config|snippets|sections|templates|locales)/**')
       .pipe(gulpShopify(config.development.shopify_api_key, config.development.shopify_api_password, config.development.shopify_url, config.development.theme_id, options));
-    
+      
     break;
+
+    case "test":
+
+      console.log(config.test);
+      console.log("this is a teste");
+
+      gulp.src(['./spacelabs-dev/**/*','!spacelabs-dev/**/*.yml']).pipe(gulp.dest('./spacelabs-test'));
+
+      break;
 
     case "production":
 
       console.log(config.production);
 
-      gulp.src(['./spacelabs-dev/**/*','!spacelabs-dev/**/*.yml']).pipe(gulp.dest('./spacelabs-prod'));
+      gulp.src(['./spacelabs-test/**/*','!spacelabs-test/**/*.yml']).pipe(gulp.dest('./spacelabs-prod'));
 
     break;
 
@@ -179,7 +200,17 @@ switch(gutil.env.env) {
 
     gulp.task('default', [
 
-      'shopifywatch', 'styles', 'scriptsWatch', 'imageWatch'
+      'shopifywatch', 'styles', 'scriptsWatch', 'imageWatch', 'filesWatch'
+
+    ]);
+
+  break;
+
+  case "test":
+
+    gulp.task('default', [
+
+      'shopifywatch'
 
     ]);
 

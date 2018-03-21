@@ -1,0 +1,46 @@
+<section
+  class="account-page account-page-addresses"
+  data-template-account-addresses
+  data-template-account>
+  <header class="account-page-masthead text-left">
+    <div class="account-image-container">
+    <img class="account-image" src="{{ "spacelabs-logo.png" | asset_url }}">
+    </div>
+  </header>
+
+  {% paginate customer.addresses by 4 %}
+    <article class="account-page account-page-content">
+
+      {% comment %}
+        Customer address list
+      {% endcomment %}
+      {% if customer.addresses.size > 0 %}
+        <div class="account-page account-addresses">
+          <h2 class="account-page-subtitle">
+            Company Addresses
+          </h2>
+          <div class="account-address-wrapper">
+
+            {% for address in customer.addresses %}
+              <div class="account-address">
+                {%
+                  include 'account-address-list-spacelabs',
+                  address: address
+                %}
+              </div>
+            {% endfor %}
+          </div>
+          <div class="address-message-container">
+          <a href="/account">
+          <button class="button-primary account-button">Back to Account</button>
+          </a>
+          <div class="address-change-message text-center">
+            <p>If you would like to update any of the above addresses please call us at 425-396-3300 or email customer@spacelabs.com</p> 
+          </div>
+          </div>
+          {% include 'pagination' %}
+        </div>
+      {% endif %}
+    </article>
+  {% endpaginate %}
+</section>

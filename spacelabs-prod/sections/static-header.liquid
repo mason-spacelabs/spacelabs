@@ -54,21 +54,24 @@
       <span class="show-for-sr">{{ 'general.accessibility.menu' | t }}</span>
     </a>
   </div>
+  
   <div class="mobile-login text-right">
   {% if customer %}
-    <a class="mobile-icon-link" href="/account">
-      <i class="fas fa-user mobile-user-icon"></i> 
+    <a style="cursor: pointer;"  href="/account" style="padding:10px;" >
+      <i class="fas fa-user mobile-user-icon"></i>
+      
     </a>
-    <a class="mobile-icon-link" href="/account/logout">
+    <a  href="/account/logout">
         <i class="fas fa-sign-out-alt mobile-user-icon"></i>
     </a>
   {% else %}
-    <a class="mobile-icon-link"  modal="modal-login" onclick="openModal(this);" >
-      <i class="fas fa-user mobile-user-icon"></i>
+    <a class="mobile-user-icon"  style="cursor: pointer;"  modal="modal-login" onclick="openModal(this);" style="padding:10px;" >
+      <i class="fas fa-user"></i>
     </a>
   {%endif%}
   </div>
   <div class="site-header-main">
+
     <div class="site-header-logo">
       <a
         class="site-logo"
@@ -97,7 +100,7 @@
         {% endif %}
       </a>
     </div>
-    
+
     {%
       include 'header-search-form',
       quick_links: linklists[section.settings.quick_links],
@@ -108,16 +111,16 @@
     %}
 
   </div>
-  <nav class="site-navigation medium-hide">
+  <nav class="site-navigation medium-hide" style="padding-right: 0px;">
   <ul class="site-header-actions" data-header-actions>
   {% if shop.customer_accounts_enabled %}
     {% unless customer %}
       <li class="site-header-account-link">
-        <a class="static-site-nav" modal="modal-login" onclick="openModal(this);">
+        <a class="static-site-nav" style="cursor: pointer;" modal="modal-login" onclick="openModal(this);">
           {{ 'header.account.login' | t }}
         </a>
       </li>
-      <li class="site-header-account-link">
+      <li class="site-header-account-link" style="padding-right: 0px;">
         <a class="static-site-nav" href="/pages/register">
           Register
         </a>
@@ -136,6 +139,19 @@
   {% endif %}
   </ul>
   </nav>
+{% comment %}
+  <div class="site-header-cart">
+    <a class="site-header-cart--button" href="/cart">
+      <span
+        class="site-header-cart--count {% if cart.item_count > 0 %}visible{% endif %}"
+        data-header-cart-count="{% if cart.item_count > 0 %}{{ cart.item_count }}{% endif %}">
+      </span>
+
+      {% include 'icon-cart' %}
+      <span class="show-for-sr">{{ 'general.accessibility.cart' | t }}</span>
+    </a>
+  </div>
+  {% endcomment %} 
 </section>
 
 {%- capture site_navigation_classes -%}

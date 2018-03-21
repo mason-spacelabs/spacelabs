@@ -52,11 +52,9 @@
   </body>
 <script>
 
-var address_field = document.querySelectorAll('[data-address-field="zip"]');
-var google_auto_prevent = address_field["0"].childNodes["3"].childNodes["1"];
+var x = document.querySelectorAll('[data-address-field="zip"]');
+x["0"].classList.add("error-show");
 
-address_field["0"].classList.add("error-show"); 
-google_auto_prevent.setAttribute("autocomplete","new-password");
 
   </script>
 </html>

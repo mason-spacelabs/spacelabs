@@ -52,7 +52,6 @@
         class="product-gallery--thumbnail-trigger {% if selected_image == image %}thumbnail--selected{% endif %}"
         data-product-thumbnail="{{ forloop.index0 }}"
         type="button"
-        {% for variant in image.variants %}variants="{{ variant.title }}"{% endfor %}
       >
         <img
           class="product-gallery--thumbnail"

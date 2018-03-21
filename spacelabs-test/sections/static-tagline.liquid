@@ -1,0 +1,30 @@
+<div class="product-row--container featured-collection--container text-center">
+<h2 class="tagline-header">{{ section.settings.title }}</h2>
+<p class="tagline-text">{{ section.settings.description }}</p>
+</div>
+{% schema %}
+{
+  "name": "Tagline Block",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Tagline Block"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Tagline",
+      "default": "Tagline Message"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tagline Block",
+      "category": "Social media"
+    }
+  ]
+}
+
+{% endschema %}

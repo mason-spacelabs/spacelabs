@@ -4,4 +4,5 @@ node_modules
 config.json
 .jsbeautifyrc
 spacelabs-prod/config.json
+spacelabs-test/config.json
 spacelabs-dev/config.json

@@ -1,0 +1,163 @@
+<article class="site-page" data-template-page data-template-contact>
+<header class="page-masthead ">
+        <div class="page-content contact-page">
+            <h1 class="page-title text-left register-title">
+            {{ page.title }}
+            </h1>
+        </div>
+</header>
+  <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8" class="contact-form">
+    <input type="hidden" name="form_type" value="contact">
+    <input type="hidden" name="utf8" value="✓">
+    <div class="contact-page-content contact-page-flex">
+        <div class="contact-information">
+            <div class="contact-info-box">
+                <p class="contact-info-text">Spacelabs Healthcare</p>
+            </div>
+            <div class="contact-info-box">
+                <i class="fas fa-map-marker-alt contact-icon"></i>
+                <p class="contact-info-text">35301 SE Center St<br/>
+                Snoqualmie, WA 98065<br/>
+                United States <br/>
+                </p>
+            </div>
+            <div class="contact-info-box">
+                <i class="fas fa-phone contact-icon"></i>
+                <p class="contact-info-text">(425) 396-3300</p>
+            </div>
+            <div class="contact-info-box"> 
+                <i class="fas fa-fax contact-icon"></i>
+                <p class="contact-info-text">(425) 396-3301</p>
+            </div>
+        </div>
+    <div class="contact-form-box">
+      {% assign has_message = false %}
+
+      {% if form.errors != blank %}
+        {% assign has_message = true %}
+        {% assign message_type = 'error' %}
+      {% endif %}
+
+      {% if form.posted_successfully? %}
+        {% assign has_message = true %}
+        {% assign message_type = 'success' %}
+      {% endif %}
+
+      {% if has_message %}
+        <div class="contact-message message--{{ message_type }}">
+          {% case message_type %}
+            {% when 'success' %}
+              <p> 
+                {{ 'contact.form.post_success' | t }}
+              </p>
+            {% when 'error' %}
+              {{ form.errors | default_errors }}
+          {% endcase %}
+        </div>
+      {% endif %}
+
+      <div class="form-fields-columns">
+        <div class="form-field form-field--half">
+          {% assign value = '' %}
+          {%- if form.name -%}
+            {% assign value = form.name %}
+          {%- elsif customer -%}
+            {% assign value = customer.name %}
+          {%- endif -%}
+
+          <input class="form-field-input form-field-text {% if form.errors contains 'name' %}form-field-error{% endif %}"
+
+            id="contact_name"
+            name="contact[name]"
+            type="text"
+            value="{{ value }}">
+
+          <label class="form-field-title" for="contact_name">
+            {{ 'contact.form.name' | t }}
+          </label>
+        </div>
+
+            <div class="form-field form-field--half">
+            {% assign value = '' %}
+            {%- if form.email -%}
+                {% assign value = form.email %}
+            {%- elsif customer -%}
+                {% assign value = customer.email %}
+            {%- endif -%}
+            <input
+                class="form-field-input form-field-text"
+                id="contact_email"
+                name="contact[email]"
+                type="text"
+                value="{{ value }}"
+                autocorrect="off"
+                autocapitalize="off"
+                >
+
+            <label class="form-field-title" for="contact_email">
+                {{ 'contact.form.email' | t }}
+            </label>
+            </div>
+        </div>
+        <div class="form-field">
+                <input class="form-field-input form-field-text" id="contact_company" name="contact[company]">
+                <label class="form-field-title" for="contact_company">
+                    Company
+                </label>
+        </div>
+        <div class="form-fields-columns">
+            <div class="form-field form-field--half">
+                <input class="form-field-input form-field-text" id="contact_country" name="contact[country]">
+                <label class="form-field-title" for="contact_country">
+                    Country
+                </label>
+            </div>
+            <div class="form-field form-field--half">
+                <input class="form-field-input form-field-text" id="contact_state" name="contact[CountryCode]" >
+                <label class="form-field-title" for="contact_state">
+                    State/Providence
+                </label>
+            </div>
+        </div>
+        <div class="form-field">
+            {% assign value = '' %}
+            {%- if form.phone -%}
+            {% assign value = form.phone %}
+            {%- elsif customer -%}
+            {% assign value = customer.phone %}
+            {%- endif -%}
+
+            <input
+            class="form-field-input form-field-text"
+            id="contact_phone_alt"
+            name="contact[phone]"
+            type="tel"
+            value="{{ value }}"
+            >
+
+            <label class="form-field-title" for="contact_phone_alt">
+            {{ 'contact.form.phone' | t }}
+            </label>
+        </div>
+        <div class="form-field">
+                {% assign value = '' %}
+                {%- if form.body -%}
+                {% assign value = form.body %}
+                {%- endif -%}
+                <textarea
+                class="form-field-input form-field-text message-box"
+                id="contact_message"
+                name="contact[message]">{{ value }}</textarea>
+
+                <label class="form-field-title" for="contact_body">
+                {{ 'contact.form.message' | t }}
+                </label>
+        </div>
+        <div class="form-action-row">
+            <button class="button-primary contact-form-button" type="submit">
+                {{ 'contact.form.send' | t }}
+            </button>
+        </div>
+    </div>
+  </form>
+</article>

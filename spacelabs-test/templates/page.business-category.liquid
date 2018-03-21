@@ -1,0 +1,50 @@
+{% assign using_linklist = false %}
+{% assign pagination = 12 %}
+{% assign linklist = 'all-collections' %}
+
+{% include 'breadcrumbs' %}
+{% if linklists[linklist] and linklists[linklist].links.size > 0 %}
+  {% assign using_linklist = true %}
+  {% assign pagination = 48 %}
+{% endif %}
+
+{% paginate collections by pagination %}
+<div class="listcollections--container collection-list-container">
+    <div class="listcollections--inner collection-list-categories"> 
+        <ul id="category-list">
+        <li>
+            <a href="/collections/all">All Categories</a>
+        </li>
+        {% for collection in collections %}
+        {% assign collection_vendors_list = collection.all_vendors %}
+        {% if collection_vendors_list contains page.title %}
+            <li>
+                <a href="{{collection.url}}">{{ collection.title }}</a>
+            </li>
+        {% endif %}
+        {% endfor %}
+        </ul> 
+    </div>
+    <div class="list-collection-box custom-page-box" style="margin-top: 18.75px;">
+        {{ page.content }}
+        <h3 class="list-collection-header" style="margin-top: 36px;">{{ page.title }}</h3>
+        <div class="listcollections--inner list-collection-flex"> 
+        {% if using_linklist %}
+            {% for link in linklists[linklist].links %}
+            {% assign link_handle = link.handle %}
+            {% assign collection = collections[link_handle] %}
+            {% include 'collection-business-category' %}
+            {% endfor %}
+        {% else %}
+
+        {% for collection in collections %}
+        {% include 'collection-business-category' %}
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% include 'pagination' %}
+{% endpaginate %}
+
+

@@ -5,9 +5,7 @@
 
     <article class="account-page-content modal-content-login">
         <div class="account-login visible" data-account-login-main>
-            {% form 'customer_login' %} 
-            <input type="hidden" name="checkout_url" id="redirect_url" value="/" />
-            {% if form.errors != blank %}
+            {% form 'customer_login' %} {% if form.errors != blank %}
             <div class="account-message message--error">
                 {{ form.errors | default_errors }}
             </div>
