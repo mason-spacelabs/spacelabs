@@ -73,7 +73,6 @@
       <a
         class="site-logo"
         href="/">
-        {% if section.settings.logo %}
           {% assign logo_alt = section.settings.logo.alt | escape %}
           {% if logo_alt == '' %}
             {% assign logo_alt = shop.name | escape | strip %}
@@ -90,11 +89,6 @@
               srcset="{{ section.settings.logo | img_url: logo_size, scale: 2 }} 2x"
             {% endif %}
             alt="{{ logo_alt }}">
-        {% else %}
-          <span class="site-logo-text">
-            {{ shop.name }}
-          </span>
-        {% endif %}
       </a>
     </div>
     

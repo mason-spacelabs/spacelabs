@@ -81,18 +81,6 @@ gulp.task('images', function() {
 
 });
 
-gulp.task('filesWatch', function () {
-
-  gulp.watch('./lib/files/*', ['files']);
-
-});
-
-gulp.task('files', function () {
-  gulp.src('./lib/files/*')
-  
-      .pipe(gulp.dest('./spacelabs-dev/assets/'));
-});
-
 gulp.task('sass', function () {
 
   gulp.src('./lib/scss/*.{sass,scss}')
@@ -171,7 +159,6 @@ gulp.task('shopifywatch', function() {
     case "test":
 
       console.log(config.test);
-      console.log("this is a teste");
 
       gulp.src(['./spacelabs-dev/**/*','!spacelabs-dev/**/*.yml']).pipe(gulp.dest('./spacelabs-test'));
 
@@ -200,7 +187,7 @@ switch(gutil.env.env) {
 
     gulp.task('default', [
 
-      'shopifywatch', 'styles', 'scriptsWatch', 'imageWatch', 'filesWatch'
+      'shopifywatch', 'styles', 'scriptsWatch', 'imageWatch'
 
     ]);
 

@@ -1,5 +1,5 @@
 var data = {
-	"956245311531": {
+	"NN0ST-M000-00": { 
 		"specifications": {
 			"Product Line Description": "NIBP Cuffs (UltraCheck & SoftCheck)",
 			"Country of Origin": "MEX",
@@ -17,23 +17,19 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"NN1ST-M316-10 Documentation.pdf": "/path-name-here",
-            "NN2ST-M316-10 Documentation.pdf": "/path-name-here",
-            "NN3ST-M316-10 Documentation.pdf": "/path-name-here",
-            "NN4ST-M316-10 Documentation.pdf": "/path-name-here",
-            "NN5ST-M316-10 Documentation.pdf": "/path-name-here"
+			"SoftCheck Blood Pressure Cuff Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0020-01_A_SoftCheck_IFU.pdf?7182394033425560905",
 		},
 		"variants": {
-			"10153058697259": {
+			"NN1ST-M316-10": {
 				"Product SKU": "NN1ST-M316-10",
 				"Description": "BP CUFF,SC FABRIC NEO,1T,SIZE 1,3-6CM,M316,10/BX",
 				"GTIN": "30841522108086",
 				"NIBP Size": "Neonatal size 1",
 				"Limb Circumference": "3-6 cm",
-				"Unit of Measure": "EA",
+				"Unit of Measure": "BX",
 				"Quantity": "10"
 			},
-			"10153058730027": {
+			"NN2ST-M316-10": {
 				"Product SKU": "NN2ST-M316-10",
 				"Description": "BP CUFF,SC FABRIC NEO,1T,SIZE 2,4-8CM,M316,10/BX",
 				"GTIN": "30841522108147",
@@ -42,7 +38,7 @@ var data = {
 				"Unit of Measure": "BX",
 				"Quantity": "10"
 			},
-			"10153058762795": {
+			"NN3ST-M316-10": {
 				"Product SKU": "NN3ST-M316-10",
 				"Description": "BP CUFF,SC FABRIC NEO,1T,SIZE 3,6-11CM,M316,10/BX",
 				"GTIN": "30841522108208",
@@ -51,7 +47,7 @@ var data = {
 				"Unit of Measure": "BX",
 				"Quantity": "10"
 			},
-			"10153058828331": {
+			"NN4ST-M316-10": {
 				"Product SKU": "NN4ST-M316-10",
 				"Description": "BP CUFF,SC FABRIC NEO,1T,SIZE 4,7-13CM,M316,10/BX",
 				"GTIN": "30841522108260",
@@ -60,7 +56,7 @@ var data = {
 				"Unit of Measure": "BX",
 				"Quantity": "10"
 			},
-			"10153058861099": {
+			"NN5ST-M316-10": {
 				"Product SKU": "NN5ST-M316-10",
 				"Description": "BP CUFF,SC FABRIC NEO,1T,SIZE 5,8-15CM,M316,10/BX",
 				"GTIN": "30841522108321",
@@ -71,7 +67,7 @@ var data = {
 			}
 		}
 	},
-	"964084072491": {
+	"ST0000HP-00": {
 		"specifications": {
 			"Product Line Description": "NIBP Cuffs (UltraCheck & SoftCheck)",
 			"Country of Origin": "MEX",
@@ -89,17 +85,10 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"ST0814HP-05 Documentation.pdf": "/path-name-here",
-            "ST1320HP-05 Documentation.pdf": "/path-name-here",
-            "ST1826HP-05 Documentation.pdf": "/path-name-here",
-            "ST2635HP-05 Documentation.pdf": "/path-name-here",
-            "ST2938HP-05 Documentation.pdf": "/path-name-here",
-            "ST3242HP-05 Documentation.pdf": "/path-name-here",
-            "ST3544HP-05 Documentation.pdf": "/path-name-here",
-            "ST4250HP-05 Documentation.pdf": "/path-name-here"
+			"SoftCheck Blood Pressure Cuff Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0020-01_A_SoftCheck_IFU.pdf?7182394033425560905",
 		},
 		"variants": {
-			"10232430755883": {
+			"ST0814HP-05": {
 				"Product SKU": "ST0814HP-05",
 				"Description": "BP CUFF,SC FABRIC,1T,INFANT,8-14CM,HP,5/BG",
 				"GTIN": "30841522108901",
@@ -108,7 +97,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232430788651": {
+			"ST1320HP-05": {
 				"Product SKU": "ST1320HP-05",
 				"Description": "BP CUFF,SC FABRIC,1T,CHILD,13-20CM,HP,5/BG",
 				"GTIN": "30841522109014",
@@ -117,7 +106,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232430821419": {
+			"ST1826HP-05": {
 				"Product SKU": "ST1826HP-05",
 				"Description": "BP CUFF,SC FABRIC,1T,SM.ADULT,18-26CM,HP,5/BG",
 				"GTIN": "30841522109120",
@@ -126,7 +115,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232430854187": {
+			"ST2635HP-05": {
 				"Product SKU": "ST2635HP-05",
 				"Description": "BP CUFF,SC FABRIC,1T,ADULT,26-35CM,HP,5/BG",
 				"GTIN": "30841522109236",
@@ -135,16 +124,16 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232430886955": {
+			"ST2938HP-05": {
 				"Product SKU": "ST2938HP-05",
-				"Description": "BP CUFF,SC FABRIC,1T,ADULT LONG,29-38CM,HP,5/BG",
+				"Description": "BP CUFF,SC FABRIC,1T,ADULT-LONG,29-38CM,HP,5/BG",
 				"GTIN": "30841522109342",
 				"NIBP Size": "Adult Long",
 				"Limb Circumference": "29-38 cm",
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232639225899": {
+			"ST3242HP-05": {
 				"Product SKU": "ST3242HP-05",
 				"Description": "BP CUFF,SC FABRIC,1T,LG.ADLT,32-42CM,HP,5/BG",
 				"GTIN": "30841522109458",
@@ -153,7 +142,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10320193585195": {
+			"ST3544HP-05": {
 				"Product SKU": "ST3544HP-05",
 				"Description": "BP CUFF,SC FABRIC,1T,LG.ADULT-L,35-44CM,HP,5/BG",
 				"GTIN": "30841522109533",
@@ -162,7 +151,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10320260956203": {
+			"ST4250HP-05": {
 				"Product SKU": "ST4250HP-05",
 				"Description": "BP CUFF,SC FABRIC,1T,THIGH,42-50CM,HP,5/BG",
 				"GTIN": "30841522109533",
@@ -173,7 +162,7 @@ var data = {
 			}
 		}
 	},
-	"964139221035": {
+	"714-0000-01": {
 		"specifications": {
 			"Product Line Description": "NIBP Accessories",
 			"Country of Origin": "USA",
@@ -191,10 +180,10 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"714-0019-01 Documentation.pdf": "/path-name-here"
+			"No Product Documentation": "",
 		},
 		"variants": {
-			"10233012781099": {
+			"714-0019-01": {
 				"Product SKU": "714-0019-01",
 				"Description": "NIBP,HOSE ASSY,NEO.,QUICK RELEASE",
 				"NIBP Size": "9ft Hose",
@@ -204,7 +193,7 @@ var data = {
 			}
 		}
 	},
-	"964152000555": {
+	"714-0000-00": {
 		"specifications": {
 			"Product Line Description": "NIBP Accessories",
 			"Country of Origin": "USA",
@@ -222,10 +211,10 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"714-0018-00 Documentation.pdf": "/path-name-here"
+			"No Product Documentation": "",
 		},
 		"variants": {
-			"10233038077995": {
+			"714-0018-00": {
 				"Product SKU": "714-0018-00",
 				"Description": "NIBP,HOSE ASSY,ADULT,QUICK RELEASE",
 				"NIBP Size": "9ft Hose",
@@ -234,7 +223,7 @@ var data = {
 			}
 		}
 	},
-	"964080140331": {
+	"VNN0ST-M000-00": {
 		"specifications": {
 			"Product Line Description": "NIBP Cuffs (UltraCheck & SoftCheck)",
 			"Country of Origin": "MEX",
@@ -252,14 +241,10 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"VNN1ST-M316-10 Documentation.pdf": "/path-name-here",
-            "VNN2ST-M316-10 Documentation.pdf": "/path-name-here",
-            "VNN3ST-M316-10 Documentation.pdf": "/path-name-here",
-            "VNN4ST-M316-10 Documentation.pdf": "/path-name-here",
-            "VNN5ST-M316-10 Documentation.pdf": "/path-name-here"
+			"SoftCheck Blood Pressure Cuff Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0020-01_A_SoftCheck_IFU.pdf?7182394033425560905",
 		},
 		"variants": {
-			"10232382881835": {
+			"VNN1ST-M316-10": {
 				"Product SKU": "VNN1ST-M316-10",
 				"Description": "BP CUFF,SC VINYL NEO,1T,SIZE 1,3-6CM,M316,10/BX",
 				"GTIN": "30841522100288",
@@ -268,7 +253,7 @@ var data = {
 				"Unit of Measure": "EA",
 				"Quantity": "10"
 			},
-			"10232382914603": {
+			"VNN2ST-M316-10": {
 				"Product SKU": "VNN2ST-M316-10",
 				"Description": "BP CUFF,SC VINYL NEO,1T,SIZE 2,4-8CM,M316,10/BX",
 				"GTIN": "30841522100295",
@@ -277,7 +262,7 @@ var data = {
 				"Unit of Measure": "BX",
 				"Quantity": "10"
 			},
-			"10232382947371": {
+			"VNN3ST-M316-10": {
 				"Product SKU": "VNN3ST-M316-10",
 				"Description": "BP CUFF,SC VINYL NEO,1T,SIZE 3,6-11CM,M316,10/BX",
 				"GTIN": "30841522100301",
@@ -286,7 +271,7 @@ var data = {
 				"Unit of Measure": "BX",
 				"Quantity": "10"
 			},
-			"10232382980139": {
+			"VNN4ST-M316-10": {
 				"Product SKU": "VNN4ST-M316-10",
 				"Description": "BP CUFF,SC VINYL NEO,1T,SIZE 4,7-13CM,M316,10/BX",
 				"GTIN": "30841522100271",
@@ -295,7 +280,7 @@ var data = {
 				"Unit of Measure": "BX",
 				"Quantity": "10"
 			},
-			"10232383012907": {
+			"VNN5ST-M316-10": {
 				"Product SKU": "VNN5ST-M316-10",
 				"Description": "BP CUFF, SC VINYL NEO,1T,SIZE 5,8-15CM,M316,10/BX",
 				"GTIN": "30841522100318",
@@ -306,7 +291,7 @@ var data = {
 			}
 		}
 	},
-	"964124639275": {
+	"US0000MHP-00": {
 		"specifications": {
 			"Product Line Description": "NIBP Cuffs (UltraCheck & SoftCheck)",
 			"Country of Origin": "MEX",
@@ -324,17 +309,10 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"US0814MHP-05 Documentation.pdf": "/path-name-here",
-            "US1320MHP-05 Documentation.pdf": "/path-name-here",
-            "US1826MHP-05 Documentation.pdf": "/path-name-here",
-            "US2635MHP-05 Documentation.pdf": "/path-name-here",
-            "US2938MHP-05 Documentation.pdf": "/path-name-here",
-            "US3242MHP-05 Documentation.pdf": "/path-name-here",
-            "US3544MHP-05 Documentation.pdf": "/path-name-here",
-            "US4250MHP-05 Documentation.pdf": "/path-name-here"
+			"UltraCheck Blood Pressure Cuff Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0021-01_A_UltraCheck_IFU.pdf?7182394033425560905",
 		},
 		"variants": {
-			"10232765841451": {
+			"US0814MHP-05": {
 				"Product SKU": "US0814MHP-05",
 				"Description": "BP CUFF,UC NYLON,1T,INFANT,8-14CM,MHP,5/BG",
 				"GTIN": "30841522110287",
@@ -343,7 +321,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232765874219": {
+			"US1320MHP-05": {
 				"Product SKU": "US1320MHP-05",
 				"Description": "BP CUFF,UC NYLON,1T,CHILD,13-20CM,MHP,5/BG",
 				"GTIN": "30841522110362",
@@ -352,7 +330,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232765906987": {
+			"US1826MHP-05": {
 				"Product SKU": "US1826MHP-05",
 				"Description": "BP CUFF,UC NYLON,1T,SM.ADULT,18-26CM,MHP,5/BG",
 				"GTIN": "30841522110461",
@@ -361,7 +339,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232765939755": {
+			"US2635MHP-05": {
 				"Product SKU": "US2635MHP-05",
 				"Description": "BP CUFF,UC NYLON,1T,ADULT,26-35CM,MHP,5/BG",
 				"GTIN": "30841522110546",
@@ -370,7 +348,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232765972523": {
+			"US2938MHP-05": {
 				"Product SKU": "US2938MHP-05",
 				"Description": "BP CUFF,UC NYLON,1T,ADULT LONG,29-38CM,MHP,5/BG",
 				"GTIN": "30841522110669",
@@ -379,7 +357,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10325361262635": {
+			"US3242MHP-05": {
 				"Product SKU": "US3242MHP-05",
 				"Description": "BP CUFF,UC NYLON,1T,LG.ADLT,32-42CM,MHP,5/BG",
 				"GTIN": "30841522102572",
@@ -388,7 +366,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10325353300011": {
+			"US3544MHP-05": {
 				"Product SKU": "US3544MHP-05",
 				"Description": "BP CUFF,UC NYLON,1T,LG.ADULT-L,35-44CM,MHP,5/BG",
 				"GTIN": "30841522110843",
@@ -397,7 +375,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232766005291": {
+			"US4250MHP-05": {
 				"Product SKU": "US4250MHP-05",
 				"Description": "BP CUFF,UC NYLON,1T,THIGH,42-50CM,MHP,5/BG",
 				"GTIN": "30841522110966",
@@ -408,7 +386,7 @@ var data = {
 			}
 		}
 	},
-	"964116906027": {
+	"US0000HP-00": {
 		"specifications": {
             "Product Line Description": "NIBP Cuffs (UltraCheck & SoftCheck)",
 			"Country of Origin": "MEX",
@@ -426,17 +404,10 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"US0814HP-05 Documentation.pdf": "/path-name-here",
-            "US1320HP-05 Documentation.pdf": "/path-name-here",
-            "US1826HP-05 Documentation.pdf": "/path-name-here",
-            "US2635HP-05 Documentation.pdf": "/path-name-here",
-            "US2938HP-05 Documentation.pdf": "/path-name-here",
-            "US3242HP-05 Documentation.pdf": "/path-name-here",
-            "US3544HP-05 Documentation.pdf": "/path-name-here",
-            "US4250HP-05 Documentation.pdf": "/path-name-here"
+			"UltraCheck Blood Pressure Cuff Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0021-01_A_UltraCheck_IFU.pdf?7182394033425560905",
 		},
 		"variants": {
-			"10232695521323": {
+			"US0814HP-05": {
 				"Product SKU": "US0814HP-05",
 				"Description": "BP CUFF,UC NYLON,1T,INFANT,8-14CM,HP,5/BG",
 				"GTIN": "30841522110263",
@@ -445,7 +416,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232695554091": {
+			"US1320HP-05": {
 				"Product SKU": "US1320HP-05",
 				"Description": "BP CUFF,UC NYLON,1T,CHILD,13-20CM,HP,5/BG",
 				"GTIN": "30841522110348",
@@ -454,16 +425,16 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232695619627": {
+			"US1826HP-05": {
 				"Product SKU": "US1826HP-05",
-				"Description": "BP CUFF,UC NYLON,1T,SM.ADULT,18-26CM,HP,5/BG",
+				"Description": "BP CUFF,UC NYLON,1T,SMALL ADULT,18-26CM,HP,5/BG",
 				"GTIN": "30841522110447",
 				"NIBP Size": "Small Adult",
 				"Limb Circumference": "18-26 cm",
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232695652395": {
+			"US2635HP-05": {
 				"Product SKU": "US2635HP-05",
 				"Description": "BP CUFF,UC NYLON,1T,ADULT,26-35CM,HP,5/BG",
 				"GTIN": "30841522110522",
@@ -472,7 +443,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232695750699": {
+			"US2938HP-05": {
 				"Product SKU": "US2938HP-05",
 				"Description": "BP CUFF,UC NYLON,1T,ADULT LONG,29-38CM,HP,5/BG",
 				"GTIN": "30841522110645",
@@ -481,25 +452,25 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10325224292395": {
+			"US3242HP-05": {
 				"Product SKU": "US3242HP-05",
-				"Description": "BP CUFF,UC NYLON,1T,LG.ADLT,32-42CM,HP,5/BG",
+				"Description": "BP CUFF,UC NYLON,1T,LARGE ADLT,32-42CM,HP,5/BG",
 				"GTIN": "30841522110768",
 				"NIBP Size": "Large Adult",
 				"Limb Circumference": "32-42 cm",
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10325216100395": {
+			"US3544HP-05": {
 				"Product SKU": "US3544HP-05",
-				"Description": "BP CUFF,UC NYLON,1T,LG.ADULT-L,35-44CM,HP,5/BG",
+				"Description": "BP CUFF,UC NYLON,1T,LG.ADULT-LNG,35-44CM,HP,5/BG",
 				"GTIN": "30841522110829",
 				"NIBP Size": "Large Adult Long",
 				"Limb Circumference": "35-44 cm",
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232695783467": {
+			"US4250HP-05": {
 				"Product SKU": "US4250HP-05",
 				"Description": "BP CUFF,UC NYLON,1T,THIGH,42-50CM,HP,5/BG",
 				"GTIN": "30841522110942",
@@ -510,7 +481,7 @@ var data = {
 			}
 		}
 	},
-	"964129161259": {
+	"VST0000HP-00": {
 		"specifications": {
 			"Product Line Description": "NIBP Cuffs (UltraCheck & SoftCheck)",
 			"Country of Origin": "MEX",
@@ -528,17 +499,10 @@ var data = {
 			"Sterile": "No"
         },
         "documentation": {
-			"VST0814HP-05 Documentation.pdf": "/path-name-here",
-            "VST1320HP-05 Documentation.pdf": "/path-name-here",
-            "VST1826HP-05 Documentation.pdf": "/path-name-here",
-            "VST2635HP-05 Documentation.pdf": "/path-name-here",
-            "VST2938HP-05 Documentation.pdf": "/path-name-here",
-            "VST3242HP-05 Documentation.pdf": "/path-name-here",
-            "VST3544HP-05 Documentation.pdf": "/path-name-here",
-            "VST4250HP-05 Documentation.pdf": "/path-name-here"
+			"SoftCheck Blood Pressure Cuff Instructions for Use": "https://cdn.shopify.com/s/files/1/2777/7236/files/059-0020-01_A_SoftCheck_IFU.pdf?7182394033425560905",
 		},
 		"variants": {
-			"10232817221675": {
+			"VST0814HP-05": {
 				"Product SKU": "VST0814HP-05",
 				"Description": "BP CUFF,SC VINYL,1T,INFANT,8-14CM,HP,5/BG",
 				"GTIN": "30841522111352",
@@ -547,7 +511,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232817254443": {
+			"VST1320HP-05": {
 				"Product SKU": "VST1320HP-05",
 				"Description": "BP CUFF,SC VINYL,1T,CHILD,13-20CM,HP,5/BG",
 				"GTIN": "30841522111499",
@@ -556,7 +520,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232817287211": {
+			"VST1826HP-05": {
 				"Product SKU": "VST1826HP-05",
 				"Description": "BP CUFF,SC VINYL,1T,SM.ADULT,18-26CM,HP,5/BG",
 				"GTIN": "30841522111628",
@@ -565,7 +529,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232817319979": {
+			"VST2635HP-05": {
 				"Product SKU": "VST2635HP-05",
 				"Description": "BP CUFF,SC VINYL,1T,ADULT,26-35CM,HP,5/BG",
 				"GTIN": "30841522111741",
@@ -574,7 +538,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232817352747": {
+			"VST2938HP-05": {
 				"Product SKU": "VST2938HP-05",
 				"Description": "BP CUFF,SC VINYL,1T,ADULT LONG,29-38CM,HP,5/BG",
 				"GTIN": "30841522111871",
@@ -583,16 +547,16 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10324494680107": {
+			"VST3242HP-05": { 
 				"Product SKU": "VST3242HP-05",
-				"Description": "BP CUFF,SC VINYL,1T,LG.ADLT,32-42CM,HP,5/BG",
+				"Description": "BP CUFF,SC VINYL,1T,LG.ADULT,32-42CM,HP,5/BG",
 				"GTIN": "30841522112076",
 				"NIBP Size": "Large Adult",
 				"Limb Circumference": "32-42 cm",
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10324522008619": {
+			"VST3544HP-05": {
 				"Product SKU": "VST3544HP-05",
 				"Description": "BP CUFF,SC VINYL,1T,LG.ADULT-L,35-44CM,HP,5/BG",
 				"GTIN": "30841522112137",
@@ -601,7 +565,7 @@ var data = {
 				"Unit of Measure": "BG",
 				"Quantity": "5"
 			},
-			"10232817385515": {
+			"VST4250HP-05": {
 				"Product SKU": "VST4250HP-05",
 				"Description": "BP CUFF,SC VINYL,1T,THIGH,42-50CM,HP,5/BG",
 				"GTIN": "30841522112083",

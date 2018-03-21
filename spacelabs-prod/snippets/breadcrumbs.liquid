@@ -13,7 +13,7 @@
     class="breadcrumbs-container"
     aria-label="{{ 'general.accessibility.nav_breadcrumbs' | t }}"
   >
-    <a href="/">{{ 'general.breadcrumbs.home' | t }}</a>
+    <a href="/">Supplies</a>
     {% if template contains 'page' %}
 
       {{ delimiter }}
@@ -35,6 +35,7 @@
 
     {% elsif template contains 'collection' and collection.handle %}
       {{ delimiter }}
+      {{ collection.id }}
       <a href="/pages/{{ collection.metafields.anchor.business_link }}">{{ collection.metafields.title.business_title }}</a>
       {{ delimiter }}
       {% if current_tags %}

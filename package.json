@@ -9,7 +9,7 @@
   "scripts": {
     "dev-watch": "gulp --env=development",
     "test-stage": "gulp --env=test",
-    "test-push": "cd spacelabs-test && theme replace -f",
+    "test-push": "cd spacelabs-test && theme replace --force",
     "test-download": "cd spacelabs-test && theme download --force",
     "prod-stage": "gulp --env=production",
     "prod-push": "cd spacelabs-prod && theme replace --force",
@@ -44,6 +44,7 @@
   "dependencies": {
     "csvjson": "^5.0.0",
     "fs": "0.0.1-security",
+    "npm": "^5.7.1",
     "path": "^0.12.7"
   }
 }

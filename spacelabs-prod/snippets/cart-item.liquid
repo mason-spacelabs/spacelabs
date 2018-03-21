@@ -10,7 +10,8 @@
 <article class="cart-item"
   data-cartitem
   data-cartitem-id="{{ item.variant_id }}"
-  data-cartitem-price="{{ item.price }}">
+  data-cartitem-price="{{ item.price }}"
+  data-cartitem-sku="{{ item.sku }}">
   <figure class="cart-item--image-wrapper">
     <a href="{{ item.url }}">
       {% if item.image %}
@@ -67,7 +68,7 @@
         class="cart-item--quantity form-fields--qty"
         data-quantity-wrapper
         >
-        <div class="form-field form-field--qty-select {% if item.quantity < 10 %}visible{% else %}hidden{% endif %}">
+        <div class="form-field form-field--qty-select {% if item.quantity < 10 %}visible{% else %}hidden{% endif %}" style="height: 50px;">
           <div class="form-field-select-wrapper">
             <select
               class="form-field-input form-field-select form-field-filled"
@@ -110,9 +111,18 @@
       </div>
 
       <div class="cart-item--total">
-        <span class="money" data-cartitem-total>
-          {{ item.line_price | money }}
-        </span>
+        {% if item.original_line_price != item.line_price %}
+                <span class="money cart-item-text" data-cartitem-discount-total>
+                {{ item.original_line_price | money }}
+                </span><br/>
+                <span class="money" data-cartitem-total>
+                  {{ item.line_price | money }}
+                </span>
+              {% else %}
+                <span class="money" data-cartitem-total>
+                  {{ item.line_price | money }}
+                </span>
+        {% endif %}
       </div>
 
       <div class="cart-item--remove">

@@ -119,6 +119,11 @@
       Product form original location, will remain unless is 3 column layout
     {% endcomment %}
     <div class="product-form--regular" data-product-form-regular>
+    {% if customer %}
+    <span class="atc-subtotal--label" style="font-size: 12px; color: #666; opacity: 1;">
+            * Calculate customer specific pricing at checkout
+    </span>
+    {% endif %}
       <div data-product-form-area>
         {% if is_product_modal %}
           <div data-product-quickshop-message class="product-message--container"></div>
@@ -188,14 +193,21 @@
 </div>
 <script src="{{ 'specifications_data.js' | asset_url }}"></script>
 <script>
-
+  // Loop through product tags to find product indentifier
+  {% for tags in product.tags %}
+    {% if tags contains "_" %}
+    {%else %}
+      var product_tag = '{{ tags }}';
+    {% endif %}
+  {% endfor %}
+  console.log(product_tag); 
   // Grabbing the correct data based on product page
-  let product_identification = {{ product.id }}; 
+  let product_identification = product_tag; 
   let product_data = data[product_identification]; 
 
   // Returning a single instance of the selected variant and creating a dynamic table from the JSON
   function variant_selector(variant){
-
+     console.log(variant);
     // Grabbing the correct JSON data for the variant
     current_variant = data[product_identification].variants[variant];
 
@@ -262,8 +274,9 @@
 
     let documentation_value = document.createTextNode(documentation);
     let documentation_href = documentation_data[documentation];
-
-    a.appendChild(documentation_value);
+    
+    a.innerHTML = '<i class="far fa-file-pdf"></i> ';
+    a.appendChild( documentation_value);
     a.setAttribute('href', documentation_href);
     
     document.getElementById("product_documentation").appendChild(a);

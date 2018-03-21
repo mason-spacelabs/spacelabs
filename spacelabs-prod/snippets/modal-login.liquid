@@ -1,6 +1,6 @@
 <div id="modal-login" class="hidden-modal" style="z-index: 1000 !important;">
     <div class="modal-login-box">
-    <button class="atc-banner--close" style="right: 10px; top: 10px;" type="button" aria-label="{{ 'general.accessibility.close' | t }}"  modal="modal-login" onclick="closeModal(this);">
+    <button class="atc-banner--close modal-close-box" type="button" aria-label="{{ 'general.accessibility.close' | t }}"  modal="modal-login" onclick="closeModal(this);">
       {%- include 'icon-menu-close' -%}
     </button>
         <section class="account-page-login" data-template-account data-template-account-login>
@@ -9,7 +9,9 @@
             </header>
             <article class="account-page-content modal-content-login">
                 <div class="account-login visible" data-account-login-main>
-                    {% form 'customer_login' %} {% if form.errors != blank %}
+                    {% form 'customer_login' %} 
+                    <input type="hidden" name="checkout_url" id="redirect_url" value="/" />
+                    {% if form.errors != blank %}
                     <div class="account-message message--error">
                         {{ form.errors | default_errors }}
                     </div>
@@ -45,7 +47,7 @@
                 </div>
                 <div class="account-recovery" id="customer_recovery" data-account-login-recovery>
                     {% form 'recover_customer_password' %}
-                    <h2 class="account-page-subtitle" style="font-weight: normal;">{{ 'customers.recover_password.title' | t }}</h2>
+                    <h2 class="account-page-subtitle recover-password-title">{{ 'customers.recover_password.title' | t }}</h2>
                     <p>{{ 'customers.recover_password.subtitle' | t }}</p>
 
                     {% assign has_message = false %} {% if form.errors != blank %} {% assign has_message = true %} {% assign message_type = 'error' %} {% endif %} {% if form.posted_successfully? %} {% assign has_message = true %} {% assign message_type = 'success' %} {% endif %} {% if has_message %}
@@ -65,7 +67,7 @@
                         </label>
                     </div>
 
-                    <div class="form-action-row" style="display: flex;">
+                    <div class="form-action-row flex">
                         <button class="button-primary modal-button-login" type="submit">
                             {{ 'customers.forms.submit' | t }}
                         </button>

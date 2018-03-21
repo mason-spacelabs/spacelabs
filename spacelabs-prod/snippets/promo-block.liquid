@@ -10,7 +10,7 @@
 {%- endcapture -%}
 
 <article
-  class="{{ classes | replace: '  ', ' ' | strip_newlines }}"
+  class="{{ classes | replace: '  ', ' ' | strip_newlines }} promo-block-image"
   {{ block.shopify_attributes }}>
   <a style=""
     class="promo-block--content {% unless has_link %}promo-block--unlinked{% endunless %}"

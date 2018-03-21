@@ -20069,6 +20069,7 @@ function ProductPriceMain(price) {
 		this.$el = jquery$1(section.el);
 		this.$header = jquery$1('.site-header-wrapper');
 		this.$total = this.$el.find('[data-cart-total]');
+		this.$totalDiscount = this.$el.find('[data-discount-cart-total]');
 		this.$shipping = this.$el.find('[data-cartshipping]');
 	
 		// Product form containers
@@ -20259,6 +20260,11 @@ function ProductPriceMain(price) {
 			el.innerHTML = Shopify.formatMoney(response.total_price, _this4.settings.money_format);
 			dist$2.update(el);
 		  });
+
+		  this.$totalDiscount.each(function (i, el) {
+			el.innerHTML = Shopify.formatMoney(response.original_total_price, _this4.settings.money_format);
+			dist$2.update(el);
+		  });
 	
 		  // Select item from response
 		  var filteredItems = response.items.filter(function (item) {
@@ -20273,6 +20279,7 @@ function ProductPriceMain(price) {
 	
 		  var cartItem = filteredItems[0];
 		  var itemTotal = $cartItem[0].querySelector('[data-cartitem-total]');
+		  var itemTotalDiscounted = $cartItem[0].querySelector('[data-cartitem-discount-total]');
 	
 		  if (cartItem.quantity !== quantity) {
 			this._quantityError(cartItem.quantity, cartItem.title);
@@ -20280,8 +20287,12 @@ function ProductPriceMain(price) {
 			$cartItem.find('[data-quantity-select]').val(cartItem.quantity);
 		  }
 	
-		  itemTotal.innerHTML = Shopify.formatMoney(cartItem.price * cartItem.quantity, this.settings.money_format);
+		  itemTotal.innerHTML = Shopify.formatMoney(cartItem.line_price, this.settings.money_format);
 		  dist$2.update(itemTotal);
+
+
+		  itemTotalDiscounted.innerHTML = Shopify.formatMoney(cartItem.original_price * cartItem.quantity, this.settings.money_format);
+		  dist$2.update(itemTotalDiscounted);
 		}
 	
 		/**
@@ -21634,7 +21645,8 @@ function ProductPriceMain(price) {
 
 			  // Compare the selected variant with the looped variants and return a match	
 			  if( selected_variant == looped_variant ){
-				variant_selector(variant.id);
+				  console.log(variant.sku);
+				variant_selector(variant.sku);
 			  }
 
 
@@ -21710,7 +21722,6 @@ function ProductPriceMain(price) {
 		  } else {
 			return;
 		  }
-	
 		  return this.productOptions.getVariantFromOptions(options);
 		}
 	  }, {

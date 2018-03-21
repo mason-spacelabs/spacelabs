@@ -1,6 +1,6 @@
 <div id="modal-success" class="hidden-modal" style="z-index: 1000 !important;">
     <div class="modal-login-box">
-        <button class="atc-banner--close" style="right: 10px; top: 10px;" type="button" aria-label="{{ 'general.accessibility.close' | t }}"  modal="modal-success" onclick="closeModal(this);">
+        <button class="atc-banner--close modal-close-box" type="button" aria-label="{{ 'general.accessibility.close' | t }}"  modal="modal-success" onclick="closeModal(this, true);">
       {%- include 'icon-menu-close' -%}
     </button>
         <section class="account-page-login">
@@ -8,12 +8,12 @@
                 <img class="modal-image-login" src="{{ "spacelabs-logo.png" | asset_url }}">
             </header>
             <article class="account-page-content modal-content-login">
-                <h3 style="margin: 25px 0px;">Your registration request was sent successfully!</h3>
+                <h3 class="error-title">Your form was sent successfully!</h3>
                 <div class="account-login visible" >
-                    <p class="rte">We will review your registration request and get back to you within 48 hours. If you have any questions or concerns please email at customer@spacelabs.com or call 425-396-3300.</p>
+                    <p class="rte">We will review your form and get back to you within 48 hours. If you have any questions or concerns please email customer@spacelabs.com or call 425-396-3300.</p>
                 </div>
-                <div class="form-action-row" style="display: flex; margin-top: 50px;">
-                    <button class="button-primary modal-button-login" modal="modal-success" onclick="closeModal(this);">
+                <div class="form-action-row modal-close-button">
+                    <button class="button-primary modal-button-login" modal="modal-success" onclick="closeModal(this, true);">
                         Close
                     </button>
                 </div>
