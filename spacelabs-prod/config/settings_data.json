@@ -70,7 +70,7 @@
         "type": "static-header",
         "settings": {
           "sticky_header": true,
-          "logo": "shopify:\/\/shop_images\/sp-logo.png",
+          "logo": "",
           "logo_height": 100,
           "logo_width": 200,
           "enable_live_search": true,
@@ -93,11 +93,11 @@
           "1520556836362": {
             "type": "menu",
             "settings": {
-              "menu": "healthcare-policies"
+              "menu": "product-categories"
             }
           },
           "1520557144600": {
-            "type": "social_accounts",
+            "type": "social_accounts", 
             "settings": {
             }
           }

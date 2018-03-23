@@ -56,7 +56,7 @@ assets/spacelabs-logo.png:
 assets/spacelabs.min.css:
   development: 2018-03-21T09:28:12-07:00   d50e64aaabe9579870c5a3a96aa177a5
 assets/spacelabs.min.js:
-  development: 2018-03-21T16:55:16-07:00   ac35388b32ec422e9cab18a06721fd30
+  development: 2018-03-23T13:58:20-07:00   8cb12aab5951359f4b5cfbccd9df7b36
 assets/specifications_data.js:
   development: 2018-03-21T15:15:14-07:00   58a8a9c8fa18f741600fa75d0e2d2364
 assets/theme.js:
@@ -66,7 +66,7 @@ assets/theme.scss.liquid:
 assets/vendor.js:
   development: 2018-03-21T15:15:22-07:00   cb7c4217c9b6feb844647b361accfe6c
 config/settings_data.json:
-  development: 2018-03-21T16:55:16-07:00   aa943d590ff12a544073eb40b6452ff4
+  development: 2018-03-23T13:59:03-07:00   9d17b29e57701a9785910482b8c010b8
 config/settings_schema.json:
   development: 2018-03-21T09:28:16-07:00   ee9dda03baf68f0aca0b32eb818c9753
 layout/checkout.liquid:
@@ -172,7 +172,7 @@ sections/static-article.liquid:
 sections/static-blog.liquid:
   development: 2018-03-21T09:27:03-07:00   c106f03e4086b0609fd9460de448737d
 sections/static-cart.liquid:
-  development: 2018-03-21T09:27:03-07:00   7ec8ebb2690aa631c5b663f7a4bfe1ab
+  development: 2018-03-23T13:58:15-07:00   25d95683b9884ecb20f909e9234725b3
 sections/static-collection.liquid:
   development: 2018-03-21T09:27:04-07:00   c9196005df352e172d702bfae82771eb
 sections/static-footer.liquid:
