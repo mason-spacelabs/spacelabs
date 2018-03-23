@@ -123,7 +123,7 @@ gulp.task('imageWatch', function () {
 
 gulp.task('scripts', function() {
 
-  return gulp.src('./lib/js/**/*.js')
+  return gulp.src(['./lib/js/jquery-validator.js', './lib/js/fontawesome.js', './lib/js/jquery-mask.js', './lib/js/spacelabs.js'])
 
       .pipe(concat('spacelabs.js'))
 
@@ -158,15 +158,11 @@ gulp.task('shopifywatch', function() {
 
     case "test":
 
-      console.log(config.test);
-
       gulp.src(['./spacelabs-dev/**/*','!spacelabs-dev/**/*.yml']).pipe(gulp.dest('./spacelabs-test'));
 
       break;
 
     case "production":
-
-      console.log(config.production);
 
       gulp.src(['./spacelabs-test/**/*','!spacelabs-test/**/*.yml']).pipe(gulp.dest('./spacelabs-prod'));
 
