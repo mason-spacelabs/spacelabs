@@ -200,14 +200,14 @@
       var product_tag = '{{ tags }}';
     {% endif %}
   {% endfor %}
-  console.log(product_tag); 
+
   // Grabbing the correct data based on product page
   let product_identification = product_tag; 
   let product_data = data[product_identification]; 
 
   // Returning a single instance of the selected variant and creating a dynamic table from the JSON
   function variant_selector(variant){
-     console.log(variant);
+
     // Grabbing the correct JSON data for the variant
     current_variant = data[product_identification].variants[variant];
 
