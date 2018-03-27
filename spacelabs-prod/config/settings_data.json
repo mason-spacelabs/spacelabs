@@ -81,6 +81,21 @@
           "menu": "main-menu"
         }
       },
+      "dynamic-page": {
+        "type": "dynamic-page",
+        "settings": {
+          "sticky_header": true,
+          "logo": "",
+          "logo_height": 100,
+          "logo_width": 200,
+          "enable_live_search": true,
+          "enable_live_search_images": true,
+          "enable_live_search_articles_pages": true,
+          "quick_links": "categories",
+          "quick_links_secondary": "footer",
+          "menu": "main-menu"
+        }
+      },
       "static-footer": {
         "type": "static-footer",
         "blocks": {

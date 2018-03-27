@@ -25,7 +25,12 @@
         {% endfor %}
         </ul> 
     </div>
+    {% assign image_handle = page.handle | append: '-banner.jpg' %}
     <div class="list-collection-box custom-page-box" style="margin-top: 18.75px;">
+    <section style="background: url('{{ image_handle | asset_url }}'); min-height: 150px; background-size: cover; padding: 1px 15px; margin-bottom: 25px;">
+    <h2 id="page-banner-title" style="color: #fff;"></h2>
+    <h3 id="page-banner-tagline" style="color: #fff;"></h3>
+    </section>
         {{ page.content }}
         <h3 class="list-collection-header" style="margin-top: 36px;">{{ page.title }}</h3>
         <div class="listcollections--inner list-collection-flex"> 
@@ -46,5 +51,31 @@
 </div>
 {% include 'pagination' %}
 {% endpaginate %}
+<script>
+var page_handle = '{{ page.handle }}';
+
+var page_banner = {
+    "electrocardiology": {
+        title: "Electrocardiology",
+        tagline: "Featuring our modular ECG combiner system of reusable or disposable lead wires"
+    },
+    "non-invasive-blood-pressure-cuffs": {
+        title: "Non-Invasive Blood Pressure Cuffs",
+        tagline: "Popular styles now available to order from our online store"
+    },
+    "capnography-multigas": {
+        title: "Capnography & Multigas",
+        tagline: "Supplies for your Spacelabs and Sidestream monitoring systems"
+    },
+    "pulse-oximetry": {
+        title: "Pulse Oximetry",
+        tagline: "Featuring Spacelabs and Masimo sensors and cables"
+    }
+}
+
+document.getElementById("page-banner-title").innerHTML = page_banner[page_handle].title;
+document.getElementById("page-banner-tagline").innerHTML = page_banner[page_handle].tagline;
+
+</script>
 
 

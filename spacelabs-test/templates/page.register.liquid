@@ -2,7 +2,7 @@
     <header class="page-masthead ">
         <div class="page-content">
             <h1 class="page-title text-left register-title">
-            {{ page.title }}
+            Spacelabs Account Request
             </h1>
         </div>
     </header>
@@ -97,6 +97,7 @@
                     <option class="register-hidden"></option>
                     <option>Administrator</option>
                     <option>Administrator, Assistant</option>
+                    <option>Biomed Manager</option>
                     <option>Buyer / Purchaser</option>
                     <option>Central Supply, Director/Manager</option>
                     <option>Chief Executive Officer</option>
@@ -273,13 +274,13 @@
                         <option>Sole Proprietor</option>
                     </select>
                     <label class="form-field-title" for="contact_billing_entity">
-                        Business Entity *
+                        Business Entity
                     </label>
                 </div>
                 <div class="form-field form-field--half">
                     <input class="form-field-input form-field-text" id="contact_billing_year" name="contact[YearBusinessStarted]" type="text">
                     <label class="form-field-title" for="contact_billing_year">
-                        Year Business Started *
+                        Year Business Started
                     </label>
                 </div>
             </div>
@@ -287,7 +288,7 @@
                 <div class="form-field">
                      <input class="form-field-input form-field-text" id="contact_employee_count" name="contact[EmployeeNumber]" type="text">
                     <label class="form-field-title" for="contact_employee_count">
-                        Number of Employees *
+                        Number of Employees
                     </label>
                 </div>
             </div>
@@ -295,7 +296,7 @@
                 <div class="form-field">
                     <input class="form-field-input form-field-text" id="contact_dun_number" name="contact[DunBradstreetNumber]" type="text">
                     <label class="form-field-title" for="contact_dun_number">
-                        DUNS Number *
+                        DUNS Number
                     </label>
                 </div>
             </div>
@@ -303,7 +304,7 @@
                 <div class="form-field form-field--half">
                     <input class="form-field-input form-field-text" id="contact_billing_fed" name="contact[FederalIdentificationNumber]" type="text">
                     <label class="form-field-title" for="contact_billing_fed">
-                        Federal Identification Number *
+                        Federal Identification Number
                     </label>
                 </div>
                 <div class="form-field form-field--half">
@@ -362,7 +363,7 @@
                         <option value="WY">Wyoming</option>
                     </select>
                     <label class="form-field-title" for="state_incorporation">
-                        State of Incorporation *
+                        State of Incorporation
                     </label>
                 </div>
             </div>
@@ -520,7 +521,6 @@
             </div>
             <div class="form-field">
                 <select id="contact_facility_hospital" onchange="hospitalTrigger(this.value)" name="contact[FacilityHospital]" class="form-field-input form-field-text">
-                <option value=" "> </option>
                     <option value="no">No</option>
                     <option value="yes">Yes</option>
                 </select>
@@ -528,7 +528,7 @@
                     Is your facility a Hospital?
                 </label>
             </div>
-            <div class="form-field hospital-questions">
+            {% comment %} <div class="form-field hospital-questions">
                 <input class="form-field-input form-field-text" id="contact_facility_HIN" name="contact[HealthIndustryNumber]" type="text" value=" ">
                 <label class="form-field-title" for="contact_facility_HIN">
                     Hospital Health Industry Number 
@@ -548,7 +548,7 @@
                 <label class="form-field-title" for="contact_facility_anesthesia">
                     Does your facility use inhaled anesthesia?
                 </label>
-            </div>
+            </div> {% endcomment %}
             <div class="form-field hospital-questions">
                 <input class="form-field-input form-field-text" id="contact_facility_beds" name="contact[FacilityHospitalBeds]" type="text" value=" ">
                 <label class="form-field-title" for="contact_facility_beds">
@@ -558,19 +558,19 @@
             <div class="form-field">
                 <input class="form-field-input form-field-text" id="contact_facility_fullname" name="contact[FacilityContactFullName]" type="text" value=" ">
                 <label class="form-field-title" for="contact_facility_fullname">
-                    Facility Contact Name *
+                    Facility Contact Name
                 </label>
             </div>
             <div class="form-field">
                 <input class="form-field-input form-field-text" id="contact_facility_number" name="contact[FacilityContactNumber]" type="tel" value=" ">
                 <label class="form-field-title" for="contact_facility_number">
-                    Facility Contact Phone Number *
+                    Facility Contact Phone Number
                 </label>
             </div>
             <div class="form-field">
                 <input class="form-field-input form-field-text" id="contact_facility_email" name="contact[FacilityContactEmail]" type="text" onfocus="if(this.value == ' ') { this.value = ''; }" value=" ">
                 <label class="form-field-title" for="contact_facility_email">
-                    Facility Contact Email Address *
+                    Facility Contact Email Address
                 </label>
             </div>
             <div class="form-action-row">
@@ -611,7 +611,7 @@
             <div class="form-field">
                 <input class="form-field-input form-field-text" id="contact_shipping_address" name="contact[ShippingAddress]" type="text" value=" ">
                 <label class="form-field-title" for="contact_shipping_address">
-                    Shipping Address *
+                    Physical Shipping Address * ( No P.O. Boxes )
                 </label>
             </div>
             <div class="form-fields-columns address-fields-box">
@@ -690,19 +690,19 @@
             <div class="form-field">
                 <input class="form-field-input form-field-text" id="contact_shipping_fullname" name="contact[ShippingContactFullName]" type="text" value=" ">
                 <label class="form-field-title" for="contact_shipping_fullname">
-                    Shipping Contact Name *
+                    Shipping Contact Name
                 </label>
             </div>
             <div class="form-field">
                 <input class="form-field-input form-field-text" id="contact_shipping_number" name="contact[ShippingContactNumber]" type="tel" value=" ">
                 <label class="form-field-title" for="contact_shipping_number">
-                    Shipping Contact Phone Number *
+                    Shipping Contact Phone Number
                 </label>
             </div>
             <div class="form-field">
                 <input class="form-field-input form-field-text" id="contact_shipping_email" name="contact[ShippingContactEmail]" type="text" onfocus="if(this.value == ' ') { this.value = ''; }" value=" ">
                 <label class="form-field-title" for="contact_shipping_email">
-                    Shipping Contact Email Address *
+                    Shipping Contact Email Address
                 </label>
             </div>
             <div class="form-action-row">

@@ -189,10 +189,12 @@
       <h3 class="product-table-title tabs-title">Product Documentation</h3>
       <div id="product_documentation"></div>
     </div>
-  </div>
+  </div> 
 </div>
+
 <script src="{{ 'specifications_data.js' | asset_url }}"></script>
 <script>
+
   // Loop through product tags to find product indentifier
   {% for tags in product.tags %}
     {% if tags contains "_" %}
