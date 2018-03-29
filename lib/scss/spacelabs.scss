@@ -1201,6 +1201,9 @@ table.product_table tr:nth-child(odd) {
 }
 .account-address {
 
+    &:nth-child(n + 4) {
+        display:none;
+    }
     @include media($max: $bp-small) {
         width: 100%;
         &:first-child {

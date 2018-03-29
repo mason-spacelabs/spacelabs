@@ -333,7 +333,7 @@
         "sold_out": "Sold out"
       },
       "price": {
-        "range_html": "<span class=\"price--label\">from<\/span> {{ price }}"
+        "range_html": "{{ price }}" 
       }
     },
     "buttons": {
