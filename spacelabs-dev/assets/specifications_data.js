@@ -134,7 +134,7 @@ var data = {
 				"Sold As": "Bag of 5"
 			},
 			"ST3544HP-05": {
-				"Part Number": "ST3544HP-05",
+				"Part Number": "ST3544HP-05", 
 				"Description": "BP CUFF,SC FABRIC,1T,LG.ADULT-L,35-44CM,HP,5/BG",
 				"GTIN": "30841522109533",
 				"NIBP Size": "Large Adult Long",
@@ -144,7 +144,7 @@ var data = {
 			"ST4250HP-05": {
 				"Part Number": "ST4250HP-05",
 				"Description": "BP CUFF,SC FABRIC,1T,THIGH,42-50CM,HP,5/BG",
-				"GTIN": "30841522109533",
+				"GTIN": "30841522109618",
 				"NIBP Size": "Thigh",
 				"Limb Circumference": "42-50 cm",
 				"Sold As": "Bag of 5"

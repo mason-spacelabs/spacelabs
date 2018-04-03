@@ -23,6 +23,13 @@
 
             {% for address in customer.addresses %}
               <div class="account-address">
+                {% if forloop.index0 == 0 %}
+                <h3>Shipping Address</h3>
+                {% elsif forloop.index0 == 1 %}
+                <h3>Facility Address</h3>
+                {% else %}
+                <h3>Billing Address</h3>
+                {% endif %}
                 {%
                   include 'account-address-list-spacelabs',
                   address: address

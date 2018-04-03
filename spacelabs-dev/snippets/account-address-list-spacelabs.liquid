@@ -2,11 +2,11 @@
   @param address {Object}
     Object containing address items
 {% endcomment %}
-  {% if address.company != blank %}
-    <h3>{{ address.company }}</h3>
-  {% endif %}
 <ul class="account-address-list">
   <li>{{ address.first_name }} {{ address.last_name }}</li>
+  {% if address.company != blank %}
+    <li>{{ address.company }}</li>
+  {% endif %}
   {% if address.street != blank %}
     <li>{{ address.street }}</li>
   {% endif %}

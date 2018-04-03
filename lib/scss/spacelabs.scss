@@ -875,6 +875,7 @@ $local-space-large: 15px;
 .recently-viewed-box {
     padding:0px 20px;
 }
+
 // ================= PRODUCT PAGE TABLES =================
 
 .product-table-title {
@@ -1135,12 +1136,15 @@ table.product_table tr:nth-child(odd) {
     background: rgba(0, 0, 0, 0.7); 
     z-index: 100;
 }
-.loading-text {
-    margin-top: 400px; 
+#loading-modal {
+    margin-top: 400px;
     color: #fff;
     max-width: 400px; 
     margin-left: auto; 
     margin-right: auto;
+}
+#checkout_options {
+    margin-top: 300px;
 }
 .modal-close-box {
     right: 10px; 

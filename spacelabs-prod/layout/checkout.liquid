@@ -34,13 +34,17 @@
         </div>
         <div class="main" role="main">
           <div class="main__header">
-            {{ content_for_logo }}
+            <a class="site-logo" href="/">
+              <img class="site-logo-image" src="{{ 'spacelabs-logo-small.png' | asset_url }}" style="max-width: 200px; max-height: 100px;" alt="">
+            </a>
+            
             {{ breadcrumb }}
             {{ alternative_payment_methods }}
           </div>
-          <div class="main__content">
+          <div id="content_block" class="main__content" >
             {{ content_for_layout }}
           </div>
+
           <div class="main__footer">
             {{ content_for_footer }}
           </div>
@@ -50,13 +54,105 @@
 
     {{ tracking_code }}
   </body>
-<script>
+<script>  
+    window.onload = function(){ 
 
-var address_field = document.querySelectorAll('[data-address-field="zip"]');
-var google_auto_prevent = address_field["0"].childNodes["3"].childNodes["1"];
+      var content_block = document.querySelectorAll('#content_block');
+      content_block[0].style.display = "block";
 
-address_field["0"].classList.add("error-show"); 
-google_auto_prevent.setAttribute("autocomplete","new-password");
+      if(document.getElementById('checkout_shipping_address_id') == undefined)
+      return
 
+      var shipping_address = document.getElementById('checkout_shipping_address_id'); 
+      shipping_address.classList.add("visually--hidden");
+
+      var address_data = JSON.parse(shipping_address[1].getAttribute('data-properties'));
+
+      var shipping_block = document.querySelectorAll('.section--shipping-address');
+      var input_cover = document.createElement("DIV");
+
+      input_cover.classList.add("input-layer");
+      shipping_block[0].appendChild(input_cover);  
+
+      document.getElementById('checkout_shipping_address_first_name').value = address_data.first_name;
+      document.getElementById('checkout_shipping_address_first_name').setAttribute("readonly", true);
+      
+      document.getElementById('checkout_shipping_address_last_name').value = address_data.last_name; 
+      document.getElementById('checkout_shipping_address_last_name').setAttribute("readonly", true); 
+
+      document.getElementById('checkout_shipping_address_company').value = address_data.company;
+      document.getElementById('checkout_shipping_address_company').setAttribute("readonly", true);
+
+      document.getElementById('checkout_shipping_address_address1').value = address_data.address1;
+      document.getElementById('checkout_shipping_address_address1').setAttribute("readonly", true);
+
+      document.getElementById('checkout_shipping_address_address2').value = address_data.adress2 || "";
+      document.getElementById('checkout_shipping_address_address2').setAttribute("readonly", true);
+
+      document.getElementById('checkout_shipping_address_city').value = address_data.city;
+      document.getElementById('checkout_shipping_address_city').setAttribute("readonly", true);
+
+      document.getElementById('checkout_shipping_address_country').value = address_data.country;
+      document.getElementById('checkout_shipping_address_country').setAttribute("readonly", true);
+
+      document.getElementById('checkout_shipping_address_province').value = address_data.province;
+      document.getElementById('checkout_shipping_address_province').setAttribute("readonly", true);
+
+      document.getElementById('checkout_shipping_address_zip').value = address_data.zip;
+      document.getElementById('checkout_shipping_address_zip').setAttribute("readonly", true);
+
+      var first_name = document.getElementById('checkout_shipping_address_first_name').parentElement;
+      var company = document.getElementById('checkout_shipping_address_company').parentElement;
+
+      company.firstChild.innerHTML = "Company";
+      first_name.firstChild.innerHTML = "First Name";
+
+      var chkReadyState = setInterval(function() {
+        if (document.readyState == "complete") {
+
+            clearInterval(chkReadyState);
+            
+            var country = document.getElementById('checkout_shipping_address_country');
+            var country_parent = country.parentElement;
+            var country_input = document.createElement("INPUT");
+
+            country.classList.add("visually--hidden");
+
+            country_input.classList.add("field__input");
+            country_input.value = address_data.country;
+            country_input.setAttribute("readonly", true);
+
+            country_parent.classList.remove("field__input-wrapper--select");
+            country_parent.appendChild(country_input);
+
+            var state = document.getElementById('checkout_shipping_address_province');
+            var state_parent = state.parentElement;
+            var state_input = document.createElement("INPUT");
+
+            state.classList.add("visually--hidden");
+
+            state_input.classList.add("field__input");
+            state_input.value = address_data.province;
+            state_input.setAttribute("readonly", true);
+
+            state_parent.classList.remove("field__input-wrapper--select");
+            state_parent.appendChild(state_input);
+          }
+        }, 0);
+      
+
+      var step_section = document.querySelectorAll('.step__sections');
+
+      var errors = document.querySelectorAll('.field__message--error');
+
+      if(errors.length != 0){
+
+        var global_error = document.createElement("P");
+        global_error.classList.add("field__message", "field__message--error", "custom--error");
+        global_error.innerHTML = "Invalid Shipping Address: Please contact customer service to request an address change.";
+        step_section[0].appendChild(global_error);
+
+      }
+    }
   </script>
 </html>

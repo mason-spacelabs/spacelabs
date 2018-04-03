@@ -21645,7 +21645,6 @@ function ProductPriceMain(price) {
 
 			  // Compare the selected variant with the looped variants and return a match	
 			  if( selected_variant == looped_variant ){
-				  console.log(variant.sku);
 				variant_selector(variant.sku);
 			  }
 
