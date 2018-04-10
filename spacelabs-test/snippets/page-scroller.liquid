@@ -1,0 +1,18 @@
+<div id="page-scroller" class="fa-3x" style="z-index: 9999;">
+<i class="fas fa-chevron-circle-up"></i>
+</div>
+<script>
+$(document).scroll(function() {
+  var y = $(this).scrollTop();
+  if (y > 50) { 
+    $('#page-scroller').fadeIn();
+  }else{
+    $('#page-scroller').fadeOut();
+  }
+});
+
+$("#page-scroller").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+  return false;
+});
+</script>

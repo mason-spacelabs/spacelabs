@@ -12,7 +12,7 @@
 <article
   class="{{ classes | replace: '  ', ' ' | strip_newlines }} promo-block-image"
   {{ block.shopify_attributes }}>
-  <a style=""
+  <a 
     class="promo-block--content {% unless has_link %}promo-block--unlinked{% endunless %}"
     {% if has_link %}href="{{ block.settings.block_link }}"{% endif %}
     data-promo-block-content>

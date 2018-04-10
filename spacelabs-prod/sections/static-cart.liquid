@@ -328,7 +328,16 @@
 }
 
 {% endschema %}
+{% assign account_data = customer.metafields.account_data %}
+{% assign account_information = account_data.details | split: ':' | join: ',' | split: ',' %}
 <script>
 $(".loading-screen").css( "display", "none" );
-var customer = {{ customer.id }}
+var facility_number = {{ account_information[1] }};
+var shipping_number = {{ account_information[7] }};
+var customer_number = {{ customer.id }};
+var customer = {
+  customer: customer_number,
+  facility: facility_number,
+  shipping: shipping_number
+}
 </script>

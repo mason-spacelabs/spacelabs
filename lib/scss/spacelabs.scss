@@ -48,6 +48,23 @@ $bp-register-md: 600px;
 .flex {
     display: flex;
 }
+#page-scroller{
+    display: none;
+    cursor: pointer;
+    height: 20px; 
+    width: 20px; 
+    position: fixed; 
+    bottom: 150px; 
+    right: 50px; 
+    color: #003f72;
+
+    @include media($max: $bp-xl) {
+        display: none !important;
+    }
+}
+#page-scroller {
+    color: #195280;
+}
 
 // ================= NAVIGATION =================
 
@@ -1240,6 +1257,13 @@ table.product_table tr:nth-child(odd) {
 .address-change-message p {
     margin-top: 0px;
     font-size: 14px;
+}
+.order-hidden {
+
+    display: block;
+    @include media($max: $bp-small) {
+        display: none;
+    }
 }
 
 // ================= REGISTRATION PAGE =================

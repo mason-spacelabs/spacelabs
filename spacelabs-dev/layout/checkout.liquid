@@ -35,7 +35,7 @@
         <div class="main" role="main">
           <div class="main__header">
             <a class="site-logo" href="/">
-              <img class="site-logo-image" src="{{ 'spacelabs-logo-small.png' | asset_url }}" style="max-width: 200px; max-height: 100px;" alt="">
+              <img class="site-logo-image checkout-image" src="{{ 'spacelabs-logo-small.png' | asset_url }}" alt="Spacelabs Healthcare">
             </a>
             
             {{ breadcrumb }}
@@ -54,8 +54,10 @@
 
     {{ tracking_code }}
   </body>
-<script>  
-    window.onload = function(){ 
+<script>
+    window.onload = function(){
+
+      // SHOWING THE SHIPPING BLOCK AFTER LOADING THE PAGE 
 
       var content_block = document.querySelectorAll('#content_block');
       content_block[0].style.display = "block";
@@ -63,16 +65,42 @@
       if(document.getElementById('checkout_shipping_address_id') == undefined)
       return
 
+      // HIDING THE ADDRESS SELECTOR
+
       var shipping_address = document.getElementById('checkout_shipping_address_id'); 
+      var shipping_address_parent = document.getElementById('checkout_shipping_address_id').parentElement; 
+      shipping_address_parent.childNodes[0].classList.add("visually--hidden");
       shipping_address.classList.add("visually--hidden");
 
-      var address_data = JSON.parse(shipping_address[1].getAttribute('data-properties'));
+      // LOOP THROUGH ADDRESS TO FIND DEFAULT
+
+      var address_data = "";
+      var shipping_array = shipping_address.getElementsByTagName("OPTION");
+      for (var i = 0; i < shipping_array.length; i++) {
+
+        var default_address = JSON.parse(shipping_address[i].getAttribute('data-properties'));
+
+        if(default_address != null){
+
+          var default_boolean = default_address.default;
+
+          if(default_boolean){
+
+            address_data = default_address;
+          }
+        }
+      }
+
+
+      // PARSING THE CORRECT ADDRESS AND ADDING AN INPUT COVER OVER THE FORM
 
       var shipping_block = document.querySelectorAll('.section--shipping-address');
       var input_cover = document.createElement("DIV");
 
       input_cover.classList.add("input-layer");
       shipping_block[0].appendChild(input_cover);  
+
+      // VERIFYING AND ASSIGNING THE CORRECT ADDRESS TO THE SHIPPING FORM
 
       document.getElementById('checkout_shipping_address_first_name').value = address_data.first_name;
       document.getElementById('checkout_shipping_address_first_name').setAttribute("readonly", true);
@@ -85,9 +113,6 @@
 
       document.getElementById('checkout_shipping_address_address1').value = address_data.address1;
       document.getElementById('checkout_shipping_address_address1').setAttribute("readonly", true);
-
-      document.getElementById('checkout_shipping_address_address2').value = address_data.adress2 || "";
-      document.getElementById('checkout_shipping_address_address2').setAttribute("readonly", true);
 
       document.getElementById('checkout_shipping_address_city').value = address_data.city;
       document.getElementById('checkout_shipping_address_city').setAttribute("readonly", true);
@@ -104,13 +129,19 @@
       var first_name = document.getElementById('checkout_shipping_address_first_name').parentElement;
       var company = document.getElementById('checkout_shipping_address_company').parentElement;
 
+      // MODIFYING THE INPUT LABELS SO THEY DONT SAY (OPTIONAL)
+
       company.firstChild.innerHTML = "Company";
       first_name.firstChild.innerHTML = "First Name";
+
+      // IE BUG FIX FOR SELECT INPUT THAT HAS A DELAYED LOADING 
 
       var chkReadyState = setInterval(function() {
         if (document.readyState == "complete") {
 
             clearInterval(chkReadyState);
+
+            // CHANGES THE COUNTRY INPUT FROM A SELECT INPUT TO A NORMAL INPUT
             
             var country = document.getElementById('checkout_shipping_address_country');
             var country_parent = country.parentElement;
@@ -124,6 +155,8 @@
 
             country_parent.classList.remove("field__input-wrapper--select");
             country_parent.appendChild(country_input);
+
+            // CHANGES THE STATE INPUT FROM A SELECT INPUT TO A NORMAL INPUT
 
             var state = document.getElementById('checkout_shipping_address_province');
             var state_parent = state.parentElement;
@@ -140,6 +173,7 @@
           }
         }, 0);
       
+      // ERROR MESSAGE CREATION FOR SHIPPING ADDRESS FORM
 
       var step_section = document.querySelectorAll('.step__sections');
 

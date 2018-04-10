@@ -76,21 +76,16 @@
 
     {% section 'static-footer' %}
 
-    {% comment %}
-      Below are various templates used in JavaScript
-    {% endcomment %}
-    <div style="display: none;" aria-hidden="true" data-templates>
+    <div aria-hidden="true" data-templates>
       {% include 'message-banner' %}
       {% include 'atc-banner' %}
     </div>
 
-    {% comment %}
-      Modal container, used on Collections, Password, and QuickShop
-    {% endcomment %}
     {% include 'modal' %}
     {% include 'modal-login' %}
     {% include 'modal-error' %}
-    {% include 'modal-success' %}   
+    {% include 'modal-success' %}
+    {% include 'page-scroller' %}    
 
 
     {%- if template contains 'customer' -%}

@@ -8,9 +8,6 @@
   </header>
 
   <article class="account-page--two-column account-page-content">
-    {% comment %}
-      Customer order summary
-    {% endcomment %}
     {% assign account_data = customer.metafields.account_data %}
     {% assign key = 'details' %}
     {% assign account_information = account_data.details | split: ',' %}
@@ -21,10 +18,13 @@
       </h2>
       <div class="account-details-container">
         {% for details in account_information %}
-        <p class="account-info-item account-information">{{ details }}</p>
+          {% assign iteration = forloop.index %}
+          {%if iteration <= 2 %}
+            <p class="account-info-item account-information">{{ details }}</p>
+          {% endif %}
         {% endfor %} 
       </div>
-
+      
       <h2 class="account-page-subtitle">
         Order History
       </h2>
@@ -35,7 +35,8 @@
             <thead>
               <tr>
                 <th class="text-left">{{ 'customers.account.order' | t }}</th>
-                <th class="text-left">{{ 'customers.account.payment' | t }}</th>
+                <th class="text-left">Date</th>
+                <th class="text-left order-hidden">{{ 'customers.account.payment' | t }}</th> 
                 <th class="text-left">{{ 'customers.account.fulfillment' | t }}</th>
                 <th class="text-left">{{ 'customers.account.total' | t }}</th>
               </tr>
@@ -46,12 +47,15 @@
                 <tr>
                   <td class="account-order-number">
                     {%- capture order_link -%}
-                      {{ order.name }} - {{ order.created_at | date: format: 'short_day_month_year' }}
+                      {{ order.name }}
                     {%- endcapture -%}
 
                     {{ order_link | strip_newlines | link_to: order.customer_url, order.name }}
                   </td>
-                  <td class="payment-status--{{ order.financial_status }}">
+                  <td class="account-order-number">
+                      {{ order.created_at | date: format: 'short_day_month_year' }}
+                  </td>
+                  <td class="payment-status--{{ order.financial_status }} order-hidden">
                     {{ order.financial_status_label }}
                   </td>
                   <td class="fulfillment-status--{{ order.fulfillment_status }}">

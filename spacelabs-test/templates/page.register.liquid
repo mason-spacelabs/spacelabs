@@ -1,3 +1,6 @@
+{% if customer %}
+<meta content="0; url=/account" http-equiv="refresh" />
+{% else %}
 <article class="site-page" data-template-page data-template-contact>
     <header class="page-masthead ">
         <div class="page-content">
@@ -758,4 +761,4 @@
         <p>If you have any questions please contact our customer service at 425-396-3300 Monday - Friday 8am - 5pm PST.</p>
     </div>
 </article> 
-
+{% endif %}
