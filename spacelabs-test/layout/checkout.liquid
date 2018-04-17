@@ -54,7 +54,7 @@
 
     {{ tracking_code }}
   </body>
-<script>  
+<script>
     window.onload = function(){
 
       // SHOWING THE SHIPPING BLOCK AFTER LOADING THE PAGE 
@@ -70,11 +70,30 @@
       var shipping_address = document.getElementById('checkout_shipping_address_id'); 
       var shipping_address_parent = document.getElementById('checkout_shipping_address_id').parentElement; 
       shipping_address_parent.childNodes[0].classList.add("visually--hidden");
-      shipping_address.classList.add("visually--hidden");      
+      shipping_address.classList.add("visually--hidden");
+
+      // LOOP THROUGH ADDRESS TO FIND DEFAULT
+
+      var address_data = "";
+      var shipping_array = shipping_address.getElementsByTagName("OPTION");
+      for (var i = 0; i < shipping_array.length; i++) {
+
+        var default_address = JSON.parse(shipping_address[i].getAttribute('data-properties'));
+
+        if(default_address != null){
+
+          var default_boolean = default_address.default;
+
+          if(default_boolean){
+
+            address_data = default_address;
+          }
+        }
+      }
+
 
       // PARSING THE CORRECT ADDRESS AND ADDING AN INPUT COVER OVER THE FORM
 
-      var address_data = JSON.parse(shipping_address[1].getAttribute('data-properties'));
       var shipping_block = document.querySelectorAll('.section--shipping-address');
       var input_cover = document.createElement("DIV");
 
@@ -94,9 +113,6 @@
 
       document.getElementById('checkout_shipping_address_address1').value = address_data.address1;
       document.getElementById('checkout_shipping_address_address1').setAttribute("readonly", true);
-
-      document.getElementById('checkout_shipping_address_address2').value = address_data.adress2 || "";
-      document.getElementById('checkout_shipping_address_address2').setAttribute("readonly", true);
 
       document.getElementById('checkout_shipping_address_city').value = address_data.city;
       document.getElementById('checkout_shipping_address_city').setAttribute("readonly", true);
