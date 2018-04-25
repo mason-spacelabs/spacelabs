@@ -19037,10 +19037,10 @@
 		key: 'submitHandler',
 		value: function submitHandler(event) {
 		  event.preventDefault();
-	
+		
 		  var $form = jquery$1(event.currentTarget).clone();
 		  var $terms = $form.find('[name=q]');
-	
+
 		  $form.css({
 			position: 'absolute',
 			left: -1000,
@@ -19077,6 +19077,7 @@
 	 * @constructor
 	 */
 	function ContentItem(contentItem) {
+	
 	  return '\n  <li class="search-flydown--content-item">\n    <a href="' + contentItem.url + '">' + contentItem.title + '</a>\n  </li>\n  ';
 	}
 	
@@ -19177,6 +19178,7 @@ function ProductPriceMain(price) {
 	 * @constructor
 	 */
 	function ProductContent(product) {
+		console.log(product);
 	  var $price = ProductPrice({
 		price: product.price,
 		onSale: product.on_sale,

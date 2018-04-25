@@ -16,13 +16,10 @@
     <h2 class="account-page-subtitle">
         Account Information
       </h2>
+      {% assign something = account_information[0] | split: ':' %}
       <div class="account-details-container">
-        {% for details in account_information %}
-          {% assign iteration = forloop.index %}
-          {%if iteration <= 2 %}
-            <p class="account-info-item account-information">{{ details }}</p>
-          {% endif %}
-        {% endfor %} 
+        <p class="account-info-item account-information">{{ something[0] }}{{ something[1] | slice: 1,something[1].size }}</p> 
+        <p class="account-info-item account-information">{{ account_information[1] }}</p> 
       </div>
       
       <h2 class="account-page-subtitle">
