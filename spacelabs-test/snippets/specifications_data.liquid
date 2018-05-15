@@ -1,0 +1,558 @@
+
+
+<script>
+
+{% assign A_SoftCheck_IFU = '059-0020-01_A_SoftCheck_IFU.pdf' | file_url %}
+{% assign A_UltraCheck_IFU = '059-0021-01_A_UltraCheck_IFU.pdf' | file_url %}
+
+var data = {
+	"NN0ST-M000-00": { 
+		"specifications": {
+			"Product Line Description": "NIBP Cuffs (UltraCheck & SoftCheck)",
+			"Country of Origin": "MEX",
+			"Compatible with Spacelabs Model Numbers": "91496/90496",
+			"Compatible with non-Spacelabs Brands": "Yes",
+			"NEO Product Group": "Yes",
+			"NIBP Tubing": "Single",
+			"NIBP Material": "Fabric disposable",
+			"NIBP Fitting": "Male Slip-Fit Micro-Taper",
+			"Related Accessories": "714-0019-01", 
+			"Consumable Type": "Single Patient Use",
+			"CE Mark": "Yes",
+			"DEHP Free": "Yes",
+			"PVC Free": "No",
+			"Latex Free": "Yes",
+			"Sterile": "No"
+        },
+        "documentation": {
+			"SoftCheck Blood Pressure Cuff Instructions for Use": {{ A_SoftCheck_IFU | json }} ,
+		},
+		"variants": {
+			"NN1ST-M316-10": {
+				"Part Number": "NN1ST-M316-10",
+				"Description": "BP CUFF,SC FABRIC NEO,1T,SIZE 1,3-6CM,M316,10/BX",
+				"GTIN": "30841522108086",
+				"NIBP Size": "Neonatal size 1",
+				"Limb Circumference": "3-6 cm",
+				"Sold As": "Box of 10"
+			},
+			"NN2ST-M316-10": {
+				"Part Number": "NN2ST-M316-10",
+				"Description": "BP CUFF,SC FABRIC NEO,1T,SIZE 2,4-8CM,M316,10/BX",
+				"GTIN": "30841522108147",
+				"NIBP Size": "Neonatal size 2",
+				"Limb Circumference": "4-8 cm",
+				"Sold As": "Box of 10"
+			},
+			"NN3ST-M316-10": {
+				"Part Number": "NN3ST-M316-10",
+				"Description": "BP CUFF,SC FABRIC NEO,1T,SIZE 3,6-11CM,M316,10/BX",
+				"GTIN": "30841522108208",
+				"NIBP Size": "Neonatal size 3",
+				"Limb Circumference": "6-11 cm",
+				"Sold As": "Box of 10"
+			},
+			"NN4ST-M316-10": {
+				"Part Number": "NN4ST-M316-10",
+				"Description": "BP CUFF,SC FABRIC NEO,1T,SIZE 4,7-13CM,M316,10/BX",
+				"GTIN": "30841522108260",
+				"NIBP Size": "Neonatal size 4",
+				"Limb Circumference": "7-13 cm",
+				"Sold As": "Box of 10"
+			},
+			"NN5ST-M316-10": {
+				"Part Number": "NN5ST-M316-10",
+				"Description": "BP CUFF,SC FABRIC NEO,1T,SIZE 5,8-15CM,M316,10/BX",
+				"GTIN": "30841522108321",
+				"NIBP Size": "Neonatal size 5",
+				"Limb Circumference": "8-15 cm",
+				"Sold As": "Box of 10"
+			}
+		}
+	},
+	"ST0000HP-00": {
+		"specifications": {
+			"Product Line Description": "NIBP Cuffs (UltraCheck & SoftCheck)",
+			"Country of Origin": "MEX",
+			"Compatible with Spacelabs Model Numbers": "91496/90496",
+			"Compatible with non-Spacelabs Brands": "Yes",
+			"NEO Product Group": "No",
+			"NIBP Tubing": "Single",
+			"NIBP Material": "Fabric disposable",
+			"NIBP Fitting": "Male Bayonet IEC 80369-5 compliant",
+			"Related Accessories": "714-0018-00", 
+			"Consumable Type": "Single Patient Use",
+			"CE Mark": "Yes",
+			"DEHP Free": "Yes",
+			"PVC Free": "No",
+			"Latex Free": "Yes",
+			"Sterile": "No"
+        },
+        "documentation": {
+			"SoftCheck Blood Pressure Cuff Instructions for Use": {{ A_SoftCheck_IFU | json }},
+		},
+		"variants": {
+			"ST0814HP-05": {
+				"Part Number": "ST0814HP-05",
+				"Description": "BP CUFF,SC FABRIC,1T,INFANT,8-14CM,HP,5/BG",
+				"GTIN": "30841522108901",
+				"NIBP Size": "Infant",
+				"Limb Circumference": "8-14 cm",
+				"Sold As": "Bag of 5"
+			},
+			"ST1320HP-05": {
+				"Part Number": "ST1320HP-05",
+				"Description": "BP CUFF,SC FABRIC,1T,CHILD,13-20CM,HP,5/BG",
+				"GTIN": "30841522109014",
+				"NIBP Size": "Child",
+				"Limb Circumference": "13-20 cm",
+				"Sold As": "Bag of 5"
+			},
+			"ST1826HP-05": {
+				"Part Number": "ST1826HP-05",
+				"Description": "BP CUFF,SC FABRIC,1T,SM.ADULT,18-26CM,HP,5/BG",
+				"GTIN": "30841522109120",
+				"NIBP Size": "Small Adult",
+				"Limb Circumference": "18-26 cm",
+				"Sold As": "Bag of 5"
+			},
+			"ST2635HP-05": {
+				"Part Number": "ST2635HP-05",
+				"Description": "BP CUFF,SC FABRIC,1T,ADULT,26-35CM,HP,5/BG",
+				"GTIN": "30841522109236",
+				"NIBP Size": "Adult",
+				"Limb Circumference": "26-35 cm",
+				"Sold As": "Bag of 5"
+			},
+			"ST2938HP-05": {
+				"Part Number": "ST2938HP-05",
+				"Description": "BP CUFF,SC FABRIC,1T,ADULT-LONG,29-38CM,HP,5/BG",
+				"GTIN": "30841522109342",
+				"NIBP Size": "Adult Long",
+				"Limb Circumference": "29-38 cm",
+				"Sold As": "Bag of 5"
+			},
+			"ST3242HP-05": {
+				"Part Number": "ST3242HP-05",
+				"Description": "BP CUFF,SC FABRIC,1T,LG.ADLT,32-42CM,HP,5/BG",
+				"GTIN": "30841522109458",
+				"NIBP Size": "Large Adult",
+				"Limb Circumference": "32-42 cm",
+				"Sold As": "Bag of 5"
+			},
+			"ST3544HP-05": {
+				"Part Number": "ST3544HP-05", 
+				"Description": "BP CUFF,SC FABRIC,1T,LG.ADULT-L,35-44CM,HP,5/BG",
+				"GTIN": "30841522109533",
+				"NIBP Size": "Large Adult Long",
+				"Limb Circumference": "35-44 cm",
+				"Sold As": "Bag of 5"
+			},
+			"ST4250HP-05": {
+				"Part Number": "ST4250HP-05",
+				"Description": "BP CUFF,SC FABRIC,1T,THIGH,42-50CM,HP,5/BG",
+				"GTIN": "30841522109618",
+				"NIBP Size": "Thigh",
+				"Limb Circumference": "42-50 cm",
+				"Sold As": "Bag of 5"
+			}
+		}
+	},
+	"714-0000-01": {
+		"specifications": {
+			"Product Line Description": "NIBP Accessories",
+			"Country of Origin": "USA",
+			"Compatible with Spacelabs Model Numbers": "91496/90496",
+			"Compatible with non-Spacelabs Brands": "No",
+			"NEO Product Group": "Yes",
+			"NIBP Tubing": "Single",
+			"NIBP Material": "Polyurethane",
+			"Hose Type": "Single Hose",
+			"NIBP Fitting": "Female to Female Bayonet IEC 80369-5 compliant",
+			"Consumable Type": "Reusable",
+			"CE Mark": "Yes",
+			"DEHP Free": "Yes",
+			"PVC Free": "Yes",
+			"Latex Free": "Yes",
+			"Sterile": "No"
+        },
+        "documentation": {
+			"No Product Documentation": "",
+		},
+		"variants": {
+			"714-0019-01": {
+				"Part Number": "714-0019-01",
+				"Description": "NIBP,HOSE ASSY,NEO.,QUICK RELEASE",
+				"NIBP Size": "9ft Hose",
+				"Sold As": "1 Each"
+                
+			}
+		}
+	},
+	"714-0000-00": {
+		"specifications": {
+			"Product Line Description": "NIBP Accessories",
+			"Country of Origin": "USA",
+			"Compatible with Spacelabs Model Numbers": "91496/90496",
+			"Compatible with non-Spacelabs Brands": "No",
+			"NEO Product Group": "No",
+			"NIBP Tubing": "Single",
+			"NIBP Material": "Polyurethane",
+			"Hose Type": "Single Hose",
+			"NIBP Fitting": "Male Bayonet IEC 80369-05 compliant to Female Slip-Fit Micro-Taper", 
+			"Consumable Type": "Reusable",
+			"CE Mark": "Yes",
+			"DEHP Free": "Yes",
+			"PVC Free": "Yes",
+			"Latex Free": "Yes",
+			"Sterile": "No"
+        },
+        "documentation": {
+			"No Product Documentation": "",
+		},
+		"variants": {
+			"714-0018-00": {
+				"Part Number": "714-0018-00",
+				"Description": "NIBP,HOSE ASSY,ADULT,QUICK RELEASE",
+				"NIBP Size": "9ft Hose",
+				"Sold As": "1 Each"
+			}
+		}
+	},
+	"VNN0ST-M000-00": {
+		"specifications": {
+			"Product Line Description": "NIBP Cuffs (UltraCheck & SoftCheck)",
+			"Country of Origin": "MEX",
+			"Compatible with Spacelabs Model Numbers": "91496/90496",
+			"Compatible with non-Spacelabs Brands": "Yes",
+			"NEO Product Group": "Yes",
+			"NIBP Tubing": "Single",
+			"NIBP Material": "Vinyl disposable",
+			"NIBP Fitting": "Male Slip-Fit Micro-Taper",
+			"Related Accessories": "714-0019-01", 
+			"Consumable Type": "Single Patient Use",
+			"CE Mark": "Yes",
+			"DEHP Free": "Yes",
+			"PVC Free": "No",
+			"Latex Free": "Yes",
+			"Sterile": "No"
+        },
+        "documentation": {
+			"SoftCheck Blood Pressure Cuff Instructions for Use": {{ A_SoftCheck_IFU | json }},
+		},
+		"variants": {
+			"VNN1ST-M316-10": {
+				"Part Number": "VNN1ST-M316-10",
+				"Description": "BP CUFF,SC VINYL NEO,1T,SIZE 1,3-6CM,M316,10/BX",
+				"GTIN": "30841522100288",
+				"NIBP Size": "Neonatal size 1",
+				"Limb Circumference": "3-6 cm",
+				"Sold As": "Box of 10"
+			},
+			"VNN2ST-M316-10": {
+				"Part Number": "VNN2ST-M316-10",
+				"Description": "BP CUFF,SC VINYL NEO,1T,SIZE 2,4-8CM,M316,10/BX",
+				"GTIN": "30841522100295",
+				"NIBP Size": "Neonatal size 2",
+				"Limb Circumference": "4-8 cm",
+				"Sold As": "Box of 10"
+			},
+			"VNN3ST-M316-10": {
+				"Part Number": "VNN3ST-M316-10",
+				"Description": "BP CUFF,SC VINYL NEO,1T,SIZE 3,6-11CM,M316,10/BX",
+				"GTIN": "30841522100301",
+				"NIBP Size": "Neonatal size 3",
+				"Limb Circumference": "6-11 cm",
+				"Sold As": "Box of 10"
+			},
+			"VNN4ST-M316-10": {
+				"Part Number": "VNN4ST-M316-10",
+				"Description": "BP CUFF,SC VINYL NEO,1T,SIZE 4,7-13CM,M316,10/BX",
+				"GTIN": "30841522100271",
+				"NIBP Size": "Neonatal size 4",
+				"Limb Circumference": "7-13 cm",
+				"Sold As": "Box of 10"
+			},
+			"VNN5ST-M316-10": {
+				"Part Number": "VNN5ST-M316-10",
+				"Description": "BP CUFF, SC VINYL NEO,1T,SIZE 5,8-15CM,M316,10/BX",
+				"GTIN": "30841522100318",
+				"NIBP Size": "Neonatal size 5",
+				"Limb Circumference": "8-15 cm",
+				"Sold As": "Box of 10"
+			}
+		}
+	},
+	"US0000MHP-00": {
+		"specifications": {
+			"Product Line Description": "NIBP Cuffs (UltraCheck & SoftCheck)",
+			"Country of Origin": "MEX",
+			"Compatible with Spacelabs Model Numbers": "91496/90496",
+			"Vendor Compatible": "Yes",
+			"NEO Product Group": "No",
+			"NIBP Tubing": "Single",
+			"NIBP Material": "Nylon reusable",
+			"NIBP Fitting": "Male Bayonet IEC 80369-5 compliant",
+			"Related Accessories": "714-0018-00", 
+			"Consumable Type": "Reusable",
+			"CE Mark": "Yes",
+			"DEHP Free": "Yes",
+			"PVC Free": "Yes",
+			"Latex Free": "Yes",
+			"Sterile": "No"
+        },
+        "documentation": {
+			"UltraCheck Blood Pressure Cuff Instructions for Use": {{ A_UltraCheck_IFU | json }},
+		},
+		"variants": {
+			"US0814MHP-05": {
+				"Part Number": "US0814MHP-05",
+				"Description": "BP CUFF,UC NYLON,1T,INFANT,8-14CM,MHP,5/BG",
+				"GTIN": "30841522110287",
+				"NIBP Size": "Infant",
+				"Limb Circumference": "8-14 cm",
+				"Sold As": "Bag of 5"
+			},
+			"US1320MHP-05": {
+				"Part Number": "US1320MHP-05",
+				"Description": "BP CUFF,UC NYLON,1T,CHILD,13-20CM,MHP,5/BG",
+				"GTIN": "30841522110362",
+				"NIBP Size": "Child",
+				"Limb Circumference": "13-20 cm",
+				"Sold As": "Bag of 5"
+			},
+			"US1826MHP-05": {
+				"Part Number": "US1826MHP-05",
+				"Description": "BP CUFF,UC NYLON,1T,SM.ADULT,18-26CM,MHP,5/BG",
+				"GTIN": "30841522110461",
+				"NIBP Size": "Small Adult",
+				"Limb Circumference": "18-26 cm",
+				"Sold As": "Bag of 5"
+			},
+			"US2635MHP-05": {
+				"Part Number": "US2635MHP-05",
+				"Description": "BP CUFF,UC NYLON,1T,ADULT,26-35CM,MHP,5/BG",
+				"GTIN": "30841522110546",
+				"NIBP Size": "Adult",
+				"Limb Circumference": "26-35 cm",
+				"Sold As": "Bag of 5"
+			},
+			"US2938MHP-05": {
+				"Part Number": "US2938MHP-05",
+				"Description": "BP CUFF,UC NYLON,1T,ADULT LONG,29-38CM,MHP,5/BG",
+				"GTIN": "30841522110669",
+				"NIBP Size": "Adult Long",
+				"Limb Circumference": "29-38 cm",
+				"Sold As": "Bag of 5"
+			},
+			"US3242MHP-05": {
+				"Part Number": "US3242MHP-05",
+				"Description": "BP CUFF,UC NYLON,1T,LG.ADLT,32-42CM,MHP,5/BG",
+				"GTIN": "30841522102572",
+				"NIBP Size": "Large Adult",
+				"Limb Circumference": "32-42 cm",
+				"Sold As": "Bag of 5"
+			},
+			"US3544MHP-05": {
+				"Part Number": "US3544MHP-05",
+				"Description": "BP CUFF,UC NYLON,1T,LG.ADULT-L,35-44CM,MHP,5/BG",
+				"GTIN": "30841522110843",
+				"NIBP Size": "Large Adult Long",
+				"Limb Circumference": "35-44 cm",
+				"Sold As": "Bag of 5"
+			},
+			"US4250MHP-05": {
+				"Part Number": "US4250MHP-05",
+				"Description": "BP CUFF,UC NYLON,1T,THIGH,42-50CM,MHP,5/BG",
+				"GTIN": "30841522110966",
+				"NIBP Size": "Thigh",
+				"Limb Circumference": "42-50 cm",
+				"Sold As": "Bag of 5"
+			}
+		}
+	},
+	"US0000HP-00": {
+		"specifications": {
+            "Product Line Description": "NIBP Cuffs (UltraCheck & SoftCheck)",
+			"Country of Origin": "MEX",
+			"Compatible with Spacelabs Model Numbers": "91496/90496",
+			"Compatible with non-Spacelabs Brands": "Yes",
+			"NEO Product Group": "No",
+			"NIBP Tubing": "Single",
+			"NIBP Material": "Nylon reusable",
+			"NIBP Fitting": "Male Bayonet IEC 80369-5 compliant",
+			"Related Accessories": "714-0018-00", 
+			"Consumable Type": "Reusable",
+			"CE Mark": "Yes",
+			"DEHP Free": "Yes",
+			"PVC Free": "Yes",
+			"Latex Free": "Yes",
+			"Sterile": "No"
+        },
+        "documentation": {
+			"UltraCheck Blood Pressure Cuff Instructions for Use": {{ A_UltraCheck_IFU | json }},
+		},
+		"variants": {
+			"US0814HP-05": {
+				"Part Number": "US0814HP-05",
+				"Description": "BP CUFF,UC NYLON,1T,INFANT,8-14CM,HP,5/BG",
+				"GTIN": "30841522110263",
+				"NIBP Size": "Infant",
+				"Limb Circumference": "8-14 cm",
+				"Sold As": "Bag of 5"
+			},
+			"US1320HP-05": {
+				"Part Number": "US1320HP-05",
+				"Description": "BP CUFF,UC NYLON,1T,CHILD,13-20CM,HP,5/BG",
+				"GTIN": "30841522110348",
+				"NIBP Size": "Child",
+				"Limb Circumference": "13-20 cm",
+				"Sold As": "Bag of 5"
+			},
+			"US1826HP-05": {
+				"Part Number": "US1826HP-05",
+				"Description": "BP CUFF,UC NYLON,1T,SMALL ADULT,18-26CM,HP,5/BG",
+				"GTIN": "30841522110447",
+				"NIBP Size": "Small Adult",
+				"Limb Circumference": "18-26 cm",
+				"Sold As": "Bag of 5"
+			},
+			"US2635HP-05": {
+				"Part Number": "US2635HP-05",
+				"Description": "BP CUFF,UC NYLON,1T,ADULT,26-35CM,HP,5/BG",
+				"GTIN": "30841522110522",
+				"NIBP Size": "Adult",
+				"Limb Circumference": "26-35 cm",
+				"Sold As": "Bag of 5"
+			},
+			"US2938HP-05": {
+				"Part Number": "US2938HP-05",
+				"Description": "BP CUFF,UC NYLON,1T,ADULT LONG,29-38CM,HP,5/BG",
+				"GTIN": "30841522110645",
+				"NIBP Size": "Adult Long",
+				"Limb Circumference": "29-38 cm",
+				"Sold As": "Bag of 5"
+			},
+			"US3242HP-05": {
+				"Part Number": "US3242HP-05",
+				"Description": "BP CUFF,UC NYLON,1T,LARGE ADLT,32-42CM,HP,5/BG",
+				"GTIN": "30841522110768",
+				"NIBP Size": "Large Adult",
+				"Limb Circumference": "32-42 cm",
+				"Sold As": "Bag of 5"
+			},
+			"US3544HP-05": {
+				"Part Number": "US3544HP-05",
+				"Description": "BP CUFF,UC NYLON,1T,LG.ADULT-LNG,35-44CM,HP,5/BG",
+				"GTIN": "30841522110829",
+				"NIBP Size": "Large Adult Long",
+				"Limb Circumference": "35-44 cm",
+				"Sold As": "Bag of 5"
+			},
+			"US4250HP-05": {
+				"Part Number": "US4250HP-05",
+				"Description": "BP CUFF,UC NYLON,1T,THIGH,42-50CM,HP,5/BG",
+				"GTIN": "30841522110942",
+				"NIBP Size": "Thigh",
+				"Limb Circumference": "42-50 cm",
+				"Sold As": "Bag of 5"
+			}
+		}
+	},
+	"VST0000HP-00": {
+		"specifications": {
+			"Product Line Description": "NIBP Cuffs (UltraCheck & SoftCheck)",
+			"Country of Origin": "MEX",
+			"Compatible with Spacelabs Model Numbers": "91496/90496",
+			"Compatible with non-Spacelabs Brands": "Yes",
+			"NEO Product Group": "No",
+			"NIBP Tubing": "Single",
+			"NIBP Material": "Vinyl disposable",
+			"NIBP Fitting": "Male Bayonet IEC 80369-5 compliant",
+			"Related Accessories": "714-0018-00", 
+			"Consumable Type": "Single Patient Use",
+			"CE Mark": "Yes",
+			"DEHP Free": "Yes",
+			"PVC Free": "No",
+			"Latex Free": "Yes",
+			"Sterile": "No"
+        },
+        "documentation": {
+			"SoftCheck Blood Pressure Cuff Instructions for Use": {{ A_SoftCheck_IFU | json }},
+		},
+		"variants": {
+			"VST0814HP-05": {
+				"Part Number": "VST0814HP-05",
+				"Description": "BP CUFF,SC VINYL,1T,INFANT,8-14CM,HP,5/BG",
+				"GTIN": "30841522111352",
+				"NIBP Size": "Infant",
+				"Limb Circumference": "8-14 cm",
+				"Sold As": "Bag of 5"
+			},
+			"VST1320HP-05": {
+				"Part Number": "VST1320HP-05",
+				"Description": "BP CUFF,SC VINYL,1T,CHILD,13-20CM,HP,5/BG",
+				"GTIN": "30841522111499",
+				"NIBP Size": "Child",
+				"Limb Circumference": "13-20 cm",
+				"Sold As": "Bag of 5"
+
+			},
+			"VST1826HP-05": {
+				"Part Number": "VST1826HP-05",
+				"Description": "BP CUFF,SC VINYL,1T,SM.ADULT,18-26CM,HP,5/BG",
+				"GTIN": "30841522111628",
+				"NIBP Size": "Small Adult",
+				"Limb Circumference": "18-26 cm",
+				"Sold As": "Bag of 5"
+
+			},
+			"VST2635HP-05": {
+				"Part Number": "VST2635HP-05",
+				"Description": "BP CUFF,SC VINYL,1T,ADULT,26-35CM,HP,5/BG",
+				"GTIN": "30841522111741",
+				"NIBP Size": "Adult",
+				"Limb Circumference": "26-35 cm",
+				"Sold As": "Bag of 5"
+
+			},
+			"VST2938HP-05": {
+				"Part Number": "VST2938HP-05",
+				"Description": "BP CUFF,SC VINYL,1T,ADULT LONG,29-38CM,HP,5/BG",
+				"GTIN": "30841522111871",
+				"NIBP Size": "Adult Long",
+				"Limb Circumference": "29-38 cm",
+				"Sold As": "Bag of 5"
+
+			},
+			"VST3242HP-05": { 
+				"Part Number": "VST3242HP-05",
+				"Description": "BP CUFF,SC VINYL,1T,LG.ADULT,32-42CM,HP,5/BG",
+				"GTIN": "30841522112076",
+				"NIBP Size": "Large Adult",
+				"Limb Circumference": "32-42 cm",
+				"Sold As": "Bag of 5"
+
+			},
+			"VST3544HP-05": {
+				"Part Number": "VST3544HP-05",
+				"Description": "BP CUFF,SC VINYL,1T,LG.ADULT-L,35-44CM,HP,5/BG",
+				"GTIN": "30841522112137",
+				"NIBP Size": "Large Adult Long",
+				"Limb Circumference": "35-44 cm",
+				"Sold As": "Bag of 5"
+
+			},
+			"VST4250HP-05": {
+				"Part Number": "VST4250HP-05",
+				"Description": "BP CUFF,SC VINYL,1T,THIGH,42-50CM,HP,5/BG",
+				"GTIN": "30841522112083",
+				"NIBP Size": "Thigh",
+				"Limb Circumference": "42-50 cm",
+				"Sold As": "Bag of 5"
+
+			}
+		} 
+	}
+};
+</script>

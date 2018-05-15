@@ -16,5 +16,5 @@ out any tag categories from our tags (E.g. remove BRAND_ from BRAND_tag)
       {%- endcapture -%}
     {% endif %}
   {%- endfor -%}
-  {% assign cat_array = categories | replace: '  ', '' | strip_newlines  | split: '|' | uniq %}
+  {% assign cat_array = categories | replace: '  ', '' | strip_newlines  | split: '|' | uniq | reverse %}
 {% endif %}

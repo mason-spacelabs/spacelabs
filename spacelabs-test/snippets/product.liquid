@@ -120,7 +120,7 @@
     {% endcomment %}
     <div class="product-form--regular" data-product-form-regular>
     {% if customer %}
-    <span class="atc-subtotal--label" style="font-size: 12px; color: #666; opacity: 1;">
+    <span class="atc-subtotal--label" style="font-size: 16px; color: #666; opacity: 1;">
             * Calculate customer specific pricing at checkout
     </span>
     {% endif %}
@@ -192,9 +192,8 @@
   </div> 
 </div>
 
-<script src="{{ 'specifications_data.js' | asset_url }}"></script>
+{% include 'specifications_data' %}
 <script>
-
   // Loop through product tags to find product indentifier
   {% for tags in product.tags %}
     {% if tags contains "_" %}

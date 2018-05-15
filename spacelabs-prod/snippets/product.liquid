@@ -192,9 +192,8 @@
   </div> 
 </div>
 
-<script src="{{ 'specifications_data.js' | asset_url }}"></script>
+{% include 'specifications_data' %}
 <script>
-
   // Loop through product tags to find product indentifier
   {% for tags in product.tags %}
     {% if tags contains "_" %}

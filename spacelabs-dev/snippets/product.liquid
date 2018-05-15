@@ -120,8 +120,8 @@
     {% endcomment %}
     <div class="product-form--regular" data-product-form-regular>
     {% if customer %}
-    <span class="atc-subtotal--label" style="font-size: 12px; color: #666; opacity: 1;">
-            * Calculate customer specific pricing at checkout
+    <span class="atc-subtotal--label" style="font-size: 16px; color: #666; opacity: 1;">
+            * Customer specific pricing calculated at checkout
     </span>
     {% endif %}
       <div data-product-form-area>
@@ -192,8 +192,21 @@
   </div> 
 </div>
 
-<script src="{{ 'specifications_data.js' | asset_url }}"></script>
+{% include 'specifications_data' %}
+{% assign meta_data = customer.metafields.account_data %}
+{% assign customer_data = customer.id %}
+
 <script>
+
+  var meta_information = {{ meta_data | json }};
+  var customer_information = {{ customer_data | json }};
+  var checkout_page = false;
+
+  var pricing_data = {
+    meta_information: meta_information,
+    customer_information: customer_information,
+    checkout_page: checkout_page
+  };
 
   // Loop through product tags to find product indentifier
   {% for tags in product.tags %}

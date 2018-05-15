@@ -30,17 +30,17 @@
         </div>
 
         <footer class="atc-banner--cart-footer">
-          <a class="button-secondary atc-button--viewcart view-cart-btn" href="/cart" data-atc-banner-cart-button>
+          <a class="button-secondary atc-button--viewcart view-cart-btn" onclick="checkCart(pricing_data)" data-atc-banner-cart-button>
             {{ 'add_to_cart_banner.general.view_cart_html' | t: count: '<span></span>' }}
           </a><br/>
           <span class="atc-subtotal--label cart-modal-calculation">
-            * Calculate customer specific pricing at checkout
+            * View cart to get negotiated rates
           </span>
         </footer>
       </div>
     </div>
-
     <button
+    id="flyoutClose"
       class="atc-banner--close" 
       type="button"
       aria-label="{{ 'general.accessibility.close' | t }}"

@@ -20,8 +20,8 @@
     {% endunless %}
   {% endif %}
 {% endcomment %} 
-  <li class="site-header-account-link">
-    <a class="site-header-cart--button" href="/cart"> 
+  <li class="site-header-account-link" style="cursor: pointer;" onclick="navigationCheckCart(pricing_data)">
+    <a class="site-header-cart--button"> 
         {% if customer %}
         <span
           class="site-header-cart--count {% if cart.item_count > 0 %}visible{% endif %}"
@@ -54,3 +54,33 @@
     </li>
   {% endif %}
 </ul>
+{% assign meta_data = customer.metafields.account_data %}
+{% assign customer_data = customer.id %}
+<script>
+
+  var meta_information = {{ meta_data | json }};
+  var customer_information = {{ customer_data | json }};
+  var checkout_page = false;
+
+  var pricing_data = {
+    meta_information: meta_information,
+    customer_information: customer_information,
+    checkout_page: checkout_page
+  };
+
+  function navigationCheckCart(pricing_data){
+    
+    if(pricing_data.customer_information){
+      jQuery.getJSON('/cart.js', function(cart) {
+    
+    var cart_information = cart.items;
+    pricing_data.cart_information = cart_information;
+    cartCheckout(pricing_data);
+
+      } );
+    }else{
+      openModal("modal-login");
+    }
+   
+};
+  </script>

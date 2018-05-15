@@ -368,7 +368,7 @@ snippets/modal-error.liquid:
 snippets/modal-login.liquid:
   development: 2018-03-21T09:28:10-07:00   326c6d175181443b0c80dfbc977e0164
 snippets/modal-success.liquid:
-  development: 2018-03-21T09:28:13-07:00   c1218f281d4f5a3d5ae762d820918b82
+  development: 2018-05-01T15:33:33-07:00   e603f1ff41ce52a036f834348a2dbe1f
 snippets/modal.liquid:
   development: 2018-03-21T09:28:13-07:00   214df72590bbe258512331e2ab839930
 snippets/navmenu.liquid:
@@ -416,7 +416,7 @@ snippets/product-options.liquid:
 snippets/product-price.liquid:
   development: 2018-03-21T09:28:14-07:00   4f7e2e603f2ff5e76f4ddd7332a42af6
 snippets/product.liquid:
-  development: 2018-03-27T11:08:11-07:00   32e2184feac2cb6cb1a6b32642bb9f2f
+  development: 2018-05-01T15:32:25-07:00   68cf999a9cbe46056f85da496fb0e741
 snippets/promo-block-background.liquid:
   development: 2018-03-21T09:28:13-07:00   3741b753b504788b4ac3b0b91bc4f762
 snippets/promo-block.liquid:
@@ -442,7 +442,7 @@ snippets/search-sanitizer.liquid:
 snippets/share-buttons.liquid:
   development: 2018-03-21T09:28:11-07:00   486ef77ff76f7ec2d7a9d3fca3f32461
 snippets/shipping-modal.liquid:
-  development: 2018-03-21T09:28:11-07:00   acef00d368a0b0c209af5d4ea22ed309
+  development: 2018-05-01T15:33:24-07:00   4731e32aafc45b78b1c81f16c9b16e21
 snippets/site-header-actions.liquid:
   development: 2018-03-21T09:28:14-07:00   30cd9a147bec25b13440b2176c3e9681
 snippets/site-mobile-nav.liquid:
@@ -459,6 +459,8 @@ snippets/social-meta-tags.liquid:
   development: 2018-03-21T09:28:11-07:00   cd0dd28ca3535fbd7b5fa7e67b674d90
 snippets/social-sharing.liquid:
   development: 2018-03-21T15:14:51-07:00   df66127392b32e401ac2dd2963c78047
+snippets/specifications_data.liquid:
+  development: 2018-05-01T15:33:40-07:00   11eff6034871083b67c1120c8aeea1c1
 snippets/structured-data.liquid:
   development: 2018-03-21T09:28:11-07:00   00ad608dc40c2e8b568267de034fc1dd
 snippets/svg-sprite.liquid:
@@ -486,7 +488,7 @@ templates/customers/account.liquid:
 templates/customers/activate_account.liquid:
   development: 2018-03-21T09:28:11-07:00   dfbb23fd4b011e7f7b5a39eb79c80127
 templates/customers/addresses.liquid:
-  development: 2018-04-03T14:37:35-07:00   1ddf84b7c622fbe80d139f841902c90b
+  development: 2018-05-01T15:32:52-07:00   35b592ce047589a59c96d49092b7891b
 templates/customers/login.liquid:
   development: 2018-03-29T15:10:57-07:00   e2a45dc5b51aeeb0bbe6caac37e838e8
 templates/customers/order.liquid:

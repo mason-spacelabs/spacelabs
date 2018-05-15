@@ -283,7 +283,7 @@ nav.productgrid--utils {
     margin-bottom: 15px;
 }
 .cart-modal-calculation {
-    font-size: 12px; 
+    font-size: 14px; 
     color: #666; 
     opacity: 1;
 }
@@ -1151,7 +1151,7 @@ table.product_table tr:nth-child(odd) {
     right: 0px; 
     bottom: 0px; 
     background: rgba(0, 0, 0, 0.7); 
-    z-index: 100;
+    z-index: 99999 !important;
 }
 #loading-modal {
     margin-top: 400px;

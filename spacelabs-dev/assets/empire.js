@@ -21887,7 +21887,6 @@ function ProductPriceMain(price) {
 			return data.name === 'quantity';
 		  });
 		  var quantity = quantityField[0].value;
-	
 		  jquery$1.ajax({
 			type: 'POST',
 			url: '/cart/add.js',
