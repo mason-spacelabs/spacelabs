@@ -86,18 +86,31 @@
         if(contact_block.length){
 
             var shipping_dropdown = document.querySelectorAll('#checkout_shipping_address_id');
-            shipping_dropdown[0].removeChild(shipping_dropdown[0].childNodes[0]);
-            shipping_dropdown[0].removeChild(shipping_dropdown[0].childNodes[1]);
+            var dropdown_array = document.querySelectorAll('#checkout_shipping_address_id > option');
+
+            for (var i = 0; i < dropdown_array.length; i++) { 
+
+            var address_data_raw = dropdown_array[i].getAttribute("data-properties");
+            var address_data = JSON.parse(address_data_raw);
+                
+
+                if(dropdown_array[i].innerHTML == 'New address…' ){
+                    shipping_dropdown[0].removeChild(shipping_dropdown[0].children[i]);
+                }
+                if(address_data){ 
+                    if(address_data.default){
+                        //shipping_dropdown[0].removeChild(shipping_dropdown[0].children[i]);
+                    }
+                }
+
+            }
+
             var form_inputs = document.querySelectorAll('.section--shipping-address > .section__content > .fieldset > .field');
 
             var attention_block = document.createElement('DIV');
             attention_block.classList.add('field__input-wrapper');
             attention_block.classList.add('attention-block');
-            attention_block.innerHTML = '<label class="field__label field__label--visible" for="checkout_shipping_attention">Attention to:</label><input class="field__input field--blue" size="30" type="text" placeholder="Attention:" value=" " id="checkout_shipping_attention" oninput="attentionInputCheck(this)">';
-
-            
-
-
+            attention_block.innerHTML = '<label class="field__label field__label--visible" for="checkout_shipping_attention">Attention to:</label><input class="field__input field--blue" size="30" type="text" placeholder="Attention:" id="checkout_shipping_attention" oninput="attentionInputCheck(this)">';
 
             var contact_interval = window.setInterval(contactCallback, 100);
             function contactCallback() {
@@ -108,10 +121,19 @@
                
                     clearInterval(contact_interval);
                     
-                    var something = document.querySelectorAll("[data-address-field='company']");
-                    something[0].appendChild(attention_block);
+                    var company_field = document.querySelectorAll("[data-address-field='company']");
+                    company_field[0].appendChild(attention_block);
 
                     var input_layer = document.querySelectorAll('.field__input-wrapper');
+
+                    document.getElementById('checkout_shipping_address_first_name').setAttribute("readonly", true);
+                    document.getElementById('checkout_shipping_address_last_name').setAttribute("readonly", true);
+                    document.getElementById('checkout_shipping_address_company').setAttribute("readonly", true);
+                    document.getElementById('checkout_shipping_address_address1').setAttribute("readonly", true);
+                    document.getElementById('checkout_shipping_address_city').setAttribute("readonly", true);
+                    document.getElementById('checkout_shipping_address_country').setAttribute("readonly", true);
+                    document.getElementById('checkout_shipping_address_province').setAttribute("readonly", true);
+                    document.getElementById('checkout_shipping_address_zip').setAttribute("readonly", true);
 
                     for (i = 0; i < input_layer.length; i++) { 
 
@@ -152,7 +174,7 @@
 
             var shipping_container = document.createElement('DIV');
             shipping_container.classList.add("shipping-container");
-            shipping_container.innerHTML = '<div class="section__content"><div class="section__header" style="padding-top: 3em;"><h2 class="section__title">Shipping carrier information</h2></div><div class="section__content"><div class="fieldset"><div class="field field--optional field--show-floating-label field--half"><div class="field__input-wrapper"><label class="field__label field__label--visible" for="checkout_shipping_carrier">Shipping Carrier</label><input placeholder="Shipping Carrier" class="field__input field--blue" size="30" type="text" id="checkout_shipping_carrier"  oninput="shippingInputCheck(this)" autocomplete="off" maxlength="20"></div></div><div class="field field--required field--show-floating-label field--half"><div class="field__input-wrapper"><label class="field__label field__label--visible" for="checkout_shipping_number">Carrier Number</label><input placeholder="Shipping Number" class="field__input field--blue aria-required="true" size="30" type="text" id="checkout_shipping_number"  oninput="shippingInputCheck(this)" autocomplete="off" maxlength="20" ></div></div></div></div>';
+            shipping_container.innerHTML = '<div class="section__content"><div class="section__header" style="padding-top: 3em;"><h2 class="section__title">Shipping carrier information</h2></div><div class="section__content"><div class="fieldset"><div class="field field--optional field--show-floating-label field--half"><div class="field__input-wrapper"><label class="field__label field__label--visible" for="checkout_shipping_carrier">Shipping Carrier</label><input placeholder="Shipping Carrier" class="field__input field--blue" size="30" type="text" id="checkout_shipping_carrier"  oninput="shippingInputCheck(this)" autocomplete="off" maxlength="20"></div></div><div class="field field--required field--show-floating-label field--half"><div class="field__input-wrapper"><label class="field__label field__label--visible" for="checkout_shipping_number">Shipping Number</label><input placeholder="Shipping Number" class="field__input field--blue aria-required="true" size="30" type="text" id="checkout_shipping_number"  oninput="shippingInputCheck(this)" autocomplete="off" maxlength="20" ></div></div></div></div>';
 
             shipping_block[0].appendChild(shipping_container);
 
@@ -161,7 +183,7 @@
 
             function myCallback() {
 
-                if (radio_input.length < 5) {
+                if (radio_input.length < 1) {
                  
                     radio_input = document.querySelectorAll('.input-radio');
 
@@ -170,9 +192,10 @@
                     radio_input = document.querySelectorAll('.input-radio');
 
                     for (i = 0; i < radio_input.length; i++) {
+
                         var continue_button = document.querySelectorAll('.step__footer__continue-btn');
                         radio_input[i].setAttribute("onclick", "shippingSelectionRadio(this);");
-
+                        radio_input[i].setAttribute("shipper", i);
 
                         if(radio_input[0].checked){
 
@@ -191,39 +214,31 @@
            
         } else if (payment_block.length) {
 
-            var footer_hidden = document.querySelectorAll('.step__footer');
-            var shipping_information = document.createElement('DIV');
-            shipping_information.innerHTML = '<input id="attention-value" type="hidden" name="checkout[note_attributes][attention]" value="" /><input id="shipping-name-value" type="hidden" name="checkout[note_attributes][shipping_name]" value="" /><input id="shipping-number-value" type="hidden" name="checkout[note_attributes][shipping_number]" value="" />';
-            footer_hidden[0].appendChild(shipping_information);
-
-            // PAYMENT BLOCK CHECKOUT PAGE
-
-            var shipping_value_name = document.querySelectorAll('#shipping-name-value');
-            var shipping_value_number = document.querySelectorAll('#shipping-number-value');
-            var attention_value = document.querySelectorAll('#attention-value');
-
-            shipping_value_name[0].value = getCookie("shopify_shipping");
-            shipping_value_number[0].value = getCookie("shopify_shipping_number");
-            attention_value[0].value = getCookie("shopify_attention");
-
-            var radio_input = document.querySelectorAll('.input-radio');
             var purchase_order = document.querySelectorAll('.content-box__row--secondary > .blank-slate');
             var review_order = document.querySelectorAll('.order-summary__sections');
             var continue_button = document.getElementsByClassName('step__footer__continue-btn');
             continue_button[0].classList.add('hidden');
 
             var payment_button_container = document.createElement('DIV');
-            payment_button_container.innerHTML = '<button name="button" type="button" class="step__footer__continue-btn btn completed_order" style="margin-top: 20px; width: 100%;" onclick="completeOrderButton()"><span class="btn__content">Complete order</span><i class="btn__spinner icon icon--button-spinner"></i></button>';
+            payment_button_container.innerHTML = '<button id="additional-button" name="button" type="button" class="btn completed_order" style="margin-top: 20px; width: 100%;" onclick="completeOrderButton()"><span class="btn__content">Complete order</span><i class="btn__spinner icon icon--button-spinner"></i></button>';
             review_order[0].appendChild(payment_button_container);
 
-            // SETTING ONCLICK EVENTS ON RADIO BUTTONS
-            var radio_manual =  document.querySelectorAll("[data-gateway-group='manual']");
-            var radio_direct = document.querySelectorAll("[data-gateway-group='direct']");
-            radio_manual [0].setAttribute("onclick", "paymentGatewayRadio(this);");
-            radio_direct [0].setAttribute("onclick", "paymentGatewayRadio(this);");
 
-            purchase_order[2].removeChild(purchase_order[2].childNodes[1]);
-            purchase_order[2].innerHTML = '<p>Please enter a purchase order number for your order records.</p><div class="fieldset" style="text-align: left; margin-top: 10px;"><div class="field field--show-floating-label"><div class="field__input-wrapper"><label class="field__label field__label--visible" for="checkout_purchase_order">Purchase Order #</label><input placeholder="Purchase Order #" autocorrect="off" class="field__input field--blue" aria-required="true" size="30" type="text" value=" " name="checkout[note_attributes][purchase_order]" id="checkout_purchase_order" oninput="purchaseOrderInput(this)" maxlength="16"></div></div></div>';
+            var purchase_box = document.createElement('DIV');
+
+            purchase_box.classList.add('content-box');
+            purchase_box.classList.add('content-box-alt');
+            purchase_box.innerHTML = '<div class="purchase-order-box"><p class="error-string error-message-custom" style="text-align: center;" >Please enter a purchase order number for your records.</p><div class="fieldset" style="text-align: left; margin-top: 10px;"><div class="field field--show-floating-label"><div class="field__input-wrapper"><label class="field__label field__label--visible" for="checkout_purchase_order">Purchase Order #</label><input placeholder="Purchase Order #" autocorrect="off" class="field__input field--blue" aria-required="true" size="30" type="text" id="checkout_purchase_order" oninput="purchaseOrderInput(this)" maxlength="16"><input id="purchase-order-value" type="hidden" name="checkout[note_attributes][purchase_order]" aria-required="true" size="30" type="text" value="none"/><input id="attention-value"  type="hidden" name="checkout[note_attributes][attention]" aria-required="true" size="30" type="text" /><input id="shipping-name-value" type="hidden" name="checkout[note_attributes][shipping_name]"  aria-required="true" size="30" type="text"  /><input id="shipping-number-value" type="hidden" name="checkout[note_attributes][shipping_number]"  aria-required="true" size="30" type="text"  /></div></div></div></div>';
+
+            payment_block[0].appendChild(purchase_box);
+
+            var shipping_value_name = document.querySelectorAll('#shipping-name-value');
+            var shipping_value_number = document.querySelectorAll('#shipping-number-value');
+            var attention_value = document.querySelectorAll('#attention-value');
+
+            shipping_value_name[0].value = getCookie("spacelabs_shipping");
+            shipping_value_number[0].value = getCookie("spacelabs_shipping_number");
+            attention_value[0].value = getCookie("spacelabs_attention");
 
         } else {
             
@@ -233,38 +248,28 @@
     // CHANGE LOCATION OF THE PAYMENT BUTTON AND SUBMIT THROUGH HIDDEN BUTTON
 
     function completeOrderButton() {
-        var continue_button = document.querySelectorAll('.step__footer__continue-btn');
-        continue_button[1].click();
+
+        var continue_button = document.querySelectorAll('.step__footer__continue-btn'); 
+        continue_button[0].click();
     }
-
-    // CHECKING FOR THE BILL ME LATER RADIO CLICK
-
-    function paymentGatewayRadio(radio_payment) {
-        
-        var radio_input = document.querySelectorAll('.input-radio');
-        var continue_button = document.querySelectorAll('.step__footer__continue-btn');
-
-        if (radio_input[1].checked) {
-            continue_button[1].setAttribute("disabled", "disabled");
-        } else {
-            continue_button[1].removeAttribute("disabled");
-        }
-
-    }
-
 
     // PURCHASE ORDER # INPUT VALIDATION
 
     function purchaseOrderInput(input) {
-
-        var continue_button = document.querySelectorAll('.step__footer__continue-btn');
+        
+        var custom_text = document.querySelectorAll('.error-string');
+        var purchase_order = document.querySelectorAll('#purchase-order-value');
 
         if (input.value.length < 2) {
-            input.classList.add('field--blue');
-            continue_button[1].setAttribute("disabled", "disabled");
+
+            custom_text[0].classList.add('error-message-custom');
+            purchase_order[0].value = "none";
+
         } else {
-            input.classList.remove('field--blue');
-            continue_button[1].removeAttribute("disabled");
+
+            custom_text[0].classList.remove('error-message-custom');
+            purchase_order[0].value = input.value;
+
         }
 
     }
@@ -280,12 +285,15 @@
         shipping_method.slice(0, 7);
         var shipping_verify = shipping_method.slice(0, 7);
 
-        if (shipping_verify == "shopify") {
+        if (shipping_verify == "shopify" && radio_button.getAttribute("shipper") == 0) {
 
             shipping_block[0].classList.remove("shipping-hidden");
             continue_button[0].setAttribute("disabled", "disabled");
 
         } else {
+
+            document.cookie = "spacelabs_shipping=none;path=/";
+            document.cookie = "spacelabs_shipping_number=none;path=/";
 
             shipping_block[0].classList.add("shipping-hidden");
             continue_button[0].removeAttribute("disabled");
@@ -294,13 +302,11 @@
 
     function attentionInputCheck(input){
 
-        document.cookie = "shopify_attention=" + input.value;
-
-        if(input.value.length === 0){
-            input.value= " ";
-        }else if(input.value.length > 2 ){
+        if(input.value.length > 2 ){
+            document.cookie = "spacelabs_attention=" + input.value + ";path=/";
             input.classList.remove('field--blue');
         }else{
+            document.cookie = "spacelabs_attention=none;path=/";
             input.classList.add('field--blue');
         }
 
@@ -308,6 +314,7 @@
     // VERIFYING THAT BOTH SHIPPING INPUT FIELDS HAVE BEEN FILLED AND SETS A TEMPORARY COOKIE
 
     function shippingInputCheck(input) {
+        
         var continue_button = document.querySelectorAll('.step__footer__continue-btn');
         var shipping_carrier = document.querySelectorAll('#checkout_shipping_carrier');
         var shipping_number = document.querySelectorAll('#checkout_shipping_number');
@@ -322,8 +329,13 @@
 
             continue_button[0].removeAttribute("disabled");
 
-            document.cookie = "shopify_shipping=" + shipping_carrier[0].value;
-            document.cookie = "shopify_shipping_number=" + shipping_number[0].value;
+            document.cookie = "spacelabs_shipping=" + shipping_carrier[0].value + ";path=/";
+            document.cookie = "spacelabs_shipping_number=" + shipping_number[0].value + ";path=/";
+
+        }else{
+
+            continue_button[0].setAttribute("disabled", "disabled");
+
         }
     }
 

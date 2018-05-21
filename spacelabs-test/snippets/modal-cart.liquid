@@ -1,0 +1,23 @@
+<div id="modal-cart" class="hidden-modal" style="z-index: 1000 !important;">
+    <div class="modal-login-box">
+        <button class="atc-banner--close modal-close-box" type="button" aria-label="{{ 'general.accessibility.close' | t }}"  modal="modal-success" onclick="closeModal(this, true);">
+      {%- include 'icon-menu-close' -%}
+    </button>
+        <section class="account-page-login">
+            <header class="account-page-masthead modal-header-login">
+                <img class="modal-image-login" src="{{ "spacelabs-logo.png" | asset_url }}">
+            </header>
+            <article class="account-page-content modal-content-login">
+                <h3 class="error-title">Your form was sent successfully!</h3>
+                <div class="account-login visible" >
+                    <p class="rte">We will review your form and get back to you within 2 business days. If you have any questions or concerns please email slcustomerservice@spacelabs.com or call 425-396-3300.</p>
+                </div>
+                <div class="form-action-row modal-close-button">
+                    <button class="button-primary modal-button-login" modal="modal-success" onclick="closeModal(this, true);">
+                        Close
+                    </button>
+                </div>
+            </article>
+        </section>
+    </div>
+</div>

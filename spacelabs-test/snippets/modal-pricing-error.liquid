@@ -1,0 +1,37 @@
+<div id="modal-pricing-error" class="hidden-modal" style="z-index: 1000 !important;">
+    <div class="modal-login-box">
+        <button id="pricing-hidden" class="atc-banner--close modal-close-box hidden" type="button" aria-label="{{ 'general.accessibility.close' | t }}" modal="modal-pricing-error" onclick="closeModal(this, true);">
+            {%- include 'icon-menu-close' -%}
+        </button>
+        <section class="account-page-login">
+            <header class="account-page-masthead modal-header-login">
+                <img class="modal-image-login" src="{{ "spacelabs-logo.png" | asset_url }}">
+            </header>
+            <article id="pricing-loading-article" class="account-page-content modal-content-login">
+                <p class="rte text-center"><i class="fas fa-spinner fa-pulse"></i>
+                    <span> Retrieving Negotiated Rates</span>
+                </p>
+                <p class="rte text-center" style="margin-bottom: 40px; margin-top: 30px;">Please allow a few seconds while we retrieve your negotiated rates. For information about your negotiated rates please contact customer service. 
+                </p>
+            </article>
+            <article id="pricing-error-article" class="account-page-content modal-content-login hidden">
+                <p class="rte">Pricing Error: We were unable to retrieve your negotiated rates. Please contact customer service at (425) 396-3300 for support.</p>
+                <div class="form-action-row modal-close-button">
+                    <a href="/cart" style="width: 100%;">
+                        <button class="button-primary modal-button-login">
+                            Continue to Cart
+                        </button>
+                    </a>
+                </div> 
+            </article>
+            <article id="pricing-error-checkout" class="account-page-content modal-content-login hidden"> 
+                <p class="rte">Pricing Error: We were unable to retrieve your negotiated rates. Please contact customer service at (425) 396-3300 for support.</p>
+                <div class="form-action-row modal-close-button">
+                    <button class="button-primary modal-button-login" style="width: 100%;" modal="modal-pricing-error" onclick="continueCheckout();">
+                            Continue to Checkout
+                    </button>
+                </div>
+            </article>
+        </section>
+    </div>
+</div>

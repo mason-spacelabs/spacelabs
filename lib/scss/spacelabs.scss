@@ -1008,7 +1008,7 @@ table.product_table tr:nth-child(odd) {
 }
 // ================= CUSTOM MODAL =================
 
-#modal-login, #modal-error, #modal-success {
+#modal-login, #modal-error, #modal-success, #modal-cart-error, #modal-pricing-error {
     position: fixed;
     top:0;
     left:0;
@@ -1019,6 +1019,12 @@ table.product_table tr:nth-child(odd) {
 #modal-login {
     position: absolute;
 
+}
+.pricing-error {
+    display: block;
+}
+.pricing-hidden {
+    display: none;
 }
 .modal-login-box {
     width: 500px;
@@ -1153,6 +1159,16 @@ table.product_table tr:nth-child(odd) {
     background: rgba(0, 0, 0, 0.7); 
     z-index: 99999 !important;
 }
+.missing-cart-items {
+    display: none;
+    position: fixed; 
+    top: 0px; 
+    left: 0px; 
+    right: 0px; 
+    bottom: 0px; 
+    background: rgba(0, 0, 0, 0.7); 
+    z-index: 99999 !important;
+}
 #loading-modal {
     margin-top: 400px;
     color: #fff;
@@ -1161,6 +1177,12 @@ table.product_table tr:nth-child(odd) {
     margin-right: auto;
 }
 #checkout_options {
+    margin-top: 300px;
+}
+#checkout_error {
+    margin-top: 300px;
+}
+#cart_error {
     margin-top: 300px;
 }
 .modal-close-box {

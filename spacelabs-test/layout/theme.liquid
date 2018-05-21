@@ -72,8 +72,8 @@
 
     <main class="site-main">
       {{ content_for_layout }}
+    {% include 'pricing-error' %}
     </main>
-
     {% section 'static-footer' %}
 
     <div aria-hidden="true" data-templates>
@@ -85,6 +85,8 @@
     {% include 'modal-login' %}
     {% include 'modal-error' %}
     {% include 'modal-success' %}
+    {% include 'modal-cart-error' %}
+    {% include 'modal-pricing-error' %}
     {% include 'page-scroller' %}    
 
 
@@ -104,12 +106,44 @@
     </script>
     <script src="{{ 'spacelabs.min.js' | asset_url }}"></script>
     {% if customer %}
+    {% assign account_data = customer.metafields.account_data %}
+    {% assign customer_data = customer.id %}
       <script>
         var logged_in = true;
+        var clearCache = getCookie("shopifyLogin");
+
+        if(clearCache != "cleared"){
+          document.cookie = "shopifyLogin=cleared;path=/"; 
+
+          var account_information = {{ account_data | json }};
+          var customer_information = {{ customer_data | json }};
+
+          var account_data = {
+            account_information: account_information,
+            customer_information: customer_information
+          };
+
+          clearPricingData(account_data);
+
+        }
       </script>
     {% else %}
       <script>
+
         var logged_in = false;
+        var clearCache = getCookie("shopifyLogin");
+
+        if(clearCache == "cleared"){
+          document.cookie = "shopifyLogin=fresh;path=/"; 
+
+          $.ajax({
+          url: '/cart/clear.js', 
+          type: "POST",
+          dataType: 'json'
+          });
+
+        }
+
       </script>
     {% endif %}
     {% include 'structured-data' %}

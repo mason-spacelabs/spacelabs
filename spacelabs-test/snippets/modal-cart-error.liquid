@@ -1,6 +1,6 @@
-<div id="modal-error" class="hidden-modal" style="z-index: 1000 !important;">
+<div id="modal-cart-error" class="hidden-modal" style="z-index: 1000 !important;">
     <div class="modal-login-box">
-        <button class="atc-banner--close modal-close-box" type="button" aria-label="{{ 'general.accessibility.close' | t }}"  modal="modal-error" onclick="closeModal(this, true);">
+        <button class="atc-banner--close modal-close-box" type="button" aria-label="{{ 'general.accessibility.close' | t }}"  modal="modal-cart-error" onclick="closeModal(this, true);">
       {%- include 'icon-menu-close' -%}
     </button>
         <section class="account-page-login">
@@ -8,11 +8,9 @@
                 <img class="modal-image-login" src="{{ "spacelabs-logo.png" | asset_url }}">
             </header>
             <article class="account-page-content modal-content-login">
-                <h3 class="error-title">Oops! Please fix the errors and resubmit your form.</h3>
-                <div id="error-box" class="account-login visible" > 
-                </div>
+                <p class="rte">Please add products to your cart before viewing the cart page. If you think this is an error please contact customer service at (425) 396-3300.</p>
                 <div class="form-action-row modal-close-button">
-                    <button class="button-primary modal-button-login" modal="modal-error" onclick="closeModal(this, true);">
+                    <button class="button-primary modal-button-login" modal="modal-cart-error" onclick="closeModal(this, true);">
                         Close
                     </button>
                 </div>
@@ -20,4 +18,3 @@
         </section>
     </div>
 </div>
-
