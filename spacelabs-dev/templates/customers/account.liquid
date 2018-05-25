@@ -99,19 +99,9 @@
       {% endif %}
 
       <p class="account-address-item">
-        {% if customer.addresses_count == 0 %}
-          <a href="/account/addresses">
-            {{ 'customers.account.new_address_link' | t }}
-          </a>
-        {% elsif customer.addresses_count < 3 %}
           <a href="/account/addresses">
             {{ 'customers.account.view_addresses' | t, count: customer.addresses_count }}
           </a>
-        {% else %}
-        <a href="/account/addresses">
-          {{ 'customers.account.view_addresses' | t, count: 3 }}
-        </a>
-        {% endif %}
       </p>
     </div>
   </article>

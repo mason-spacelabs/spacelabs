@@ -66,7 +66,7 @@
       {% endif %}
     </div>
 
-    {% if has_items or show_continue_link %}
+    {% comment %} {% if has_items or show_continue_link %}
       <div class="cart-title-right">
         {% if has_items %}
           <div class="cart-title-total--large">
@@ -86,22 +86,11 @@
               {% endif %}
             </div> 
           </div>
-
-          <button
-            class="button-primary cart-title-button"
-            name="checkout"
-            type="button"
-            aria-label="{{ 'cart.general.checkout' | t }}"
-            onclick="collectData(customer, true);"
-          >
-            {% include 'icon-cart' %}
-            Update Pricing
-          </button>
         {% elsif show_continue_link %}
           {{ continue_link_html }}
         {% endif %}
       </div>
-    {% endif %}
+    {% endif %} {% endcomment %}
   </header>
 
   <section class="cartitems--container {% if has_sidebar %}has-sidebar{% endif %}">
@@ -159,7 +148,7 @@
               type="button"
               name="checkout"
               aria-label="{{ 'cart.general.checkout' | t }}"
-              onclick="collectData(customer);"
+              onclick="checkoutPage();"
             >
               {% include 'icon-cart' %}
               {{ 'cart.general.checkout' | t }}
@@ -302,22 +291,72 @@
 }
 
 {% endschema %}
-{% assign account_data = customer.metafields.account_data %}
-{% assign account_string = account_data.details | split: ':' | join: ',' %}
+
+{% assign customer_tags = customer.tags %}
+{% assign meta_data = customer.metafields.account_data %}
+{% assign customer_data = customer.id %}
+
 <script>
-$(".loading-screen").css( "display", "none" );
-var account_information = {{ account_string | json }};
-var account_array = account_information.split(",");
-var customer_number = {{ customer.id }};
-var facility_number = account_array[1].slice(1, 15);
-var shipping_number = account_array[7].slice(1, 15);
-var billing_number = account_array[5].slice(1, 15);
 
-var customer = {
-customer: customer_number,
-facility: facility_number,
-shipping: shipping_number,
-billing: billing_number
-}
+    var meta_information = {{ meta_data | json }} || '';
+    var customer_information = {{ customer_data | json }} || '';
+    var checkout_page = true;
 
+    var pricing_data = {
+      meta_information: meta_information,
+      customer_information: customer_information,
+      checkout_page: checkout_page
+    }
+
+    var pricingCheck = getCookie('shopifyPricing');
+
+    if(pricingCheck == "true"){
+    document.getElementById("checkout").submit();
+    document.cookie = "shopifyPricing=false;path=/"; 
+    }
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+ function checkoutPage(){
+    var tags = {{ customer_tags | json }};
+    jQuery.getJSON('/cart.js', function(cart) {
+      var tag_array = tags.join(":").split(":");
+      var pricing_check = true;
+      var cart_data = cart.items;
+  
+      for(var items in cart_data){
+  
+        pricing_check = false;
+        var array_key = cart_data[items].id;
+  
+        for(var cart in tag_array){
+  
+          if(array_key == tag_array[cart]){
+            pricing_check = true;
+          }
+        }
+        if(pricing_check){
+  
+        }else{
+          staticCartCheck(pricing_data);
+          return
+        } 
+      }
+      $("#hidden-submit").click();
+    } );
+  }
 </script>
+

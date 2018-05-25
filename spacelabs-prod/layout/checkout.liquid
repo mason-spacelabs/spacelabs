@@ -55,138 +55,311 @@
     {{ tracking_code }}
   </body>
 <script>
-    window.onload = function(){
+    window.onload = function() {
 
-      // SHOWING THE SHIPPING BLOCK AFTER LOADING THE PAGE 
+        // ERROR MESSAGE CREATION FOR SHIPPING ADDRESS FORM
 
-      var content_block = document.querySelectorAll('#content_block');
-      content_block[0].style.display = "block";
+        var step_section = document.querySelectorAll('.step__sections');
+        var errors = document.querySelectorAll('.field__message--error');
 
-      if(document.getElementById('checkout_shipping_address_id') == undefined)
-      return
+        if (errors.length != 0) {
 
-      // HIDING THE ADDRESS SELECTOR
+            var global_error = document.createElement("P");
+            global_error.classList.add("field__message", "field__message--error", "custom--error");
+            global_error.innerHTML = "Invalid Shipping Address: Please contact customer service to request an address change.";
+            step_section[0].appendChild(global_error);
 
-      var shipping_address = document.getElementById('checkout_shipping_address_id'); 
-      var shipping_address_parent = document.getElementById('checkout_shipping_address_id').parentElement; 
-      shipping_address_parent.childNodes[0].classList.add("visually--hidden");
-      shipping_address.classList.add("visually--hidden");
-
-      // LOOP THROUGH ADDRESS TO FIND DEFAULT
-
-      var address_data = "";
-      var shipping_array = shipping_address.getElementsByTagName("OPTION");
-      for (var i = 0; i < shipping_array.length; i++) {
-
-        var default_address = JSON.parse(shipping_address[i].getAttribute('data-properties'));
-
-        if(default_address != null){
-
-          var default_boolean = default_address.default;
-
-          if(default_boolean){
-
-            address_data = default_address;
-          }
         }
-      }
+    }
+
+    // CALLS A FUNCTION FOR ALL FOLLOWING CHECKOUT STEPS
+
+    document.getElementById("content_block").onload = step_loader();
+
+    function step_loader() {
+        
+        var contact_block = document.querySelectorAll('.section--shipping-address');
+        var shipping_block = document.querySelectorAll('.section--shipping-method');
+        var payment_block = document.querySelectorAll('.section--payment-method');
+
+        // VERIFYING PAGE SELECTION
+        if(contact_block.length){
+
+            var shipping_dropdown = document.querySelectorAll('#checkout_shipping_address_id');
+            var dropdown_array = document.querySelectorAll('#checkout_shipping_address_id > option');
+
+            for (var i = 0; i < dropdown_array.length; i++) { 
+
+            var address_data_raw = dropdown_array[i].getAttribute("data-properties");
+            var address_data = JSON.parse(address_data_raw);
+                
+
+                if(dropdown_array[i].innerHTML == 'New address…' ){
+                    shipping_dropdown[0].removeChild(shipping_dropdown[0].children[i]);
+                }
+                if(address_data){ 
+                    if(address_data.default){
+                        //shipping_dropdown[0].removeChild(shipping_dropdown[0].children[i]);
+                    }
+                }
+
+            }
+
+            var form_inputs = document.querySelectorAll('.section--shipping-address > .section__content > .fieldset > .field');
+
+            var attention_block = document.createElement('DIV');
+            attention_block.classList.add('field__input-wrapper');
+            attention_block.classList.add('attention-block');
+            attention_block.innerHTML = '<label class="field__label field__label--visible" for="checkout_shipping_attention">Attention to:</label><input class="field__input field--blue" size="30" type="text" placeholder="Attention:" id="checkout_shipping_attention" oninput="attentionInputCheck(this)">';
+
+            var contact_interval = window.setInterval(contactCallback, 100);
+            function contactCallback() {
+
+                if (form_inputs.length < 8) {
+
+                } else {
+               
+                    clearInterval(contact_interval);
+                    
+                    var company_field = document.querySelectorAll("[data-address-field='company']");
+                    company_field[0].appendChild(attention_block);
+
+                    var input_layer = document.querySelectorAll('.field__input-wrapper');
+
+                    document.getElementById('checkout_shipping_address_first_name').setAttribute("readonly", true);
+                    document.getElementById('checkout_shipping_address_last_name').setAttribute("readonly", true);
+                    document.getElementById('checkout_shipping_address_company').setAttribute("readonly", true);
+                    document.getElementById('checkout_shipping_address_address1').setAttribute("readonly", true);
+                    document.getElementById('checkout_shipping_address_city').setAttribute("readonly", true);
+                    document.getElementById('checkout_shipping_address_country').setAttribute("readonly", true);
+                    document.getElementById('checkout_shipping_address_province').setAttribute("readonly", true);
+                    document.getElementById('checkout_shipping_address_zip').setAttribute("readonly", true);
+                    document.getElementById('checkout_shipping_address_phone').setAttribute("readonly", true);
+
+                    for (i = 0; i < input_layer.length; i++) { 
+
+                        var inputs = input_layer[i];
+  
+                        switch(inputs.children[0].innerHTML) {
+                            case 'Discount':
+                                
+                                break;
+                            case 'Stored addresses':
+                                
+                                break;
+                            case 'Attention to:':
+                                
+                                break;
+                            default:
+                                var input_cover = document.createElement('DIV');
+                                input_cover.classList.add('input-cover');
+                                inputs.classList.add('input-layer');
+                                inputs.appendChild(input_cover); 
+                        }
+                    }
+
+                    var first_name = document.getElementById('checkout_shipping_address_first_name').parentElement;
+                    var company = document.getElementById('checkout_shipping_address_company').parentElement;
+                    var phone = document.getElementById('checkout_shipping_address_phone').parentElement;
+
+                                        
+                    company.firstChild.innerHTML = "Company";
+                    first_name.firstChild.innerHTML = "First name";      
+                    phone.firstChild.innerHTML = "Phone";
+                    phone.children[1].placeholder = "Phone";              
+       
+                }
+            }
+
+            document.cookie = "spacelabs_attention=none;path=/";
 
 
-      // PARSING THE CORRECT ADDRESS AND ADDING AN INPUT COVER OVER THE FORM
+        }else if (shipping_block.length) {
 
-      var shipping_block = document.querySelectorAll('.section--shipping-address');
-      var input_cover = document.createElement("DIV");
+            // SHIPPING BLOCK CHECKOUT PAGE
 
-      input_cover.classList.add("input-layer");
-      shipping_block[0].appendChild(input_cover);  
+            var shipping_container = document.createElement('DIV');
+            shipping_container.classList.add("shipping-container");
+            shipping_container.innerHTML = '<div class="section__content"><div class="section__header" style="padding-top: 3em;"><h2 class="section__title">Shipping carrier information</h2></div><div class="section__content"><div class="fieldset"><div class="field field--optional field--show-floating-label field--half"><div class="field__input-wrapper"><label class="field__label field__label--visible" for="checkout_shipping_carrier">Shipping Carrier</label><input placeholder="Shipping Carrier" class="field__input field--blue" size="30" type="text" id="checkout_shipping_carrier"  oninput="shippingInputCheck(this)" autocomplete="off" maxlength="20"></div></div><div class="field field--required field--show-floating-label field--half"><div class="field__input-wrapper"><label class="field__label field__label--visible" for="checkout_shipping_number">Shipping Number</label><input placeholder="Shipping Number" class="field__input field--blue aria-required="true" size="30" type="text" id="checkout_shipping_number"  oninput="shippingInputCheck(this)" autocomplete="off" maxlength="20" ></div></div></div></div>';
 
-      // VERIFYING AND ASSIGNING THE CORRECT ADDRESS TO THE SHIPPING FORM
+            shipping_block[0].appendChild(shipping_container);
 
-      document.getElementById('checkout_shipping_address_first_name').value = address_data.first_name;
-      document.getElementById('checkout_shipping_address_first_name').setAttribute("readonly", true);
-      
-      document.getElementById('checkout_shipping_address_last_name').value = address_data.last_name; 
-      document.getElementById('checkout_shipping_address_last_name').setAttribute("readonly", true); 
+            var radio_input = document.querySelectorAll('.input-radio');
+            var interval = window.setInterval(myCallback, 500);
 
-      document.getElementById('checkout_shipping_address_company').value = address_data.company;
-      document.getElementById('checkout_shipping_address_company').setAttribute("readonly", true);
+            function myCallback() {
 
-      document.getElementById('checkout_shipping_address_address1').value = address_data.address1;
-      document.getElementById('checkout_shipping_address_address1').setAttribute("readonly", true);
+                if (radio_input.length < 1) {
+                 
+                    radio_input = document.querySelectorAll('.input-radio');
 
-      document.getElementById('checkout_shipping_address_city').value = address_data.city;
-      document.getElementById('checkout_shipping_address_city').setAttribute("readonly", true);
+                } else {
+               
+                    radio_input = document.querySelectorAll('.input-radio');
 
-      document.getElementById('checkout_shipping_address_country').value = address_data.country;
-      document.getElementById('checkout_shipping_address_country').setAttribute("readonly", true);
+                    for (i = 0; i < radio_input.length; i++) {
 
-      document.getElementById('checkout_shipping_address_province').value = address_data.province;
-      document.getElementById('checkout_shipping_address_province').setAttribute("readonly", true);
+                        var continue_button = document.querySelectorAll('.step__footer__continue-btn');
+                        radio_input[i].setAttribute("onclick", "shippingSelectionRadio(this);");
+                        radio_input[i].setAttribute("shipper", i);
 
-      document.getElementById('checkout_shipping_address_zip').value = address_data.zip;
-      document.getElementById('checkout_shipping_address_zip').setAttribute("readonly", true);
+                        if(radio_input[0].checked){
 
-      var first_name = document.getElementById('checkout_shipping_address_first_name').parentElement;
-      var company = document.getElementById('checkout_shipping_address_company').parentElement;
+                            shipping_container.classList.remove("shipping-hidden");
+                            continue_button[0].setAttribute("disabled", "disabled");
+                        }else{
 
-      // MODIFYING THE INPUT LABELS SO THEY DONT SAY (OPTIONAL)
+                            shipping_container.classList.add("shipping-hidden");
+                            continue_button[0].removeAttribute("disabled");
+                        }
 
-      company.firstChild.innerHTML = "Company";
-      first_name.firstChild.innerHTML = "First Name";
+                    }
+                    clearInterval(interval);
+                }
+            }
+           
+        } else if (payment_block.length) {
 
-      // IE BUG FIX FOR SELECT INPUT THAT HAS A DELAYED LOADING 
+            var purchase_order = document.querySelectorAll('.content-box__row--secondary > .blank-slate');
+            var review_order = document.querySelectorAll('.order-summary__sections');
+            var continue_button = document.getElementsByClassName('step__footer__continue-btn');
+            continue_button[0].classList.add('hidden');
 
-      var chkReadyState = setInterval(function() {
-        if (document.readyState == "complete") {
+            var payment_button_container = document.createElement('DIV');
+            payment_button_container.innerHTML = '<button id="additional-button" name="button" type="button" class="btn completed_order" style="margin-top: 20px; width: 100%;" onclick="completeOrderButton()"><span class="btn__content">Complete order</span><i class="btn__spinner icon icon--button-spinner"></i></button>';
+            review_order[0].appendChild(payment_button_container);
 
-            clearInterval(chkReadyState);
 
-            // CHANGES THE COUNTRY INPUT FROM A SELECT INPUT TO A NORMAL INPUT
+            var purchase_box = document.createElement('DIV');
+
+            purchase_box.classList.add('content-box');
+            purchase_box.classList.add('content-box-alt');
+            purchase_box.innerHTML = '<div class="purchase-order-box"><p class="error-string error-message-custom" style="text-align: center;" >Please enter a purchase order number for your records.</p><div class="fieldset" style="text-align: left; margin-top: 10px;"><div class="field field--show-floating-label"><div class="field__input-wrapper"><label class="field__label field__label--visible" for="checkout_purchase_order">Purchase Order #</label><input placeholder="Purchase Order #" autocorrect="off" class="field__input field--blue" aria-required="true" size="30" type="text" id="checkout_purchase_order" oninput="purchaseOrderInput(this)" maxlength="16"><input id="purchase-order-value" type="hidden" name="checkout[note_attributes][purchase_order]" aria-required="true" size="30" type="text" value="none"/><input id="attention-value"  type="hidden" name="checkout[note_attributes][attention]" aria-required="true" size="30" type="text" /><input id="shipping-name-value" type="hidden" name="checkout[note_attributes][shipping_name]"  aria-required="true" size="30" type="text"  /><input id="shipping-number-value" type="hidden" name="checkout[note_attributes][shipping_number]"  aria-required="true" size="30" type="text"  /></div></div></div></div>';
+
+            payment_block[0].appendChild(purchase_box);
+
+            var shipping_value_name = document.querySelectorAll('#shipping-name-value');
+            var shipping_value_number = document.querySelectorAll('#shipping-number-value');
+            var attention_value = document.querySelectorAll('#attention-value');
+
+            shipping_value_name[0].value = getCookie("spacelabs_shipping");
+            shipping_value_number[0].value = getCookie("spacelabs_shipping_number");
+            attention_value[0].value = getCookie("spacelabs_attention");
+
+        } else {
             
-            var country = document.getElementById('checkout_shipping_address_country');
-            var country_parent = country.parentElement;
-            var country_input = document.createElement("INPUT");
+        }
+    }
 
-            country.classList.add("visually--hidden");
+    // CHANGE LOCATION OF THE PAYMENT BUTTON AND SUBMIT THROUGH HIDDEN BUTTON
 
-            country_input.classList.add("field__input");
-            country_input.value = address_data.country;
-            country_input.setAttribute("readonly", true);
+    function completeOrderButton() {
 
-            country_parent.classList.remove("field__input-wrapper--select");
-            country_parent.appendChild(country_input);
+        var continue_button = document.querySelectorAll('.step__footer__continue-btn'); 
+        continue_button[0].click();
+    }
 
-            // CHANGES THE STATE INPUT FROM A SELECT INPUT TO A NORMAL INPUT
+    // PURCHASE ORDER # INPUT VALIDATION
 
-            var state = document.getElementById('checkout_shipping_address_province');
-            var state_parent = state.parentElement;
-            var state_input = document.createElement("INPUT");
+    function purchaseOrderInput(input) {
+        
+        var custom_text = document.querySelectorAll('.error-string');
+        var purchase_order = document.querySelectorAll('#purchase-order-value');
 
-            state.classList.add("visually--hidden");
+        if (input.value.length < 2) {
 
-            state_input.classList.add("field__input");
-            state_input.value = address_data.province;
-            state_input.setAttribute("readonly", true);
+            custom_text[0].classList.add('error-message-custom');
+            purchase_order[0].value = "none";
 
-            state_parent.classList.remove("field__input-wrapper--select");
-            state_parent.appendChild(state_input);
-          }
-        }, 0);
-      
-      // ERROR MESSAGE CREATION FOR SHIPPING ADDRESS FORM
+        } else {
 
-      var step_section = document.querySelectorAll('.step__sections');
+            custom_text[0].classList.remove('error-message-custom');
+            purchase_order[0].value = input.value;
 
-      var errors = document.querySelectorAll('.field__message--error');
+        }
 
-      if(errors.length != 0){
+    }
 
-        var global_error = document.createElement("P");
-        global_error.classList.add("field__message", "field__message--error", "custom--error");
-        global_error.innerHTML = "Invalid Shipping Address: Please contact customer service to request an address change.";
-        step_section[0].appendChild(global_error);
+    // CHECKING THE CARRIER SELECTION TO DISABLE THE CONTINUE BUTTON
 
-      }
+    function shippingSelectionRadio(radio_button) {
+
+        var shipping_block = document.querySelectorAll('.shipping-container');
+        var continue_button = document.querySelectorAll('.step__footer__continue-btn');
+
+        var shipping_method = radio_button.value;
+        shipping_method.slice(0, 7);
+        var shipping_verify = shipping_method.slice(0, 7);
+
+        if (shipping_verify == "shopify" && radio_button.getAttribute("shipper") == 0) {
+
+            shipping_block[0].classList.remove("shipping-hidden");
+            continue_button[0].setAttribute("disabled", "disabled");
+
+        } else {
+
+            document.cookie = "spacelabs_shipping=none;path=/";
+            document.cookie = "spacelabs_shipping_number=none;path=/";
+
+            shipping_block[0].classList.add("shipping-hidden");
+            continue_button[0].removeAttribute("disabled");
+        }
+    }
+
+    function attentionInputCheck(input){
+
+        if(input.value.length > 2 ){
+            document.cookie = "spacelabs_attention=" + input.value + ";path=/";
+            input.classList.remove('field--blue');
+        }else{
+            document.cookie = "spacelabs_attention=none;path=/";
+            input.classList.add('field--blue');
+        }
+
+    }
+    // VERIFYING THAT BOTH SHIPPING INPUT FIELDS HAVE BEEN FILLED AND SETS A TEMPORARY COOKIE
+
+    function shippingInputCheck(input) {
+        
+        var continue_button = document.querySelectorAll('.step__footer__continue-btn');
+        var shipping_carrier = document.querySelectorAll('#checkout_shipping_carrier');
+        var shipping_number = document.querySelectorAll('#checkout_shipping_number');
+
+        if (input.value.length < 2) {
+            input.classList.add('field--blue');
+        } else {
+            input.classList.remove('field--blue');
+        }
+
+        if (shipping_carrier[0].value.length > 2 && shipping_number[0].value.length > 2) {
+
+            continue_button[0].removeAttribute("disabled");
+
+            document.cookie = "spacelabs_shipping=" + shipping_carrier[0].value + ";path=/";
+            document.cookie = "spacelabs_shipping_number=" + shipping_number[0].value + ";path=/";
+
+        }else{
+
+            continue_button[0].setAttribute("disabled", "disabled");
+
+        }
+    }
+
+    // SETS A COOKIE THAT EXPIRE ON BROWSER EXIT
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
     }
   </script>
 </html>

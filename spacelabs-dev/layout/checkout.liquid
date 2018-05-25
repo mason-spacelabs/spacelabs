@@ -134,6 +134,7 @@
                     document.getElementById('checkout_shipping_address_country').setAttribute("readonly", true);
                     document.getElementById('checkout_shipping_address_province').setAttribute("readonly", true);
                     document.getElementById('checkout_shipping_address_zip').setAttribute("readonly", true);
+                    document.getElementById('checkout_shipping_address_phone').setAttribute("readonly", true);
 
                     for (i = 0; i < input_layer.length; i++) { 
 
@@ -159,10 +160,13 @@
 
                     var first_name = document.getElementById('checkout_shipping_address_first_name').parentElement;
                     var company = document.getElementById('checkout_shipping_address_company').parentElement;
+                    var phone = document.getElementById('checkout_shipping_address_phone').parentElement;
 
                                         
                     company.firstChild.innerHTML = "Company";
-                    first_name.firstChild.innerHTML = "First name";                    
+                    first_name.firstChild.innerHTML = "First name";      
+                    phone.firstChild.innerHTML = "Phone";
+                    phone.children[1].placeholder = "Phone";              
        
                 }
             }
