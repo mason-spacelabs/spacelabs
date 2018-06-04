@@ -35,8 +35,15 @@
 
     {% elsif template contains 'collection' and collection.handle %}
       {{ delimiter }}
-      <a href="/pages/{{ collection.metafields.anchor.business_link }}">{{ collection.metafields.title.business_title }}</a>
-      {{ delimiter }}
+
+      {%if collection.metafields.title.business_title %}
+        <a href="/pages/{{ collection.metafields.anchor.business_link }}">{{ collection.metafields.title.business_title }}</a>
+        {{ delimiter }}
+        
+      {% else %}
+  
+      {% endif %}
+
       {% if current_tags %}
         {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
         {{ collection.title | link_to: url }}

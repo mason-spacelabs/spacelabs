@@ -162,14 +162,18 @@
 
         <ul class="account-order-attributes">
           {% for attribute in order.attributes %}
+          {% assign spacelabs_notes = attribute | first %}
+
+            {%if spacelabs_notes == "purchase_order" %}
             <li>
               <span class="account-order-attribute-title">
-                {{ attribute | first }}:
+                Purchase Order :
               </span>
               <span class="account-order-attribute-content">
                 {{ attribute | last }}
               </span>
             </li>
+            {% endif %}
           {% endfor %}
         </ul>
       {% endif %}
