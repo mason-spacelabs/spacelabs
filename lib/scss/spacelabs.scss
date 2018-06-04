@@ -62,8 +62,11 @@ $bp-register-md: 600px;
         display: none !important;
     }
 }
-#page-scroller {
+#page-scroller { 
     color: #195280;
+}
+select, option {
+    line-height: normal;
 }
 
 // ================= NAVIGATION =================
@@ -1008,7 +1011,7 @@ table.product_table tr:nth-child(odd) {
 }
 // ================= CUSTOM MODAL =================
 
-#modal-login, #modal-error, #modal-success, #modal-cart-error, #modal-pricing-error {
+#modal-login, #modal-error, #modal-success, #modal-cart-error, #modal-pricing-error, #modal-success-contact {
     position: fixed;
     top:0;
     left:0;

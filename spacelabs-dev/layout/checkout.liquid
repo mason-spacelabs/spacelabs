@@ -70,6 +70,7 @@
             step_section[0].appendChild(global_error);
 
         }
+
     }
 
     // CALLS A FUNCTION FOR ALL FOLLOWING CHECKOUT STEPS
@@ -166,17 +167,20 @@
                     company.firstChild.innerHTML = "Company";
                     first_name.firstChild.innerHTML = "First name";      
                     phone.firstChild.innerHTML = "Phone";
-                    phone.children[1].placeholder = "Phone";              
+                    phone.children[1].placeholder = "Phone";   
        
                 }
+                
             }
 
             document.cookie = "spacelabs_attention=none;path=/";
 
-
         }else if (shipping_block.length) {
 
             // SHIPPING BLOCK CHECKOUT PAGE
+
+            document.cookie = "spacelabs_shipping=none;path=/";
+            document.cookie = "spacelabs_shipping_number=none;path=/"; 
 
             var shipping_container = document.createElement('DIV');
             shipping_container.classList.add("shipping-container");
@@ -185,9 +189,9 @@
             shipping_block[0].appendChild(shipping_container);
 
             var radio_input = document.querySelectorAll('.input-radio');
-            var interval = window.setInterval(myCallback, 500);
+            var shipping_interval = window.setInterval(shippingCallback, 500);
 
-            function myCallback() {
+            function shippingCallback() {
 
                 if (radio_input.length < 1) {
                  
@@ -214,12 +218,28 @@
                         }
 
                     }
-                    clearInterval(interval);
+                    clearInterval(shipping_interval);
                 }
             }
+
+            var custom_carrier_radio = document.querySelectorAll('.content-box__emphasis');
+
+            for (var i = 0; i < custom_carrier_radio.length; i++) {
+                
+                if(custom_carrier_radio[i].innerText.trim() == "Free"){
+                   
+                    custom_carrier_radio[i].innerText = "";
+                }
+            }
+
+            var tax_line = document.querySelectorAll('.total-line--taxes');
+
+            if(tax_line){
+                tax_line[0].children[0].innerText = "Est. Taxes";
+            }            
            
         } else if (payment_block.length) {
-
+    
             var purchase_order = document.querySelectorAll('.content-box__row--secondary > .blank-slate');
             var review_order = document.querySelectorAll('.order-summary__sections');
             var continue_button = document.getElementsByClassName('step__footer__continue-btn');
@@ -229,7 +249,6 @@
             payment_button_container.innerHTML = '<button id="additional-button" name="button" type="button" class="btn completed_order" style="margin-top: 20px; width: 100%;" onclick="completeOrderButton()"><span class="btn__content">Complete order</span><i class="btn__spinner icon icon--button-spinner"></i></button>';
             review_order[0].appendChild(payment_button_container);
 
-
             var purchase_box = document.createElement('DIV');
 
             purchase_box.classList.add('content-box');
@@ -237,7 +256,6 @@
             purchase_box.innerHTML = '<div class="purchase-order-box"><p class="error-string error-message-custom" style="text-align: center;" >Please enter a purchase order number for your records.</p><div class="fieldset" style="text-align: left; margin-top: 10px;"><div class="field field--show-floating-label"><div class="field__input-wrapper"><label class="field__label field__label--visible" for="checkout_purchase_order">Purchase Order #</label><input placeholder="Purchase Order #" autocorrect="off" class="field__input field--blue" aria-required="true" size="30" type="text" id="checkout_purchase_order" oninput="purchaseOrderInput(this)" maxlength="16"><input id="purchase-order-value" type="hidden" name="checkout[note_attributes][purchase_order]" aria-required="true" size="30" type="text" value="none"/><input id="attention-value"  type="hidden" name="checkout[note_attributes][attention]" aria-required="true" size="30" type="text" /><input id="shipping-name-value" type="hidden" name="checkout[note_attributes][shipping_name]"  aria-required="true" size="30" type="text"  /><input id="shipping-number-value" type="hidden" name="checkout[note_attributes][shipping_number]"  aria-required="true" size="30" type="text"  /></div></div></div></div>';
 
             payment_block[0].appendChild(purchase_box);
-
             var shipping_value_name = document.querySelectorAll('#shipping-name-value');
             var shipping_value_number = document.querySelectorAll('#shipping-number-value');
             var attention_value = document.querySelectorAll('#attention-value');
@@ -246,9 +264,25 @@
             shipping_value_number[0].value = getCookie("spacelabs_shipping_number");
             attention_value[0].value = getCookie("spacelabs_attention");
 
+            var shipping_review_carrier = document.querySelectorAll('.review-block__content');
+
+            for (var i = 0; i < shipping_review_carrier.length; i++) {
+                
+                if(shipping_review_carrier[i].innerText == "Bill my freight carrier · Free"){
+                    shipping_review_carrier[i].innerText = "Bill my freight carrier";
+                }
+            }
+
+            var tax_line = document.querySelectorAll('.total-line--taxes');
+            tax_line[0].children[0].innerText = "Est. Taxes";
+
         } else {
             
+            setTimeout(step_loader, 1000);
+            
+            
         }
+
     }
 
     // CHANGE LOCATION OF THE PAYMENT BUTTON AND SUBMIT THROUGH HIDDEN BUTTON
@@ -361,5 +395,31 @@
         }
         return "";
     }
+
+    var tax_interval = window.setInterval(taxCallback, 1000);
+
+            function taxCallback() {
+
+
+                var tax_line = document.querySelectorAll('.total-line--taxes');
+
+                setTimeout(function(){ 
+                    if(tax_line){
+
+                        if(tax_line[0].children[0].innerText == "Taxes"){
+
+                        tax_line[0].children[0].innerText = "Est. Taxes";
+                        
+                        }else{
+
+                            clearInterval(tax_interval);
+
+                        }
+
+                    }
+
+                 }, 1000);
+
+            }
   </script>
 </html>
