@@ -19178,7 +19178,7 @@ function ProductPriceMain(price) {
 	 * @constructor
 	 */
 	function ProductContent(product) {
-		console.log(product);
+		
 	  var $price = ProductPrice({
 		price: product.price,
 		onSale: product.on_sale,

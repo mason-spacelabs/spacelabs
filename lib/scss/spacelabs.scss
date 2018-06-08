@@ -310,6 +310,52 @@ nav.productgrid--utils {
     border-bottom: 1px solid hsla(0,0%,50%,.3); 
     color: #003f72;
 }
+#cookie_message {
+    display: none; 
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 100%;  
+    font-size: 13px; 
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;  
+    background-color: #003f72;
+    border-top: 1px solid hsla(0,0%,50%,.3); 
+    color: #fff;
+}
+.button-cookie {
+    background-color: #fff;
+    font-weight: 400;
+    border: 1px solid #b7d2e3; 
+    color: #003f72;
+    padding: 0.625rem 1rem;
+    font-size: 13px; 
+    display: inline-block;
+    font-family: "Open Sans",sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.button-cookie:hover {
+    opacity: .8;
+}
+#cookie_message span {
+    display:inline-block;
+    padding: 12px 0px;
+}
+.cookie-policy {
+    color: #fff;
+    text-decoration-color: #fff;
+}
+.cookie-policy:hover {
+    opacity: .8;
+}
 #message_close {
     margin-left: 20px;
 }

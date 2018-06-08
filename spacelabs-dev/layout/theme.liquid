@@ -85,6 +85,7 @@
     {% include 'modal-login' %}
     {% include 'modal-error' %}
     {% include 'modal-success' %}
+    {% include 'modal-cookies' %}
     {% include 'modal-success-contact' %}
     {% include 'modal-cart-error' %}
     {% include 'modal-pricing-error' %}
@@ -115,7 +116,6 @@
 
         if(clearCache != "cleared"){
           document.cookie = "shopifyLogin=cleared;path=/"; 
-
           var account_information = {{ account_data | json }};
           var customer_information = {{ customer_data | json }};
 
@@ -135,13 +135,12 @@
         var clearCache = getCookie("shopifyLogin");
 
         if(clearCache == "cleared"){
-          console.log("clearing");
           document.cookie = "shopifyLogin=fresh;path=/"; 
-          document.cookie = "checkout=; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/";
-          document.cookie = "cart=; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/";
-          document.cookie = "cart_sig=; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/";
-          document.cookie = "cart_ts=; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/";
-          document.cookie = "checkout_token=; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/";
+          document.cookie = 'cart=; expires=Thu, 01-Jan-70 00:00:01 GMT;path=/';
+          document.cookie = 'cart_sig=; expires=Thu, 01-Jan-70 00:00:01 GMT;path=/';
+          document.cookie = 'cart_ts=; expires=Thu, 01-Jan-70 00:00:01 GMT;path=/';
+          document.cookie = 'checkout=; expires=Thu, 01-Jan-70 00:00:01 GMT;path=/';
+          document.cookie = 'checkout_token=; expires=Thu, 01-Jan-70 00:00:01 GMT;path=/';
 
           $.ajax({
           url: '/cart/clear.js', 

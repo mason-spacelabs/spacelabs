@@ -120,19 +120,14 @@
             </div>
         </div>
         <div class="form-field">
-            {% assign value = '' %}
-            {%- if form.phone -%}
-            {% assign value = form.phone %}
-            {%- elsif customer -%}
-            {% assign value = customer.phone %}
-            {%- endif -%}
+          
 
             <input
             class="form-field-input form-field-text"
             id="contact_phone_alt"
             name="contact[phone]"
             type="tel"
-            value="{{ value }}"
+            value=""
             >
 
             <label class="form-field-title" for="contact_phone_alt">

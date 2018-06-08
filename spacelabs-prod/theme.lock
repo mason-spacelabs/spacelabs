@@ -6,7 +6,7 @@ assets/checkout.scss.liquid:
 assets/electrocardiology-banner.jpg:
   development: 2018-03-27T11:09:00-07:00   97877010d9082a5061febc5fc3cefece
 assets/empire.js:
-  development: 2018-05-24T15:51:22-07:00   65f26451439d66e642ccd0d99fbf2397
+  development: 2018-06-04T16:08:09-07:00   6e9b4a75cf1d52eb8869055870ba1c5a
 assets/empire.js.map:
   development: 2018-03-21T15:16:20-07:00   8a1948556554a0c76622a98f53d0cbf1
 assets/gift-card.js:
@@ -56,9 +56,9 @@ assets/spacelabs-logo-small.png:
 assets/spacelabs-logo.png:
   development: 2018-03-21T09:28:10-07:00   09493cd484e61602273a10b527747a96
 assets/spacelabs.min.css:
-  development: 2018-06-04T10:18:39-07:00   97441498a9fd1ad3c2a9ff48a1da77d5
+  development: 2018-06-06T16:41:10-07:00   9cfcae9d6c8f92eaa8df55a70378387f
 assets/spacelabs.min.js:
-  development: 2018-06-04T10:18:45-07:00   09e14dd732c063de156fc6053900ccd9
+  development: 2018-06-06T10:10:53-07:00   59a93c2c7a84991cfed25ebf937e71c5
 assets/specifications_data.js:
   development: 2018-04-03T14:39:09-07:00   d2a7c3765a741f4946b195315174e729
 assets/theme.js:
@@ -72,7 +72,7 @@ config/settings_data.json:
 config/settings_schema.json:
   development: 2018-03-21T09:28:16-07:00   ee9dda03baf68f0aca0b32eb818c9753
 layout/checkout.liquid:
-  development: 2018-06-01T17:00:27-07:00   f85da305f65c30ecdaa619fe83fc17e6
+  development: 2018-06-07T15:40:05-07:00   d361dddc20fd140436642e4789db67e1
 layout/gift_card.liquid:
   development: 2018-03-21T09:28:11-07:00   7748333192fdf44be2fbc47b4c50f1c3
 layout/giftcard.liquid:
@@ -82,7 +82,7 @@ layout/none.liquid:
 layout/password.liquid:
   development: 2018-03-21T09:28:12-07:00   ab4e99aa0bc552e3d315e8fc816602c0
 layout/theme.liquid:
-  development: 2018-06-04T10:17:10-07:00   fb597fee5983439ecfb9843b7a7df5ef
+  development: 2018-06-06T13:03:32-07:00   be728b5a4994572414d81d6a824c4892
 locales/de.json:
   development: 2018-03-21T15:14:29-07:00   b7cd7749b0a0d9df967227ee73bcbb7f
 locales/en.default.json:
@@ -367,6 +367,8 @@ snippets/modal-cart-error.liquid:
   development: 2018-05-25T16:27:03-07:00   334f96a26fe65aafd3d95eb211fd6080
 snippets/modal-cart.liquid:
   development: 2018-06-04T09:17:35-07:00   a2858f67c0254125fdbc5e30225bb211
+snippets/modal-cookies.liquid:
+  development: 2018-06-06T16:41:29-07:00   5ceac6c249961883b2a9a2760944d7dc
 snippets/modal-error.liquid:
   development: 2018-05-30T09:16:53-07:00   8ca9d9f63fe94ef25b948fe9ecfd99a8
 snippets/modal-login.liquid:
@@ -520,11 +522,11 @@ templates/page.business-category.liquid:
 templates/page.business-line.liquid:
   development: 2018-03-27T11:08:35-07:00   3e2d16641031e55626dbb87ebab5a9ca
 templates/page.contact.liquid:
-  development: 2018-05-25T16:28:49-07:00   64dc37ac28ecaf7174ea9bd5403ce582
+  development: 2018-06-07T09:24:14-07:00   d21644630b8cb640a31169b511875f8c
 templates/page.liquid:
   development: 2018-03-21T09:28:11-07:00   9e442c571c6eb6ea9b0b06598a29321b
 templates/page.register.liquid:
-  development: 2018-05-30T12:10:46-07:00   4103dcb49eeb23e893852b8e0a818b0d
+  development: 2018-06-04T14:56:27-07:00   d0e5df842ef4e2a59fdb2b5815a4ae98
 templates/password.liquid:
   development: 2018-03-21T09:28:14-07:00   2fdfbecb3470b2a25e6559a816577052
 templates/product.liquid:

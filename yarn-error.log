@@ -73,7 +73,7 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 1
+  Exit code: 3221225786
   Command: C:\Windows\system32\cmd.exe
   Arguments: /d /s /c gulp --env=development
   Directory: C:\Users\halstemx\Desktop\Spacelabs\spacelabs-website
